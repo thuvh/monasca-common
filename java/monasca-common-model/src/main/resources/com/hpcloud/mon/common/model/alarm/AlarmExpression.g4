@@ -31,6 +31,7 @@ expression
     | '(' expression ')' # parenExpr
     ;
 
+
 function
     : functionType '(' compoundIdentifier (',' period)? ')'
     ;
@@ -43,8 +44,8 @@ relational_operator
     ;
 
 lt
-    : LT
-    | LT_S
+    : LT_S
+    | LT
     ;
 
 lte
@@ -90,7 +91,7 @@ compoundIdentifier
     ;
 
 namespace
-    : identifier
+    : txt
     ;
 
 dimensionList
@@ -98,21 +99,8 @@ dimensionList
     ;
 
 dimension
-    : identifier '=' ext_identifier
+    : txt '=' txt
     ;
-
-identifier
-	: IDENTIFIER
-    | keyword
-	;
-
-ext_identifier
-	: IDENTIFIER
-	| EXT_IDENTIFIER
-    | INTEGER
-    | keyword
-    | STRING
-	;
 
 keyword
     : LT
@@ -128,18 +116,25 @@ keyword
     | AVG
 	;
 
-literal
+period
     : INTEGER
     ;
 
-period
+literal
     : INTEGER
     ;
 
 repeat
     : INTEGER
     ;
-    
+
+txt
+    : TXT
+    | keyword
+    | INTEGER 
+    | ID
+    | STRING
+    ;
 LT
 	: [lL][tT]
 	;
@@ -173,7 +168,7 @@ GTE_S
 	;
 	
 AND
-	: [aA][nN][dD]
+	: [aA][nN][dD] 
 	;
 	
 AND_S
@@ -212,12 +207,8 @@ INTEGER
     : DIGIT+
     ;
 
-IDENTIFIER
-  : (LETTER|UNDERSCORE) (LETTER|DIGIT|UNDERSCORE|DASH|PERIOD)*
-  ;
-
-EXT_IDENTIFIER
-  : (LETTER|DIGIT|UNDERSCORE|DASH|PERIOD)+
+TXT
+  : [a-zA-Z_$/\\]~('\''|';' | '}' | '{' | '=' | ','| '&' | ')' | '(' |' '| '"' )*
   ;
 
 STRING
