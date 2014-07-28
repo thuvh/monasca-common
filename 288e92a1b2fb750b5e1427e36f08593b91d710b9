@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: Roland Hochmuth <roland.hochmuth@hp.com>
+Workflow+1: Roland Hochmuth <roland.hochmuth@hp.com>
+Code-Review+1: Tim Kuhlman <tim.kuhlman@hp.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 28 Jul 2014 17:01:37 +0000
+Reviewed-on: https://review.openstack.org/109773
+Project: stackforge/monasca-common
+Branch: refs/heads/master
