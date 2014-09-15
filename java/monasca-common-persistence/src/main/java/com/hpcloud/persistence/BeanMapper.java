@@ -30,6 +30,7 @@ import java.sql.Timestamp;
 import java.sql.Types;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.joda.time.DateTime;
@@ -39,6 +40,8 @@ import org.joda.time.format.ISODateTimeFormat;
 import org.skife.jdbi.v2.StatementContext;
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 
+import com.google.common.base.Splitter;
+
 /**
  * A result set mapper which maps the fields in a statement into a JavaBean. This uses the JDK's
  * built in bean mapping facilities, so it does not support nested properties.
@@ -47,6 +50,7 @@ import org.skife.jdbi.v2.tweak.ResultSetMapper;
  * Additionally this bean mapper maps pascal case named columns to camel case named bean properties.
  */
 public class BeanMapper<T> implements ResultSetMapper<T> {
+  private static final Splitter COMMA_SPLITTER = Splitter.on(',');
   public static final DateTimeFormatter DATETIME_FORMATTER = ISODateTimeFormat.dateTimeNoMillis()
       .withZoneUTC();
 
@@ -132,6 +136,8 @@ public class BeanMapper<T> implements ResultSetMapper<T> {
             value = DATETIME_FORMATTER.print(rs.getTimestamp(i).getTime());
           else
             value = rs.getString(i);
+        } else if (type.isAssignableFrom(List.class)) {
+          value = COMMA_SPLITTER.splitToList(rs.getString(i));
         } else {
           value = rs.getObject(i);
         }
