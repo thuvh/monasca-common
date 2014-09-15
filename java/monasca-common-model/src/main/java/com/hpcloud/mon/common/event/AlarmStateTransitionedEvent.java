@@ -1,20 +1,19 @@
 /*
  * Copyright (c) 2014 Hewlett-Packard Development Company, L.P.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
- * implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
 package com.hpcloud.mon.common.event;
+
+import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonRootName;
 import com.hpcloud.mon.common.model.alarm.AlarmState;
@@ -26,6 +25,9 @@ import com.hpcloud.mon.common.model.alarm.AlarmState;
 public class AlarmStateTransitionedEvent {
   public String tenantId;
   public String alarmId;
+  public String alarmDefinitionId;
+  public String metricName;
+  public Map<String, String> metricDimensions;
   public String alarmName;
   public String alarmDescription;
   public AlarmState oldState;
@@ -35,14 +37,17 @@ public class AlarmStateTransitionedEvent {
   /** POSIX timestamp */
   public long timestamp;
 
-  public AlarmStateTransitionedEvent() {
-  }
+  public AlarmStateTransitionedEvent() {}
 
-  public AlarmStateTransitionedEvent(String tenantId, String alarmId, String alarmName,
+  public AlarmStateTransitionedEvent(String tenantId, String alarmId, String alarmDefinitionId,
+      String metricName, Map<String, String> metricDimensions, String alarmName,
       String alarmDescription, AlarmState oldState, AlarmState newState, boolean actionsEnabled,
       String stateChangeReason, long timestamp) {
     this.tenantId = tenantId;
     this.alarmId = alarmId;
+    this.alarmDefinitionId = alarmDefinitionId;
+    this.metricName = metricName;
+    this.metricDimensions = metricDimensions;
     this.alarmName = alarmName;
     this.alarmDescription = alarmDescription;
     this.oldState = oldState;
@@ -54,9 +59,11 @@ public class AlarmStateTransitionedEvent {
 
   @Override
   public String toString() {
-    return String.format(
-        "AlarmStateTransitionedEvent [tenantId=%s, alarmId=%s, alarmName=%s, alarmDescription=%s oldState=%s, newState=%s, actionsEnabled=%s, stateChangeReason=%s, timestamp=%s]",
-        tenantId, alarmId, alarmName, alarmDescription, oldState, newState, actionsEnabled,
-        stateChangeReason, timestamp);
+    return "AlarmStateTransitionedEvent [tenantId=" + tenantId + ", alarmId=" + alarmId
+        + ", alarmDefinitionId=" + alarmDefinitionId + ", metricName=" + metricName
+        + ", metricDimensions=" + metricDimensions + ", alarmName=" + alarmName
+        + ", alarmDescription=" + alarmDescription + ", oldState=" + oldState + ", newState="
+        + newState + ", actionsEnabled=" + actionsEnabled + ", stateChangeReason="
+        + stateChangeReason + ", timestamp=" + timestamp + "]";
   }
 }
