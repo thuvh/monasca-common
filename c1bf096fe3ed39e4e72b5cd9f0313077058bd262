@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_d85af34e",
+        "filename": "java/monasca-common-model/src/main/java/com/hpcloud/mon/common/event/AlarmDeletedEvent.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2014-09-15T23:11:00Z",
+      "side": 1,
+      "message": "Could you add the AlarmDefinitionId? I think it will make it easier to find the Alarm in some bolts. I can\u0027t get the AlarmDefinition myself once the Alarm is deleted since it is a hard delete from the database",
+      "revId": "c1bf096fe3ed39e4e72b5cd9f0313077058bd262",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7355a8f8",
+        "filename": "java/monasca-common-model/src/main/java/com/hpcloud/mon/common/event/AlarmUpdatedEvent.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2014-09-15T23:11:00Z",
+      "side": 1,
+      "message": "I\u0027m not sure I need the AlarmDefinitionId here, but maybe you should just add it",
+      "revId": "c1bf096fe3ed39e4e72b5cd9f0313077058bd262",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
