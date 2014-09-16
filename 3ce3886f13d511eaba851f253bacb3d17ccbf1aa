@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_0fedfab7",
+        "filename": "java/monasca-common-model/src/main/java/com/hpcloud/mon/common/event/AlarmDefinitionCreatedEvent.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 12512
+      },
+      "writtenOn": "2014-09-16T15:32:58Z",
+      "side": 1,
+      "message": "I think you want to use instanceof instead of comparing class types.  Block, p. 39.",
+      "revId": "3ce3886f13d511eaba851f253bacb3d17ccbf1aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_6f0a067b",
+        "filename": "java/monasca-common-model/src/main/java/com/hpcloud/mon/common/event/AlarmDefinitionDeletedEvent.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 12512
+      },
+      "writtenOn": "2014-09-16T15:32:58Z",
+      "side": 1,
+      "message": "instanceof?",
+      "revId": "3ce3886f13d511eaba851f253bacb3d17ccbf1aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_4f7c62ec",
+        "filename": "java/monasca-common-model/src/main/java/com/hpcloud/mon/common/event/AlarmDefinitionUpdatedEvent.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 12512
+      },
+      "writtenOn": "2014-09-16T15:32:58Z",
+      "side": 1,
+      "message": "instanceof?",
+      "revId": "3ce3886f13d511eaba851f253bacb3d17ccbf1aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8fa2ca49",
+        "filename": "java/monasca-common-model/src/main/java/com/hpcloud/mon/common/event/AlarmDeletedEvent.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 12512
+      },
+      "writtenOn": "2014-09-16T15:32:58Z",
+      "side": 1,
+      "message": "Do we need the alarmDefinitionId if we have the alarmId?",
+      "revId": "3ce3886f13d511eaba851f253bacb3d17ccbf1aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_2f939e01",
+        "filename": "java/monasca-common-model/src/main/java/com/hpcloud/mon/common/event/AlarmDeletedEvent.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 12512
+      },
+      "writtenOn": "2014-09-16T15:32:58Z",
+      "side": 1,
+      "message": "instanceof?",
+      "revId": "3ce3886f13d511eaba851f253bacb3d17ccbf1aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_af5b0e54",
+        "filename": "java/monasca-common-model/src/main/java/com/hpcloud/mon/common/event/AlarmStateTransitionedEvent.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 12512
+      },
+      "writtenOn": "2014-09-16T15:32:58Z",
+      "side": 1,
+      "message": "equals and haschcode?",
+      "revId": "3ce3886f13d511eaba851f253bacb3d17ccbf1aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_0f017a06",
+        "filename": "java/monasca-common-model/src/main/java/com/hpcloud/mon/common/event/AlarmUpdatedEvent.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 12512
+      },
+      "writtenOn": "2014-09-16T15:32:58Z",
+      "side": 1,
+      "message": "instanceof?",
+      "revId": "3ce3886f13d511eaba851f253bacb3d17ccbf1aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
