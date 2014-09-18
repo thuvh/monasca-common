@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_79fd463b",
+        "filename": "java/monasca-common-model/src/main/java/com/hpcloud/mon/common/event/AlarmDefinitionCreatedEvent.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2014-09-18T04:16:58Z",
+      "side": 1,
+      "message": "I think alarm should be removed from these field names. It really isn\u0027t the alarmName it is the alarmDefinitionName but since the event is AlarmDefinitionCreatedEvent, it is probably redundant to call it alarmDefinitionName",
+      "revId": "145f1aa7e9f5ff92455559155db44031e2427546",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
