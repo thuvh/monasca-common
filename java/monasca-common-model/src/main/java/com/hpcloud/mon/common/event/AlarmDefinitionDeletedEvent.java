@@ -14,31 +14,26 @@
 package com.hpcloud.mon.common.event;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonRootName;
 import com.hpcloud.mon.common.model.metric.MetricDefinition;
 
 /**
- * Represents an alarm having been deleted.
+ * Represents an alarm definition having been deleted.
  */
-@JsonRootName(value = "alarm-deleted")
-public class AlarmDeletedEvent implements Serializable {
-  private static final long serialVersionUID = -988406683520841426L;
+@JsonRootName(value = "alarm-definition-deleted")
+public class AlarmDefinitionDeletedEvent implements Serializable {
+  private static final long serialVersionUID = -845914476456541787L;
 
-  public String alarmId;
-  public List<MetricDefinition> alarmMetrics;
   public String alarmDefinitionId;
   public Map<String, MetricDefinition> subAlarmMetricDefinitions;
 
-  public AlarmDeletedEvent() {}
+  public AlarmDefinitionDeletedEvent() {}
 
-  public AlarmDeletedEvent(String alarmId, List<MetricDefinition> alarmMetrics,
-      String alarmDefinitionId, Map<String, MetricDefinition> subAlarmMetricDefinitions) {
-    this.alarmId = alarmId;
-    this.alarmDefinitionId = alarmDefinitionId;
-    this.alarmDefinitionId = alarmDefinitionId;
+  public AlarmDefinitionDeletedEvent(String alarmDefinition,
+      Map<String, MetricDefinition> subAlarmMetricDefinitions) {
+    this.alarmDefinitionId = alarmDefinition;
     this.subAlarmMetricDefinitions = subAlarmMetricDefinitions;
   }
 
@@ -48,18 +43,18 @@ public class AlarmDeletedEvent implements Serializable {
       return true;
     if (obj == null)
       return false;
-    if (!(obj instanceof AlarmDeletedEvent))
+    if (!(obj instanceof AlarmDefinitionDeletedEvent))
       return false;
-    AlarmDeletedEvent other = (AlarmDeletedEvent) obj;
+    AlarmDefinitionDeletedEvent other = (AlarmDefinitionDeletedEvent) obj;
     if (alarmDefinitionId == null) {
       if (other.alarmDefinitionId != null)
         return false;
     } else if (!alarmDefinitionId.equals(other.alarmDefinitionId))
       return false;
-    if (alarmId == null) {
-      if (other.alarmId != null)
+    if (subAlarmMetricDefinitions == null) {
+      if (other.subAlarmMetricDefinitions != null)
         return false;
-    } else if (!alarmId.equals(other.alarmId))
+    } else if (!subAlarmMetricDefinitions.equals(other.subAlarmMetricDefinitions))
       return false;
     return true;
   }
@@ -69,13 +64,15 @@ public class AlarmDeletedEvent implements Serializable {
     final int prime = 31;
     int result = 1;
     result = prime * result + ((alarmDefinitionId == null) ? 0 : alarmDefinitionId.hashCode());
-    result = prime * result + ((alarmId == null) ? 0 : alarmId.hashCode());
+    result =
+        prime * result
+            + ((subAlarmMetricDefinitions == null) ? 0 : subAlarmMetricDefinitions.hashCode());
     return result;
   }
 
   @Override
   public String toString() {
-    return "AlarmDeletedEvent [alarmId=" + alarmId + ", alarmDefinitionId=" + alarmDefinitionId
-        + "]";
+    return String.format("AlarmDefinitionDeletedEvent [alarmDefinitionId=%s, subAlarmIds=%s]",
+        alarmDefinitionId, subAlarmMetricDefinitions);
   }
 }
