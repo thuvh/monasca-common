@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_1e098795",
+        "filename": "java/monasca-common-model/src/main/java/com/hpcloud/mon/common/event/AlarmStateTransitionedEvent.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 12512
+      },
+      "writtenOn": "2014-10-10T21:09:57Z",
+      "side": 1,
+      "message": "would severity be better as an enum?",
+      "revId": "e6f05f87f4c7002aea9902f01e69c17b18b0e5f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
