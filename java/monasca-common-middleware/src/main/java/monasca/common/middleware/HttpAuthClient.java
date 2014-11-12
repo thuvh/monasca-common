@@ -25,12 +25,17 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.message.BasicHeader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.google.gson.JsonPrimitive;
 
 public class HttpAuthClient implements AuthClient {
-	private static final String ACCESSKEY = "accesskey";
+    private static final Logger logger = LoggerFactory.getLogger(HttpAuthClient.class);
+
 	private static final String PASSWORD = "password";
 	private static final String SERVICE_IDS_PARAM = "serviceIds";
 	private static final String ENDPOINT_IDS_PARAM = "endpointIds";
@@ -121,14 +126,22 @@ public class HttpAuthClient implements AuthClient {
       int code = response.getStatusLine().getStatusCode();
 			if (!(code == 201 || code == 200 || code == 203)) {
 				adminToken = null;
-				throw new AuthException(
+				throw new AdminAuthException(
 						"Failed to authenticate admin credentials " + code
 								+ response.getStatusLine().getReasonPhrase());
 			}
 		} catch (IOException e) {
+		    final String message;
+		    if ((e.getMessage() == null) && (e.getCause() != null)) {
+		        message = e.getCause().getMessage();
+		    }
+		    else {
+		        message = e.getMessage();
+		    }
+		    logger.error("Failure authenticating adminUser: {}", message);
 			post.abort();
-      throw new ClientProtocolException(
-        "IO Exception during POST request ", e);
+            throw new AdminAuthException(
+                "Failure authenticating adminUser :" + message, e);
 		}
 		return response;
 	}
@@ -259,32 +272,48 @@ public class HttpAuthClient implements AuthClient {
 			try {
 				return new StringEntity(bfr.toString());
 			} catch (UnsupportedEncodingException e) {
-				throw new AuthException("Invalid V2 authentication request "
+				throw new AdminAuthException("Invalid V2 authentication request "
 						+ e);
 			}
 		} else {
 			String msg = String.format("Admin auth method %s not supported",appConfig.getAdminAuthMethod());
-			throw new AuthException(msg);
+			throw new AdminAuthException(msg);
 		}
 	}
 
+	private String buildAuth(final String userName, final String password) {
+	  final JsonObject domain = new JsonObject();
+	  domain.addProperty("id", "default");
+      final JsonObject user = new JsonObject();
+      user.addProperty("name", userName);
+      user.addProperty("password", password);
+      user.add("domain", domain);
+      final JsonArray methods = new JsonArray();
+      final JsonObject passwordHolder = new JsonObject();
+      passwordHolder.add("user", user);
+      methods.add(new JsonPrimitive("password"));
+      final JsonObject identity = new JsonObject();
+      identity.add("methods", methods);
+      identity.add("password", passwordHolder);
+      final JsonObject auth = new JsonObject();
+      auth.add("identity", identity);
+      final JsonObject outer = new JsonObject();
+      outer.add("auth", auth);
+	  return outer.toString();
+	}
+
 	private StringEntity getUnscopedV3AdminTokenRequest() {
-		StringBuffer bfr = new StringBuffer();
+		final String body;
 		if (appConfig.getAdminAuthMethod().equalsIgnoreCase(PASSWORD)) {
-			bfr.append("{\"auth\": {\"identity\": {\"methods\": [\"password\"],\"password\": {\"user\": {\"name\": \"");
-			bfr.append(appConfig.getAdminUser());
-			bfr.append("\",\"password\": \"");
-			bfr.append(appConfig.getAdminPassword());
-      bfr.append("\",\"domain\": {\"id\": \"default\"");
-      bfr.append("}}}}}}");
+		    body = buildAuth(appConfig.getAdminUser(), appConfig.getAdminPassword());
 		} else {
 			String msg = String.format("Admin auth method %s not supported",appConfig.getAdminAuthMethod());
-			throw new AuthException(msg);
+			throw new AdminAuthException(msg);
 		}
 		try {
-			return new StringEntity(bfr.toString());
+			return new StringEntity(body);
 		} catch (UnsupportedEncodingException e) {
-			throw new AuthException("Invalid V3 authentication request " + e);
+			throw new AdminAuthException("Invalid V3 authentication request " + e);
 		}
 	}
 
