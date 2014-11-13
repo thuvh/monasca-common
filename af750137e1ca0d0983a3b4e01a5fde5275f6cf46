@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_11d69ac5",
+        "filename": "java/monasca-common-middleware/src/main/java/monasca/common/middleware/AdminAuthException.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 12512
+      },
+      "writtenOn": "2014-11-13T14:31:11Z",
+      "side": 1,
+      "message": "you sure this is supposed to be an unchecked exception?",
+      "revId": "af750137e1ca0d0983a3b4e01a5fde5275f6cf46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_71ab5e1d",
+        "filename": "java/monasca-common-middleware/src/main/java/monasca/common/middleware/AuthClientFactory.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 12512
+      },
+      "writtenOn": "2014-11-13T14:31:11Z",
+      "side": 1,
+      "message": "might want to consider wrapping all the parms in a class.",
+      "revId": "af750137e1ca0d0983a3b4e01a5fde5275f6cf46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_315f1643",
+        "filename": "java/monasca-common-middleware/src/main/java/monasca/common/middleware/Config.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 12512
+      },
+      "writtenOn": "2014-11-13T14:31:11Z",
+      "side": 1,
+      "message": "catching throwable is usually a bad code smell. wasn\u0027t done in this submission, but it might be good to clean it up.",
+      "revId": "af750137e1ca0d0983a3b4e01a5fde5275f6cf46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
