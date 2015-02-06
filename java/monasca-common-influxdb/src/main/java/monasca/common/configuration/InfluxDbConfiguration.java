@@ -18,6 +18,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class InfluxDbConfiguration {
 
   @JsonProperty
+  String version;
+
+  public String getVersion() {
+    return version;
+  }
+
+  @JsonProperty
+  String retentionPolicy;
+
+  public String getRetentionPolicy() {
+    return retentionPolicy;
+  }
+
+  @JsonProperty
   String name;
 
   public String getName() {
