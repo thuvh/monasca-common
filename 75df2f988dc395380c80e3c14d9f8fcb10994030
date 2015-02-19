@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+1: Dexter Fryar <dexter.fryar@outlook.com>
+Code-Review+2: Deklan Dieterly <deklan.dieterly@hp.com>
+Workflow+1: Deklan Dieterly <deklan.dieterly@hp.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 19 Feb 2015 19:53:33 +0000
+Reviewed-on: https://review.openstack.org/157499
+Project: stackforge/monasca-common
+Branch: refs/heads/master
