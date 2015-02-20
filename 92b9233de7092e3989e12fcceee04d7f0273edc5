@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_aa604f36",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmTransitionSubAlarm.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 12512
+      },
+      "writtenOn": "2015-02-20T16:56:16Z",
+      "side": 1,
+      "message": "Wondering if instead of just a String, we also represent the elements of a subalarm exp. Like operator, metric, function, etc.",
+      "revId": "92b9233de7092e3989e12fcceee04d7f0273edc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
