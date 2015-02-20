@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_5aefa8b0",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmTransitionSubAlarm.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2015-02-20T14:43:24Z",
+      "side": 1,
+      "message": "Should be a space after if",
+      "revId": "07c44a780816671426d8d0e33d89e76f22461411",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_1af53083",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmTransitionSubAlarm.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2015-02-20T14:43:24Z",
+      "side": 1,
+      "message": "Should be a space after if",
+      "revId": "07c44a780816671426d8d0e33d89e76f22461411",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_1ace105b",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmTransitionSubAlarm.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2015-02-20T14:43:24Z",
+      "side": 1,
+      "message": "You have AlarmSub instead of SubAlarm",
+      "revId": "07c44a780816671426d8d0e33d89e76f22461411",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
