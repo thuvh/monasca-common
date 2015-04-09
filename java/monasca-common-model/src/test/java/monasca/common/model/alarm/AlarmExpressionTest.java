@@ -230,4 +230,24 @@ public class AlarmExpressionTest {
                 "avg(hpcs.compute{instance_id=5,metric_name=cpu,device=a}, 1) lt 5 times 444 and avg(hpcs.compute{flavor_id=3,metric_name=mem}, 2) < 4 times 3");
         assertNotEquals(expr1, expr3);
     }
+
+    public void shouldParseDimensionsWithUnicode() {
+      AlarmExpression expr1 = new AlarmExpression(
+          "metric{\u00B1f\u0CAEoo=\u00AEbar,metric_name=mem} > 4"
+      );
+      AlarmSubExpression alarm1 = expr1.getSubExpressions().get(0);
+      MetricDefinition expected1 = new MetricDefinition("metric",
+                                                        ImmutableMap.<String, String>builder()
+                                                            .put("\u00B1f\u0CAEoo", "\u00AEbar")
+                                                            .put("metric_name", "mem")
+                                                            .build());
+      assertEquals(alarm1.getMetricDefinition(), expected1);
+    }
+
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void shouldFailWithRestrictedChars() {
+      AlarmExpression expr1 = new AlarmExpression(
+          "metric{\u00A0\u007Dthing=\u00AEstuff,metric_name=mem} > 4"
+      );
+    }
 }
