@@ -1,4 +1,5 @@
 [gerrit]
-host=review.openstack.org
+host=10.187.22.116
 port=29418
-project=stackforge/monasca-common
+project=monasca-common.git
+defaultbranch=project
