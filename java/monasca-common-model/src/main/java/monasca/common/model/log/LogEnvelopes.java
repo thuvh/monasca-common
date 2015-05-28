@@ -25,7 +25,7 @@ public final class LogEnvelopes {
   }
 
   /**
-   * Returns the MetricEnvelope for the {@code logJson}.
+   * Returns the LogEnvelope for the {@code logJson}.
    * 
    * @throws RuntimeException if an error occurs while parsing {@code logJson}
    */
