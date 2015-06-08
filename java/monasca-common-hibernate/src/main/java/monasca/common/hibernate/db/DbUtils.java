@@ -18,7 +18,7 @@ import java.util.UUID;
 
 class DbUtils {
 
-  final static byte[] DEFAULT_VALUE = new byte[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+  final static byte[] DEFAULT_VALUE = new byte[20];
 
   static final byte[] toByteArray(UUID uuid) {
     ByteBuffer bb = ByteBuffer.wrap(new byte[16]);
