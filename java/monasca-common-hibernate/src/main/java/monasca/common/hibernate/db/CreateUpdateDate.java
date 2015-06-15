@@ -37,13 +37,11 @@ public abstract class CreateUpdateDate {
   }
 
   @Column(name = "created_at")
-  // @Temporal(TemporalType.TIMESTAMP)
   @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime", parameters = {@Parameter(name = "databaseZone", value = "UTC"),
       @Parameter(name = "javaZone", value = "jvm")})
   private DateTime created_at;
 
   @Column(name = "updated_at")
-  // @Temporal(TemporalType.TIMESTAMP)
   @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime", parameters = {@Parameter(name = "databaseZone", value = "UTC"),
       @Parameter(name = "javaZone", value = "jvm")})
   private DateTime updated_at;

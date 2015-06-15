@@ -24,6 +24,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import monasca.common.model.alarm.AlarmState;
+
+import org.hibernate.annotations.Parameter;
+import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 
 @Entity
@@ -41,16 +44,29 @@ public class AlarmDb extends CreateUpdateDate{
   @Enumerated(EnumType.STRING)
   private AlarmState state;
 
+  @Column(name = "lifecycle_state", length = 50)
+  private String lifecycle_state;
+
+  @Column(name = "link", length = 512)
+  private String link;
+
+  @Column(name = "state_updated_at")
+  @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime", parameters = {@Parameter(name = "databaseZone", value = "UTC"),
+      @Parameter(name = "javaZone", value = "jvm")})
+  private DateTime state_updated_at;
+
   public AlarmDb() {
     super();
   }
 
-  public AlarmDb(String id, String alarm_definition_id, AlarmState state, DateTime created_at, DateTime updated_at) {
+  public AlarmDb(String id, String alarm_definition_id, AlarmState state, String lifecycleState, String link, DateTime state_updated_at, DateTime created_at, DateTime updated_at) {
     super(created_at, updated_at);
     this.id = id;
     this.alarm_definition_id = alarm_definition_id;
     this.state = state;
-
+    this.lifecycle_state = lifecycleState;
+    this.link = link;
+    this.state_updated_at = state_updated_at;
   }
 
   public String getAlarm_definition_id() {
@@ -67,5 +83,29 @@ public class AlarmDb extends CreateUpdateDate{
 
   public void setState(AlarmState state) {
     this.state = state;
+  }
+
+  public String getLifecycle_state() {
+    return lifecycle_state;
+  }
+
+  public void setLifecycle_state(String lifecycle_state) {
+    this.lifecycle_state = lifecycle_state;
+  }
+
+  public String getLink() {
+    return link;
+  }
+
+  public void setLink(String link) {
+    this.link = link;
+  }
+
+  public DateTime getState_updated_at() {
+    return state_updated_at;
+  }
+
+  public void setState_updated_at(DateTime state_updated_at) {
+    this.state_updated_at = state_updated_at;
   }
 }
