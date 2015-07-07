@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_d713e55a",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/log/LogEnvelope.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-07-07T22:24:41Z",
+      "side": 1,
+      "message": "Just wondering if you really want the creation time in the envelope or is this something you ended up copying over from the MetricEnvelop.\n\nIn the metrics pipeline we use the creationTime in the thresholdEngine to calculate the elapsed time between when the metric was POST\u0027d to the API to when it is actually processed in the threshold engine. This is done to track the overall delay in the overall service. For example, detect if Kafka or the Threshold Engine is getting backed up.",
+      "revId": "45b72281f6b1c3e464eb499993c5a59815da6e1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
