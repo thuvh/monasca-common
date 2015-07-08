@@ -16,6 +16,24 @@
       "revId": "45b72281f6b1c3e464eb499993c5a59815da6e1e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_8b61ae3b",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/log/LogEnvelope.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 15178
+      },
+      "writtenOn": "2015-07-08T07:30:44Z",
+      "side": 1,
+      "message": "I think this should be okay.\n\nWe need the creation time for the same reason. To calculate the elapsed time between create Log Entry and POST to API. And afterwards to calculate the elapsed time between POST and persist.",
+      "parentUuid": "ba3cc151_d713e55a",
+      "revId": "45b72281f6b1c3e464eb499993c5a59815da6e1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
