@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_b2cf8fb2",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmState.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 12512
+      },
+      "writtenOn": "2015-07-24T20:10:44Z",
+      "side": 1,
+      "message": "it is used. i walked thru the debugger to confirm that it is used and fixes the issue. without it, only \u0027UNDETERMINED\u0027, \u0027OK\u0027, \u0027ALARM\u0027 are recognized.",
+      "parentUuid": "3a50d1a3_676f0e93",
+      "revId": "5bfc04b88758539404d37887b3eb70104d27b896",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_e709dede",
         "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmState.java",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-24T18:34:26Z",
       "side": 1,
       "message": "Need a newline if you keep fromString()",
+      "revId": "5bfc04b88758539404d37887b3eb70104d27b896",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_72dca746",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmState.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 12512
+      },
+      "writtenOn": "2015-07-24T20:10:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_e709dede",
       "revId": "5bfc04b88758539404d37887b3eb70104d27b896",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
