@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_676f0e93",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmState.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2015-07-24T18:34:26Z",
+      "side": 1,
+      "message": "Why do you need to add the fromString() method? It doesn\u0027t seem to be used anywhere",
+      "revId": "5bfc04b88758539404d37887b3eb70104d27b896",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_e709dede",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmState.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2015-07-24T18:34:26Z",
+      "side": 1,
+      "message": "Need a newline if you keep fromString()",
+      "revId": "5bfc04b88758539404d37887b3eb70104d27b896",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
