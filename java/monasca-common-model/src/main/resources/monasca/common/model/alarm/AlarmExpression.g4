@@ -97,7 +97,7 @@ dimensionList
     ;
 
 dimension
-    : txt '=' txt
+    : (txt)+ '=' (txt)+
     ;
 
 keyword
