@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_f9267715",
+        "filename": "monasca_common/config/opts.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-08-17T23:07:41Z",
+      "side": 1,
+      "message": "We should talk about the overall organization of the opts. In general, I would like to see opts for a specific area, like logging, or mysql, or kafka, under that area.\n\nFor example, the opts for kafka would be under\n\nmonasca_common/message/kafka",
+      "revId": "53de10d51cb4deb9d35cc39126327fba657f18ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_f9543755",
+        "filename": "monasca_common/config/opts.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-08-17T23:07:41Z",
+      "side": 1,
+      "message": "There are Kafka specific options, like fetch_size, buffer_size, ..., and then there are options for things fields like the topic, event_group, or stream_def_group, .... I think these options should be separated.\n\nThe metrics pipeline should in general not know anything about the metrics pipeline, ... Unless it really does need to know.",
+      "revId": "53de10d51cb4deb9d35cc39126327fba657f18ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_99f3bb73",
+        "filename": "monasca_common/config/register.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-08-17T23:07:41Z",
+      "side": 1,
+      "message": "I think this would change, based on my comments on where the opts woudl live.",
+      "revId": "53de10d51cb4deb9d35cc39126327fba657f18ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_39b62f8b",
+        "filename": "monasca_common/repositories/constants.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-08-17T23:07:41Z",
+      "side": 1,
+      "message": "I don\u0027t see the same paging limits being necessarily used across projects.",
+      "revId": "53de10d51cb4deb9d35cc39126327fba657f18ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_99365b02",
+        "filename": "monasca_common/repositories/events/streams_repository.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-08-17T23:07:41Z",
+      "side": 1,
+      "message": "Is there any other project, besides the monasca-events-api that creates a stream definition? \n\nI don\u0027t think there is, so not sure why we would have this repository in common.\n\nI would only put some very \"common\" level of stuff in the monasca-common repo.",
+      "revId": "53de10d51cb4deb9d35cc39126327fba657f18ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_5c2511a9",
+        "filename": "monasca_common/repositories/exceptions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-08-17T23:07:41Z",
+      "side": 1,
+      "message": "So, I expect this to be common across all projects, so this can be in monasca-common",
+      "revId": "53de10d51cb4deb9d35cc39126327fba657f18ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_bc346dde",
+        "filename": "monasca_common/repositories/mysql/events/streams_repository.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-08-17T23:07:41Z",
+      "side": 1,
+      "message": "Same comment was earlier about stream definitions.",
+      "revId": "53de10d51cb4deb9d35cc39126327fba657f18ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_7c74959b",
+        "filename": "monasca_common/repositories/mysql/mysql_repository.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-08-17T23:07:41Z",
+      "side": 1,
+      "message": "So, this class I expect to be common across all repos, so this should be in monasca-common. There isn\u0027t any code here that is specific to metrics or events or logging.",
+      "revId": "53de10d51cb4deb9d35cc39126327fba657f18ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
