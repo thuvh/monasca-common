@@ -9,3 +9,9 @@ test-output/
 test-config.yml
 *.swp
 *.iml
+*.pyc
+.tox
+build
+dist
+*.egg-info
+*.egg
