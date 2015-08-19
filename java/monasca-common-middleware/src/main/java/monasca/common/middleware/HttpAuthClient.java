@@ -244,14 +244,17 @@ public class HttpAuthClient implements AuthClient {
   }
 
   private String buildAuth(final String userName, final String password,
-                           final String projectId, final String projectName) {
-    final JsonObject domain = new JsonObject();
-    domain.addProperty("id", "default");
-
+                           final String projectId, final String projectName, final String userDomain, final String projectDomain) {
+    final JsonObject jsonUserDomain = new JsonObject();
+    if (!userDomain.isEmpty()) {
+      jsonUserDomain.addProperty("name", userDomain);
+    } else {
+      jsonUserDomain.addProperty("id", "default");
+    }
     final JsonObject user = new JsonObject();
     user.addProperty("name", userName);
     user.addProperty("password", password);
-    user.add("domain", domain);
+    user.add("domain", jsonUserDomain);
 
     final JsonObject passwordHolder = new JsonObject();
     passwordHolder.add("user", user);
@@ -271,7 +274,13 @@ public class HttpAuthClient implements AuthClient {
       scopeDefined = true;
 
     } else if (!projectName.isEmpty()) {
-      project.add("domain", domain);
+      final JsonObject jsonProjectDomain = new JsonObject();
+      if (!projectDomain.isEmpty()) {
+        jsonProjectDomain.addProperty("name", projectDomain);
+      } else {
+        jsonProjectDomain.addProperty("id", "default");
+      }
+      project.add("domain", jsonProjectDomain);
       project.addProperty("name", projectName);
       scopeDefined = true;
     }
@@ -294,7 +303,7 @@ public class HttpAuthClient implements AuthClient {
     final String body;
     if (appConfig.getAdminAuthMethod().equalsIgnoreCase(Config.PASSWORD)) {
       body = buildAuth(appConfig.getAdminUser(), appConfig.getAdminPassword(),
-                       appConfig.getAdminProjectId(), appConfig.getAdminProjectName());
+                       appConfig.getAdminProjectId(), appConfig.getAdminProjectName(), appConfig.getAdminUserDomainName(), appConfig.getAdminProjectDomainName());
     } else {
       String
           msg =
