@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_6a596e34",
+        "filename": "java/monasca-common-middleware/src/main/java/monasca/common/middleware/HttpAuthClient.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-08-21T02:21:08Z",
+      "side": 1,
+      "message": "Probably would be good idea to add a newline after project Name and then a newline after the start of the function body, after the \"{\"",
+      "revId": "2fd34f97c2fdbaba0c680e51f2067be59b0683e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_eab81e13",
+        "filename": "java/monasca-common-middleware/src/main/java/monasca/common/middleware/HttpAuthClient.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-08-21T02:21:08Z",
+      "side": 1,
+      "message": "I would like to keep the convention that was used to name variables already if possible.\n\nThe pre-existing parameters to the function, like userName, projectName, had the \"Name\" suffix. Then when the JsonObject is created and assigned to a variable the \"Name\" suffix is dropped.\n\nSo instead of having jsonUserDomain, you would have\n\nfinal JsonObject userDomain \u003d new JsonObject();\n\nand the parameter to the function would be userDomainName.",
+      "revId": "2fd34f97c2fdbaba0c680e51f2067be59b0683e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_6a43ae13",
+        "filename": "java/monasca-common-middleware/src/main/java/monasca/common/middleware/HttpAuthClient.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-08-21T02:21:08Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "2fd34f97c2fdbaba0c680e51f2067be59b0683e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_6a288e33",
+        "filename": "java/monasca-common-middleware/src/main/java/monasca/common/middleware/HttpAuthClient.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-08-21T02:21:08Z",
+      "side": 1,
+      "message": "A new line after \"appConfig.getAdminProjectName()\", would probably be a good idea here.\n\nNote, we\u0027ve adopted to Google style guide for coding conventions at, https://google-styleguide.googlecode.com/svn/trunk/javaguide.html and documented at, https://wiki.openstack.org/wiki/Monasca.\n\nLine lengths are restricted to 100 chars. Not sure you are past that, but I think it would look a little nicer to balance out the lines.",
+      "revId": "2fd34f97c2fdbaba0c680e51f2067be59b0683e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
