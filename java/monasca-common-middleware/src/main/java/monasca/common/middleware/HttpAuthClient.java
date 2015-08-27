@@ -244,17 +244,19 @@ public class HttpAuthClient implements AuthClient {
   }
 
   private String buildAuth(final String userName, final String password,
-                           final String projectId, final String projectName, final String userDomain, final String projectDomain) {
-    final JsonObject jsonUserDomain = new JsonObject();
-    if (!userDomain.isEmpty()) {
-      jsonUserDomain.addProperty("name", userDomain);
+                           final String projectId, final String projectName,
+                           final String userDomainName, final String projectDomainName) {
+
+    final JsonObject UserDomain = new JsonObject();
+    if (!userDomainName.isEmpty()) {
+      UserDomain.addProperty("name", userDomainName);
     } else {
-      jsonUserDomain.addProperty("id", "default");
+      UserDomain.addProperty("id", "default");
     }
     final JsonObject user = new JsonObject();
     user.addProperty("name", userName);
     user.addProperty("password", password);
-    user.add("domain", jsonUserDomain);
+    user.add("domain", UserDomain);
 
     final JsonObject passwordHolder = new JsonObject();
     passwordHolder.add("user", user);
@@ -274,13 +276,13 @@ public class HttpAuthClient implements AuthClient {
       scopeDefined = true;
 
     } else if (!projectName.isEmpty()) {
-      final JsonObject jsonProjectDomain = new JsonObject();
-      if (!projectDomain.isEmpty()) {
-        jsonProjectDomain.addProperty("name", projectDomain);
+      final JsonObject ProjectDomain = new JsonObject();
+      if (!projectDomainName.isEmpty()) {
+        ProjectDomain.addProperty("name", projectDomainName);
       } else {
-        jsonProjectDomain.addProperty("id", "default");
+        ProjectDomain.addProperty("id", "default");
       }
-      project.add("domain", jsonProjectDomain);
+      project.add("domain", ProjectDomain);
       project.addProperty("name", projectName);
       scopeDefined = true;
     }
@@ -303,7 +305,8 @@ public class HttpAuthClient implements AuthClient {
     final String body;
     if (appConfig.getAdminAuthMethod().equalsIgnoreCase(Config.PASSWORD)) {
       body = buildAuth(appConfig.getAdminUser(), appConfig.getAdminPassword(),
-                       appConfig.getAdminProjectId(), appConfig.getAdminProjectName(), appConfig.getAdminUserDomainName(), appConfig.getAdminProjectDomainName());
+                       appConfig.getAdminProjectId(), appConfig.getAdminProjectName(),
+                       appConfig.getAdminUserDomainName(), appConfig.getAdminProjectDomainName());
     } else {
       String
           msg =
