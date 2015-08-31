@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_67478cbc",
+        "filename": "java/monasca-common-hibernate/src/main/java/monasca/common/hibernate/core/AuditablePersistable.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2015-08-31T07:20:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_d1aa7f85",
+      "revId": "8e0777bf3e426c6655b0fd0d199bd96f04f26874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_51aaef1a",
         "filename": "java/monasca-common-hibernate/src/main/java/monasca/common/hibernate/db/MetricDefinitionDimensionsDb.java",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_82b40e35",
+        "filename": "java/monasca-common-hibernate/src/main/java/monasca/common/hibernate/db/MetricDefinitionDimensionsDb.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2015-08-31T07:20:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_51aaef1a",
+      "revId": "8e0777bf3e426c6655b0fd0d199bd96f04f26874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_51818f8e",
         "filename": "java/monasca-common-hibernate/src/main/java/monasca/common/hibernate/type/BinaryId.java",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2015-08-26T20:27:54Z",
       "side": 1,
       "message": "Need to remove extra blank line.",
+      "revId": "8e0777bf3e426c6655b0fd0d199bd96f04f26874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_a2dfd267",
+        "filename": "java/monasca-common-hibernate/src/main/java/monasca/common/hibernate/type/BinaryId.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2015-08-31T07:20:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_51818f8e",
       "revId": "8e0777bf3e426c6655b0fd0d199bd96f04f26874",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
