@@ -16,6 +16,24 @@
       "revId": "6cdf714956624e23b129b9d2e3c84eb87aabd43b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_58d13956",
+        "filename": "java/monasca-common-util/src/main/java/monasca/common/util/Conversions.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-09-03T20:10:07Z",
+      "side": 1,
+      "message": "hmmm, but would the final message be easier to read?\n\nI think double quotes in the message is more readable, and I worry most about our customers, i would readily sacrifice a little code readability to make our customers happier\n\nhappy, happy, happy",
+      "parentUuid": "da20952f_f8660dec",
+      "revId": "6cdf714956624e23b129b9d2e3c84eb87aabd43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
