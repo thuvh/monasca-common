@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_18d0ce52",
+        "filename": "java/monasca-common-util/src/main/java/monasca/common/util/Conversions.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2015-09-03T00:43:39Z",
+      "side": 1,
+      "message": "Maybe the best thing would be to check if it is a Number and cast it to that. Then use intValue(). That will handle any reasonable return type",
+      "revId": "c53d6319b1c0b2076cc33c156cb7876182916731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_185e8ee9",
+        "filename": "java/monasca-common-util/src/main/java/monasca/common/util/Conversions.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2015-09-03T00:43:39Z",
+      "side": 1,
+      "message": "I think you should add variant.getClass() to the error message.",
+      "revId": "c53d6319b1c0b2076cc33c156cb7876182916731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
