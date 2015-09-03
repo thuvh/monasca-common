@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_f8660dec",
+        "filename": "java/monasca-common-util/src/main/java/monasca/common/util/Conversions.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 12512
+      },
+      "writtenOn": "2015-09-03T20:05:14Z",
+      "side": 1,
+      "message": "How about single quotes in double quotes or double quotes in single quotes. That would get rid of the backslashes and make the code more readable.",
+      "revId": "6cdf714956624e23b129b9d2e3c84eb87aabd43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
