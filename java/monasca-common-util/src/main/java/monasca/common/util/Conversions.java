@@ -16,6 +16,11 @@
  */
 package monasca.common.util;
 
+import java.util.Arrays;
+
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
+
 public final class Conversions {
 
   /**
@@ -32,4 +37,82 @@ public final class Conversions {
                                                        variant.getClass(), variant));
     }
   }
+
+  /**
+   * Converts a Java Object to DateTime instance
+   *
+   * @param variant object of type supported in {@link org.joda.time.convert.ConverterManager}
+   *
+   * @return DateTime in {@link DateTimeZone#UTC}
+   *
+   * @throws IllegalArgumentException
+   * @see #variantToDateTime(Object, DateTimeZone)
+   * @see DateTime
+   * @see DateTimeZone#UTC
+   */
+  public static DateTime variantToDateTime(final Object variant) {
+    return variantToDateTime(variant, DateTimeZone.UTC);
+  }
+
+
+  /**
+   * Converts a Java Object to DateTime instance using given {@code timeZone}
+   *
+   * @param variant  object of type supported in {@link org.joda.time.convert.ConverterManager}
+   * @param timeZone timeZone to be used
+   *
+   * @return DateTime in {@code timeZone}
+   *
+   * @throws IllegalArgumentException
+   * @see #variantToDateTime(Object)
+   * @see DateTime
+   * @see DateTimeZone
+   */
+  public static DateTime variantToDateTime(final Object variant, final DateTimeZone timeZone) {
+    return new DateTime(variant, timeZone);
+  }
+
+  /**
+   * Converts variant to {@code enumClazz} instance.
+   *
+   * Supported variants are:
+   * <ol>
+   * <li>{@link String}, trimmed and upper-cased</li>
+   * <li>{@link Number}, taken from {@link Class#getEnumConstants}</li>
+   * <li>{@link Enum}, simple cast</li>
+   * </ol>
+   *
+   * @param variant   object of type supported by this method, see above
+   * @param enumClazz desired {@link Enum}
+   * @param <T>       enumType of {@code enumClazz}
+   *
+   * @return valid enum class instance
+   *
+   * @throws IllegalArgumentException
+   */
+  @SuppressWarnings("unchecked")
+  public static <T extends Enum<T>> T variantToEnum(final Object variant, final Class<T> enumClazz) {
+    if (variant instanceof String) {
+      return Enum.valueOf(enumClazz, ((String) variant).trim().toUpperCase());
+    } else if (variant instanceof Number) {
+      final Integer index = variantToInteger(variant);
+      final T[] enumConstants = enumClazz.getEnumConstants();
+      if (index < 0 || index >= enumConstants.length) {
+        throw new IllegalArgumentException(
+            String.format("Variant of type \"%s\", and value \"%s\" exceeds maximum number of constants %d",
+                variant.getClass(),
+                variant,
+                enumConstants.length
+            )
+        );
+      }
+
+      return enumConstants[index];
+    } else if (variant instanceof Enum) {
+      return (T) variant;
+    }
+    throw new IllegalArgumentException(String.format("Variant of type \"%s\", and value \"%s\" is not a Number.",
+        variant.getClass(), variant));
+  }
+
 }
