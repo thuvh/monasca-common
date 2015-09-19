@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_22084f91",
+        "filename": "java/monasca-common-hibernate/src/main/java/monasca/common/hibernate/db/AbstractAuditablePersistable.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2015-09-19T05:06:28Z",
+      "side": 1,
+      "message": "Why isn\u0027t this just:\nif (createdAt \u003d\u003d null) {\n   this.createdAt \u003d date;\n}\nelse {\n   this.createdAt \u003d createdAt;\n}\n\nand then the same for updatedAt? It would easier to read and the code you have here wouldn\u0027t set this.updatedAt if it createdAt was null but updatedAt was not.",
+      "revId": "332e6c1b840f5beffc3115091f0864869ce7b911",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
