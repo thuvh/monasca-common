@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_d9ee0fec",
+        "filename": "java/monasca-common-hibernate/src/main/java/monasca/common/hibernate/db/AbstractPersistable.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2015-09-25T11:25:49Z",
+      "side": 1,
+      "message": "The import is never used.",
+      "revId": "35a9ff2c4c83a7708afa7511c3d79185983bca56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_7963431b",
+        "filename": "java/monasca-common-hibernate/src/main/java/monasca/common/hibernate/db/SubAlarmDefinitionDb.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2015-09-25T11:25:49Z",
+      "side": 1,
+      "message": "Why do you change the ordering? It is not Google Java Style conform anyway.",
+      "revId": "35a9ff2c4c83a7708afa7511c3d79185983bca56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_9f55d2c7",
+        "filename": "java/monasca-common-util/src/main/java/monasca/common/util/Conversions.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2015-09-25T11:25:49Z",
+      "side": 1,
+      "message": "Is out of range.",
+      "revId": "35a9ff2c4c83a7708afa7511c3d79185983bca56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_7f631eb2",
+        "filename": "java/monasca-common-util/src/main/java/monasca/common/util/Conversions.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2015-09-25T11:25:49Z",
+      "side": 1,
+      "message": "It is not a String or Enum either.",
+      "revId": "35a9ff2c4c83a7708afa7511c3d79185983bca56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
