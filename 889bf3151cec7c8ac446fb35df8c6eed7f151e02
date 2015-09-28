@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_a413b40c",
+        "filename": "java/monasca-common-util/src/main/java/monasca/common/util/Conversions.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2015-09-28T10:45:46Z",
+      "side": 1,
+      "message": "Please see below.",
+      "revId": "889bf3151cec7c8ac446fb35df8c6eed7f151e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_a4f734f4",
+        "filename": "java/monasca-common-util/src/main/java/monasca/common/util/Conversions.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2015-09-28T10:45:46Z",
+      "side": 1,
+      "message": "Better:\nreturn ((DateTime) variant).toDateTime(timeZone);",
+      "revId": "889bf3151cec7c8ac446fb35df8c6eed7f151e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_646a7c1c",
+        "filename": "java/monasca-common-util/src/main/java/monasca/common/util/Conversions.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2015-09-28T10:45:46Z",
+      "side": 1,
+      "message": "\"[...] is out of range [0, %d].\"",
+      "revId": "889bf3151cec7c8ac446fb35df8c6eed7f151e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_44cc186a",
+        "filename": "java/monasca-common-util/src/main/java/monasca/common/util/Conversions.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2015-09-28T10:45:46Z",
+      "side": 1,
+      "message": "\"[...] is not one of %s.\". And please wrap.",
+      "revId": "889bf3151cec7c8ac446fb35df8c6eed7f151e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
