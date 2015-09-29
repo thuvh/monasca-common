@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_7a62e83f",
+        "filename": "java/monasca-common-model/src/test/java/monasca/common/model/alarm/AlarmSubExpressionLocaleTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2015-09-29T07:04:09Z",
+      "side": 1,
+      "message": "I\u0027d add the test for default locale just to let it be complementary.",
+      "revId": "8d784082b745d9ba7b2019aa67137fcead5dcb58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
