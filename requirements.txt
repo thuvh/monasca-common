@@ -3,6 +3,6 @@ kafka-python>=0.9.1,<0.9.3
 PyYAML
 MySQL-python>=1.2.3
 oslo.config>=1.2.1
-oslo.utils
+oslo.utils<2.0
 pbr>=0.11,<2.0
 six>=1.7.0
