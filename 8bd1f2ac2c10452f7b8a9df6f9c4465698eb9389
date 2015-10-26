@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_3e404d07",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 14273
+      },
+      "writtenOn": "2015-10-26T02:07:00Z",
+      "side": 1,
+      "message": "There is a concurrency library from Oslo but we\u0027re handing a threading object to the Kazoo library to allow it to wake us up in the future.  I\u0027m not certain that the oslo concurrency library is compatible so I\u0027d prefer to stick with the one I\u0027ve tested for now.",
+      "parentUuid": "3a29b11f_5bebdbb0",
+      "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_bbc30f38",
         "filename": "monasca_common/kafka/consumer.py",
         "patchSetId": 5
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_5e5c29ed",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 14273
+      },
+      "writtenOn": "2015-10-26T02:07:00Z",
+      "side": 1,
+      "message": "The timeout is configurable but I was planning to make it configurable at the level of the module that constructs this object.  So the API would not configure either a callback function or a timeout value while the Persister would configure both.\n\nWould you expect to see configuration information for this passed down from the module constructing these objects or would you expect these objects to look for their own config in whatever config file is currently loaded?",
+      "parentUuid": "3a29b11f_bbc30f38",
+      "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_1ba00390",
         "filename": "monasca_common/kafka/consumer.py",
         "patchSetId": 5
@@ -64,6 +100,24 @@
       "writtenOn": "2015-10-26T00:25:44Z",
       "side": 1,
       "message": "Do you really want this as a log.info or should this be a log.debug?",
+      "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_9ea5e1b6",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 14273
+      },
+      "writtenOn": "2015-10-26T02:07:00Z",
+      "side": 1,
+      "message": "I don\u0027t know.  These messages have been set to the info level in both the Persister and Notification system so far.  Do we have any guidelines for what we consider debug as opposed to info messages?",
+      "parentUuid": "3a29b11f_1ba00390",
       "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_be753d33",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 14273
+      },
+      "writtenOn": "2015-10-26T02:07:00Z",
+      "side": 1,
+      "message": "I don\u0027t know.  Depending on what we\u0027re doing we may not even want acks but this seems to be the settings we\u0027re using most places at the moment.",
+      "parentUuid": "3a29b11f_db728b49",
+      "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_bb754f33",
         "filename": "monasca_common/kafka/producer.py",
         "patchSetId": 5
@@ -115,6 +187,24 @@
       "writtenOn": "2015-10-26T00:25:44Z",
       "side": 1,
       "message": "Just some questions.\n\nIn the Java code we key messages, not purely based on time. The ideas is to get metrics with the same tenant, name and dimensions routed to the same consumer. This is required for use cases such as the Anomaly Engine.\n\nSee MetricService.java, but the code is as follows:\n\n  public void create(List\u003cMetric\u003e metrics, String tenantId, @Nullable String crossTenantId) {\n    String metricTenantId \u003d Strings.isNullOrEmpty(crossTenantId) ? tenantId : crossTenantId;\n    Builder\u003cString, Object\u003e metaBuilder \u003d\n        new ImmutableMap.Builder\u003cString, Object\u003e().put(\"tenantId\", metricTenantId).put(\"region\",\n            config.region);\n    ImmutableMap\u003cString, Object\u003e meta \u003d metaBuilder.build();\n\n    List\u003cKeyedMessage\u003cString, String\u003e\u003e keyedMessages \u003d new ArrayList\u003c\u003e(metrics.size());\n    for (Metric metric : metrics) {\n      MetricEnvelope envelope \u003d new MetricEnvelope(metric, meta);\n      keyedMessages.add(new KeyedMessage\u003c\u003e(config.metricsTopic, buildKey(metricTenantId, metric),\n                        MetricEnvelopes.toJson(envelope)));\n      metricMeter.mark();\n    }\n\n    producer.send(keyedMessages);\n    batchMeter.mark();\n  }\n\n  private String buildKey(String metricTenantId, Metric metric) {\n    final StringBuilder key \u003d new StringBuilder(metricTenantId);\n    key.append(metric.name);\n\n    // Dimensions are optional.\n    if (metric.dimensions !\u003d null \u0026\u0026 !metric.dimensions.isEmpty()) {\n\n      // Key must be the same for the same metric so sort the dimensions so they will be\n      // in a known order\n      for (final Map.Entry\u003cString, String\u003e dim : buildSortedDimSet(metric.dimensions)) {\n        key.append(dim.getKey());\n        key.append(dim.getValue());\n      }\n    }\n    String keyValue \u003d key.toString();\n    return keyValue;\n  }",
+      "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_9ebac1bf",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 14273
+      },
+      "writtenOn": "2015-10-26T02:07:00Z",
+      "side": 1,
+      "message": "If I\u0027m reading that correctly it\u0027s building a key for each individual message in a batch?  If it is then I\u0027m not certain that the Python version we\u0027re using right now has that capability.  It accepts a key for any message, or list of messages, that you write to Kafka but to get the performance we want we need to write as many as possible at once.\n\nThere have been quite a few improvements in the python kafka library since we froze on 0.9.2 so it\u0027s possible we can do what the Java library is doing with more recent versions.\n\nWould the current method of distribution be sufficient for the Threshold engine?  It was sufficient for the Notification engine and should be sufficient for the Persister.",
+      "parentUuid": "3a29b11f_bb754f33",
       "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
