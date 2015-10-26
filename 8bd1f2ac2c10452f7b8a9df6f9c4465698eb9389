@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_9be173d3",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-10-26T00:25:44Z",
+      "side": 1,
+      "message": "Should we use\n\nfrom oslo_log import log\n\nThis is what we are using in the monasca api.",
+      "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_5bebdbb0",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-10-26T00:25:44Z",
+      "side": 1,
+      "message": "Is there a special oslo library that we should be using for threading too?",
+      "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_bbc30f38",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-10-26T00:25:44Z",
+      "side": 1,
+      "message": "Should timeout_seconds be made configurable, or minimally use a variable declaration such as \n\nDEFAULT_TIMEOUT_SECS \u003d 30",
+      "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_1ba00390",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-10-26T00:25:44Z",
+      "side": 1,
+      "message": "Do you really want this as a log.info or should this be a log.debug?",
+      "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_bbac6f8d",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-10-26T00:25:44Z",
+      "side": 1,
+      "message": "Do you really want this as a log.info or should this be a log.debug?",
+      "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_db728b49",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-10-26T00:25:44Z",
+      "side": 1,
+      "message": "Should timeout be configurable?",
+      "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_bb754f33",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2015-10-26T00:25:44Z",
+      "side": 1,
+      "message": "Just some questions.\n\nIn the Java code we key messages, not purely based on time. The ideas is to get metrics with the same tenant, name and dimensions routed to the same consumer. This is required for use cases such as the Anomaly Engine.\n\nSee MetricService.java, but the code is as follows:\n\n  public void create(List\u003cMetric\u003e metrics, String tenantId, @Nullable String crossTenantId) {\n    String metricTenantId \u003d Strings.isNullOrEmpty(crossTenantId) ? tenantId : crossTenantId;\n    Builder\u003cString, Object\u003e metaBuilder \u003d\n        new ImmutableMap.Builder\u003cString, Object\u003e().put(\"tenantId\", metricTenantId).put(\"region\",\n            config.region);\n    ImmutableMap\u003cString, Object\u003e meta \u003d metaBuilder.build();\n\n    List\u003cKeyedMessage\u003cString, String\u003e\u003e keyedMessages \u003d new ArrayList\u003c\u003e(metrics.size());\n    for (Metric metric : metrics) {\n      MetricEnvelope envelope \u003d new MetricEnvelope(metric, meta);\n      keyedMessages.add(new KeyedMessage\u003c\u003e(config.metricsTopic, buildKey(metricTenantId, metric),\n                        MetricEnvelopes.toJson(envelope)));\n      metricMeter.mark();\n    }\n\n    producer.send(keyedMessages);\n    batchMeter.mark();\n  }\n\n  private String buildKey(String metricTenantId, Metric metric) {\n    final StringBuilder key \u003d new StringBuilder(metricTenantId);\n    key.append(metric.name);\n\n    // Dimensions are optional.\n    if (metric.dimensions !\u003d null \u0026\u0026 !metric.dimensions.isEmpty()) {\n\n      // Key must be the same for the same metric so sort the dimensions so they will be\n      // in a known order\n      for (final Map.Entry\u003cString, String\u003e dim : buildSortedDimSet(metric.dimensions)) {\n        key.append(dim.getKey());\n        key.append(dim.getValue());\n      }\n    }\n    String keyValue \u003d key.toString();\n    return keyValue;\n  }",
+      "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
