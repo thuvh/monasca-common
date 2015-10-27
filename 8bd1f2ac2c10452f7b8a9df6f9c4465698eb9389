@@ -141,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_94cab04e",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2015-10-27T19:21:52Z",
+      "side": 1,
+      "message": "No, I\u0027m wrong, it only gets called every self.timeout_seconds. But, it still isn\u0027t really a timeout, it is more just a periodic callback.",
+      "parentUuid": "1a26ad4f_f4e1a4ff",
+      "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_1ba00390",
         "filename": "monasca_common/kafka/consumer.py",
         "patchSetId": 5
