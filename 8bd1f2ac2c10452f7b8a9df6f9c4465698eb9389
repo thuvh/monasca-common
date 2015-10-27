@@ -54,6 +54,23 @@
     },
     {
       "key": {
+        "uuid": "1a26ad4f_74b6f43e",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2015-10-27T19:15:19Z",
+      "side": 1,
+      "message": "Is this reading an alarm or is this reading a generic object?",
+      "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a29b11f_bbc30f38",
         "filename": "monasca_common/kafka/consumer.py",
         "patchSetId": 5
@@ -83,6 +100,23 @@
       "side": 1,
       "message": "The timeout is configurable but I was planning to make it configurable at the level of the module that constructs this object.  So the API would not configure either a callback function or a timeout value while the Persister would configure both.\n\nWould you expect to see configuration information for this passed down from the module constructing these objects or would you expect these objects to look for their own config in whatever config file is currently loaded?",
       "parentUuid": "3a29b11f_bbc30f38",
+      "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a26ad4f_f4e1a4ff",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2015-10-27T19:15:19Z",
+      "side": 1,
+      "message": "_timeout_callback is not a good name for this. It gets called after every batch of messages even if 1000 messages were read in .1 seconds",
       "revId": "8bd1f2ac2c10452f7b8a9df6f9c4465698eb9389",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
