@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_ff227400",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2015-10-30T20:44:56Z",
+      "side": 1,
+      "message": "You seem to be assuming that commit will be called from periodic_callback(). That is the only way self._last_commit gets reset. That would be a bad assumption for a generic class.",
+      "revId": "c6574138fa185c0d0bbc6cacf4377da545d2439c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
