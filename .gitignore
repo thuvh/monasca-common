@@ -11,6 +11,7 @@ test-config.yml
 *.iml
 bin/
 *.pyc
+*~
 .tox
 build
 dist
