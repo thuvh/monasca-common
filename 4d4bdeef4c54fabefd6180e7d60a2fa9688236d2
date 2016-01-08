@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_fc508a60",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-01-08T02:02:49Z",
+      "side": 1,
+      "message": "I guess you are adding the _ prefix to specify that these values are private to this module. \n\nHowever, we haven\u0027t been using that convention anywhere else.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 23
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_fc0f2a2c",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-01-08T02:02:49Z",
+      "side": 1,
+      "message": "Would like to see this exception put in a separate filed for exceptions. For example, in the monasca-api, we have a separate file for exceptions created by the repositories. \n\nSee, https://github.com/openstack/monasca-api/blob/master/monasca_api/common/repositories/exceptions.py.",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 4
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_1cfd5e6e",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-01-08T02:02:49Z",
+      "side": 1,
+      "message": "I think it would be cleared if content_type\u003d_DEFAULT_CONTENT_TYPE in the parameter list.",
+      "range": {
+        "startLine": 31,
+        "startChar": 23,
+        "endLine": 31,
+        "endChar": 35
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_dcf7c68a",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-01-08T02:02:49Z",
+      "side": 1,
+      "message": "I think it would be clearer if content_type\u003d_DEFAULT_CONTENT_TYPE in the parameter list.",
+      "range": {
+        "startLine": 60,
+        "startChar": 8,
+        "endLine": 60,
+        "endChar": 20
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_d7123f58",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-01-08T02:02:49Z",
+      "side": 1,
+      "message": "So, this function returns False if there is no content, and it returns the json or text content if there is content.\n\nI think it would be clearer to return None, rather than False, in this case. Returning multiple types based on the success/failure seems a little more difficult of the client of this method to have to account for.",
+      "range": {
+        "startLine": 68,
+        "startChar": 12,
+        "endLine": 68,
+        "endChar": 18
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_f7e3c303",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-01-08T02:02:49Z",
+      "side": 1,
+      "message": "With most of these common methods, it might be better to create and return exceptions, similar to the UnsupportedContentType exception rather than just logging and then throwing whatever exception was thrown.\n\nIn this case there is no content in the message request body. Is that really an exception that should be propogated up, or something that should just result in a no-op.",
+      "range": {
+        "startLine": 70,
+        "startChar": 8,
+        "endLine": 70,
+        "endChar": 11
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_57bbaf75",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-01-08T02:02:49Z",
+      "side": 1,
+      "message": "It is not possible to translate the request body to json.  Ultimately, you wold like to return a Bad Request or Unprocessable Entity to the user. Would it be better to just throw that type of exception here, rather than re-throwing the exception, and requiring the client to catch and process further.",
+      "range": {
+        "startLine": 78,
+        "startChar": 8,
+        "endLine": 78,
+        "endChar": 13
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_373f1bd8",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-01-08T02:02:49Z",
+      "side": 1,
+      "message": "Do you want to catch exceptions from dumps, and handle in some way?",
+      "range": {
+        "startLine": 91,
+        "startChar": 22,
+        "endLine": 91,
+        "endChar": 34
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
