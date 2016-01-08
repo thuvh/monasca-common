@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_4c8bf268",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-01-08T13:32:25Z",
+      "side": 1,
+      "message": "That\u0027s more or less python convention to indicate that privacy. I am not sure, but if you find it problematic, I don\u0027t see a point in arguing to keep it that way.\n\nBut, I have another idea. I\u0027ll create two fields to mark application/json and text/plain to be used in read_body as content_type but I\u0027ll keep _READABLE_CONTENT_TYPES marked private.",
+      "parentUuid": "fa69d971_fc508a60",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 23
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_fc0f2a2c",
         "filename": "monasca_common/rest/utils.py",
         "patchSetId": 3
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_8c0eca30",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-01-08T13:32:25Z",
+      "side": 1,
+      "message": "Nice idea, I will make it happen :).",
+      "parentUuid": "fa69d971_fc0f2a2c",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 4
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_1cfd5e6e",
         "filename": "monasca_common/rest/utils.py",
         "patchSetId": 3
@@ -59,6 +107,30 @@
       "writtenOn": "2016-01-08T02:02:49Z",
       "side": 1,
       "message": "I think it would be cleared if content_type\u003d_DEFAULT_CONTENT_TYPE in the parameter list.",
+      "range": {
+        "startLine": 31,
+        "startChar": 23,
+        "endLine": 31,
+        "endChar": 35
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_ccf5a2ed",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-01-08T13:32:25Z",
+      "side": 1,
+      "message": "I had that originally, but one of my colleagues, who is much better experienced in Python, told me that current approach is slightly better. However, I think I might check that once again. On the other hand , that will take few lines away :).",
+      "parentUuid": "fa69d971_1cfd5e6e",
       "range": {
         "startLine": 31,
         "startChar": 23,
@@ -117,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_eeadfb88",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-01-08T13:32:25Z",
+      "side": 1,
+      "message": "Correct, I will fix it.",
+      "parentUuid": "fa69d971_d7123f58",
+      "range": {
+        "startLine": 68,
+        "startChar": 12,
+        "endLine": 68,
+        "endChar": 18
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_f7e3c303",
         "filename": "monasca_common/rest/utils.py",
         "patchSetId": 3
@@ -128,6 +224,30 @@
       "writtenOn": "2016-01-08T02:02:49Z",
       "side": 1,
       "message": "With most of these common methods, it might be better to create and return exceptions, similar to the UnsupportedContentType exception rather than just logging and then throwing whatever exception was thrown.\n\nIn this case there is no content in the message request body. Is that really an exception that should be propogated up, or something that should just result in a no-op.",
+      "range": {
+        "startLine": 70,
+        "startChar": 8,
+        "endLine": 70,
+        "endChar": 11
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_ae7943fe",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-01-08T13:32:25Z",
+      "side": 1,
+      "message": "So, what you\u0027re saying, is to add custom Exception (i.e. DataReadException) and throw it without logging ?",
+      "parentUuid": "fa69d971_f7e3c303",
       "range": {
         "startLine": 70,
         "startChar": 8,
@@ -163,6 +283,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_2e78f3c3",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-01-08T13:32:25Z",
+      "side": 1,
+      "message": "Hmm...I haven\u0027t checked if monasca-common has appropriate dependency to match Falcon exception for instance. If not, do you think it\u0027d be good to add it at this, somehow, lower level. After all that is library that supports monasca-api and the rest of monasca-* stuff, introducing library with exceptions you\u0027ve mentioned seems to much, doesn\u0027t it ?",
+      "parentUuid": "fa69d971_57bbaf75",
+      "range": {
+        "startLine": 78,
+        "startChar": 8,
+        "endLine": 78,
+        "endChar": 13
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_373f1bd8",
         "filename": "monasca_common/rest/utils.py",
         "patchSetId": 3
@@ -174,6 +318,30 @@
       "writtenOn": "2016-01-08T02:02:49Z",
       "side": 1,
       "message": "Do you want to catch exceptions from dumps, and handle in some way?",
+      "range": {
+        "startLine": 91,
+        "startChar": 22,
+        "endLine": 91,
+        "endChar": 34
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_0e540f1f",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-01-08T13:32:25Z",
+      "side": 1,
+      "message": "Yes, perhaps it is nice idea to think about something decent here.",
+      "parentUuid": "fa69d971_373f1bd8",
       "range": {
         "startLine": 91,
         "startChar": 22,
