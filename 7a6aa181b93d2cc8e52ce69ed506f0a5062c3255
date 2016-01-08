@@ -1,0 +1,9 @@
+Code-Review+2: Witold Bedyk <witold.bedyk@est.fujitsu.com>
+Code-Review+1: Roland Hochmuth <roland.hochmuth@hp.com>
+Workflow+1: Joe Keen <joe.keen@hpe.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 08 Jan 2016 18:39:54 +0000
+Reviewed-on: https://review.openstack.org/255727
+Project: openstack/monasca-common
+Branch: refs/heads/master
