@@ -166,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "fa69d971_bdc2a5e7",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-01-11T08:22:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_dcf7c68a",
+      "range": {
+        "startLine": 60,
+        "startChar": 8,
+        "endLine": 60,
+        "endChar": 20
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_d7123f58",
         "filename": "monasca_common/rest/utils.py",
         "patchSetId": 3
@@ -201,6 +225,30 @@
       "side": 1,
       "message": "Correct, I will fix it.",
       "parentUuid": "fa69d971_d7123f58",
+      "range": {
+        "startLine": 68,
+        "startChar": 12,
+        "endLine": 68,
+        "endChar": 18
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_fd8d7dd3",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-01-11T08:22:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_eeadfb88",
       "range": {
         "startLine": 68,
         "startChar": 12,
@@ -342,6 +390,30 @@
       "side": 1,
       "message": "Yes, perhaps it is nice idea to think about something decent here.",
       "parentUuid": "fa69d971_373f1bd8",
+      "range": {
+        "startLine": 91,
+        "startChar": 22,
+        "endLine": 91,
+        "endChar": 34
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_12915bf1",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-01-11T08:22:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa69d971_0e540f1f",
       "range": {
         "startLine": 91,
         "startChar": 22,
