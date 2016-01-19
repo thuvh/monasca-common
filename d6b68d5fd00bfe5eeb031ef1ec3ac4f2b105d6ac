@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_02d71424",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/event/AlarmStateTransitionedEvent.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-01-19T20:54:03Z",
+      "side": 1,
+      "message": "You\u0027ve updated equals, but shouldn\u0027t hashCode be updated to with link and lifecycleState?",
+      "range": {
+        "startLine": 113,
+        "startChar": 10,
+        "endLine": 113,
+        "endChar": 11
+      },
+      "revId": "d6b68d5fd00bfe5eeb031ef1ec3ac4f2b105d6ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
