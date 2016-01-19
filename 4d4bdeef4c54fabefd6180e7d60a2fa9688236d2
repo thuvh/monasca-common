@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "ba63e191_1cb45acf",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-01-19T20:46:04Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "fa69d971_4c8bf268",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 23
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa69d971_fc0f2a2c",
         "filename": "monasca_common/rest/utils.py",
         "patchSetId": 3
@@ -131,6 +155,30 @@
       "side": 1,
       "message": "I had that originally, but one of my colleagues, who is much better experienced in Python, told me that current approach is slightly better. However, I think I might check that once again. On the other hand , that will take few lines away :).",
       "parentUuid": "fa69d971_1cfd5e6e",
+      "range": {
+        "startLine": 31,
+        "startChar": 23,
+        "endLine": 31,
+        "endChar": 35
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_5ce172cf",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-01-19T20:46:04Z",
+      "side": 1,
+      "message": "OK.",
+      "parentUuid": "fa69d971_ccf5a2ed",
       "range": {
         "startLine": 31,
         "startChar": 23,
@@ -343,6 +391,30 @@
       "side": 1,
       "message": "Hmm...I haven\u0027t checked if monasca-common has appropriate dependency to match Falcon exception for instance. If not, do you think it\u0027d be good to add it at this, somehow, lower level. After all that is library that supports monasca-api and the rest of monasca-* stuff, introducing library with exceptions you\u0027ve mentioned seems to much, doesn\u0027t it ?",
       "parentUuid": "fa69d971_57bbaf75",
+      "range": {
+        "startLine": 78,
+        "startChar": 8,
+        "endLine": 78,
+        "endChar": 13
+      },
+      "revId": "4d4bdeef4c54fabefd6180e7d60a2fa9688236d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba63e191_5c1c1277",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-01-19T20:46:04Z",
+      "side": 1,
+      "message": "I think you are correct. As monasca-common doesn\u0027t have a dependency on Falcon yet, it probably would be good to try and maintain that.",
+      "parentUuid": "fa69d971_2e78f3c3",
       "range": {
         "startLine": 78,
         "startChar": 8,
