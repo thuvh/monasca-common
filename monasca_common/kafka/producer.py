@@ -54,7 +54,7 @@ class KafkaProducer(object):
         try:
             if key is None:
                 key = time.time() * 1000
-            partition = self._producer._next_partition(topic, key)
+            partition = self._producer._next_partition(topic, str(key))
             self._producer.send_messages(topic, partition, *messages)
         except Exception:
             log.exception('Error publishing to {} topic.'.format(topic))
