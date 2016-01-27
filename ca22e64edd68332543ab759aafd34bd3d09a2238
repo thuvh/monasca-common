@@ -1,0 +1,9 @@
+Code-Review+2: Fabio Giannetti <fgiannet@cisco.com>
+Code-Review+2: Craig Bryant <craig.bryant@hpe.com>
+Workflow+1: Craig Bryant <craig.bryant@hpe.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 27 Jan 2016 00:20:22 +0000
+Reviewed-on: https://review.openstack.org/272628
+Project: openstack/monasca-common
+Branch: refs/heads/master
