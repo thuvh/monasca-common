@@ -16,6 +16,7 @@
 import datetime
 import logging
 import threading
+import time
 
 import kafka.client
 import kafka.common
@@ -119,14 +120,11 @@ class KafkaConsumer(object):
             # between our current offset and the new Kafka head.
 
             try:
-                messages = self._consumer.get_messages(count=1000, timeout=1)
-                for message in messages:
-
-                    log.debug("Consuming message from kafka, "
-                              "partition {}, offset {}".
-                              format(message[0], message[1].offset))
-
+                message = self._consumer.get_message()
+                if message:
                     yield message
+                else:
+                    time.sleep(0.01)
 
                 if self._commit_callback:
                     time_now = datetime.datetime.now()
