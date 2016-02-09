@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a5ae5dd_047d2be7",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2016-02-09T01:56:10Z",
+      "side": 1,
+      "message": "Why the sleep interval is so small?\nWouldn\u0027t his force the Persister to constantly bug Kafka?\nPlease explain",
+      "range": {
+        "startLine": 130,
+        "startChar": 31,
+        "endLine": 130,
+        "endChar": 35
+      },
+      "revId": "ce75f18ccb777ec352488bce148e83c1f3ac4694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
