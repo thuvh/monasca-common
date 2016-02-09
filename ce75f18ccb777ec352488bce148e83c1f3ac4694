@@ -22,6 +22,30 @@
       "revId": "ce75f18ccb777ec352488bce148e83c1f3ac4694",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a5ae5dd_38e64845",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 14273
+      },
+      "writtenOn": "2016-02-09T03:18:30Z",
+      "side": 1,
+      "message": "If we\u0027re optimizing for throughput then we need to keep the waiting here small.  There\u0027s a built in 100ms wait in the Kafka protocol itself that I don\u0027t see a way to modify in the kafka-python library.  This wait is for a situation where the return from Kafka was no data at all so the total wait time would be 110ms plus any scheduling jitter.  That seems more than enough and I saw no adverse effects in my testing.  In other testing Kafka handled requests at a ~30ms interval with no trouble.",
+      "parentUuid": "5a5ae5dd_047d2be7",
+      "range": {
+        "startLine": 130,
+        "startChar": 31,
+        "endLine": 130,
+        "endChar": 35
+      },
+      "revId": "ce75f18ccb777ec352488bce148e83c1f3ac4694",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
