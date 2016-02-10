@@ -78,7 +78,8 @@ def read_body(payload, content_type=JSON_CONTENT_TYPE):
     """Reads HTTP payload according to given content_type.
 
     Function is capable of reading from payload stream.
-    Read data is then processed according to content_type.
+    Function checks if payload object has read method.
+    Read data is then processed according to content_type
 
     Note:
         Content-Type is validated. It means that if read_body
@@ -92,24 +93,29 @@ def read_body(payload, content_type=JSON_CONTENT_TYPE):
         There is no transformation if content type is equal to
         'text/plain'. What has been read is returned.
 
-    :param stream payload: payload to read, payload should have read method
+    :param payload: payload to read, payload could be stream (in this cases
+                    payload should have read method) or str (message body)
     :param str content_type: payload content type, default to application/json
     :return: read data, returned type depends on content_type or False
              if empty
 
-    :exception: :py:class:`.UnreadableBody` - in case of any failure when
-                                              reading data
+    :exception: :py:class:`.UnsupportedContentType` - in content_type is not
+                                                      supported
+
 
     """
+    if not payload:
+        return None
     if content_type not in _READABLE_CONTENT_TYPES:
         msg = ('Cannot read %s, not in %s' %
                (content_type, _READABLE_CONTENT_TYPES))
         raise exceptions.UnsupportedContentTypeException(msg)
 
     try:
-        content = payload.read()
-        if not content:
-            return None
+        if hasattr(payload, 'read'):
+            content = payload.read()
+        else:
+            content = payload
     except Exception as ex:
         raise exceptions.UnreadableContentError(str(ex))
 
