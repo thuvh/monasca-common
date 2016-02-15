@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a57f1b5_af67d24b",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-02-15T06:40:48Z",
+      "side": 0,
+      "message": "Just in case, Falcon would stay put this should support it as well in my opinion.",
+      "range": {
+        "startLine": 109,
+        "startChar": 4,
+        "endLine": 114,
+        "endChar": 56
+      },
+      "revId": "a623b10429a7e6cf30b5d7b5c57cc3a65afc4e2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
