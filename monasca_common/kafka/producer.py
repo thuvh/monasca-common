@@ -29,7 +29,7 @@ class KafkaProducer(object):
         """Init
              url - kafka connection details
         """
-        self._kafka = kafka.client.KafkaClient(url)
+        self._kafka = kafka.client.SimpleClient(url)
         self._producer = kafka.producer.KeyedProducer(
             self._kafka,
             async=False,

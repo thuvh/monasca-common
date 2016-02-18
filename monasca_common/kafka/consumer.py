@@ -86,7 +86,7 @@ class KafkaConsumer(object):
         self._zookeeper_url = zookeeper_url
         self._zookeeper_path = zookeeper_path
 
-        self._kafka = kafka.client.KafkaClient(kafka_url)
+        self._kafka = kafka.client.SimpleClient(kafka_url)
 
         # No auto-commit so that commits only happen after the message is processed.
         self._consumer = kafka.consumer.SimpleConsumer(self._kafka,
