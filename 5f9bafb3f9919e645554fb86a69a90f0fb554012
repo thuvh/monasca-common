@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3afc51ec_8c076c17",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-03-15T10:52:33Z",
+      "side": 1,
+      "message": "Yes, these are valid comments.\nI\u0027ve had some troubles deciding if this should go with Long or Double, that\u0027s more or less my current problem that I think needs to be solved at this level. I couldn\u0027t find any actual reference (launchpad for instance) where it is mentioned.\n\nRight now, I am adjusting the code here to match your comments, but if you\u0027d have anything to add for the type being used (Long vs Double) that would be great.",
+      "parentUuid": "3afc51ec_33f5d756",
+      "revId": "5f9bafb3f9919e645554fb86a69a90f0fb554012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afc51ec_33515737",
         "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metrics.java",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2016-03-15T09:47:11Z",
       "side": 1,
       "message": "It looks like WriteNumberField is defined for double (not Double) so I think this could raise a NullPointerException?",
+      "revId": "5f9bafb3f9919e645554fb86a69a90f0fb554012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_cc6a14b3",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metrics.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-03-15T10:52:33Z",
+      "side": 1,
+      "message": "hasPeriod will take care of evaluating if period is actually set, so if that would return false we won\u0027t write anything into json generator.",
+      "parentUuid": "3afc51ec_33515737",
       "revId": "5f9bafb3f9919e645554fb86a69a90f0fb554012",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
