@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afc51ec_33f5d756",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 15799
+      },
+      "writtenOn": "2016-03-15T09:43:26Z",
+      "side": 1,
+      "message": "If you\u0027re using 0.0 to represent an unset period (rather than null) then why use a Double to store the period, and why initialise the period to null?",
+      "revId": "5f9bafb3f9919e645554fb86a69a90f0fb554012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
