@@ -14,19 +14,21 @@
 package monasca.common.model.metric;
 
 import java.io.Serializable;
-
-import com.google.common.base.Preconditions;
+import java.util.Map;
 
 import javax.annotation.Nullable;
 import javax.validation.constraints.NotNull;
 
-import java.util.Map;
+import com.google.common.base.Objects;
+import com.google.common.base.Preconditions;
 
 /**
  * Metric with definition information flattened alongside value information.
  */
 public class Metric implements Serializable {
   private static final long serialVersionUID = 3455749495426525634L;
+  private static final Double PERIOD_NOT_SET = 0.0;
+  private static final Double SPARSE_PERIOD = -1.0;
 
   public String name;
   public Map<String, String> dimensions;
@@ -34,6 +36,7 @@ public class Metric implements Serializable {
   public double value;
   public Map<String, String> valueMeta;
   private MetricDefinition definition;
+  private Double period = null;
 
   public Metric() {}
 
@@ -74,6 +77,7 @@ public class Metric implements Serializable {
            ", value=" + value +
            ", valueMeta=" + valueMeta +
            ", definition=" + definition +
+           ", period=" + this.period +
            '}';
   }
 
@@ -110,6 +114,9 @@ public class Metric implements Serializable {
       return false;
     if (Double.doubleToLongBits(value) != Double.doubleToLongBits(other.value))
       return false;
+    if(!Objects.equal(this.period, other.period)){
+      return false;
+    }
     return true;
   }
 
@@ -122,9 +129,9 @@ public class Metric implements Serializable {
     result = prime * result + ((name == null) ? 0 : name.hashCode());
     result = prime * result + ((valueMeta == null) ? 0 : valueMeta.hashCode());
     result = prime * result + (int) (timestamp ^ (timestamp >>> 32));
-    long temp;
-    temp = Double.doubleToLongBits(value);
+    long temp = Double.doubleToLongBits(value);
     result = prime * result + (int) (temp ^ (temp >>> 32));
+    result = prime * result + ((this.period == null) ? 0 : this.period.hashCode());
     return result;
   }
 
@@ -166,5 +173,25 @@ public class Metric implements Serializable {
 
   public void setValueMeta(Map<String, String> valueMeta) {
     this.valueMeta = valueMeta;
+  }
+
+  public Double getPeriod() {
+    return this.period;
+  }
+
+  public void setPeriod(final Double period) {
+    this.period = period;
+  }
+
+  public boolean hasPeriod() {
+    return this.period != null && !Objects.equal(this.period, PERIOD_NOT_SET);
+  }
+
+  public boolean isSparse() {
+    return Objects.equal(this.period, SPARSE_PERIOD);
+  }
+
+  public boolean isPeriodic() {
+    return !this.isSparse();
   }
 }
