@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2014 Hewlett-Packard Development Company, L.P.
+ * Copyright 2016 FUJITSU LIMITED
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -19,11 +20,15 @@ import static org.testng.Assert.assertNotEquals;
 import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
-import org.testng.annotations.Test;
-
+import com.beust.jcommander.internal.Maps;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Lists;
+import org.testng.annotations.Test;
 
 import monasca.common.model.metric.MetricDefinition;
 
@@ -315,4 +320,60 @@ public class AlarmExpressionTest {
                                                  + "(min(ເຮືອນ{dn3=dv3,家=дом}) < 10 or sum(biz{dn5=dv5}) >9 and "
                                                  + "count(fizzle) lt 0 or count(baz) > 1)");
     }
+
+  public void shouldParseDeterministicExpression() {
+    final Map<String, String> dimensions = Maps.newHashMap();
+    final ArrayList<AlarmExpression> expressions = Lists.newArrayList(
+        new AlarmExpression("count(log.error{},deterministic=true,20) > 5"),
+        new AlarmExpression("count(log.error{},deterministic=yes,20) > 5"),
+        new AlarmExpression("count(log.error{},deterministic=1,20) > 5"),
+        new AlarmExpression("count(log.error{},deterministic,20) > 5"),
+        new AlarmExpression("count(log.error{},20) > 5")
+    );
+    final MetricDefinition metricDefinition = new MetricDefinition("log.error", dimensions);
+
+    final AlarmSubExpression logErrorExpr = new AlarmSubExpression(
+        AggregateFunction.COUNT,
+        metricDefinition,
+        AlarmOperator.GT,
+        5,
+        20,
+        1
+    );
+
+    for (final AlarmExpression expr : expressions) {
+      final List<AlarmSubExpression> subExpressions = expr.getSubExpressions();
+
+      assertEquals(1, subExpressions.size());
+      assertEquals(subExpressions.get(0), logErrorExpr);
+    }
+  }
+
+  public void shouldParseNonDeterministicExpression() {
+    final Map<String, String> dimensions = Maps.newHashMap();
+    final ArrayList<AlarmExpression> expressions = Lists.newArrayList(
+        new AlarmExpression("count(log.error{},deterministic=false,20) > 5"),
+        new AlarmExpression("count(log.error{},deterministic=no,20) > 5"),
+        new AlarmExpression("count(log.error{},deterministic=0,20) > 5")
+    );
+    final MetricDefinition metricDefinition = new MetricDefinition("log.error", dimensions);
+
+    final AlarmSubExpression logErrorExpr = new AlarmSubExpression(
+        AggregateFunction.COUNT,
+        metricDefinition,
+        AlarmOperator.GT,
+        5,
+        20,
+        1,
+        false // expressions are non-deterministic
+    );
+
+    for (final AlarmExpression expr : expressions) {
+      final List<AlarmSubExpression> subExpressions = expr.getSubExpressions();
+
+      assertEquals(1, subExpressions.size());
+      assertEquals(subExpressions.get(0), logErrorExpr);
+    }
+  }
+
 }
