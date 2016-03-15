@@ -20,6 +20,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Nullable;
+
+import com.google.common.base.Function;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -33,6 +36,35 @@ import monasca.common.util.Stack;
  * Alarm expression value object.
  */
 public class AlarmExpression {
+  /**
+   * Function accepting {@link java.util.List} of {@link AlarmSubExpression} that
+   * computes if entire {@link #expression} is either <b>deterministic</b>
+   * or <b>non-deterministic</b>.
+   *
+   * All {@link AlarmSubExpression} must be non-deterministic in order for entire expression
+   * to be such.
+   *
+   * @see AlarmSubExpression#isDeterministic()
+   * @see #isDeterministic()
+   */
+  private static final Function<List<AlarmSubExpression>, Boolean> IS_DETERMINISTIC_FUNCTION =
+      new Function<List<AlarmSubExpression>, Boolean>() {
+
+        @Nullable
+        @Override
+        public Boolean apply(@Nullable final List<AlarmSubExpression> input) {
+          if (input == null || input.isEmpty()) {
+            return AlarmSubExpression.DEFAULT_DETERMINISTIC;
+          }
+          for (final AlarmSubExpression alarmSubExpression : input) {
+            if (alarmSubExpression.isDeterministic()) {
+              return true;
+            }
+          }
+          return false;
+        }
+
+      };
   private final String expression;
   /** Postfix list of expression elements. */
   private final List<Object> elements;
@@ -151,12 +183,26 @@ public class AlarmExpression {
   public List<AlarmSubExpression> getSubExpressions() {
     if (subExpressions != null)
       return subExpressions;
-    List<AlarmSubExpression> subExpressions = new ArrayList<AlarmSubExpression>();
+    List<AlarmSubExpression> subExpressions = new ArrayList<>(elements.size());
     for (Object element : elements)
       if (element instanceof AlarmSubExpression)
         subExpressions.add((AlarmSubExpression) element);
     this.subExpressions = subExpressions;
     return subExpressions;
+  }
+
+  /**
+   * Returns if expression is deterministic or non-deterministic.
+   *
+   * See {@link #IS_DETERMINISTIC_FUNCTION} documentation for more details.
+   *
+   * @return true/false
+   *
+   * @see #IS_DETERMINISTIC_FUNCTION
+   * @see #getSubExpressions()
+   */
+  public boolean isDeterministic() {
+    return IS_DETERMINISTIC_FUNCTION.apply(this.getSubExpressions());
   }
 
   @Override
