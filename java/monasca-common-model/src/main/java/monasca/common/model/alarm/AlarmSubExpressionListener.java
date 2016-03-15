@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2014 Hewlett-Packard Development Company, L.P.
+ * Copyright 2016 FUJITSU LIMITED
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +22,9 @@ import java.util.List;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
+import org.antlr.v4.runtime.misc.NotNull;
+import org.antlr.v4.runtime.tree.ParseTree;
+
 import monasca.common.model.metric.MetricDefinition;
 
 /**
@@ -36,6 +40,7 @@ class AlarmSubExpressionListener extends AlarmExpressionBaseListener {
   private int period = AlarmSubExpression.DEFAULT_PERIOD;
   private int periods = AlarmSubExpression.DEFAULT_PERIODS;
   private List<Object> elements = new ArrayList<Object>();
+  private boolean sporadic = AlarmSubExpression.DEFAULT_SPORADIC;
 
   AlarmSubExpressionListener(boolean simpleExpression) {
     this.simpleExpression = simpleExpression;
@@ -43,7 +48,7 @@ class AlarmSubExpressionListener extends AlarmExpressionBaseListener {
 
   private void saveSubExpression() {
     AlarmSubExpression subExpression = new AlarmSubExpression(function, new MetricDefinition(
-        namespace, dimensions), operator, threshold, period, periods);
+        namespace, dimensions, sporadic), operator, threshold, period, periods);
     elements.add(subExpression);
 
     function = null;
@@ -53,6 +58,7 @@ class AlarmSubExpressionListener extends AlarmExpressionBaseListener {
     threshold = 0;
     period = AlarmSubExpression.DEFAULT_PERIOD;
     periods = AlarmSubExpression.DEFAULT_PERIODS;
+    sporadic = AlarmSubExpression.DEFAULT_SPORADIC;
   }
 
   @Override
@@ -153,6 +159,24 @@ class AlarmSubExpressionListener extends AlarmExpressionBaseListener {
   @Override
   public void exitAndExpr(AlarmExpressionParser.AndExprContext ctx) {
     elements.add(BooleanOperator.AND);
+  }
+
+  @Override
+  public void enterSporadic(@NotNull final AlarmExpressionParser.SporadicContext ctx) {
+    final int childCount = ctx.getChildCount();
+    if (childCount == 1) {
+      // just sporadic keyword expectected
+      final ParseTree child = ctx.getChild(0);
+      this.sporadic = child.getText().equalsIgnoreCase("sporadic");
+    } else if (childCount == 3) {
+      // we have assignment operator
+      final ParseTree child = ctx.getChild(2);
+      final String text = child.getText();
+      this.sporadic = text.equalsIgnoreCase("1")
+          || text.equalsIgnoreCase("true")
+          || text.equalsIgnoreCase("yes");
+    }
+    // other conditions are not possible according to gramma rules
   }
 
   /**

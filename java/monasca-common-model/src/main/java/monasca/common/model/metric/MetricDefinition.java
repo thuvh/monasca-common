@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2014 Hewlett-Packard Development Company, L.P.
+ * Copyright 2016 FUJITSU LIMITED
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,16 +31,24 @@ import monasca.common.model.domain.common.AbstractEntity;
  */
 public class MetricDefinition extends AbstractEntity implements Serializable  {
   private static final long serialVersionUID = -3074228641225201445L;
-
+  private static boolean DEFAULT_SPORADIC = false;
   public String name;
   public Map<String, String> dimensions;
+  private boolean sporadic = DEFAULT_SPORADIC;
 
   public MetricDefinition() {
   }
 
   public MetricDefinition(String name, @Nullable Map<String, String> dimensions) {
+    this(name, dimensions, DEFAULT_SPORADIC);
+  }
+
+  public MetricDefinition(String name,
+                          @Nullable Map<String, String> dimensions,
+                          @Nullable Boolean sporadic) {
     this.name = Preconditions.checkNotNull(name, "name");
     this.dimensions = dimensions;
+    this.sporadic = sporadic == null ? DEFAULT_SPORADIC : sporadic;
   }
 
   @Override
@@ -47,6 +56,7 @@ public class MetricDefinition extends AbstractEntity implements Serializable  {
     return "MetricDefinition{" +
            "name='" + name + '\'' +
            ", dimensions=" + dimensions +
+           ", sporadic=" + sporadic +
            '}';
   }
 
@@ -69,6 +79,9 @@ public class MetricDefinition extends AbstractEntity implements Serializable  {
         return false;
     } else if (!name.equals(other.name))
       return false;
+    if(this.sporadic != ((MetricDefinition) obj).sporadic){
+      return false;
+    }
     return true;
   }
 
@@ -78,6 +91,7 @@ public class MetricDefinition extends AbstractEntity implements Serializable  {
     int result = 1;
     result = prime * result + ((dimensions == null) ? 0 : dimensions.hashCode());
     result = prime * result + ((name == null) ? 0 : name.hashCode());
+    result = prime * result + Boolean.valueOf(this.sporadic).hashCode();
     return result;
   }
 
@@ -99,5 +113,13 @@ public class MetricDefinition extends AbstractEntity implements Serializable  {
     if (dimensions != null && !dimensions.isEmpty())
       b.append(dimensions);
     return b.toString();
+  }
+
+  public boolean isSporadic() {
+    return this.sporadic;
+  }
+
+  public void setSporadic(final boolean sporadic) {
+    this.sporadic = sporadic;
   }
 }
