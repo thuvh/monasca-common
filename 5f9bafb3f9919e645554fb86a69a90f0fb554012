@@ -16,6 +16,23 @@
       "revId": "5f9bafb3f9919e645554fb86a69a90f0fb554012",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_33515737",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metrics.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 15799
+      },
+      "writtenOn": "2016-03-15T09:47:11Z",
+      "side": 1,
+      "message": "It looks like WriteNumberField is defined for double (not Double) so I think this could raise a NullPointerException?",
+      "revId": "5f9bafb3f9919e645554fb86a69a90f0fb554012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
