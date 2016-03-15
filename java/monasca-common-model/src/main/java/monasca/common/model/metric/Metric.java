@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2014 Hewlett-Packard Development Company, L.P.
+ * Copyright 2016 FUJITSU LIMITED
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -14,19 +15,20 @@
 package monasca.common.model.metric;
 
 import java.io.Serializable;
-
-import com.google.common.base.Preconditions;
+import java.util.Map;
 
 import javax.annotation.Nullable;
 import javax.validation.constraints.NotNull;
 
-import java.util.Map;
+import com.google.common.base.Objects;
+import com.google.common.base.Preconditions;
 
 /**
  * Metric with definition information flattened alongside value information.
  */
 public class Metric implements Serializable {
   private static final long serialVersionUID = 3455749495426525634L;
+  private static long PERIOD_NOT_SET = 0L;
 
   public String name;
   public Map<String, String> dimensions;
@@ -34,6 +36,24 @@ public class Metric implements Serializable {
   public double value;
   public Map<String, String> valueMeta;
   private MetricDefinition definition;
+  /**
+   * <b>period</b> describes how long should it take before
+   * alarm associated with metric change its state from one to
+   * another.
+   *
+   * Period is considered as non-set if the value is equal to {@value PERIOD_NOT_SET}.
+   * Otherwise following is true:
+   * <ol>
+   *   <li><i>period is negative</i> means metric is <b>sparse</b></li>
+   *   <li><i>period is positive</i> means metric is <b>periodical</b></li>
+   * </ol>
+   *
+   * @see #isSparse()
+   * @see #isPeriodic()
+   * @see #hasPeriod()
+   * @see MetricPeriod
+   */
+  private long period = PERIOD_NOT_SET;
 
   public Metric() {}
 
@@ -47,6 +67,12 @@ public class Metric implements Serializable {
     this.valueMeta = valueMeta;
   }
 
+  public Metric(@NotNull MetricDefinition definition, long timestamp, double value,
+                @Nullable Map<String, String> valueMeta, long period) {
+    this(definition, timestamp, value, valueMeta);
+    this.period = period;
+  }
+
   public Metric(String name, @Nullable Map<String, String> dimensions, long timestamp,
       double value, @Nullable Map<String, String> valueMeta) {
     this.name = Preconditions.checkNotNull(name, "name");
@@ -54,6 +80,12 @@ public class Metric implements Serializable {
     this.timestamp = timestamp;
     this.value = value;
     this.valueMeta = valueMeta;
+  }
+
+  public Metric(String name, @Nullable Map<String, String> dimensions, long timestamp,
+                double value, @Nullable Map<String, String> valueMeta, long period) {
+    this(name, dimensions, timestamp, value, valueMeta);
+    this.period = period;
   }
 
   /**
@@ -74,6 +106,7 @@ public class Metric implements Serializable {
            ", value=" + value +
            ", valueMeta=" + valueMeta +
            ", definition=" + definition +
+           ", period=" + this.period +
            '}';
   }
 
@@ -110,6 +143,9 @@ public class Metric implements Serializable {
       return false;
     if (Double.doubleToLongBits(value) != Double.doubleToLongBits(other.value))
       return false;
+    if(this.period != other.period){
+      return false;
+    }
     return true;
   }
 
@@ -122,8 +158,9 @@ public class Metric implements Serializable {
     result = prime * result + ((name == null) ? 0 : name.hashCode());
     result = prime * result + ((valueMeta == null) ? 0 : valueMeta.hashCode());
     result = prime * result + (int) (timestamp ^ (timestamp >>> 32));
+    result = prime * result + (int) (this.period ^ (this.period >>> 32));
     long temp;
-    temp = Double.doubleToLongBits(value);
+    temp = Double.doubleToLongBits(this.value);
     result = prime * result + (int) (temp ^ (temp >>> 32));
     return result;
   }
@@ -166,5 +203,53 @@ public class Metric implements Serializable {
 
   public void setValueMeta(Map<String, String> valueMeta) {
     this.valueMeta = valueMeta;
+  }
+
+  public long getPeriod() {
+    return this.period;
+  }
+
+  public void setPeriod(final long period) {
+    this.period = period;
+  }
+
+  /**
+   * Method returns if period is set.
+   * True if metric's period is set (i.e. <> {@value PERIOD_NOT_SET}),
+   * false otherwise.
+   *
+   * @return true/false
+   * @see #period
+   */
+  public boolean hasPeriod() {
+    return this.period != PERIOD_NOT_SET;
+  }
+
+  /**
+   * If {@link #period} is negative value (< 0) method returns true.
+   * False is returned otherwise.
+   *
+   * @return true/false
+   *
+   * @see #isPeriodic()
+   * @see #hasPeriod()
+   * @see #period
+   */
+  public boolean isSparse() {
+    return MetricPeriod.isSparse(this.period);
+  }
+
+  /**
+   * Returns true if {@link #period} is positive number (i.e. > 0).
+   * False is returned otherwise.
+   *
+   * @return true/false
+   *
+   * @see #isSparse()
+   * @see #hasPeriod()
+   * @see #period
+   */
+  public boolean isPeriodic() {
+    return MetricPeriod.isPeriodic(this.period);
   }
 }

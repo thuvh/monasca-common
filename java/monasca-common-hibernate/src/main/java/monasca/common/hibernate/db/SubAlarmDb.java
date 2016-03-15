@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 FUJITSU LIMITED
+ * Copyright 2016 FUJITSU LIMITED
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -43,6 +43,10 @@ import org.joda.time.DateTime;
         query = "from SubAlarmDb where alarm_id = :id"
     ),
     @NamedQuery(
+        name = SubAlarmDb.Queries.BY_SPORADIC,
+        query = "from SubAlarmDb where sporadic = :sporadic"
+    ),
+    @NamedQuery(
         name = SubAlarmDb.Queries.UPDATE_EXPRESSION_BY_SUBEXPRESSION_ID,
         query = "update SubAlarmDb set expression=:expression where subExpression.id=:alarmSubExpressionId"
     )
@@ -51,6 +55,7 @@ public class SubAlarmDb
     extends AbstractAuditablePersistable<String> {
   private static final long serialVersionUID = 5719744905744636511L;
   private static final String DEFAULT_EXPRESSION = "";
+  private static final boolean DEFAULT_IS_SPORADIC = false;
 
   @JoinColumn(name = "alarm_id", nullable = false)
   @ManyToOne(cascade = {CascadeType.REMOVE}, fetch = FetchType.LAZY, optional = false)
@@ -66,6 +71,9 @@ public class SubAlarmDb
   @Basic(fetch = FetchType.LAZY)
   @Column(name = "expression", nullable = false, length = 16777215)
   private String expression = DEFAULT_EXPRESSION;
+
+  @Column(name = "sporadic", length = 1, nullable = false)
+  private boolean sporadic = DEFAULT_IS_SPORADIC;
 
   public SubAlarmDb() {
     super();
@@ -125,9 +133,19 @@ public class SubAlarmDb
     return this.expression;
   }
 
+  public boolean isSporadic() {
+    return this.sporadic;
+  }
+
+  public SubAlarmDb setSporadic(final boolean isPeriodic){
+    this.sporadic = isPeriodic;
+    return this;
+  }
+
   public interface Queries {
     String BY_ALARMDEFINITION_ID = "SubAlarm.byAlarmDefinitionId";
     String BY_ALARM_ID = "SubAlarm.byAlarmId";
     String UPDATE_EXPRESSION_BY_SUBEXPRESSION_ID = "SubAlarm.updateExpressionBySubexpressionId";
+    String BY_SPORADIC = "SubAlarm.byIsSporadic";
   }
 }
