@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2014 Hewlett-Packard Development Company, L.P.
+ * Copyright 2016 FUJITSU LIMITED
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +22,9 @@ import java.util.List;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
+import org.antlr.v4.runtime.misc.NotNull;
+import org.antlr.v4.runtime.tree.ParseTree;
+
 import monasca.common.model.metric.MetricDefinition;
 
 /**
@@ -36,23 +40,36 @@ class AlarmSubExpressionListener extends AlarmExpressionBaseListener {
   private int period = AlarmSubExpression.DEFAULT_PERIOD;
   private int periods = AlarmSubExpression.DEFAULT_PERIODS;
   private List<Object> elements = new ArrayList<Object>();
+  private boolean deterministic = AlarmSubExpression.DEFAULT_DETERMINISTIC;
 
   AlarmSubExpressionListener(boolean simpleExpression) {
     this.simpleExpression = simpleExpression;
   }
 
   private void saveSubExpression() {
-    AlarmSubExpression subExpression = new AlarmSubExpression(function, new MetricDefinition(
-        namespace, dimensions), operator, threshold, period, periods);
+    // not possible to establish if metric is sporadic from expression, so we go with default
+    final MetricDefinition metricDefinition = new MetricDefinition(
+        namespace,
+        dimensions
+    );
+    final AlarmSubExpression subExpression = new AlarmSubExpression(function,
+        metricDefinition,
+        operator,
+        threshold,
+        period,
+        periods,
+        deterministic
+    );
     elements.add(subExpression);
 
     function = null;
     namespace = null;
-    dimensions = new TreeMap<String, String>();
+    dimensions = new TreeMap<>();
     operator = null;
     threshold = 0;
     period = AlarmSubExpression.DEFAULT_PERIOD;
     periods = AlarmSubExpression.DEFAULT_PERIODS;
+    deterministic = AlarmSubExpression.DEFAULT_DETERMINISTIC;
   }
 
   @Override
@@ -153,6 +170,24 @@ class AlarmSubExpressionListener extends AlarmExpressionBaseListener {
   @Override
   public void exitAndExpr(AlarmExpressionParser.AndExprContext ctx) {
     elements.add(BooleanOperator.AND);
+  }
+
+  @Override
+  public void enterDeterministic(@NotNull final AlarmExpressionParser.DeterministicContext ctx) {
+    final int childCount = ctx.getChildCount();
+    if (childCount == 1) {
+      // just deterministic keyword expected
+      final ParseTree child = ctx.getChild(0);
+      this.deterministic = child.getText().equalsIgnoreCase("deterministic");
+    } else if (childCount == 3) {
+      // we have assignment operator
+      final ParseTree child = ctx.getChild(2);
+      final String text = child.getText();
+      this.deterministic = text.equalsIgnoreCase("1")
+          || text.equalsIgnoreCase("true")
+          || text.equalsIgnoreCase("yes");
+    }
+    // other conditions are not possible according to gramma rules
   }
 
   /**

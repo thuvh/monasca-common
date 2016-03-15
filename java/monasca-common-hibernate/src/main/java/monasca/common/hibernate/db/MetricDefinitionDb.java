@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 FUJITSU LIMITED
+ * Copyright 2015-2016 FUJITSU LIMITED
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -19,6 +19,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import monasca.common.hibernate.type.BinaryId;
+import monasca.common.model.metric.MetricDefinition;
 
 @Entity
 @Table(name = "metric_definition")
@@ -34,6 +35,9 @@ public class MetricDefinitionDb
 
   @Column(name = "region", length = 255, nullable = false)
   private String region;
+
+  @Column(name = "sporadic", length = 1, nullable = false)
+  private Boolean sporadic = MetricDefinition.DEFAULT_SPORADIC;
 
   public MetricDefinitionDb() {
     super();
@@ -75,6 +79,15 @@ public class MetricDefinitionDb
 
   public String getRegion() {
     return this.region;
+  }
+
+  public Boolean isSporadic() {
+    return this.sporadic;
+  }
+
+  public MetricDefinitionDb setSporadic(final Boolean isSporadic){
+    this.sporadic = isSporadic;
+    return this;
   }
 
 }
