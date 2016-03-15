@@ -151,12 +151,35 @@ public class AlarmExpression {
   public List<AlarmSubExpression> getSubExpressions() {
     if (subExpressions != null)
       return subExpressions;
-    List<AlarmSubExpression> subExpressions = new ArrayList<AlarmSubExpression>();
+    List<AlarmSubExpression> subExpressions = new ArrayList<>(elements.size());
     for (Object element : elements)
       if (element instanceof AlarmSubExpression)
         subExpressions.add((AlarmSubExpression) element);
     this.subExpressions = subExpressions;
     return subExpressions;
+  }
+
+  /**
+   * Returns if expression is deterministic or non-deterministic.
+   *
+   * All {@link AlarmSubExpression} must be non-deterministic in order for entire expression
+   * to be such. Otherwise expression is deterministic.
+   *
+   * @return true/false
+   *
+   * @see #getSubExpressions()
+   */
+  public boolean isDeterministic() {
+    final List<AlarmSubExpression> subExpressions = this.getSubExpressions();
+    if (subExpressions == null || subExpressions.isEmpty()) {
+      return AlarmSubExpression.DEFAULT_DETERMINISTIC;
+    }
+    for (final AlarmSubExpression alarmSubExpression : subExpressions) {
+      if (alarmSubExpression.isDeterministic()) {
+        return true;
+      }
+    }
+    return false;
   }
 
   @Override
