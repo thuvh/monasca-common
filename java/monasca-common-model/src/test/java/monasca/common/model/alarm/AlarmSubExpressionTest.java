@@ -1,11 +1,12 @@
 /*
  * Copyright (c) 2014 Hewlett-Packard Development Company, L.P.
- * 
+ * Copyright 2016 FUJITSU LIMITED
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software distributed under the License
  * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
  * or implied. See the License for the specific language governing permissions and limitations under
@@ -17,13 +18,9 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
+import com.google.common.collect.ImmutableMap;
 import org.testng.annotations.Test;
 
-import com.google.common.collect.ImmutableMap;
-import monasca.common.model.alarm.AggregateFunction;
-import monasca.common.model.alarm.AlarmExpression;
-import monasca.common.model.alarm.AlarmOperator;
-import monasca.common.model.alarm.AlarmSubExpression;
 import monasca.common.model.metric.MetricDefinition;
 
 @Test
@@ -172,4 +169,39 @@ public class AlarmSubExpressionTest {
   public void shouldAllowDecimalThresholds() {
     assertEquals(AlarmSubExpression.of("avg(hpcs.compute) > 2.375").getThreshold(), 2.375);
   }
+
+  public void shouldSetDeterministicByDefault() {
+    assertTrue(AlarmSubExpression.of("count(log.error) > 1.0").isDeterministic());
+  }
+
+  public void shouldBeNonDeterministicIfSet() {
+    assertFalse(
+        AlarmSubExpression.of("count(log.error, deterministic=false) > 1.0").isDeterministic());
+    assertFalse(
+        AlarmSubExpression.of("count(log.error, deterministic=no) > 1.0").isDeterministic());
+    assertFalse(
+        AlarmSubExpression.of("count(log.error, deterministic=0) > 1.0").isDeterministic());
+  }
+
+  public void shouldBeDeterministicIfSet() {
+    assertTrue(
+        AlarmSubExpression.of("count(log.error, deterministic=true) > 1.0").isDeterministic());
+    assertTrue(
+        AlarmSubExpression.of("count(log.error, deterministic=yes) > 1.0").isDeterministic());
+    assertTrue(
+        AlarmSubExpression.of("count(log.error, deterministic=1) > 1.0").isDeterministic());
+    assertTrue(
+        AlarmSubExpression.of("count(log.error, deterministic) > 1.0").isDeterministic());
+  }
+
+  @Test(expectedExceptions = IllegalArgumentException.class)
+  public void shouldFailIfDeterministicAssignmentIsInvalid() {
+    AlarmSubExpression.of("count(log.error{}, deterministic=foo) > 1.0");
+  }
+
+  @Test(expectedExceptions = IllegalArgumentException.class)
+  public void shouldFailWithMalformedDeterministicKeyword() {
+    AlarmSubExpression.of("count(log.error{}, deterministici=true) > 1.0");
+  }
+
 }
