@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2014 Hewlett-Packard Development Company, L.P.
+ * Copyright 2016 FUJITSU LIMITED
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -14,19 +15,20 @@
 package monasca.common.model.metric;
 
 import java.io.Serializable;
-
-import com.google.common.base.Preconditions;
+import java.util.Map;
 
 import javax.annotation.Nullable;
 import javax.validation.constraints.NotNull;
 
-import java.util.Map;
+import com.google.common.base.Objects;
+import com.google.common.base.Preconditions;
 
 /**
  * Metric with definition information flattened alongside value information.
  */
 public class Metric implements Serializable {
   private static final long serialVersionUID = 3455749495426525634L;
+  private static long PERIOD_NOT_SET = 0L;
 
   public String name;
   public Map<String, String> dimensions;
@@ -34,6 +36,7 @@ public class Metric implements Serializable {
   public double value;
   public Map<String, String> valueMeta;
   private MetricDefinition definition;
+  private long period = PERIOD_NOT_SET;
 
   public Metric() {}
 
@@ -74,6 +77,7 @@ public class Metric implements Serializable {
            ", value=" + value +
            ", valueMeta=" + valueMeta +
            ", definition=" + definition +
+           ", period=" + this.period +
            '}';
   }
 
@@ -110,21 +114,31 @@ public class Metric implements Serializable {
       return false;
     if (Double.doubleToLongBits(value) != Double.doubleToLongBits(other.value))
       return false;
+    if(!Objects.equal(this.period, other.period)){
+      return false;
+    }
     return true;
   }
 
   @Override
   public int hashCode() {
     final int prime = 31;
+
     int result = 1;
+    long temp;
+
     result = prime * result + ((definition == null) ? 0 : definition.hashCode());
     result = prime * result + ((dimensions == null) ? 0 : dimensions.hashCode());
     result = prime * result + ((name == null) ? 0 : name.hashCode());
     result = prime * result + ((valueMeta == null) ? 0 : valueMeta.hashCode());
     result = prime * result + (int) (timestamp ^ (timestamp >>> 32));
-    long temp;
-    temp = Double.doubleToLongBits(value);
+
+    temp = Double.doubleToLongBits(this.value);
     result = prime * result + (int) (temp ^ (temp >>> 32));
+
+    temp = Double.doubleToLongBits(this.period);
+    result = prime * result + (int) (temp ^ (temp >>> 32));
+
     return result;
   }
 
@@ -166,5 +180,25 @@ public class Metric implements Serializable {
 
   public void setValueMeta(Map<String, String> valueMeta) {
     this.valueMeta = valueMeta;
+  }
+
+  public long getPeriod() {
+    return this.period;
+  }
+
+  public void setPeriod(final long period) {
+    this.period = period;
+  }
+
+  public boolean hasPeriod() {
+    return this.period != PERIOD_NOT_SET;
+  }
+
+  public boolean isSparse() {
+    return this.hasPeriod() && this.period < 0L;
+  }
+
+  public boolean isPeriodic() {
+    return !this.isSparse();
   }
 }

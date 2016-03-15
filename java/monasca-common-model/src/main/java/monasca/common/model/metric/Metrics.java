@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2014 Hewlett-Packard Development Company, L.P.
+ * Copyright 2016 FUJITSU LIMITED
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +63,9 @@ public final class Metrics {
       jgen.writeNumberField("value", value.value);
       if (value.valueMeta != null && !value.valueMeta.isEmpty()) {
         jgen.writeObjectField("value_meta", value.valueMeta);
+      }
+      if(value.hasPeriod()){
+        jgen.writeNumberField("period", value.getPeriod());
       }
       jgen.writeEndObject();
     }
