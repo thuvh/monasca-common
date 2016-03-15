@@ -19,11 +19,15 @@ import static org.testng.Assert.assertNotEquals;
 import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
-import org.testng.annotations.Test;
-
+import com.beust.jcommander.internal.Maps;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Lists;
+import org.testng.annotations.Test;
 
 import monasca.common.model.metric.MetricDefinition;
 
@@ -315,4 +319,61 @@ public class AlarmExpressionTest {
                                                  + "(min(ເຮືອນ{dn3=dv3,家=дом}) < 10 or sum(biz{dn5=dv5}) >9 and "
                                                  + "count(fizzle) lt 0 or count(baz) > 1)");
     }
+
+  public void shouldParseSporadicExpression() {
+    final Map<String, String> dimensions = Maps.newHashMap();
+    final ArrayList<AlarmExpression> expressions = Lists.newArrayList(
+        new AlarmExpression("count(log.error{},sporadic=true,20) > 5"),
+        new AlarmExpression("count(log.error{},sporadic=yes,20) > 5"),
+        new AlarmExpression("count(log.error{},sporadic=1,20) > 5"),
+        new AlarmExpression("count(log.error{},sporadic,20) > 5")
+    );
+    final MetricDefinition metricDefinition = new MetricDefinition("log.error", dimensions);
+    metricDefinition.setSporadic(true);
+
+    final AlarmSubExpression logErrorExpr = new AlarmSubExpression(
+        AggregateFunction.COUNT,
+        metricDefinition,
+        AlarmOperator.GT,
+        5,
+        20,
+        1
+    );
+
+    for (final AlarmExpression expr : expressions) {
+      final List<AlarmSubExpression> alarms = expr.getSubExpressions();
+
+      assertEquals(1, alarms.size());
+      assertEquals(alarms.get(0), logErrorExpr);
+    }
+  }
+
+  public void shouldParseNonSporadicExpression() {
+    final Map<String, String> dimensions = Maps.newHashMap();
+    final ArrayList<AlarmExpression> expressions = Lists.newArrayList(
+        new AlarmExpression("count(log.error{},sporadic=false,20) > 5"),
+        new AlarmExpression("count(log.error{},sporadic=no,20) > 5"),
+        new AlarmExpression("count(log.error{},sporadic=0,20) > 5"),
+        new AlarmExpression("count(log.error{},20) > 5")
+    );
+    final MetricDefinition metricDefinition = new MetricDefinition("log.error", dimensions);
+    metricDefinition.setSporadic(false);
+
+    final AlarmSubExpression logErrorExpr = new AlarmSubExpression(
+        AggregateFunction.COUNT,
+        metricDefinition,
+        AlarmOperator.GT,
+        5,
+        20,
+        1
+    );
+
+    for (final AlarmExpression expr : expressions) {
+      final List<AlarmSubExpression> alarms = expr.getSubExpressions();
+
+      assertEquals(1, alarms.size());
+      assertEquals(alarms.get(0), logErrorExpr);
+    }
+  }
+
 }

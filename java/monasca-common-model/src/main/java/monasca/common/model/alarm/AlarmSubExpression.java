@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2014 Hewlett-Packard Development Company, L.P.
+ * Copyright 2016 FUJITSU LIMITED
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,8 +31,6 @@ import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 
-import monasca.common.model.alarm.AlarmExpressionLexer;
-import monasca.common.model.alarm.AlarmExpressionParser;
 import monasca.common.model.metric.MetricDefinition;
 
 /**
@@ -41,6 +40,7 @@ public class AlarmSubExpression implements Serializable {
   private static final long serialVersionUID = -7458129503846747592L;
   public static final int DEFAULT_PERIOD = 60;
   public static final int DEFAULT_PERIODS = 1;
+  public static final boolean DEFAULT_SPORADIC = false;
 
   private AggregateFunction function;
   private MetricDefinition metricDefinition;
@@ -130,8 +130,12 @@ public class AlarmSubExpression implements Serializable {
   public String getExpression() {
     StringBuilder sb = new StringBuilder();
     sb.append(function).append('(').append(metricDefinition.toExpression());
-    if (period != 60)
+    if (this.isSporadic()) {
+      sb.append(", sporadic=true");
+    }
+    if (period != 60) {
       sb.append(", ").append(period);
+    }
     sb.append(") ").append(operator).append(' ').append(formatter.format(threshold));
     if (periods != 1)
       sb.append(" times ").append(periods);
@@ -160,6 +164,10 @@ public class AlarmSubExpression implements Serializable {
 
   public double getThreshold() {
     return threshold;
+  }
+
+  public boolean isSporadic(){
+    return this.metricDefinition != null && this.metricDefinition.isSporadic();
   }
 
   @Override

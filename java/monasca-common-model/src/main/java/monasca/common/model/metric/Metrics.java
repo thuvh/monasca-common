@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2014 Hewlett-Packard Development Company, L.P.
+ * Copyright 2016 FUJITSU LIMITED
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +28,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.module.SimpleModule;
+
 import monasca.common.util.Exceptions;
 
 /**
@@ -63,6 +65,12 @@ public final class Metrics {
       if (value.valueMeta != null && !value.valueMeta.isEmpty()) {
         jgen.writeObjectField("value_meta", value.valueMeta);
       }
+
+      // minimize json output, by default all metrics are periodic
+      if(value.isSporadic()){
+        jgen.writeBooleanField("sporadic", value.isSporadic());
+      }
+
       jgen.writeEndObject();
     }
   }
