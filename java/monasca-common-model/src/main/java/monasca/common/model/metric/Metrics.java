@@ -63,6 +63,9 @@ public final class Metrics {
       if (value.valueMeta != null && !value.valueMeta.isEmpty()) {
         jgen.writeObjectField("value_meta", value.valueMeta);
       }
+      if(value.hasPeriod()){
+        jgen.writeNumberField("period", value.getPeriod());
+      }
       jgen.writeEndObject();
     }
   }
