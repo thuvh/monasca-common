@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2014 Hewlett-Packard Development Company, L.P.
+ * Copyright 2016 FUJITSU LIMITED
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +19,6 @@ package monasca.common.model.metric;
 
 import java.io.IOException;
 
-import org.apache.commons.lang3.StringEscapeUtils;
-
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
@@ -27,6 +26,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.module.SimpleModule;
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import monasca.common.util.Exceptions;
 
 /**
@@ -62,6 +63,9 @@ public final class Metrics {
       jgen.writeNumberField("value", value.value);
       if (value.valueMeta != null && !value.valueMeta.isEmpty()) {
         jgen.writeObjectField("value_meta", value.valueMeta);
+      }
+      if (value.hasPeriod()) {
+        jgen.writeNumberField("period", value.getPeriod());
       }
       jgen.writeEndObject();
     }
