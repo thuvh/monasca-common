@@ -1,0 +1,9 @@
+Code-Review+1: Gleb Stepanov <gstepanov@mirantis.com>
+Code-Review+2: Roland Hochmuth <roland.hochmuth@hp.com>
+Workflow+1: Roland Hochmuth <roland.hochmuth@hp.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 22 Mar 2016 21:46:05 +0000
+Reviewed-on: https://review.openstack.org/289914
+Project: openstack/monasca-common
+Branch: refs/heads/master
