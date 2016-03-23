@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa0719c6_82cbc5a4",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-03-23T02:31:19Z",
+      "side": 1,
+      "message": "period is a primitive type so I think a direct comparison \n\nperiod !\u003d other.period\n\nwould probably be better in this case.",
+      "range": {
+        "startLine": 141,
+        "startChar": 6,
+        "endLine": 141,
+        "endChar": 12
+      },
+      "revId": "e6a1b84944fa0a873482abaafd71be0f410612a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
