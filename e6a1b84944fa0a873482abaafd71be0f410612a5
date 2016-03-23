@@ -22,6 +22,29 @@
       "revId": "e6a1b84944fa0a873482abaafd71be0f410612a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa0719c6_829aa561",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-03-23T02:47:18Z",
+      "side": 1,
+      "message": "I think we discussed that the default is that the metric is \"periodic\" if a period field isn\u0027t supplied with the metric and the default period is 30 seconds. If that is the case, then the test for period should is \n\nif !this.hasPeriod() || ...\n\nunless we create a \"period\" field in all metrics prior to processing.",
+      "range": {
+        "startLine": 247,
+        "startChar": 4,
+        "endLine": 247,
+        "endChar": 10
+      },
+      "revId": "e6a1b84944fa0a873482abaafd71be0f410612a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
