@@ -22,6 +22,30 @@
       "revId": "6e49abbdaa1b2f318be8cf2ce8b807777718803a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_e2cd0567",
+        "filename": "java/monasca-common-model/src/test/java/monasca/common/model/metric/MetricPeriodTest.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-04-01T04:25:08Z",
+      "side": 1,
+      "message": "Whoops, I missed that comment at all.\n\nIf period \u003d\u003d 0 (which is PERIOD_NOT_SET) value in the Metric model, return False for both case, if that what you had in mind ?",
+      "parentUuid": "da0c15f0_e45d967a",
+      "range": {
+        "startLine": 21,
+        "startChar": 13,
+        "endLine": 21,
+        "endChar": 29
+      },
+      "revId": "6e49abbdaa1b2f318be8cf2ce8b807777718803a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
