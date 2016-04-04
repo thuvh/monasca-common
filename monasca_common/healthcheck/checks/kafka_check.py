@@ -13,6 +13,7 @@
 # under the License.
 
 from kafka import client
+
 from oslo_config import cfg
 from oslo_log import log
 
