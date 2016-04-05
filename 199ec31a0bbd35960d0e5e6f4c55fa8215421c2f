@@ -22,6 +22,30 @@
       "revId": "199ec31a0bbd35960d0e5e6f4c55fa8215421c2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_bd9450e2",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-04-05T15:39:37Z",
+      "side": 1,
+      "message": "That actually makes sense. \n\nI think I could replace \u0027partitioner\u0027 with boolean argument \u0027fair\u0027, by default that would be set to False, so we would use Murmur2, otherwise RoundRobin.\n\nThere is actually no other alternative, at least built in kafka, so I guess boolean value would do the trick.\n\nMy idea was to keep outer code clean of kafka.* imports, you know just to import this class, pass some flag and voila. Otherwise I would just add **kwargs here, set other defaults in it (async\u003dFalse etc) nad that would it be it. But again that misses the points of these defaults for every component that uses monasca_common.KafkaProducer, right ?",
+      "parentUuid": "9a061dce_056fecc5",
+      "range": {
+        "startLine": 39,
+        "startChar": 18,
+        "endLine": 39,
+        "endChar": 31
+      },
+      "revId": "199ec31a0bbd35960d0e5e6f4c55fa8215421c2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
