@@ -70,6 +70,30 @@
       "revId": "199ec31a0bbd35960d0e5e6f4c55fa8215421c2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_64bb3c28",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-04-05T18:11:20Z",
+      "side": 1,
+      "message": "Ok, so I will update this change with roundRobin boolean flag.",
+      "parentUuid": "9a061dce_646ea130",
+      "range": {
+        "startLine": 39,
+        "startChar": 18,
+        "endLine": 39,
+        "endChar": 31
+      },
+      "revId": "199ec31a0bbd35960d0e5e6f4c55fa8215421c2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
