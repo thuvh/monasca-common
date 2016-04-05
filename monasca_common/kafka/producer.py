@@ -14,6 +14,7 @@
 # limitations under the License.
 
 import kafka.client
+import kafka.partitioner
 import kafka.producer
 import logging
 import time
@@ -25,16 +26,25 @@ class KafkaProducer(object):
     """Adds messages to a kafka topic
     """
 
-    def __init__(self, url):
+    def __init__(self, url, **kwargs):
         """Init
              url - kafka connection details
         """
+
+        partitioner = kwargs.get('partitioner', None)
+        if partitioner == 'fair':
+            partitioner = kafka.partitioner.RoundRobinPartitioner
+        else:
+            partitioner = kafka.partitioner.Murmur2Partitioner
+        kwargs = {'partitioner': partitioner}
+
         self._kafka = kafka.client.KafkaClient(url)
         self._producer = kafka.producer.KeyedProducer(
             self._kafka,
             async=False,
             req_acks=kafka.producer.KeyedProducer.ACK_AFTER_LOCAL_WRITE,
-            ack_timeout=2000)
+            ack_timeout=2000,
+            **kwargs)
 
     def publish(self, topic, messages, key=None):
         """Takes messages and puts them on the supplied kafka topic
