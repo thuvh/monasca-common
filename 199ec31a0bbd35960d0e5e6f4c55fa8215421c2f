@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_056fecc5",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-04-05T14:29:34Z",
+      "side": 1,
+      "message": "Personally, I don\u0027 t like reusing the \u0027partitioner\u0027 key for this. The value for it comes in to this method as a string and then gets sets to a class. That seems confusing.",
+      "range": {
+        "startLine": 39,
+        "startChar": 18,
+        "endLine": 39,
+        "endChar": 31
+      },
+      "revId": "199ec31a0bbd35960d0e5e6f4c55fa8215421c2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
