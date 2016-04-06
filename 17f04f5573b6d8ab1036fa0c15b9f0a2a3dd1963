@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_4c437f42",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-04-06T18:23:44Z",
+      "side": 1,
+      "message": "Should be space after the if",
+      "range": {
+        "startLine": 146,
+        "startChar": 6,
+        "endLine": 146,
+        "endChar": 7
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_acd69b4c",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-04-06T18:23:44Z",
+      "side": 1,
+      "message": "Should really reference MetricPeriod.isSparse() instead of repeating what that says. What if you decided to reverse the \u003c and \u003e than? You would have to change it in more places?",
+      "range": {
+        "startLine": 229,
+        "startChar": 27,
+        "endLine": 229,
+        "endChar": 47
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_2cc3ab8a",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/MetricPeriod.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-04-06T18:23:44Z",
+      "side": 1,
+      "message": "Should be a space before the {",
+      "range": {
+        "startLine": 30,
+        "startChar": 52,
+        "endLine": 30,
+        "endChar": 54
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_4c4d3f3d",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metrics.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-04-06T18:23:44Z",
+      "side": 1,
+      "message": "Add space after if and before {. Follow the existing formatting",
+      "range": {
+        "startLine": 67,
+        "startChar": 6,
+        "endLine": 67,
+        "endChar": 28
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
