@@ -2,6 +2,98 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a061dce_cc282a36",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-04-06T20:34:57Z",
+      "side": 1,
+      "message": "long it should take before an alarm associated with a metric transitions",
+      "range": {
+        "startLine": 40,
+        "startChar": 38,
+        "endLine": 40,
+        "endChar": 44
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_8c31125d",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-04-06T20:34:57Z",
+      "side": 1,
+      "message": "sporadic, or sparse.\n\nWould prefer using common names.",
+      "range": {
+        "startLine": 47,
+        "startChar": 56,
+        "endLine": 47,
+        "endChar": 62
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_0c3ea227",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-04-06T20:34:57Z",
+      "side": 1,
+      "message": "periodic",
+      "range": {
+        "startLine": 48,
+        "startChar": 56,
+        "endLine": 48,
+        "endChar": 66
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_ac1336b7",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-04-06T20:34:57Z",
+      "side": 1,
+      "message": "isSporadic",
+      "range": {
+        "startLine": 51,
+        "startChar": 11,
+        "endLine": 51,
+        "endChar": 19
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_4c437f42",
         "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
         "patchSetId": 15
@@ -48,6 +140,29 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_ac7a16ef",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-04-06T20:34:57Z",
+      "side": 1,
+      "message": "Should this be isSporadic()?",
+      "range": {
+        "startLine": 238,
+        "startChar": 17,
+        "endLine": 238,
+        "endChar": 25
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_2cc3ab8a",
         "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/MetricPeriod.java",
         "patchSetId": 15
@@ -64,6 +179,69 @@
         "startChar": 52,
         "endLine": 30,
         "endChar": 54
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_8f7aa486",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/MetricPeriod.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-04-06T20:34:57Z",
+      "side": 1,
+      "message": "Do you want to add another method \n\npublic static boolean isSporadic(final Metric metric) {\n\njust to match the one down below for isPeriodic(final Metric metric)",
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_2c79e6c8",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/MetricPeriod.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-04-06T20:34:57Z",
+      "side": 1,
+      "message": "isSporadic()?",
+      "range": {
+        "startLine": 34,
+        "startChar": 24,
+        "endLine": 34,
+        "endChar": 32
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_cf0bfc22",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/MetricPeriod.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-04-06T20:34:57Z",
+      "side": 1,
+      "message": "Is period \u003d\u003d 0, then it is neither sporadic or periodic. \n\nWhat happens when period \u003d\u003d 0?",
+      "range": {
+        "startLine": 43,
+        "startChar": 20,
+        "endLine": 43,
+        "endChar": 29
       },
       "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
