@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_d6b4d5d5",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-04-08T10:44:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_cc282a36",
+      "range": {
+        "startLine": 40,
+        "startChar": 38,
+        "endLine": 40,
+        "endChar": 44
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_8c31125d",
         "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
         "patchSetId": 15
@@ -36,6 +60,30 @@
       "writtenOn": "2016-04-06T20:34:57Z",
       "side": 1,
       "message": "sporadic, or sparse.\n\nWould prefer using common names.",
+      "range": {
+        "startLine": 47,
+        "startChar": 56,
+        "endLine": 47,
+        "endChar": 62
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_769b4973",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-04-08T10:44:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_8c31125d",
       "range": {
         "startLine": 47,
         "startChar": 56,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_d6869515",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-04-08T10:44:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_0c3ea227",
+      "range": {
+        "startLine": 48,
+        "startChar": 56,
+        "endLine": 48,
+        "endChar": 66
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_ac1336b7",
         "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
         "patchSetId": 15
@@ -82,6 +154,30 @@
       "writtenOn": "2016-04-06T20:34:57Z",
       "side": 1,
       "message": "isSporadic",
+      "range": {
+        "startLine": 51,
+        "startChar": 11,
+        "endLine": 51,
+        "endChar": 19
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_96753d34",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-04-08T10:44:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_ac1336b7",
       "range": {
         "startLine": 51,
         "startChar": 11,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_56c9e559",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-04-08T10:44:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_4c437f42",
+      "range": {
+        "startLine": 146,
+        "startChar": 6,
+        "endLine": 146,
+        "endChar": 7
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_acd69b4c",
         "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
         "patchSetId": 15
@@ -140,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_f601196c",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-04-08T10:44:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_acd69b4c",
+      "range": {
+        "startLine": 229,
+        "startChar": 27,
+        "endLine": 229,
+        "endChar": 47
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_ac7a16ef",
         "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
         "patchSetId": 15
@@ -151,6 +295,30 @@
       "writtenOn": "2016-04-06T20:34:57Z",
       "side": 1,
       "message": "Should this be isSporadic()?",
+      "range": {
+        "startLine": 238,
+        "startChar": 17,
+        "endLine": 238,
+        "endChar": 25
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_16348d48",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-04-08T10:44:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_ac7a16ef",
       "range": {
         "startLine": 238,
         "startChar": 17,
@@ -203,6 +371,24 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_f923caa5",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/MetricPeriod.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-04-08T10:44:04Z",
+      "side": 1,
+      "message": "I think it\u0027s already here.",
+      "parentUuid": "9a061dce_8f7aa486",
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_2c79e6c8",
         "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/MetricPeriod.java",
         "patchSetId": 15
@@ -214,6 +400,30 @@
       "writtenOn": "2016-04-06T20:34:57Z",
       "side": 1,
       "message": "isSporadic()?",
+      "range": {
+        "startLine": 34,
+        "startChar": 24,
+        "endLine": 34,
+        "endChar": 32
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_96489dce",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/MetricPeriod.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-04-08T10:44:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_2c79e6c8",
       "range": {
         "startLine": 34,
         "startChar": 24,
@@ -249,6 +459,30 @@
     },
     {
       "key": {
+        "uuid": "9a061dce_59c3d68a",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/MetricPeriod.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-04-08T10:44:04Z",
+      "side": 1,
+      "message": "That could be part of evaluation if metric has a period defined. There is\n\n Metric@hasPeriod\n\nwhich answers that question. Alternative approach would be to have \u003e\u003d comparison here. But again in thresh you would have to check if supplied value means something. I think 0 as period is not quite good, what do you think ?",
+      "parentUuid": "9a061dce_cf0bfc22",
+      "range": {
+        "startLine": 43,
+        "startChar": 20,
+        "endLine": 43,
+        "endChar": 29
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a061dce_4c4d3f3d",
         "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metrics.java",
         "patchSetId": 15
@@ -260,6 +494,30 @@
       "writtenOn": "2016-04-06T18:23:44Z",
       "side": 1,
       "message": "Add space after if and before {. Follow the existing formatting",
+      "range": {
+        "startLine": 67,
+        "startChar": 6,
+        "endLine": 67,
+        "endChar": 28
+      },
+      "revId": "17f04f5573b6d8ab1036fa0c15b9f0a2a3dd1963",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_19403e07",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metrics.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-04-08T10:44:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_4c4d3f3d",
       "range": {
         "startLine": 67,
         "startChar": 6,
