@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_eeac43a2",
+        "filename": "java/monasca-common-middleware/src/main/java/monasca/common/middleware/HttpAuthClient.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-04-18T21:00:35Z",
+      "side": 1,
+      "message": "How much of the end of the token varies? How close does the last 10 characters get you to a valid token? The ones I generate vary across all characters, how about yours?",
+      "range": {
+        "startLine": 107,
+        "startChar": 42,
+        "endLine": 107,
+        "endChar": 43
+      },
+      "revId": "896817f2d183dd260609a774ed9db222894f8cbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
