@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_1570823f",
+        "filename": "java/monasca-common-hibernate/src/main/java/monasca/common/hibernate/db/NotificationMethodDb.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-05-05T04:36:59Z",
+      "side": 1,
+      "message": "I guess that you might want to add:\n\n nullable \u003d false \n\nby default is is true, but I guess that you want to have is second option, because this what schema says.\n\nAlso in Hibernate wrappers are encouraged over primitives.",
+      "range": {
+        "startLine": 62,
+        "startChar": 24,
+        "endLine": 62,
+        "endChar": 26
+      },
+      "revId": "3e742aa7d4d73f8fc8ba8add218e222749d85bc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
