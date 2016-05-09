@@ -22,6 +22,30 @@
       "revId": "f33c821bd66e8d427eccd9f4cc6161c42ccbc176",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_2b5f590f",
+        "filename": "java/monasca-common-model/src/test/java/monasca/common/model/alarm/AlarmExpressionTest.java",
+        "patchSetId": 22
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-05-09T14:22:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_88d12b5a",
+      "range": {
+        "startLine": 330,
+        "startChar": 8,
+        "endLine": 330,
+        "endChar": 70
+      },
+      "revId": "f33c821bd66e8d427eccd9f4cc6161c42ccbc176",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
