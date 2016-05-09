@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_367df4e7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-05-09T20:18:07Z",
+      "side": 1,
+      "message": "There is no use right now for sporadic metrics so I don\u0027t think it is a good idea to clutter up the code with something that is not used. If needed, we can always add it later.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 52
+      },
+      "revId": "f0e683832763420a8ec5b0b4db373bf4b2d5b9e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_b6f564cc",
+        "filename": "java/monasca-common-hibernate/src/main/java/monasca/common/hibernate/db/MetricDefinitionDb.java",
+        "patchSetId": 23
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-05-09T20:18:07Z",
+      "side": 1,
+      "message": "We don\u0027t need any of these changes now, right?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 52
+      },
+      "revId": "f0e683832763420a8ec5b0b4db373bf4b2d5b9e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_363b349e",
+        "filename": "java/monasca-common-hibernate/src/main/java/monasca/common/hibernate/db/SubAlarmDefinitionDb.java",
+        "patchSetId": 23
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-05-09T20:18:07Z",
+      "side": 1,
+      "message": "Should be isDeterministic. Let\u0027s totally get rid of Sporadic so we don\u0027t confuse people",
+      "range": {
+        "startLine": 199,
+        "startChar": 61,
+        "endLine": 199,
+        "endChar": 71
+      },
+      "revId": "f0e683832763420a8ec5b0b4db373bf4b2d5b9e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_161c3011",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 23
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-05-09T20:18:07Z",
+      "side": 1,
+      "message": "We don\u0027t need any of these changes, either.",
+      "range": {
+        "startLine": 30,
+        "startChar": 25,
+        "endLine": 30,
+        "endChar": 41
+      },
+      "revId": "f0e683832763420a8ec5b0b4db373bf4b2d5b9e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_96de603d",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/MetricDefinition.java",
+        "patchSetId": 23
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-05-09T20:18:07Z",
+      "side": 1,
+      "message": "We don\u0027t need any of these changes anymore",
+      "range": {
+        "startLine": 34,
+        "startChar": 24,
+        "endLine": 34,
+        "endChar": 40
+      },
+      "revId": "f0e683832763420a8ec5b0b4db373bf4b2d5b9e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_56bb58e5",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metrics.java",
+        "patchSetId": 23
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-05-09T20:18:07Z",
+      "side": 1,
+      "message": "Remove these changes as well",
+      "range": {
+        "startLine": 69,
+        "startChar": 41,
+        "endLine": 69,
+        "endChar": 42
+      },
+      "revId": "f0e683832763420a8ec5b0b4db373bf4b2d5b9e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_96830004",
+        "filename": "java/monasca-common-model/src/test/java/monasca/common/model/alarm/AlarmExpressionTest.java",
+        "patchSetId": 23
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-05-09T20:18:07Z",
+      "side": 1,
+      "message": "These are subExpressions not alarms",
+      "range": {
+        "startLine": 345,
+        "startChar": 37,
+        "endLine": 345,
+        "endChar": 43
+      },
+      "revId": "f0e683832763420a8ec5b0b4db373bf4b2d5b9e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_f6a9ac7c",
+        "filename": "java/monasca-common-model/src/test/java/monasca/common/model/metric/MetricsTest.java",
+        "patchSetId": 23
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-05-09T20:18:07Z",
+      "side": 1,
+      "message": "Remove all of these changes as well",
+      "range": {
+        "startLine": 127,
+        "startChar": 14,
+        "endLine": 127,
+        "endChar": 42
+      },
+      "revId": "f0e683832763420a8ec5b0b4db373bf4b2d5b9e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
