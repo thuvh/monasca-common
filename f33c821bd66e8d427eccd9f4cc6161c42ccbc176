@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_88d12b5a",
+        "filename": "java/monasca-common-model/src/test/java/monasca/common/model/alarm/AlarmExpressionTest.java",
+        "patchSetId": 22
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2016-05-09T14:07:31Z",
+      "side": 1,
+      "message": "Please add the test without the attribute name.\n\n  \"count(log.error{},20) \u003e 5\"",
+      "range": {
+        "startLine": 330,
+        "startChar": 8,
+        "endLine": 330,
+        "endChar": 70
+      },
+      "revId": "f33c821bd66e8d427eccd9f4cc6161c42ccbc176",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
