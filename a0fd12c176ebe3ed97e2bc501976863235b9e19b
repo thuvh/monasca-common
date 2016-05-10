@@ -68,6 +68,52 @@
       "revId": "a0fd12c176ebe3ed97e2bc501976863235b9e19b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_94b29392",
+        "filename": "java/monasca-common-model/src/main/resources/monasca/common/model/alarm/AlarmExpression.g4",
+        "patchSetId": 24
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-05-10T22:22:57Z",
+      "side": 1,
+      "message": "What is the point of making the \u003d and value optional? I think it should be required.",
+      "range": {
+        "startLine": 123,
+        "startChar": 22,
+        "endLine": 123,
+        "endChar": 31
+      },
+      "revId": "a0fd12c176ebe3ed97e2bc501976863235b9e19b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_d4e37ba2",
+        "filename": "java/monasca-common-model/src/test/java/monasca/common/model/alarm/AlarmSubExpressionTest.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-05-10T22:22:57Z",
+      "side": 1,
+      "message": "Interestingly, I bet this will work as well:\n\n    assertFalse(\n        AlarmSubExpression.of(\"count(log.error, deterministic\u003dFred) \u003e 1.0\").isDeterministic());\n\nMakes you wonder if we should limit the values to true/false so we can tell the user if they misspell true or false",
+      "range": {
+        "startLine": 182,
+        "startChar": 0,
+        "endLine": 183,
+        "endChar": 92
+      },
+      "revId": "a0fd12c176ebe3ed97e2bc501976863235b9e19b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
