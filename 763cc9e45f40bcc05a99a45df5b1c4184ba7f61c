@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_74a3b400",
+        "filename": "java/monasca-common-hibernate/src/main/java/monasca/common/hibernate/db/MetricDefinitionDb.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 15359
+      },
+      "writtenOn": "2016-05-10T20:33:39Z",
+      "side": 1,
+      "message": "please, add a space after \u0027)\u0027",
+      "range": {
+        "startLine": 88,
+        "startChar": 64,
+        "endLine": 88,
+        "endChar": 66
+      },
+      "revId": "763cc9e45f40bcc05a99a45df5b1c4184ba7f61c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_b4223c50",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/Metric.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 15359
+      },
+      "writtenOn": "2016-05-10T20:33:39Z",
+      "side": 1,
+      "message": "please, add a space character after \u0027)\u0027",
+      "range": {
+        "startLine": 67,
+        "startChar": 26,
+        "endLine": 67,
+        "endChar": 28
+      },
+      "revId": "763cc9e45f40bcc05a99a45df5b1c4184ba7f61c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_d44420b8",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/metric/MetricDefinition.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 15359
+      },
+      "writtenOn": "2016-05-10T20:33:39Z",
+      "side": 1,
+      "message": "please, add a character space after \u0027)\u0027",
+      "range": {
+        "startLine": 82,
+        "startChar": 57,
+        "endLine": 82,
+        "endChar": 59
+      },
+      "revId": "763cc9e45f40bcc05a99a45df5b1c4184ba7f61c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_9fd3d103",
+        "filename": "java/monasca-common-model/src/test/java/monasca/common/model/metric/MetricsTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 15359
+      },
+      "writtenOn": "2016-05-10T20:33:39Z",
+      "side": 1,
+      "message": "Just a suggestion:\n\nI believe a better assert here would be to create m2 with the same values but not being sporadic and test if m2 is equal to m1.\n\nOr, insted of removing this assertEquals, you may use m2.setSporadic(false) and then have the assertNotEquals.",
+      "range": {
+        "startLine": 163,
+        "startChar": 4,
+        "endLine": 163,
+        "endChar": 16
+      },
+      "revId": "763cc9e45f40bcc05a99a45df5b1c4184ba7f61c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
