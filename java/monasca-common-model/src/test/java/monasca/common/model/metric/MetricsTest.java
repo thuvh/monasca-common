@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2014 Hewlett-Packard Development Company, L.P.
+ * Copyright 2016 FUJITSU LIMITED
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -14,15 +15,14 @@
 package monasca.common.model.metric;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 import java.io.UnsupportedEncodingException;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
 import org.testng.annotations.Test;
-
-import monasca.common.model.metric.Metric;
-import monasca.common.model.metric.Metrics;
 
 @Test
 public class MetricsTest {
@@ -122,4 +122,59 @@ public class MetricsTest {
     metric = Metrics.fromJson(Metrics.toJson(expected_escaped).getBytes("UTF-8"));
     assertEquals(metric, expected_nonescaped);
   }
+
+  public void shouldNotBeSporadicByDefault() throws UnsupportedEncodingException {
+    final SortedMap<String, String> m1Dimensions = new TreeMap<>();
+    m1Dimensions.put("where", "test");
+    final SortedMap<String, String> m1Meta = new TreeMap<>();
+    m1Meta.put("result", "123");
+    m1Meta.put("who", "me");
+
+    final Metric m1 = new Metric("no.period", m1Dimensions, 1, 1, m1Meta);
+    final Metric m2 = Metrics.fromJson(Metrics.toJson(m1).getBytes("UTF-8"));
+
+    assertFalse(m1.isSporadic());
+    assertFalse(m2.isSporadic());
+
+    String json1 = Metrics.toJson(m1);
+    String json2 = Metrics.toJson(m1);
+
+    assertEquals(json1, json2);
+    assertEquals(
+        json1,
+        "{\"name\":\"no.period\",\"dimensions\":{\"where\":\"test\"}," +
+            "\"timestamp\":1,\"value\":1.0,\"value_meta\":{\"result\":\"123\"," +
+            "\"who\":\"me\"}}");
+  }
+
+  public void shouldSerializeSporadic() throws UnsupportedEncodingException {
+    final SortedMap<String, String> m1Dimensions = new TreeMap<>();
+    m1Dimensions.put("where", "test");
+    final SortedMap<String, String> m1Meta = new TreeMap<>();
+    m1Meta.put("result", "123");
+    m1Meta.put("who", "me");
+
+    final Metric m1 = new Metric("with.period", m1Dimensions, 1, 1, m1Meta);
+    m1.setSporadic(true);
+
+    final Metric m2 = Metrics.fromJson(Metrics.toJson(m1).getBytes("UTF-8"));
+
+    assertEquals(
+        m1.isSporadic(),
+        m2.isSporadic()
+    );
+    assertTrue(m1.isSporadic());
+    assertTrue(m2.isSporadic());
+
+    String json1 = Metrics.toJson(m1);
+    String json2 = Metrics.toJson(m1);
+
+    assertEquals(json1, json2);
+    assertEquals(
+        json1,
+        "{\"name\":\"with.period\",\"dimensions\":{\"where\":\"test\"}," +
+            "\"timestamp\":1,\"value\":1.0,\"value_meta\":{\"result\":\"123\"," +
+            "\"who\":\"me\"},\"sporadic\":true}");
+  }
+
 }

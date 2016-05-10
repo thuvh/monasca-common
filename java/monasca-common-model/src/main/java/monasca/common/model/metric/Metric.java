@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2014 Hewlett-Packard Development Company, L.P.
+ * Copyright 2016 FUJITSU LIMITED
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -14,19 +15,19 @@
 package monasca.common.model.metric;
 
 import java.io.Serializable;
-
-import com.google.common.base.Preconditions;
+import java.util.Map;
 
 import javax.annotation.Nullable;
 import javax.validation.constraints.NotNull;
 
-import java.util.Map;
+import com.google.common.base.Preconditions;
 
 /**
  * Metric with definition information flattened alongside value information.
  */
 public class Metric implements Serializable {
   private static final long serialVersionUID = 3455749495426525634L;
+  private static boolean DEFAULT_SPORADIC = false;
 
   public String name;
   public Map<String, String> dimensions;
@@ -34,23 +35,26 @@ public class Metric implements Serializable {
   public double value;
   public Map<String, String> valueMeta;
   private MetricDefinition definition;
+  private boolean sporadic = DEFAULT_SPORADIC;
 
-  public Metric() {}
+  public Metric() {
+  }
 
   public Metric(@NotNull MetricDefinition definition, long timestamp, double value,
       @Nullable Map<String, String> valueMeta) {
     this.definition = Preconditions.checkNotNull(definition, "definition");
     this.name = definition.name;
-    setDimensions(definition.dimensions);
+    this.setDimensions(definition.dimensions);
     this.timestamp = timestamp;
     this.value = value;
     this.valueMeta = valueMeta;
+    this.sporadic = definition.isSporadic();
   }
 
   public Metric(String name, @Nullable Map<String, String> dimensions, long timestamp,
       double value, @Nullable Map<String, String> valueMeta) {
     this.name = Preconditions.checkNotNull(name, "name");
-    setDimensions(dimensions);
+    this.setDimensions(dimensions);
     this.timestamp = timestamp;
     this.value = value;
     this.valueMeta = valueMeta;
@@ -60,8 +64,9 @@ public class Metric implements Serializable {
    * Returns the MetricDefinition.
    */
   public MetricDefinition definition() {
-    if (definition == null)
-      definition = new MetricDefinition(name, dimensions);
+    if (definition == null) {
+      this.definition = new MetricDefinition(name, dimensions, sporadic);
+    }
     return definition;
   }
 
@@ -74,6 +79,7 @@ public class Metric implements Serializable {
            ", value=" + value +
            ", valueMeta=" + valueMeta +
            ", definition=" + definition +
+           ", sporadic=" + this.sporadic +
            '}';
   }
 
@@ -110,6 +116,9 @@ public class Metric implements Serializable {
       return false;
     if (Double.doubleToLongBits(value) != Double.doubleToLongBits(other.value))
       return false;
+    if (this.sporadic != other.sporadic) {
+      return false;
+    }
     return true;
   }
 
@@ -122,8 +131,9 @@ public class Metric implements Serializable {
     result = prime * result + ((name == null) ? 0 : name.hashCode());
     result = prime * result + ((valueMeta == null) ? 0 : valueMeta.hashCode());
     result = prime * result + (int) (timestamp ^ (timestamp >>> 32));
+    result = prime * result + Boolean.valueOf(this.sporadic).hashCode();
     long temp;
-    temp = Double.doubleToLongBits(value);
+    temp = Double.doubleToLongBits(this.value);
     result = prime * result + (int) (temp ^ (temp >>> 32));
     return result;
   }
@@ -166,5 +176,13 @@ public class Metric implements Serializable {
 
   public void setValueMeta(Map<String, String> valueMeta) {
     this.valueMeta = valueMeta;
+  }
+
+  public boolean isSporadic() {
+    return this.sporadic;
+  }
+
+  public void setSporadic(final boolean sporadic) {
+    this.sporadic = sporadic;
   }
 }
