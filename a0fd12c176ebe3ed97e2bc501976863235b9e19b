@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_02d2d827",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmSubExpressionListener.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-05-11T06:10:33Z",
+      "side": 1,
+      "message": "Actually that has grown a bit large, so I decided to refactor this into singleton.",
+      "parentUuid": "dab17558_9f84630b",
+      "range": {
+        "startLine": 184,
+        "startChar": 43,
+        "endLine": 184,
+        "endChar": 44
+      },
+      "revId": "a0fd12c176ebe3ed97e2bc501976863235b9e19b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_94b29392",
         "filename": "java/monasca-common-model/src/main/resources/monasca/common/model/alarm/AlarmExpression.g4",
         "patchSetId": 24
