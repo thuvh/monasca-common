@@ -94,6 +94,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_032f513f",
+        "filename": "java/monasca-common-model/src/test/java/monasca/common/model/alarm/AlarmExpressionTest.java",
+        "patchSetId": 26
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-05-11T20:09:01Z",
+      "side": 1,
+      "message": "Well, if it is misspelled, expression parser should throw appropriate exception. In grammar you specify\n\n  deterministic\n    : \"deterministic\" (\"\u003d\" txt)?\n\nso if there\u0027s no deterministic keyword it won\u0027t match anything at this position. However that\u0027s pure assumption, so I will add test for this.",
+      "parentUuid": "dab17558_95754865",
+      "range": {
+        "startLine": 352,
+        "startChar": 14,
+        "endLine": 352,
+        "endChar": 51
+      },
+      "revId": "27744e37414249c3c00de73034b73b8130f66f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_152f983f",
         "filename": "java/monasca-common-model/src/test/java/monasca/common/model/alarm/AlarmSubExpressionTest.java",
         "patchSetId": 26
@@ -105,6 +129,30 @@
       "writtenOn": "2016-05-11T15:25:36Z",
       "side": 1,
       "message": "What happens if deterministic is misspelled?",
+      "range": {
+        "startLine": 199,
+        "startChar": 0,
+        "endLine": 199,
+        "endChar": 73
+      },
+      "revId": "27744e37414249c3c00de73034b73b8130f66f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_83234155",
+        "filename": "java/monasca-common-model/src/test/java/monasca/common/model/alarm/AlarmSubExpressionTest.java",
+        "patchSetId": 26
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-05-11T20:09:01Z",
+      "side": 1,
+      "message": "See my other comment.",
+      "parentUuid": "dab17558_152f983f",
       "range": {
         "startLine": 199,
         "startChar": 0,
