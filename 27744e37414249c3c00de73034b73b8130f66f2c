@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_a9e62341",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmSubExpressionIsDeterministicFunction.java",
+        "patchSetId": 26
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-05-11T21:20:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_f529359c",
+      "range": {
+        "startLine": 73,
+        "startChar": 41,
+        "endLine": 73,
+        "endChar": 47
+      },
+      "revId": "27744e37414249c3c00de73034b73b8130f66f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_d56190d4",
         "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmSubExpressionIsDeterministicFunction.java",
         "patchSetId": 26
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_69e0bb29",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmSubExpressionIsDeterministicFunction.java",
+        "patchSetId": 26
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-05-11T21:20:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_d56190d4",
+      "range": {
+        "startLine": 92,
+        "startChar": 38,
+        "endLine": 92,
+        "endChar": 45
+      },
+      "revId": "27744e37414249c3c00de73034b73b8130f66f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_b5004d35",
         "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmSubExpressionIsDeterministicFunction.java",
         "patchSetId": 26
@@ -59,6 +107,30 @@
       "writtenOn": "2016-05-11T15:25:36Z",
       "side": 1,
       "message": "Given how you are using it, this method should be called isInvalidValue.\n\nUse contains() here as well",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 59
+      },
+      "revId": "27744e37414249c3c00de73034b73b8130f66f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_49db377c",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmSubExpressionIsDeterministicFunction.java",
+        "patchSetId": 26
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-05-11T21:20:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_b5004d35",
       "range": {
         "startLine": 101,
         "startChar": 0,
