@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_1f1513e4",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmSubExpression.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-05-11T05:34:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_7a3efb28",
+      "range": {
+        "startLine": 186,
+        "startChar": 32,
+        "endLine": 186,
+        "endChar": 35
+      },
+      "revId": "a0fd12c176ebe3ed97e2bc501976863235b9e19b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_da4727ba",
         "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmSubExpression.java",
         "patchSetId": 24
@@ -36,6 +60,30 @@
       "writtenOn": "2016-05-10T21:11:22Z",
       "side": 1,
       "message": "please, add a space character between \u0027)\u0027 and \u0027{\u0027.",
+      "range": {
+        "startLine": 230,
+        "startChar": 58,
+        "endLine": 230,
+        "endChar": 60
+      },
+      "revId": "a0fd12c176ebe3ed97e2bc501976863235b9e19b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_7fd6df28",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmSubExpression.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-05-11T05:34:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_da4727ba",
       "range": {
         "startLine": 230,
         "startChar": 58,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_9f84630b",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmSubExpressionListener.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-05-11T05:34:56Z",
+      "side": 1,
+      "message": "Went for static fields here. Also replaced \u00270\u0027 above and set of values that if found as right side of assignment operator means that deterministic should be set to true.",
+      "parentUuid": "dab17558_257614a4",
+      "range": {
+        "startLine": 184,
+        "startChar": 43,
+        "endLine": 184,
+        "endChar": 44
+      },
+      "revId": "a0fd12c176ebe3ed97e2bc501976863235b9e19b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_94b29392",
         "filename": "java/monasca-common-model/src/main/resources/monasca/common/model/alarm/AlarmExpression.g4",
         "patchSetId": 24
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_3cb9052f",
+        "filename": "java/monasca-common-model/src/main/resources/monasca/common/model/alarm/AlarmExpression.g4",
+        "patchSetId": 24
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-05-11T05:34:56Z",
+      "side": 1,
+      "message": "To have the case where only \u0027deterministic\u0027 keyword is provided in the expression, without any assignment. Shortand of some sort.",
+      "parentUuid": "dab17558_94b29392",
+      "range": {
+        "startLine": 123,
+        "startChar": 22,
+        "endLine": 123,
+        "endChar": 31
+      },
+      "revId": "a0fd12c176ebe3ed97e2bc501976863235b9e19b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_d4e37ba2",
         "filename": "java/monasca-common-model/src/test/java/monasca/common/model/alarm/AlarmSubExpressionTest.java",
         "patchSetId": 24
@@ -105,6 +201,30 @@
       "writtenOn": "2016-05-10T22:22:57Z",
       "side": 1,
       "message": "Interestingly, I bet this will work as well:\n\n    assertFalse(\n        AlarmSubExpression.of(\"count(log.error, deterministic\u003dFred) \u003e 1.0\").isDeterministic());\n\nMakes you wonder if we should limit the values to true/false so we can tell the user if they misspell true or false",
+      "range": {
+        "startLine": 182,
+        "startChar": 0,
+        "endLine": 183,
+        "endChar": 92
+      },
+      "revId": "a0fd12c176ebe3ed97e2bc501976863235b9e19b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_dfc8ab57",
+        "filename": "java/monasca-common-model/src/test/java/monasca/common/model/alarm/AlarmSubExpressionTest.java",
+        "patchSetId": 24
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-05-11T05:34:56Z",
+      "side": 1,
+      "message": "Nice comment, I will update listener to allow only valid values to be passed.",
+      "parentUuid": "dab17558_d4e37ba2",
       "range": {
         "startLine": 182,
         "startChar": 0,
