@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_c93d7e2c",
+        "filename": "java/monasca-common-hibernate/src/main/java/monasca/common/hibernate/db/MetricDefinitionDb.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 19861
+      },
+      "writtenOn": "2016-05-11T14:16:57Z",
+      "side": 1,
+      "message": "I believe this will be more organized if you move this method to be alongside the others setters up there.",
+      "range": {
+        "startLine": 88,
+        "startChar": 28,
+        "endLine": 88,
+        "endChar": 39
+      },
+      "revId": "6f6c03f398e07dbc7a6a6a202f82ffdbf9723286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
