@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_f529359c",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmSubExpressionIsDeterministicFunction.java",
+        "patchSetId": 26
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-05-11T15:25:36Z",
+      "side": 1,
+      "message": "grammar",
+      "range": {
+        "startLine": 73,
+        "startChar": 41,
+        "endLine": 73,
+        "endChar": 47
+      },
+      "revId": "27744e37414249c3c00de73034b73b8130f66f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_d56190d4",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmSubExpressionIsDeterministicFunction.java",
+        "patchSetId": 26
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-05-11T15:25:36Z",
+      "side": 1,
+      "message": "Use contains()",
+      "range": {
+        "startLine": 92,
+        "startChar": 38,
+        "endLine": 92,
+        "endChar": 45
+      },
+      "revId": "27744e37414249c3c00de73034b73b8130f66f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_b5004d35",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmSubExpressionIsDeterministicFunction.java",
+        "patchSetId": 26
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-05-11T15:25:36Z",
+      "side": 1,
+      "message": "Given how you are using it, this method should be called isInvalidValue.\n\nUse contains() here as well",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 59
+      },
+      "revId": "27744e37414249c3c00de73034b73b8130f66f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_95754865",
+        "filename": "java/monasca-common-model/src/test/java/monasca/common/model/alarm/AlarmExpressionTest.java",
+        "patchSetId": 26
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-05-11T15:25:36Z",
+      "side": 1,
+      "message": "Need to add a couple of tests to ensure it properly rejects expressions like deterministic\u003dtue, deterministic. What happens if deterministic is misspelled?",
+      "range": {
+        "startLine": 352,
+        "startChar": 14,
+        "endLine": 352,
+        "endChar": 51
+      },
+      "revId": "27744e37414249c3c00de73034b73b8130f66f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_152f983f",
+        "filename": "java/monasca-common-model/src/test/java/monasca/common/model/alarm/AlarmSubExpressionTest.java",
+        "patchSetId": 26
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-05-11T15:25:36Z",
+      "side": 1,
+      "message": "What happens if deterministic is misspelled?",
+      "range": {
+        "startLine": 199,
+        "startChar": 0,
+        "endLine": 199,
+        "endChar": 73
+      },
+      "revId": "27744e37414249c3c00de73034b73b8130f66f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
