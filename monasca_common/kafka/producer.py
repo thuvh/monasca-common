@@ -20,6 +20,8 @@ import time
 
 log = logging.getLogger(__name__)
 
+KAFKA_PRODUCER_ACK_TIMEOUT = 2000
+
 
 class KafkaProducer(object):
     """Adds messages to a kafka topic
@@ -34,7 +36,7 @@ class KafkaProducer(object):
             self._kafka,
             async=False,
             req_acks=kafka.producer.KeyedProducer.ACK_AFTER_LOCAL_WRITE,
-            ack_timeout=2000)
+            ack_timeout=KAFKA_PRODUCER_ACK_TIMEOUT)
 
     def publish(self, topic, messages, key=None):
         """Takes messages and puts them on the supplied kafka topic
