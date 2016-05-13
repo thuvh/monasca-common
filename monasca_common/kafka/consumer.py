@@ -44,15 +44,18 @@ keep in mind when dealing with batched data.
     fire when the commit_timeout duration has elapsed since the last commit.
 """
 
+DEFAULT_KAFKA_FETCH_SIZE = 1048576
+DEFAULT_COMMIT_TIMEOUT = 30
+
 
 class KafkaConsumer(object):
     def __init__(self, kafka_url,
                  zookeeper_url, zookeeper_path,
                  group, topic,
-                 fetch_size=1048576,
+                 fetch_size=DEFAULT_KAFKA_FETCH_SIZE,
                  repartition_callback=None,
                  commit_callback=None,
-                 commit_timeout=30):
+                 commit_timeout=DEFAULT_COMMIT_TIMEOUT):
         """Init
              kafka_url            - Kafka location
              zookeeper_url        - Zookeeper location
