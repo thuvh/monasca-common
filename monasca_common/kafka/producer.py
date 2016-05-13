@@ -20,6 +20,9 @@ import time
 
 log = logging.getLogger(__name__)
 
+DEFAULT_KAFKA_PRODUCER_ACK_TIMEOUT = 2000
+SECOND = 1000
+
 
 class KafkaProducer(object):
     """Adds messages to a kafka topic
@@ -34,7 +37,7 @@ class KafkaProducer(object):
             self._kafka,
             async=False,
             req_acks=kafka.producer.KeyedProducer.ACK_AFTER_LOCAL_WRITE,
-            ack_timeout=2000)
+            ack_timeout=DEFAULT_KAFKA_PRODUCER_ACK_TIMEOUT)
 
     def publish(self, topic, messages, key=None):
         """Takes messages and puts them on the supplied kafka topic
@@ -45,7 +48,7 @@ class KafkaProducer(object):
 
         try:
             if key is None:
-                key = int(time.time() * 1000)
+                key = int(time.time() * SECOND)
             self._producer.send_messages(topic, str(key), *messages)
         except Exception:
             log.exception('Error publishing to {} topic.'.format(topic))
