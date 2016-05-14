@@ -22,6 +22,30 @@
       "revId": "2ba2b135078698b1764465fad8364360b6043e54",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_e78bb466",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 20873
+      },
+      "writtenOn": "2016-05-14T12:47:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_dacad5a0",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 6
+      },
+      "revId": "2ba2b135078698b1764465fad8364360b6043e54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
