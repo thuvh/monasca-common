@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_8dabe788",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 14273
+      },
+      "writtenOn": "2016-05-14T19:00:17Z",
+      "side": 1,
+      "message": "Naming these variables DEFAULT_ makes sense to me if we have the ability to override what they\u0027re assigned to.  fetch_size and commit_timeout both have that ability now but iter_timeout does not.\n\nIf we\u0027re going to give the impression that these pieces are configurable I\u0027d prefer to see an keyword argument to _create_kafka_consumer that allows you to override the iter_timeout variable.",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 22
+      },
+      "revId": "dfed0bbae3a635247b66b4bc52de139c9b346f10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_6dae8399",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 14273
+      },
+      "writtenOn": "2016-05-14T19:00:17Z",
+      "side": 1,
+      "message": "Same comment here as in the consumer.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 34
+      },
+      "revId": "dfed0bbae3a635247b66b4bc52de139c9b346f10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
