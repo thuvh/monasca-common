@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_a7208cb1",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 14273
+      },
+      "writtenOn": "2016-05-14T14:27:01Z",
+      "side": 1,
+      "message": "I don\u0027t agree with this name.  This value is used to convert a timestamp to milliseconds.  It has nothing to do with seconds and the constant name makes the code that uses it misleading.  We\u0027re not multiplying anything by one second we\u0027re multiplying by 1000 milliseconds.\n\nI\u0027d prefer not to have a constant for this as I think \"timestamp * 1000\" is clear and it\u0027s not something we should be changing.\n\nIf you want to add more clarity a to_milliseconds function may be preferable but that seems like a lot of overhead for a common bit of code.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 10
+      },
+      "revId": "5434697c566b427a712f912f775e85f2334194d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
