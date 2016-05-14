@@ -22,6 +22,30 @@
       "revId": "5434697c566b427a712f912f775e85f2334194d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_2dd3db60",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 20873
+      },
+      "writtenOn": "2016-05-14T18:11:40Z",
+      "side": 1,
+      "message": "You make a good point. I wasn\u0027t totally sure what to name it at first. MILISECONDS_IN_A_SECOND would be about right, but that\u0027s a bit ugly.\nSince there is almost no chance that its value will change, I am okay with using 1000 in the code, so I reset the original expression.",
+      "parentUuid": "dab17558_a7208cb1",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 10
+      },
+      "revId": "5434697c566b427a712f912f775e85f2334194d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
