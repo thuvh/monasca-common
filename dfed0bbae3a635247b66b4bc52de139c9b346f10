@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dab17558_4e80878b",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 20873
+      },
+      "writtenOn": "2016-05-17T07:12:02Z",
+      "side": 1,
+      "message": "Thanks. Good point. I\u0027ll lose the DEFAULT_ prefix when the value is not configurable from outside.",
+      "parentUuid": "dab17558_8dabe788",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 22
+      },
+      "revId": "dfed0bbae3a635247b66b4bc52de139c9b346f10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_6dae8399",
         "filename": "monasca_common/kafka/producer.py",
         "patchSetId": 8
@@ -36,6 +60,30 @@
       "writtenOn": "2016-05-14T19:00:17Z",
       "side": 1,
       "message": "Same comment here as in the consumer.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 34
+      },
+      "revId": "dfed0bbae3a635247b66b4bc52de139c9b346f10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_8e4c2f9f",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 20873
+      },
+      "writtenOn": "2016-05-17T07:12:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_6dae8399",
       "range": {
         "startLine": 23,
         "startChar": 0,
