@@ -22,6 +22,30 @@
       "revId": "ebb11fa867cdd1ae120be5fc503cf53a38477063",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_3d3e588c",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmSubExpressionIsDeterministicFunction.java",
+        "patchSetId": 29
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-05-20T05:52:49Z",
+      "side": 1,
+      "message": "I think that having values originated long time ago and stayed like this till someone thought about it like you did.\n\nI think that might work and will simplify grammar but won\u0027t affect implementation or meaning. There\u0027s just one glitch Roland has spotted and that needs to be reworked.",
+      "parentUuid": "bab6814e_2c063ace",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 4
+      },
+      "revId": "ebb11fa867cdd1ae120be5fc503cf53a38477063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
