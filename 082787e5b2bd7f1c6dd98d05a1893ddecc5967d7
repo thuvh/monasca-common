@@ -1,0 +1,9 @@
+Code-Review+1: Michael Hoppal <michael.jam.hoppal@hp.com>
+Code-Review+2: Tomasz Trębski <tomasz.trebski@ts.fujitsu.com>
+Workflow+1: Joe Keen <joe.keen@hpe.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Sat, 21 May 2016 15:54:40 +0000
+Reviewed-on: https://review.openstack.org/316235
+Project: openstack/monasca-common
+Branch: refs/heads/master
