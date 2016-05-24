@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_efc3c488",
+        "filename": "java/monasca-common-hibernate/src/main/java/monasca/common/hibernate/db/SubAlarmDefinitionDb.java",
+        "patchSetId": 31
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 15359
+      },
+      "writtenOn": "2016-05-24T20:57:00Z",
+      "side": 1,
+      "message": "Just to keep the code consistent, please indent this line the \u0027u\u0027 from updated_at should be right above the \u0027i\u0027 from id.",
+      "range": {
+        "startLine": 103,
+        "startChar": 8,
+        "endLine": 103,
+        "endChar": 62
+      },
+      "revId": "a28821304466cafd5cbef0e91822bf593f9e6cf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_ef0bc429",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/alarm/AlarmSubExpressionListener.java",
+        "patchSetId": 31
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 15359
+      },
+      "writtenOn": "2016-05-24T20:57:00Z",
+      "side": 1,
+      "message": "Sorry if it\u0027s a silly question, but why do you need this annotation here, since it is not used inside the method?\n\nAnd as it shows here http://www.antlr.org/api/Java/org/antlr/v4/runtime/misc/NotNull.html this annotation is deprecated.",
+      "range": {
+        "startLine": 176,
+        "startChar": 34,
+        "endLine": 176,
+        "endChar": 41
+      },
+      "revId": "a28821304466cafd5cbef0e91822bf593f9e6cf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_2efe6b6b",
+        "filename": "java/monasca-common-model/src/test/java/monasca/common/model/alarm/AlarmExpressionTest.java",
+        "patchSetId": 31
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 15359
+      },
+      "writtenOn": "2016-05-24T20:57:00Z",
+      "side": 1,
+      "message": "Shouldn\u0027t it be \u0027deterministic\u0027 here?",
+      "range": {
+        "startLine": 345,
+        "startChar": 65,
+        "endLine": 345,
+        "endChar": 82
+      },
+      "revId": "a28821304466cafd5cbef0e91822bf593f9e6cf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
