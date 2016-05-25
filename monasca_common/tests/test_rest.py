@@ -12,12 +12,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import mock
 import unittest
 
-from monasca_common.rest.exceptions import DataConversionException
-from monasca_common.rest.exceptions import UnreadableContentError
-from monasca_common.rest.exceptions import UnsupportedContentTypeException
+import mock
+
+from monasca_common.rest import exceptions
 from monasca_common.rest import utils
 
 
@@ -49,13 +48,14 @@ class TestRestUtils(unittest.TestCase):
         self.mock_json.loads.side_effect = Exception
         payload = mock.Mock()
 
-        self.assertRaises(DataConversionException, utils.read_body, payload)
+        self.assertRaises(
+            exceptions.DataConversionException, utils.read_body, payload)
 
     def test_read_body_unsupported_content_type(self):
         unsupported_content_type = mock.Mock()
 
         self.assertRaises(
-            UnsupportedContentTypeException, utils.read_body, None,
+            exceptions.UnsupportedContentTypeException, utils.read_body, None,
             unsupported_content_type)
 
     def test_read_body_unreadable_content_error(self):
@@ -63,7 +63,8 @@ class TestRestUtils(unittest.TestCase):
         unreadable_content.read.side_effect = Exception
 
         self.assertRaises(
-            UnreadableContentError, utils.read_body, unreadable_content)
+            exceptions.UnreadableContentError, utils.read_body,
+            unreadable_content)
 
     def test_as_json_success(self):
         data = mock.Mock()
@@ -76,4 +77,5 @@ class TestRestUtils(unittest.TestCase):
         data = mock.Mock()
         self.mock_json.dumps.side_effect = Exception
 
-        self.assertRaises(DataConversionException, utils.as_json, data)
+        self.assertRaises(
+            exceptions.DataConversionException, utils.as_json, data)
