@@ -21,9 +21,8 @@ import time
 import kafka.client
 import kafka.common
 import kafka.consumer
-
-from kazoo.client import KazooClient
-from kazoo.recipe.partitioner import SetPartitioner
+from kazoo import client
+from kazoo.recipe import partitioner
 
 log = logging.getLogger(__name__)
 
@@ -54,6 +53,7 @@ class KafkaConsumer(object):
                  commit_callback=None,
                  commit_timeout=30):
         """Init
+
              kafka_url            - Kafka location
              zookeeper_url        - Zookeeper location
              zookeeper_path       - Zookeeper path used for partition
@@ -151,7 +151,9 @@ class KafkaConsumer(object):
         return not self._set_partitioner.acquired
 
     def _partition(self):
-        """Consume messages from kafka using the Kazoo SetPartitioner to
+        """Consume messages from kafka
+
+           Consume messages from kafka using the Kazoo SetPartitioner to
            allow multiple consumer processes to negotiate access to the kafka
            partitions
         """
@@ -162,17 +164,17 @@ class KafkaConsumer(object):
         # connection to zookeeper is lost and no state changes are visible
 
         if not self._kazoo_client:
-            self._kazoo_client = KazooClient(hosts=self._zookeeper_url)
+            self._kazoo_client = client.KazooClient(hosts=self._zookeeper_url)
             self._kazoo_client.start()
 
             state_change_event = threading.Event()
 
             self._set_partitioner = (
-                SetPartitioner(self._kazoo_client,
-                               path=self._zookeeper_path,
-                               set=self._consumer.fetch_offsets.keys(),
-                               state_change_event=state_change_event,
-                               identifier=str(datetime.datetime.now())))
+                partitioner.SetPartitioner(
+                    self._kazoo_client, path=self._zookeeper_path,
+                    set=self._consumer.fetch_offsets.keys(),
+                    state_change_event=state_change_event,
+                    identifier=str(datetime.datetime.now())))
 
         try:
             while 1:

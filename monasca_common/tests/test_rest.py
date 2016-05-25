@@ -1,5 +1,3 @@
-# Copyright 2016 OpenStack Foundation
-#
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
 # not use this file except in compliance with the License. You may obtain
 # a copy of the License at
@@ -12,50 +10,53 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import mock
 import unittest
 
-from monasca_common.rest.exceptions import DataConversionException
-from monasca_common.rest.exceptions import UnreadableContentError
-from monasca_common.rest.exceptions import UnsupportedContentTypeException
+import mock
+
+from monasca_common.rest import exceptions
 from monasca_common.rest import utils
 
 
 class TestRestUtils(unittest.TestCase):
 
     def setUp(self):
-        self.mock_json_patcher = mock.patch('monasca_common.rest.utils.json')
-        self.mock_json = self.mock_json_patcher.start()
+        self.mock_ujson_loads_patcher = mock.patch('ujson.loads')
+        self.mock_ujson_dumps_patcher = mock.patch('ujson.dumps')
+        self.mock_ujson_loads = self.mock_ujson_loads_patcher.start()
+        self.mock_ujson_dumps = self.mock_ujson_dumps_patcher.start()
 
     def tearDown(self):
-        self.mock_json_patcher.stop()
+        self.mock_ujson_loads_patcher.stop()
+        self.mock_ujson_dumps_patcher.stop()
 
     def test_read_body_with_success(self):
-        self.mock_json.loads.return_value = ""
+        self.mock_ujson_loads.return_value = ""
         payload = mock.Mock()
 
         utils.read_body(payload)
 
-        self.mock_json.loads.assert_called_once_with(payload.read.return_value)
+        self.mock_ujson_loads.assert_called_once_with(payload.read.return_value)
 
     def test_read_body_empty_content_in_payload(self):
-        self.mock_json.loads.return_value = ""
+        self.mock_ujson_loads.return_value = ""
         payload = mock.Mock()
         payload.read.return_value = None
 
         self.assertIsNone(utils.read_body(payload))
 
     def test_read_body_json_loads_exception(self):
-        self.mock_json.loads.side_effect = Exception
+        self.mock_ujson_loads.side_effect = Exception
         payload = mock.Mock()
 
-        self.assertRaises(DataConversionException, utils.read_body, payload)
+        self.assertRaises(
+            exceptions.DataConversionException, utils.read_body, payload)
 
     def test_read_body_unsupported_content_type(self):
         unsupported_content_type = mock.Mock()
 
         self.assertRaises(
-            UnsupportedContentTypeException, utils.read_body, None,
+            exceptions.UnsupportedContentTypeException, utils.read_body, None,
             unsupported_content_type)
 
     def test_read_body_unreadable_content_error(self):
@@ -63,17 +64,19 @@ class TestRestUtils(unittest.TestCase):
         unreadable_content.read.side_effect = Exception
 
         self.assertRaises(
-            UnreadableContentError, utils.read_body, unreadable_content)
+            exceptions.UnreadableContentError, utils.read_body,
+            unreadable_content)
 
     def test_as_json_success(self):
         data = mock.Mock()
 
         dumped_json = utils.as_json(data)
 
-        self.assertEqual(dumped_json, self.mock_json.dumps.return_value)
+        self.assertEqual(dumped_json, self.mock_ujson_dumps.return_value)
 
     def test_as_json_with_exception(self):
         data = mock.Mock()
-        self.mock_json.dumps.side_effect = Exception
+        self.mock_ujson_dumps.side_effect = Exception
 
-        self.assertRaises(DataConversionException, utils.as_json, data)
+        self.assertRaises(
+            exceptions.DataConversionException, utils.as_json, data)
