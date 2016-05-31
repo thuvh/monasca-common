@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_ceef7285",
+        "filename": "monasca_common/tests/test_kafka.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 14273
+      },
+      "writtenOn": "2016-05-31T22:24:03Z",
+      "side": 1,
+      "message": "These new mocks seem to be overly broad.  My understanding of this is that any object using time.time, not just the monasca_common.kafka.producer will be effected by this mock.  Is that your understanding?  If it is then this may work in the current case but seems dangerous for future development.  I\u0027d prefer to mock as specifically as possible to avoid unintentionally disabling functionality in objects.",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 28
+      },
+      "revId": "c4e0a844da2affaf84d964531013a73637d9cafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
