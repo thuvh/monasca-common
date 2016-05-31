@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9abb7d3a_4d01c769",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 14273
+      },
+      "writtenOn": "2016-05-31T23:19:37Z",
+      "side": 1,
+      "message": "I\u0027m not real fond of this sort of import.  I know you\u0027re following a rule that\u0027s somewhere in the pep8, flake8, or hacking stack.  Could you point me to the particular rule we were ignoring before?  I\u0027d like to see the argument in favor of doing it this way.",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 36
+      },
+      "revId": "c4e0a844da2affaf84d964531013a73637d9cafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_ceef7285",
         "filename": "monasca_common/tests/test_kafka.py",
         "patchSetId": 4
