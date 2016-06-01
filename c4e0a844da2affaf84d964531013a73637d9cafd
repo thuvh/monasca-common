@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_79d0c4f6",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 20873
+      },
+      "writtenOn": "2016-06-01T06:54:10Z",
+      "side": 1,
+      "message": "The previous import style broke rule H302 - import only modules. I tried to find an explanation of this rule, but without success.",
+      "parentUuid": "9abb7d3a_4d01c769",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 36
+      },
+      "revId": "c4e0a844da2affaf84d964531013a73637d9cafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_ceef7285",
         "filename": "monasca_common/tests/test_kafka.py",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2016-05-31T22:24:03Z",
       "side": 1,
       "message": "These new mocks seem to be overly broad.  My understanding of this is that any object using time.time, not just the monasca_common.kafka.producer will be effected by this mock.  Is that your understanding?  If it is then this may work in the current case but seems dangerous for future development.  I\u0027d prefer to mock as specifically as possible to avoid unintentionally disabling functionality in objects.",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 28
+      },
+      "revId": "c4e0a844da2affaf84d964531013a73637d9cafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_b9722c0f",
+        "filename": "monasca_common/tests/test_kafka.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 20873
+      },
+      "writtenOn": "2016-06-01T06:54:10Z",
+      "side": 1,
+      "message": "You are right, this mocks time outside of monasca_common.kafka.producer. In unit tests I usually try to mock everything that is outside of the module being tested. That way I can be sure that no \"real\" functions (outside of the module) are called so I think this mock would not mess up other modules.\n\nBut I get your point. In a less controlled environment this could cause trouble.\n\nI can change it back, but I prefer not to change (mock) any part of the module that is being tested, unless there is no other way, like in the case of monasca_common.kafka.producer.log.",
+      "parentUuid": "9abb7d3a_ceef7285",
       "range": {
         "startLine": 57,
         "startChar": 0,
