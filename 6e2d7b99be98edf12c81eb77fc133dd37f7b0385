@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_b8770f3a",
+        "filename": "java/monasca-common-model/src/test/java/monasca/common/model/alarm/AlarmExpressionTest.java",
+        "patchSetId": 32
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-06-03T19:43:27Z",
+      "side": 1,
+      "message": "What is the point of using the same expression 3 times?",
+      "range": {
+        "startLine": 327,
+        "startChar": 0,
+        "endLine": 328,
+        "endChar": 70
+      },
+      "revId": "6e2d7b99be98edf12c81eb77fc133dd37f7b0385",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
