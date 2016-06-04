@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_a83567f8",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 20873
+      },
+      "writtenOn": "2016-06-04T09:27:43Z",
+      "side": 1,
+      "message": "You are right. There was a restriction on the version of hacking in test-requirements.txt.\n\nI have removed it (made it compatible with global requirements) and most of the original code passed almost all the pep8 checks. So the change turned out to be quite mininal after all.",
+      "parentUuid": "9abb7d3a_5eebb0b0",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 36
+      },
+      "revId": "c4e0a844da2affaf84d964531013a73637d9cafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abb7d3a_ceef7285",
         "filename": "monasca_common/tests/test_kafka.py",
         "patchSetId": 4
