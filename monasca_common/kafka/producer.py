@@ -46,7 +46,9 @@ class KafkaProducer(object):
         try:
             if key is None:
                 key = int(time.time() * 1000)
-            self._producer.send_messages(topic, str(key), *messages)
+            if type(key) is not unicode:
+                key = str(key)
+            self._producer.send_messages(topic, key.encode('utf-8'), *messages)
         except Exception:
             log.exception('Error publishing to {} topic.'.format(topic))
             raise
