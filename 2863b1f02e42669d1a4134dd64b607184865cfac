@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_83291e8c",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 17331
+      },
+      "writtenOn": "2016-06-07T00:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_97e843e4",
+      "range": {
+        "startLine": 49,
+        "startChar": 32,
+        "endLine": 49,
+        "endChar": 39
+      },
+      "revId": "2863b1f02e42669d1a4134dd64b607184865cfac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_f777079d",
         "filename": "monasca_common/kafka/producer.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2016-06-06T20:58:57Z",
       "side": 1,
       "message": "This is substantially slower than the code that was here before.  Have you done any performance testing on it?  Is it possible to push this further up so that other projects, that don\u0027t have unicode keys, aren\u0027t effected?",
+      "range": {
+        "startLine": 51,
+        "startChar": 52,
+        "endLine": 51,
+        "endChar": 58
+      },
+      "revId": "2863b1f02e42669d1a4134dd64b607184865cfac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_83775e9e",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 17331
+      },
+      "writtenOn": "2016-06-07T00:10:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_f777079d",
       "range": {
         "startLine": 51,
         "startChar": 52,
