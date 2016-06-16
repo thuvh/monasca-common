@@ -22,6 +22,30 @@
       "revId": "c98478df188876fe8d2607d4b2156b2a46ca2f84",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_dd1b221b",
+        "filename": "test-requirements.txt",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 20873
+      },
+      "writtenOn": "2016-06-16T06:36:59Z",
+      "side": 1,
+      "message": "hacking contains them",
+      "parentUuid": "7aa08908_0fb9fecb",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 8
+      },
+      "revId": "c98478df188876fe8d2607d4b2156b2a46ca2f84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
