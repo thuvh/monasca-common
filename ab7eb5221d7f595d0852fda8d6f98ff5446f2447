@@ -22,6 +22,30 @@
       "revId": "ab7eb5221d7f595d0852fda8d6f98ff5446f2447",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_3a9fe9b5",
+        "filename": "java/monasca-common-hibernate/src/main/java/monasca/common/hibernate/db/NotificationMethodTypesDb.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2016-07-22T18:35:27Z",
+      "side": 1,
+      "message": "Fixed this",
+      "parentUuid": "dada55a8_14f11ece",
+      "range": {
+        "startLine": 3,
+        "startChar": 61,
+        "endLine": 3,
+        "endChar": 68
+      },
+      "revId": "ab7eb5221d7f595d0852fda8d6f98ff5446f2447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
