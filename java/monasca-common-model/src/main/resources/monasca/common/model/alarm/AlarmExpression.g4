@@ -78,6 +78,7 @@ functionType
     | SUM
     | CNT
     | AVG
+    | LAST
     ;
 
 primary
@@ -113,6 +114,7 @@ keyword
     | SUM
     | CNT
     | AVG
+    | LAST
     ;
 
 period
@@ -205,6 +207,10 @@ CNT
 
 AVG
     : [aA][vV][gG]
+    ;
+
+LAST
+    : [lL][aA][sS][tT]
     ;
 
 INTEGER
