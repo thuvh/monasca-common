@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_dbe76910",
+        "filename": "java/monasca-common-model/src/main/resources/monasca/common/model/alarm/AlarmExpression.g4",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-07-25T18:59:32Z",
+      "side": 1,
+      "message": "copyright",
+      "revId": "2391282aefbb44742499b727e0e3835eab6b331d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_9b269166",
+        "filename": "java/monasca-common-model/src/main/resources/monasca/common/model/alarm/AlarmExpression.g4",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-07-25T18:59:32Z",
+      "side": 1,
+      "message": "spaces",
+      "revId": "2391282aefbb44742499b727e0e3835eab6b331d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
