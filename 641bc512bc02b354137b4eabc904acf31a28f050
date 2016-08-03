@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_f739c7a4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 15027
+      },
+      "writtenOn": "2016-08-03T14:33:56Z",
+      "side": 1,
+      "message": "AlarmNotificationMethodType",
+      "range": {
+        "startLine": 7,
+        "startChar": 26,
+        "endLine": 7,
+        "endChar": 54
+      },
+      "revId": "641bc512bc02b354137b4eabc904acf31a28f050",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
