@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_50b5302f",
+        "filename": "java/monasca-common-middleware/src/main/java/monasca/common/middleware/TokenCache.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 15027
+      },
+      "writtenOn": "2016-08-09T15:21:34Z",
+      "side": 1,
+      "message": "(c) goes in the front",
+      "range": {
+        "startLine": 2,
+        "startChar": 13,
+        "endLine": 2,
+        "endChar": 14
+      },
+      "revId": "760e8157ff3e5ea63b7945771c4064a4fb09787e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
