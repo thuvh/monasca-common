@@ -46,6 +46,30 @@
       "revId": "b9d1eda56eefc59a9bce94347aa6f054aac39fec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_8b4e516d",
+        "filename": "java/monasca-common-middleware/src/main/java/monasca/common/middleware/TokenCache.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-08-09T18:33:12Z",
+      "side": 1,
+      "message": "No, the handling in TokenExceptionHandler is sufficient",
+      "parentUuid": "9ad45d7e_831c7fc2",
+      "range": {
+        "startLine": 52,
+        "startChar": 24,
+        "endLine": 52,
+        "endChar": 148
+      },
+      "revId": "b9d1eda56eefc59a9bce94347aa6f054aac39fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
