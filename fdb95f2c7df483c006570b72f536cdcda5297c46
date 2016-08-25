@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_82e146d3",
+        "filename": "monasca_common/validation/metric_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 14273
+      },
+      "writtenOn": "2016-08-25T02:00:53Z",
+      "side": 1,
+      "message": "One thing we\u0027re missing here is the entry point function where you can submit a metric and have that function run all the various validations on the metric components.  We don\u0027t want people to have to run these bits and pieces by hand.  In the monasca agent the submit_metric function was our entry point to the validation.  We just need a replacement for that in this new library.",
+      "revId": "fdb95f2c7df483c006570b72f536cdcda5297c46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
