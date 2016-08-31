@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_5f47241d",
+        "filename": "monasca_common/validation/metrics.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-08-31T04:40:34Z",
+      "side": 1,
+      "message": "Do you think we can create another script under validation just for dimensions ? Log-API validates them, so maybe we could try and see later if your code fits there.",
+      "revId": "e1b99b38e07cf213a5f8a1c8ab1bbd684f4657c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
