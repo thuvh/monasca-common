@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_10827752",
+        "filename": "monasca_common/validation/metrics.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 14273
+      },
+      "writtenOn": "2016-09-01T16:02:01Z",
+      "side": 1,
+      "message": "We originally had a validate prefix but once you imported the module you ended up writing validate a lot to call the method.  Right now the example Kaiyan has in the tests ends up doing:\n\nimport monasca_common.validation.metrics as metric_validator\nmetric_validator.validate([metrics])\n\nThat\u0027s how we intended to use it in the API but it turns out that we can\u0027t use it that way in the Agent because when we do the validation there we don\u0027t have a fully constructed metric yet we just have the component pieces.\n\nWe should take a look at the changes Kaiyan has there and see if prefixing with \u0027_validate\u0027 would make more sense or if we even want to prefix with \u0027_\u0027 when half our use cases end up calling \"private\" methods.",
+      "parentUuid": "fa7ab95a_7a5d6478",
+      "revId": "3fd851a4786260080936dc95ca83024e443b47da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_fa2a548f",
         "filename": "monasca_common/validation/metrics.py",
         "patchSetId": 5
