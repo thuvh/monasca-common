@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_ba90cc4f",
+        "filename": "monasca_common/validation/metrics.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-09-01T15:51:15Z",
+      "side": 1,
+      "message": "Would ujson be a better choice?",
+      "revId": "3fd851a4786260080936dc95ca83024e443b47da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_b591bd9c",
+        "filename": "monasca_common/validation/metrics.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-09-01T15:51:15Z",
+      "side": 1,
+      "message": "I think you should make these all upper case too.",
+      "revId": "3fd851a4786260080936dc95ca83024e443b47da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_5a350044",
+        "filename": "monasca_common/validation/metrics.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-09-01T15:51:15Z",
+      "side": 1,
+      "message": "Why declare all these methods with an _. I guess you are thinking that they are private, and not meant to be invoked by external clients, but at the same time, I\u0027m wondering if these functions would be useful to external clients. Is it always the case that clients will go through \"validate\".",
+      "revId": "3fd851a4786260080936dc95ca83024e443b47da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_7a5d6478",
+        "filename": "monasca_common/validation/metrics.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-09-01T15:51:15Z",
+      "side": 1,
+      "message": "I think we should add a \"_validate\" prefix to everything. The code would be slightly longer, but it would also be more clear. _metric_value as a function name, doesn\u0027t tell me what it does.",
+      "revId": "3fd851a4786260080936dc95ca83024e443b47da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_fa2a548f",
+        "filename": "monasca_common/validation/metrics.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-09-01T15:51:15Z",
+      "side": 1,
+      "message": "Do you want to add the key that is empty in the error message?",
+      "revId": "3fd851a4786260080936dc95ca83024e443b47da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_dae590a8",
+        "filename": "monasca_common/validation/metrics.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 2419
+      },
+      "writtenOn": "2016-09-01T15:51:15Z",
+      "side": 1,
+      "message": "I believe that the tabbing is too far.",
+      "revId": "3fd851a4786260080936dc95ca83024e443b47da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
