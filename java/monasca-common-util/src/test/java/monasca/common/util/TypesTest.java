@@ -46,7 +46,7 @@ public class TypesTest {
     enhancer.setCallbackTypes(new Class[] { NoOp.class });
     Class<?> proxy = enhancer.createClass();
 
-    assertEquals(Types.deProxy(proxy), ArrayList.class);
+    assertEqual(Types.deProxy(proxy), ArrayList.class);
   }
 
   public void shouldDeProxyGuiceEnhancedProxy() {
@@ -58,7 +58,7 @@ public class TypesTest {
       }
     });
 
-    assertEquals(Types.deProxy(Injector.getInstance(TestClass.class).getClass()), TestClass.class);
+    assertEqual(Types.deProxy(Injector.getInstance(TestClass.class).getClass()), TestClass.class);
   }
 
   @Test(enabled = false)
@@ -67,6 +67,6 @@ public class TypesTest {
     proxyFactory.setSuperclass(ArrayList.class);
     Class<?> proxy = proxyFactory.createClass();
 
-    assertEquals(Types.deProxy(proxy), ArrayList.class);
+    assertEqual(Types.deProxy(proxy), ArrayList.class);
   }
 }

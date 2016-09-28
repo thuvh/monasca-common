@@ -47,7 +47,7 @@ public class AlarmSubExpressionLocaleTest {
           new AlarmSubExpression(AggregateFunction.MIN, new MetricDefinition("hpcs.compute", ImmutableMap.<String, String>builder()
               .put("instance_id", "5").put("metric_name", "cpu").put("device", "1").build()), AlarmOperator.LT, 1.2, 60, 1);
 
-      assertEquals(alarmSubExpression.getExpression(), EXPECTED_EXPRESSION, "Not correct expression for locale " + locale.getDisplayName());
+      assertEqual(alarmSubExpression.getExpression(), EXPECTED_EXPRESSION, "Not correct expression for locale " + locale.getDisplayName());
 
     }
   }
@@ -59,6 +59,6 @@ public class AlarmSubExpressionLocaleTest {
         new AlarmSubExpression(AggregateFunction.MIN, new MetricDefinition("hpcs.compute", ImmutableMap.<String, String>builder()
             .put("instance_id", "5").put("metric_name", "cpu").put("device", "1").build()), AlarmOperator.LT, 1.2, 60, 1);
 
-    assertEquals(alarmSubExpression.getExpression(), EXPECTED_EXPRESSION, "Not correct expression for default locale");
+    assertEqual(alarmSubExpression.getExpression(), EXPECTED_EXPRESSION, "Not correct expression for default locale");
   }
 }

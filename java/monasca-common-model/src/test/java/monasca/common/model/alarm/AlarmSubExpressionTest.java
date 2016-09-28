@@ -35,7 +35,7 @@ public class AlarmSubExpressionTest {
             .put("device", "1")
             .build()), AlarmOperator.GT, 5, 1, 3);
 
-    assertEquals(expr, expected);
+    assertEqual(expr, expected);
   }
 
   public void shouldParseExpressionNoType() {
@@ -48,7 +48,7 @@ public class AlarmSubExpressionTest {
             .put("device", "1")
             .build()), AlarmOperator.GT, 5, 1, 3);
 
-    assertEquals(expr, expected);
+    assertEqual(expr, expected);
   }
 
   public void shouldParseExpressionWithoutFunctionGT() {
@@ -61,7 +61,7 @@ public class AlarmSubExpressionTest {
             .put("device", "1")
             .build()), AlarmOperator.GT, 5, 60, 1);
 
-    assertEquals(expr, expected);
+    assertEqual(expr, expected);
   }
 
   public void shouldParseExpressionWithoutFunctionLT() {
@@ -74,7 +74,7 @@ public class AlarmSubExpressionTest {
             .put("device", "1")
             .build()), AlarmOperator.LT, 5, 60, 1);
 
-    assertEquals(expr, expected);
+    assertEqual(expr, expected);
   }
 
   public void shouldEvaluateExpression() {
@@ -86,7 +86,7 @@ public class AlarmSubExpressionTest {
 
   public void shouldParseExpressionWithoutSubject() {
     AlarmSubExpression expr = AlarmSubExpression.of("avg(hpcs.compute{metric_name=cpu, instance_id=5}, 1) > 5 times 3");
-    assertEquals(expr,
+    assertEqual(expr,
         new AlarmSubExpression(AggregateFunction.AVG, new MetricDefinition("hpcs.compute",
             ImmutableMap.<String, String>builder()
                 .put("instance_id", "5")
@@ -96,7 +96,7 @@ public class AlarmSubExpressionTest {
 
   public void shouldParseExpressionCaseInsensitiveFunc() {
     AlarmSubExpression expr = AlarmSubExpression.of("AvG(hpcs.compute{metric_name=cpu, instance_id=5}, 1) > 5 times 3");
-    assertEquals(expr,
+    assertEqual(expr,
         new AlarmSubExpression(AggregateFunction.AVG, new MetricDefinition("hpcs.compute",
             ImmutableMap.<String, String>builder()
                 .put("instance_id", "5")
@@ -106,7 +106,7 @@ public class AlarmSubExpressionTest {
 
   public void shouldParseExpressionCaseInsensitiveOp() {
     AlarmSubExpression expr = AlarmSubExpression.of("avg(hpcs.compute{metric_name=cpu, instance_id=5}, 1) Gt 5 times 3");
-    assertEquals(expr,
+    assertEqual(expr,
         new AlarmSubExpression(AggregateFunction.AVG, new MetricDefinition("hpcs.compute",
             ImmutableMap.<String, String>builder()
                 .put("instance_id", "5")
@@ -116,7 +116,7 @@ public class AlarmSubExpressionTest {
 
   public void shouldParseExpressionKeywordNamespace() {
     AlarmSubExpression expr = AlarmSubExpression.of("avg(count{metric_name=cpu, instance_id=5}, 1) > 5 times 3");
-    assertEquals(expr, new AlarmSubExpression(AggregateFunction.AVG, new MetricDefinition("count",
+    assertEqual(expr, new AlarmSubExpression(AggregateFunction.AVG, new MetricDefinition("count",
         ImmutableMap.<String, String>builder()
             .put("instance_id", "5")
             .put("metric_name", "cpu")
@@ -125,7 +125,7 @@ public class AlarmSubExpressionTest {
 
   public void shouldParseExpressionKeywordMetricType() {
     AlarmSubExpression expr = AlarmSubExpression.of("avg(hpcs.compute{metric_name=count, instance_id=5}, 1) > 5 times 3");
-    assertEquals(expr,
+    assertEqual(expr,
         new AlarmSubExpression(AggregateFunction.AVG, new MetricDefinition("hpcs.compute",
             ImmutableMap.<String, String>builder()
                 .put("instance_id", "5")
@@ -137,8 +137,8 @@ public class AlarmSubExpressionTest {
     AlarmExpression expr = new AlarmExpression(
         "avg(hpcs.compute{metric_name=cpu, device=1, instance_id=2}) > 5");
     AlarmSubExpression alarm = expr.getSubExpressions().get(0);
-    assertEquals(alarm.getPeriod(), 60);
-    assertEquals(alarm.getPeriods(), 1);
+    assertEqual(alarm.getPeriod(), 60);
+    assertEqual(alarm.getPeriods(), 1);
   }
 
   @Test(expectedExceptions = IllegalArgumentException.class)
@@ -152,9 +152,9 @@ public class AlarmSubExpressionTest {
   }
 
   public void shouldGetExpression() {
-    assertEquals(AlarmSubExpression.of("avg(hpcs.compute{metric_name=cpu, device=1}) > 5")
+    assertEqual(AlarmSubExpression.of("avg(hpcs.compute{metric_name=cpu, device=1}) > 5")
         .getExpression(), "avg(hpcs.compute{device=1, metric_name=cpu}) > 5.0");
-    assertEquals(
+    assertEqual(
         AlarmSubExpression.of("avg(hpcs.compute{metric_name=cpu, device=1}, 45) > 5 times 4")
             .getExpression(), "avg(hpcs.compute{device=1, metric_name=cpu}, 45) > 5.0 times 4");
   }
@@ -163,11 +163,11 @@ public class AlarmSubExpressionTest {
     AlarmExpression expr = new AlarmExpression("elasticsearch.store.size>21474836480");
     AlarmSubExpression subExpr1 = expr.getSubExpressions().get(0);
     AlarmSubExpression subExpr2 = AlarmSubExpression.of(subExpr1.getExpression());
-    assertEquals(subExpr2, subExpr1);
+    assertEqual(subExpr2, subExpr1);
   }
 
   public void shouldAllowDecimalThresholds() {
-    assertEquals(AlarmSubExpression.of("avg(hpcs.compute) > 2.375").getThreshold(), 2.375);
+    assertEqual(AlarmSubExpression.of("avg(hpcs.compute) > 2.375").getThreshold(), 2.375);
   }
 
   public void shouldBeNonDeterministicByDefault() {

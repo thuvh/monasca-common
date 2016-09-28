@@ -37,6 +37,6 @@ public class StatisticsTest {
   public void testStat(Statistic stat, double expectedValue) {
     stat.addValue(2, 1);
     stat.addValue(4, 2);
-    assertEquals(stat.value(), expectedValue, stat.getClass().getName());
+    assertEqual(stat.value(), expectedValue, stat.getClass().getName());
   }
 }

@@ -29,10 +29,10 @@ public class DurationTest {
   }
 
   public void testOf() {
-    assertEquals(Duration.seconds(1), Duration.of("1s"));
-    assertEquals(Duration.seconds(1), Duration.of("1 s"));
-    assertEquals(Duration.seconds(1), Duration.of("1 second"));
-    assertEquals(Duration.seconds(10), Duration.of("10 seconds"));
+    assertEqual(Duration.seconds(1), Duration.of("1s"));
+    assertEqual(Duration.seconds(1), Duration.of("1 s"));
+    assertEqual(Duration.seconds(1), Duration.of("1 second"));
+    assertEqual(Duration.seconds(10), Duration.of("10 seconds"));
   }
 
   public void shouldSerializeAndDeserializeFromJson() throws Exception {
@@ -40,7 +40,7 @@ public class DurationTest {
     ObjectMapper om = new ObjectMapper();
     String ser = om.writeValueAsString(d);
     Duration dd = om.readValue(ser, Duration.class);
-    assertEquals(dd, d);
+    assertEqual(dd, d);
   }
 
   public void shouldSerializeAndDeserializeInfiniteDurationFromJson() throws Exception {
@@ -48,6 +48,6 @@ public class DurationTest {
     ObjectMapper om = new ObjectMapper();
     String ser = om.writeValueAsString(d);
     Duration dd = om.readValue(ser, Duration.class);
-    assertEquals(dd, d);
+    assertEqual(dd, d);
   }
 }

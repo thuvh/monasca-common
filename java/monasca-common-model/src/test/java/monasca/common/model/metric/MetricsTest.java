@@ -35,7 +35,7 @@ public class MetricsTest {
     valueMeta.put("deklan", "123");
     Metric metric = new Metric("hpcs.compute", dimensions, 123345, 5, valueMeta);
     String json = Metrics.toJson(metric);
-    assertEquals(
+    assertEqual(
         json,
         "{\"name\":\"hpcs.compute\",\"dimensions\":{\"instance_id\":\"123\",\"metric_name\":\"cpu\"}," +
         "\"timestamp\":123345,\"value\":5.0,\"value_meta\":{\"deklan\":\"123\",\"result\":\"foobar\"}}");
@@ -52,7 +52,7 @@ public class MetricsTest {
     Metric expected = new Metric("hpcs.compute", dimensions, 123345, 55.0, valueMeta);
 
     Metric metric = Metrics.fromJson(Metrics.toJson(expected).getBytes());
-    assertEquals(metric, expected);
+    assertEqual(metric, expected);
   }
 
   public void shouldSerializeValueUTF() {
@@ -64,7 +64,7 @@ public class MetricsTest {
     valueMeta.put("deklan", "123");
     Metric metric = new Metric("hpcs.compute", dimensions, 123345, 5, valueMeta);
     String json = Metrics.toJson(metric);
-    assertEquals(
+    assertEqual(
         json,
         "{\"name\":\"hpcs.compute\",\"dimensions\":{\"instance_id\":\"123\",\"metric_name\":\"foôbár\"}," +
         "\"timestamp\":123345,\"value\":5.0,\"value_meta\":{\"deklan\":\"123\",\"result\":\"boôbár\"}}");
@@ -82,7 +82,7 @@ public class MetricsTest {
 
     Metric metric;
     metric = Metrics.fromJson(Metrics.toJson(expected).getBytes("UTF-8"));
-    assertEquals(metric, expected);
+    assertEqual(metric, expected);
   }
 
   public void shouldSerializeAndDeserializeUTF8_2() throws UnsupportedEncodingException {
@@ -97,7 +97,7 @@ public class MetricsTest {
 
     Metric metric;
     metric = Metrics.fromJson(Metrics.toJson(expected).getBytes("UTF-8"));
-    assertEquals(metric, expected);
+    assertEqual(metric, expected);
   }
 
   public void shouldSerializeAndDeserializeUTF8_3() throws UnsupportedEncodingException {
@@ -120,6 +120,6 @@ public class MetricsTest {
 
     Metric metric;
     metric = Metrics.fromJson(Metrics.toJson(expected_escaped).getBytes("UTF-8"));
-    assertEquals(metric, expected_nonescaped);
+    assertEqual(metric, expected_nonescaped);
   }
 }

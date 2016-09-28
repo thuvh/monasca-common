@@ -28,7 +28,7 @@ public class Assert {
     if (null == actual)
       fail("expected not null array, but null found.");
 
-    assertEquals(actual.length, expected.length, "arrays don't have the same size.");
+    assertEqual(actual.length, expected.length, "arrays don't have the same size.");
 
     for (int i = 0; i < expected.length; i++) {
       if (expected[i] != actual[i]) {
@@ -46,7 +46,7 @@ public class Assert {
     if (null == actual)
       fail("expected not null array, but null found.");
 
-    assertEquals(actual.length, expected.length, "arrays don't have the same size.");
+    assertEqual(actual.length, expected.length, "arrays don't have the same size.");
 
     for (int i = 0; i < expected.length; i++) {
       if (expected[i] != actual[i]) {

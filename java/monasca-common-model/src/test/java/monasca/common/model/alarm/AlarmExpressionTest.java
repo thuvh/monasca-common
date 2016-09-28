@@ -52,8 +52,8 @@ public class AlarmExpressionTest {
                         .put("metric_name", "mem")
                         .build()), AlarmOperator.LT, 4, 2, 3);
 
-        assertEquals(alarms.get(0), expected1);
-        assertEquals(alarms.get(1), expected2);
+        assertEqual(alarms.get(0), expected1);
+        assertEqual(alarms.get(1), expected2);
     }
 
     public void shouldParseString() {
@@ -78,8 +78,8 @@ public class AlarmExpressionTest {
                         .put("specialchars", "\"!@#$%^&*()~<>{}[],.\"")
                         .build()), AlarmOperator.LT, 4, 2, 3);
 
-        assertEquals(alarms.get(0), expected1);
-        assertEquals(alarms.get(1), expected2);
+        assertEqual(alarms.get(0), expected1);
+        assertEqual(alarms.get(1), expected2);
     }
 
     public void shouldParseComplexWithoutQuotes() {
@@ -127,10 +127,10 @@ public class AlarmExpressionTest {
                         .put("__useSparingly", "special")
                         .put("unix", "/opt/vertica/bin/")
                         .build()), AlarmOperator.LT, 4, 2, 3);
-        assertEquals(alarms.get(0), expected1);
-        assertEquals(alarms.get(1), expected2);
-        assertEquals(alarmsContainsDirectories.get(0), expected3);
-        assertEquals(alarmsContainsDirectories.get(1), expected4);
+        assertEqual(alarms.get(0), expected1);
+        assertEqual(alarms.get(1), expected2);
+        assertEqual(alarmsContainsDirectories.get(0), expected3);
+        assertEqual(alarmsContainsDirectories.get(1), expected4);
     }
 
     public void shouldParseExpressionWithoutType() {
@@ -150,8 +150,8 @@ public class AlarmExpressionTest {
                         .put("metric_name", "mem")
                         .build()), AlarmOperator.LT, 4, 2, 3);
 
-        assertEquals(alarms.get(0), expected1);
-        assertEquals(alarms.get(1), expected2);
+        assertEqual(alarms.get(0), expected1);
+        assertEqual(alarms.get(1), expected2);
     }
 
     public void shouldEvaluateExpression() {
@@ -192,8 +192,8 @@ public class AlarmExpressionTest {
         AlarmExpression expr = new AlarmExpression(
                 "avg(hpcs.compute{instance_id=5,metric_name=cpu,device=1}) > 5");
         AlarmSubExpression alarm = expr.getSubExpressions().get(0);
-        assertEquals(alarm.getPeriod(), 60);
-        assertEquals(alarm.getPeriods(), 1);
+        assertEqual(alarm.getPeriod(), 60);
+        assertEqual(alarm.getPeriods(), 1);
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
@@ -218,14 +218,14 @@ public class AlarmExpressionTest {
         Object expr = AlarmExpression.of(
                 "(avg(foo) > 1 and avg(bar) < 2 and avg(baz) > 3) or (avg(foo) > 4 and avg(bar) < 5 and avg(baz) > 6)")
                 .getExpressionTree();
-        assertEquals(
+        assertEqual(
                 expr.toString(),
                 "((avg(foo) > 1.0 AND avg(bar) < 2.0 AND avg(baz) > 3.0) OR (avg(foo) > 4.0 AND avg(bar) < 5.0 AND avg(baz) > 6.0))");
 
         expr = AlarmExpression.of(
                 "(avg(foo) > 1 and (avg(bar) < 2 or avg(baz) > 3)) and (avg(foo) > 4 or avg(bar) < 5 or avg(baz) > 6)")
                 .getExpressionTree();
-        assertEquals(
+        assertEqual(
                 expr.toString(),
                 "(avg(foo) > 1.0 AND (avg(bar) < 2.0 OR avg(baz) > 3.0) AND (avg(foo) > 4.0 OR avg(bar) < 5.0 OR avg(baz) > 6.0))");
     }
@@ -236,7 +236,7 @@ public class AlarmExpressionTest {
                 "avg(hpcs.compute{instance_id=5,metric_name=cpu,device=a}, 1) lt 5 times 3 and avg(hpcs.compute{flavor_id=3,metric_name=mem}, 2) < 4 times 3");
         AlarmExpression expr2 = new AlarmExpression(
                 "avg(hpcs.compute{flavor_id=3,metric_name=mem}, 2) gt 3  times 3 && avg(hpcs.compute{instance_id=5,metric_name=cpu,device=a}, 1) lt 5 times 3");
-        assertEquals(expr1, expr2);
+        assertEqual(expr1, expr2);
 
         AlarmExpression expr3 = new AlarmExpression(
                 "avg(hpcs.compute{instance_id=5,metric_name=cpu,device=a}, 1) lt 5 times 444 and avg(hpcs.compute{flavor_id=3,metric_name=mem}, 2) < 4 times 3");
@@ -253,7 +253,7 @@ public class AlarmExpressionTest {
                                                             .put("此", "该")
                                                             .put("metric_name", "mem")
                                                             .build());
-      assertEquals(alarm1.getMetricDefinition(), expected1);
+      assertEqual(alarm1.getMetricDefinition(), expected1);
     }
 
     public void shouldParseDimensionsWithSpaces() {
@@ -272,7 +272,7 @@ public class AlarmExpressionTest {
 
       for(int i = 0; i < expr_list.length; i++) {
         AlarmSubExpression expr = expr_list[i].getSubExpressions().get(0);
-        assertEquals(expr.getMetricDefinition(), expected_list[i]);
+        assertEqual(expr.getMetricDefinition(), expected_list[i]);
       }
     }
 
@@ -308,7 +308,7 @@ public class AlarmExpressionTest {
                                                  + " or avg (metric {foo =bar ,metric_name =mem }) >4");
       List<AlarmSubExpression> subExpressions = expr.getSubExpressions();
       for(int i = 1; i < subExpressions.size(); i++){
-        assertEquals(subExpressions.get(0),subExpressions.get(i));
+        assertEqual(subExpressions.get(0),subExpressions.get(i));
       }
     }
 
@@ -341,8 +341,8 @@ public class AlarmExpressionTest {
       final List<AlarmSubExpression> subExpressions = expr.getSubExpressions();
 
       assertTrue(expr.isDeterministic());  // each expression is deterministic
-      assertEquals(1, subExpressions.size());
-      assertEquals(subExpressions.get(0), logErrorExpr);
+      assertEqual(1, subExpressions.size());
+      assertEqual(subExpressions.get(0), logErrorExpr);
     }
   }
 

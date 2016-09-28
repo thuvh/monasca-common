@@ -26,13 +26,13 @@ public class TimesTest {
     DateTime dt = new DateTime(t * 1000);
     DateTime dt1 = new DateTime(rounded * 1000);
 
-    assertEquals(dt.getYear(), dt1.getYear());
-    assertEquals(dt.getMonthOfYear(), dt1.getMonthOfYear());
-    assertEquals(dt.getDayOfYear(), dt1.getDayOfYear());
-    assertEquals(dt.getHourOfDay(), dt1.getHourOfDay());
-    assertEquals(dt.getMinuteOfHour(), dt1.getMinuteOfHour());
-    assertEquals(dt1.getSecondOfMinute(), 0);
-    assertEquals(dt1.getMillisOfSecond(), 0);
+    assertEqual(dt.getYear(), dt1.getYear());
+    assertEqual(dt.getMonthOfYear(), dt1.getMonthOfYear());
+    assertEqual(dt.getDayOfYear(), dt1.getDayOfYear());
+    assertEqual(dt.getHourOfDay(), dt1.getHourOfDay());
+    assertEqual(dt.getMinuteOfHour(), dt1.getMinuteOfHour());
+    assertEqual(dt1.getSecondOfMinute(), 0);
+    assertEqual(dt1.getMillisOfSecond(), 0);
   }
 
   public void shouldRoundDownToNearestSecond() {
@@ -41,12 +41,12 @@ public class TimesTest {
     DateTime dt = new DateTime(t);
     DateTime dt1 = new DateTime(rounded);
 
-    assertEquals(dt.getYear(), dt1.getYear());
-    assertEquals(dt.getMonthOfYear(), dt1.getMonthOfYear());
-    assertEquals(dt.getDayOfYear(), dt1.getDayOfYear());
-    assertEquals(dt.getHourOfDay(), dt1.getHourOfDay());
-    assertEquals(dt.getMinuteOfHour(), dt1.getMinuteOfHour());
-    assertEquals(dt.getSecondOfMinute(), dt1.getSecondOfMinute());
-    assertEquals(dt1.getMillisOfSecond(), 0);
+    assertEqual(dt.getYear(), dt1.getYear());
+    assertEqual(dt.getMonthOfYear(), dt1.getMonthOfYear());
+    assertEqual(dt.getDayOfYear(), dt1.getDayOfYear());
+    assertEqual(dt.getHourOfDay(), dt1.getHourOfDay());
+    assertEqual(dt.getMinuteOfHour(), dt1.getMinuteOfHour());
+    assertEqual(dt.getSecondOfMinute(), dt1.getSecondOfMinute());
+    assertEqual(dt1.getMillisOfSecond(), 0);
   }
 }

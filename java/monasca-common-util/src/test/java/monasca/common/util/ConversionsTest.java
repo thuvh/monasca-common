@@ -31,20 +31,20 @@ import org.testng.annotations.Test;
 public class ConversionsTest {
   public void testInteger() {
     Integer value = Conversions.variantToInteger(new Integer(Integer.MAX_VALUE));
-    assertEquals(value, new Integer(Integer.MAX_VALUE));
+    assertEqual(value, new Integer(Integer.MAX_VALUE));
   }
 
   public void testLong() {
     Integer value1 = Conversions.variantToInteger(new Long(1));
-    assertEquals(value1, new Integer(1));
+    assertEqual(value1, new Integer(1));
 
     Integer value2 = Conversions.variantToInteger(Long.MAX_VALUE);
-    assertEquals(value2, new Integer(-1));
+    assertEqual(value2, new Integer(-1));
   }
 
   public void testBigDecimal() {
     Integer value = Conversions.variantToInteger(new BigDecimal(Long.MAX_VALUE));
-    assertEquals(value, new Integer(-1));
+    assertEqual(value, new Integer(-1));
   }
 
   @Test(expectedExceptions = IllegalArgumentException.class)
@@ -73,36 +73,36 @@ public class ConversionsTest {
 
   public void testDateTimeShouldEqualSameTZImplicit() {
     final DateTime now = DateTime.now(DateTimeZone.UTC);
-    assertEquals(now, Conversions.variantToDateTime(now));
+    assertEqual(now, Conversions.variantToDateTime(now));
   }
 
   public void testDateTimeShouldEqualSameTZExplicit() {
     final DateTime now = DateTime.now(DateTimeZone.UTC);
-    assertEquals(now, Conversions.variantToDateTime(now, DateTimeZone.UTC));
+    assertEqual(now, Conversions.variantToDateTime(now, DateTimeZone.UTC));
   }
 
   public void testEnumFromString() {
-    assertEquals(MockEnum.THIS, Conversions.variantToEnum("THIS", MockEnum.class));
+    assertEqual(MockEnum.THIS, Conversions.variantToEnum("THIS", MockEnum.class));
   }
 
   public void testEnumFromStringLowerCased() {
-    assertEquals(MockEnum.THIS, Conversions.variantToEnum("this", MockEnum.class));
+    assertEqual(MockEnum.THIS, Conversions.variantToEnum("this", MockEnum.class));
   }
 
   public void testEnumFromStringWithSpaces() {
-    assertEquals(MockEnum.THIS, Conversions.variantToEnum("   THIS          ", MockEnum.class));
+    assertEqual(MockEnum.THIS, Conversions.variantToEnum("   THIS          ", MockEnum.class));
   }
 
   public void testEnumFromNumber() {
-    assertEquals(MockEnum.IS, Conversions.variantToEnum(1, MockEnum.class));
+    assertEqual(MockEnum.IS, Conversions.variantToEnum(1, MockEnum.class));
   }
 
   public void testEnumFromNumberDouble() {
-    assertEquals(MockEnum.IS, Conversions.variantToEnum(1.0, MockEnum.class));
+    assertEqual(MockEnum.IS, Conversions.variantToEnum(1.0, MockEnum.class));
   }
 
   public void testEnumFromEnum() {
-    assertEquals(MockEnum.TEST, Conversions.variantToEnum(MockEnum.TEST, MockEnum.class));
+    assertEqual(MockEnum.TEST, Conversions.variantToEnum(MockEnum.TEST, MockEnum.class));
   }
 
   @Test(expectedExceptions = IllegalArgumentException.class)

@@ -30,7 +30,7 @@ public class SqlStatementsTest {
     dimensions.put("flavor_id", "937");
     dimensions.put("image_id", "12");
 
-    assertEquals(
+    assertEqual(
         SqlStatements.unionAllStatementFor(dimensions, "dimension_name", "value"),
         "select 'flavor_id' dimension_name, '937' value union all select 'image_id' dimension_name, '12' value");
   }
@@ -40,7 +40,7 @@ public class SqlStatementsTest {
     actions.add("123");
     actions.add("234");
 
-    assertEquals(SqlStatements.unionStatementFor(actions, "action_id"),
+    assertEqual(SqlStatements.unionStatementFor(actions, "action_id"),
         "select '123' action_id union select '234' action_id");
   }
 }

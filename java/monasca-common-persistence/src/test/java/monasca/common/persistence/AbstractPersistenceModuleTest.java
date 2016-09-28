@@ -58,6 +58,6 @@ public class AbstractPersistenceModuleTest {
    */
   public void shouldGetSqlType() {
     Injector.registerModules(dbModule, persistenceModule);
-    assertEquals(Injector.getInstance(FakeDAO.class), dao);
+    assertEqual(Injector.getInstance(FakeDAO.class), dao);
   }
 }

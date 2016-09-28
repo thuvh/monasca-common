@@ -119,7 +119,7 @@ public class SerializationTest {
   public void shouldDeserializeFromJsonElement() {
     JsonNode node = Serialization.toJsonNode("{\"uuid\":\"123\",\"type\":1}");
     TestCommand command = Serialization.fromJson(node, TestCommand.class);
-    assertEquals(command, new TestCommand("123", 1));
+    assertEqual(command, new TestCommand("123", 1));
   }
 
   public void shouldDeserializeFromWrappedJsonElement() {
@@ -127,7 +127,7 @@ public class SerializationTest {
     JsonNode node = Serialization.toJsonNode(command);
     Serialization.registerTarget(TestCommand.class);
     TestCommand command2 = Serialization.fromJson(node);
-    assertEquals(command2, command);
+    assertEqual(command2, command);
   }
 
   public void shouldDeserialize() {
@@ -135,7 +135,7 @@ public class SerializationTest {
     String json = "{\"TestCommand\":{\"uuid\":\"123\",\"type\":1}}";
     Serialization.registerTarget(TestCommand.class);
     TestCommand command2 = Serialization.fromJson(json);
-    assertEquals(command2, command);
+    assertEqual(command2, command);
   }
 
   @Test(expectedExceptions = IllegalStateException.class)
@@ -148,7 +148,7 @@ public class SerializationTest {
     TestCommand command = new TestCommand("123", 1);
     String json = "{\"TestCommand\":{\"uuid\":\"123\",\"type\":1}}";
     TestCommand command2 = Serialization.fromJson(json, TestCommand.class);
-    assertEquals(command2, command);
+    assertEqual(command2, command);
   }
 
   public void shouldRegisterTargetUsingAnnotatedName() {
@@ -160,14 +160,14 @@ public class SerializationTest {
     String json = "{\"TestCommand\":{\"uuid\":\"123\",\"type\":1}}";
     JsonNode node = Serialization.toJsonNode(json);
     TestCommand cmd = Serialization.fromJson(node, TestCommand.class);
-    assertEquals(cmd, new TestCommand("123", 1));
+    assertEqual(cmd, new TestCommand("123", 1));
   }
 
   public void shouldSerialize() {
     TestCommand command = new TestCommand("123", 1);
     String json = "{\"TestCommand\":{\"uuid\":\"123\",\"type\":1}}";
     String ser = Serialization.toJson(command);
-    assertEquals(ser, json);
+    assertEqual(ser, json);
   }
 
   // TODO enable after https://github.com/FasterXML/jackson-databind/issues/412 is fixed
@@ -179,20 +179,20 @@ public class SerializationTest {
 
     String json = Serialization.toJson(cmd);
     TestCommand cmd1 = Serialization.fromJson(json);
-    assertEquals(cmd.uuid, cmd1.uuid);
-    assertEquals(cmd.type, cmd1.type);
+    assertEqual(cmd.uuid, cmd1.uuid);
+    assertEqual(cmd.type, cmd1.type);
   }
 
   public void shouldSerializeAndDeserializeToRegisteredType() {
     TestCommand command = new TestCommand("123", 1);
     String json = Serialization.toJson(command);
-    assertEquals(Serialization.fromJson(json), command);
+    assertEqual(Serialization.fromJson(json), command);
   }
 
   public void toJsonShouldUseAnnotatedRootName() {
     String json = Serialization.toJson(new AnnotatedCommand());
     String expected = "{\"instance-id\":{\"value\":\"test\"}}";
-    assertEquals(json, expected);
+    assertEqual(json, expected);
   }
 
   // TODO enable after https://github.com/FasterXML/jackson-databind/issues/412 is fixed
@@ -205,7 +205,7 @@ public class SerializationTest {
     cmd.type = 5;
     String json = Serialization.toJson(cmd);
     TestCommand cmd1 = Serialization.fromJson(json);
-    assertEquals(cmd, cmd1);
+    assertEqual(cmd, cmd1);
   }
 
   public void shouldProduceFullyInjectedInstances() {
@@ -218,7 +218,7 @@ public class SerializationTest {
 
     String json = Serialization.toJson(new TestInjectedCommand());
     TestInjectedCommand cmd = Serialization.fromJson(json);
-    assertEquals(cmd.value, "test");
+    assertEqual(cmd.value, "test");
   }
 
   public void shouldParseSingleQuotedJson() {
@@ -230,7 +230,7 @@ public class SerializationTest {
     Serialization.registerTarget(TestCommand.class);
     String json = "{\"TestCommand\":{\"uuid\":\"123\",\"type\":1,\"foo\":\"bar\"}}";
     TestCommand cmd = Serialization.fromJson(json);
-    assertEquals(cmd.uuid, "123");
+    assertEqual(cmd.uuid, "123");
   }
 
   @Test(enabled = false)
@@ -241,11 +241,11 @@ public class SerializationTest {
     int i = 1;
     String json = Serialization.toJson(i);
     int ii = Serialization.<Integer>fromJson(json);
-    assertEquals(i, ii);
+    assertEqual(i, ii);
 
     Integer j = 1;
     json = Serialization.toJson(i);
     Integer jj = Serialization.<Integer>fromJson(json);
-    assertEquals(j, jj);
+    assertEqual(j, jj);
   }
 }
