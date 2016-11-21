@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_7feea3b5",
+        "filename": "monasca_common/tests/validation/test_metric_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-11-21T07:38:48Z",
+      "side": 1,
+      "message": "There was a question, I guess, in another change about using six in general for that kind of things.",
+      "revId": "341562c90e4b1b32100f606aa5ef1037c063996c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
