@@ -16,6 +16,24 @@
       "revId": "341562c90e4b1b32100f606aa5ef1037c063996c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_f0f10003",
+        "filename": "monasca_common/tests/validation/test_metric_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 22255
+      },
+      "writtenOn": "2016-11-21T09:20:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a77a97e_7feea3b5",
+      "revId": "341562c90e4b1b32100f606aa5ef1037c063996c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
