@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_2959478f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-11-29T22:53:42Z",
+      "side": 1,
+      "message": "Please fix your commit message to have no lines longer than 72 characters.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 523
+      },
+      "revId": "81ec4764ee98b9ea0a83532d8b5b9a7af10a1c3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_09cbab1f",
+        "filename": "java/monasca-common-model/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2016-11-29T22:53:42Z",
+      "side": 1,
+      "message": "Is the antlr version change required for the fix? Not clear from your commit message.",
+      "range": {
+        "startLine": 13,
+        "startChar": 19,
+        "endLine": 13,
+        "endChar": 24
+      },
+      "revId": "81ec4764ee98b9ea0a83532d8b5b9a7af10a1c3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
