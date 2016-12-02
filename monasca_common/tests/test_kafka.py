@@ -32,7 +32,7 @@ class TestKafkaProducer(unittest.TestCase):
         self.mock_kafka_client = self.kafka_client_patcher.start()
         self.mock_kafka_producer = self.kafka_producer_patcher.start()
         self.producer = self.mock_kafka_producer.KeyedProducer.return_value
-        self.client = self.mock_kafka_client.KafkaClient.return_value
+        self.client = self.mock_kafka_client.SimpleClient.return_value
         self.monasca_kafka_producer = KafkaProducer(FAKE_KAFKA_URL)
 
     def tearDown(self):
@@ -40,7 +40,7 @@ class TestKafkaProducer(unittest.TestCase):
         self.kafka_client_patcher.stop()
 
     def test_kafka_producer_init(self):
-        self.assertTrue(self.mock_kafka_client.KafkaClient.called)
+        self.assertTrue(self.mock_kafka_client.SimpleClient.called)
         self.assertTrue(self.mock_kafka_producer.KeyedProducer.called)
 
     def test_kafka_producer_publish(self):
@@ -97,7 +97,7 @@ class TestKafkaConsumer(unittest.TestCase):
         self.mock_kafka_consumer = self.kafka_consumer_patcher.start()
         self.kazoo_patcher.start()
 
-        self.client = self.mock_kafka_client.KafkaClient.return_value
+        self.client = self.mock_kafka_client.SimpleClient.return_value
         self.consumer = self.mock_kafka_consumer.SimpleConsumer.return_value
 
         self.monasca_kafka_consumer = KafkaConsumer(
@@ -111,7 +111,7 @@ class TestKafkaConsumer(unittest.TestCase):
         self.kazoo_patcher.stop()
 
     def test_kafka_consumer_init(self):
-        self.assertTrue(self.mock_kafka_client.KafkaClient.called)
+        self.assertTrue(self.mock_kafka_client.SimpleClient.called)
         self.assertTrue(self.mock_kafka_consumer.SimpleConsumer.called)
 
     @mock.patch('monasca_common.kafka.consumer.SetPartitioner')

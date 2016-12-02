@@ -66,7 +66,7 @@ class KafkaHealthCheck(object):
         url = CONF.kafka_healthcheck.kafka_url
 
         try:
-            kafka_client = client.KafkaClient(hosts=url)
+            kafka_client = client.SimpleClient(hosts=url)
         except client.KafkaUnavailableError as ex:
             LOG.error(repr(ex))
             error_str = 'Could not connect to kafka at %s' % url
