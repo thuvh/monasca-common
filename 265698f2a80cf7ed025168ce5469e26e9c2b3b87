@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a71b18c_19062786",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2016-12-05T06:25:49Z",
+      "side": 1,
+      "message": "Not exactly sure I am ok with that.\nFile is managed by the bot and if the bot says we stick with it.\n\nCheck here: https://github.com/openstack/requirements/blob/master/global-requirements.txt#L330",
+      "revId": "265698f2a80cf7ed025168ce5469e26e9c2b3b87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
