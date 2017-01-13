@@ -13,8 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import os
 import sys
-import unittest
+
+from oslotest import base
 
 import monasca_common.simport.simport as simport
 
@@ -34,7 +36,11 @@ class LocalClass(object):
         pass
 
 
-class TestSimport(unittest.TestCase):
+PWD = os.path.dirname(os.path.abspath(__file__))
+
+
+class TestSimport(base.BaseTestCase):
+
     def test_bad_targets(self):
         self.assertRaises(simport.BadDirectory, simport._get_module,
                           "|foo.Class")
@@ -51,30 +57,28 @@ class TestSimport(unittest.TestCase):
 
         self.assertFalse("AnyModuleName" in sys.modules)
         self.assertRaises(simport.MissingMethodOrFunction, simport._get_module,
-                          "tests|AnyModuleName:")
+                          PWD + "|AnyModuleName:")
         self.assertFalse("AnyModuleName" in sys.modules)
 
     def test_good_external_targets(self):
         self.assertEqual(("localmodule", "Foo", "method_a"),
-                         simport._get_module("tests|"
-                                             "localmodule:Foo.method_a"))
+                         simport._get_module(PWD + "|localmodule:Foo.method_a"))
 
         self.assertRaises(simport.ImportFailed, simport._get_module,
-                          "tests|that_module:function_a")
+                          PWD + "|that_module:function_a")
 
     def test_bad_load(self):
-        self.assertRaises(AttributeError, simport.load,
+        self.assertRaises(simport.ImportFailed, simport.load,
                           "TestSimport:missing")
 
     def test_good_load_internal(self):
-        self.assertEqual(dummy_function,
-                         simport.load("TestSimport:dummy_function"))
-        self.assertEqual(DummyClass.method_a,
-                         simport.load("TestSimport:DummyClass.method_a"))
+        self.assertEqual(dummy_function.func_code,
+                         simport.load("test_simport:dummy_function").func_code)
+        self.assertEqual(DummyClass.method_a.func_code,
+                         simport.load("test_simport:DummyClass.method_a").func_code)
 
     def test_good_load_local(self):
-        method = simport.load("tests|"
-                              "localmodule:Foo.method_a")
+        method = simport.load(PWD + "|localmodule:Foo.method_a")
         import localmodule
 
         self.assertEqual(method, localmodule.Foo.method_a)
@@ -82,8 +86,7 @@ class TestSimport(unittest.TestCase):
                          simport.load("localmodule:function_a"))
 
     def test_good_load_external(self):
-        method = simport.load("tests/external|"
-                              "external.externalmodule:Blah.method_b")
+        method = simport.load(PWD + "/external|external.externalmodule:Blah.method_b")
 
         self.assertTrue('external.externalmodule' in sys.modules)
         old = sys.modules['external.externalmodule']
@@ -95,8 +98,7 @@ class TestSimport(unittest.TestCase):
         self.assertEqual(method, external.externalmodule.Blah.method_b)
 
     def test_import_class(self):
-        klass = simport.load("tests/external|"
-                             "external.externalmodule:Blah")
+        klass = simport.load(PWD + "/external|external.externalmodule:Blah")
         import external.externalmodule
 
         self.assertEqual(klass, external.externalmodule.Blah)
