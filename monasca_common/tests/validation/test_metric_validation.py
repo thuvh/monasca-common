@@ -13,9 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import monasca_common.validation.metrics as metric_validator
+from oslotest import base
 from six.moves import range
-import unittest
+
+from monasca_common.validation import metrics as metric_validator
 
 # a few valid characters to test
 valid_name_chars = ".'_-"
@@ -26,7 +27,7 @@ valid_dimension_chars = " .'_-"
 invalid_dimension_chars = "<>={}(),\"\\\\;&"
 
 
-class TestMetricValidation(unittest.TestCase):
+class TestMetricValidation(base.BaseTestCase):
     def test_valid_single_metric(self):
         metric = {"name": "test_metric_name",
                   "dimensions": {"key1": "value1",
