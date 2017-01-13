@@ -11,7 +11,8 @@
 # under the License.
 
 import mock
-import unittest
+
+from oslotest import base
 
 from monasca_common.kafka import consumer
 from monasca_common.kafka import producer
@@ -24,9 +25,11 @@ FAKE_KAFKA_CONSUMER_GROUP = "group"
 FAKE_KAFKA_TOPIC = "topic"
 
 
-class TestKafkaProducer(unittest.TestCase):
+class TestKafkaProducer(base.BaseTestCase):
 
     def setUp(self):
+        super(TestKafkaProducer, self).setUp()
+
         self.kafka_client_patcher = mock.patch('kafka.client')
         self.kafka_producer_patcher = mock.patch('kafka.producer')
         self.mock_kafka_client = self.kafka_client_patcher.start()
@@ -36,6 +39,8 @@ class TestKafkaProducer(unittest.TestCase):
         self.monasca_kafka_producer = producer.KafkaProducer(FAKE_KAFKA_URL)
 
     def tearDown(self):
+        super(TestKafkaProducer, self).tearDown()
+
         self.kafka_producer_patcher.stop()
         self.kafka_client_patcher.stop()
 
@@ -83,9 +88,11 @@ class TestKafkaProducer(unittest.TestCase):
             'Error publishing to {} topic.'. format(topic))
 
 
-class TestKafkaConsumer(unittest.TestCase):
+class TestKafkaConsumer(base.BaseTestCase):
 
     def setUp(self):
+        super(TestKafkaConsumer, self).setUp()
+
         self.kafka_client_patcher = mock.patch('kafka.client')
         self.kafka_common_patcher = mock.patch('kafka.common')
         self.kafka_consumer_patcher = mock.patch('kafka.consumer')
@@ -105,6 +112,8 @@ class TestKafkaConsumer(unittest.TestCase):
             FAKE_KAFKA_CONSUMER_GROUP, FAKE_KAFKA_TOPIC)
 
     def tearDown(self):
+        super(TestKafkaConsumer, self).tearDown()
+
         self.kafka_client_patcher.stop()
         self.kafka_common_patcher.stop()
         self.kafka_consumer_patcher.stop()
