@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_e8509334",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2017-01-17T12:10:24Z",
+      "side": 1,
+      "message": "I think this empty line can be dropped.\n\nnit: Move this under setenv ;-)",
+      "revId": "562fb0de67119c76e843896dd1f42430ae0bf61a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
