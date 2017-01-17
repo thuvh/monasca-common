@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a3c09a3_e81ed36e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 23043
+      },
+      "writtenOn": "2017-01-17T12:11:51Z",
+      "side": 1,
+      "message": "I guess the convention is to use \u0027Add\u0027 instead of \u0027Adding\u0027",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 6
+      },
+      "revId": "562fb0de67119c76e843896dd1f42430ae0bf61a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a3c09a3_e8509334",
         "filename": "tox.ini",
         "patchSetId": 1
