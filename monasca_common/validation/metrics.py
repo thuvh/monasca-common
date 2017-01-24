@@ -17,6 +17,8 @@ import math
 import re
 import ujson
 
+import does_not_exist
+
 # This is used to ensure that metrics with a timestamp older than
 # RECENT_POINT_THRESHOLD_DEFAULT seconds (or the value passed in to
 # the MetricsAggregator constructor) get discarded rather than being
