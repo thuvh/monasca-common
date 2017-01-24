@@ -25,6 +25,8 @@ import monasca_common.kafka_lib.consumer as kafka_consumer
 from kazoo.client import KazooClient
 from kazoo.recipe.partitioner import SetPartitioner
 
+import does_not_exist
+
 log = logging.getLogger(__name__)
 
 """Kafka consumer interface
