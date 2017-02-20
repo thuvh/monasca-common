@@ -1,4 +1,3 @@
-import logging
 import struct
 
 import six
@@ -22,8 +21,6 @@ from monasca_common.kafka_lib.util import (
     write_short_string, write_int_string, group_by_topic_and_partition
 )
 
-
-log = logging.getLogger(__name__)
 
 ATTRIBUTE_CODEC_MASK = 0x03
 CODEC_NONE = 0x00

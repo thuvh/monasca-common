@@ -1,16 +1,12 @@
 from __future__ import absolute_import
 
 from itertools import cycle
-import logging
 import random
 import six
 
 from six.moves import xrange
 
 from .base import Producer
-
-
-log = logging.getLogger(__name__)
 
 
 class SimpleProducer(Producer):

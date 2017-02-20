@@ -1,14 +1,10 @@
 from __future__ import absolute_import
 
-import logging
 import warnings
 
 from .base import Producer
 from ..partitioner import HashedPartitioner
 from ..util import kafka_bytestring
-
-
-log = logging.getLogger(__name__)
 
 
 class KeyedProducer(Producer):
