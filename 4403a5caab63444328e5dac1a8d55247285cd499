@@ -34,6 +34,24 @@
       "revId": "4403a5caab63444328e5dac1a8d55247285cd499",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_211aa617",
+        "filename": ".gitignore",
+        "patchSetId": 12
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2017-02-24T05:22:57Z",
+      "side": 1,
+      "message": "That is why I asked. Maybe you had a good reason :)",
+      "parentUuid": "da36d5c6_41679ab6",
+      "revId": "4403a5caab63444328e5dac1a8d55247285cd499",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
