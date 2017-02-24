@@ -49,6 +49,10 @@ import monasca.common.model.alarm.AlarmSeverity;
 })
 @NamedQueries({
     @NamedQuery(
+        name = AlarmDefinitionDb.Queries.DELETE_BY_ID,
+        query = "delete from AlarmDefinitionDb a where a.id = :id"
+    ),
+    @NamedQuery(
         name = AlarmDefinitionDb.Queries.FIND_BY_TENANT_AND_ID_NOT_DELETED,
         query = "from AlarmDefinitionDb ad " +
             "where ad.tenantId = :tenant_id " +
@@ -259,6 +263,7 @@ public class AlarmDefinitionDb
   }
 
   public interface Queries {
+    String DELETE_BY_ID = "AlarmDefinition.deleteById";
     String FIND_BY_TENANT_AND_ID_NOT_DELETED = "AlarmDefinition.byTenantAndIdNotDeleted";
     String FIND_BY_TENANT_ID_AND_ID = "AlarmDefinition.byTenantIdAndId";
   }
