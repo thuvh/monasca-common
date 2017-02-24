@@ -16,6 +16,24 @@
       "revId": "4403a5caab63444328e5dac1a8d55247285cd499",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_41679ab6",
+        "filename": ".gitignore",
+        "patchSetId": 12
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2017-02-24T05:20:17Z",
+      "side": 1,
+      "message": "Well, I though it gives this file a little spiciness, you know :)",
+      "parentUuid": "da36d5c6_01ae82e5",
+      "revId": "4403a5caab63444328e5dac1a8d55247285cd499",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
