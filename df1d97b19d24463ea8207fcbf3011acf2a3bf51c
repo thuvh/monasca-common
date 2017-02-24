@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_fbfcb7b9",
+        "filename": "java/monasca-common-hibernate/src/main/java/monasca/common/hibernate/db/AlarmDefinitionDb.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2017-02-24T11:33:30Z",
+      "side": 1,
+      "message": "I think I\u0027d add tenantId here as well just for consistency with the below.",
+      "revId": "df1d97b19d24463ea8207fcbf3011acf2a3bf51c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
