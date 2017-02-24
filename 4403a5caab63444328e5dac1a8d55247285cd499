@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_01ae82e5",
+        "filename": ".gitignore",
+        "patchSetId": 12
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2017-02-24T05:15:09Z",
+      "side": 1,
+      "message": "Should you have this blank line?",
+      "revId": "4403a5caab63444328e5dac1a8d55247285cd499",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
