@@ -16,6 +16,24 @@
       "revId": "df1d97b19d24463ea8207fcbf3011acf2a3bf51c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_c3aaa584",
+        "filename": "java/monasca-common-hibernate/src/main/java/monasca/common/hibernate/db/AlarmDefinitionDb.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2017-02-24T14:59:39Z",
+      "side": 1,
+      "message": "The tenantId may not be available at this point if called from Thresh",
+      "parentUuid": "da36d5c6_fbfcb7b9",
+      "revId": "df1d97b19d24463ea8207fcbf3011acf2a3bf51c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
