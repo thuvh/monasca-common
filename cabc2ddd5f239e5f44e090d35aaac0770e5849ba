@@ -1,0 +1,9 @@
+Code-Review+2: Artur Basiak <artur.basiak@ts.fujitsu.com>
+Code-Review+1: Craig Bryant <craig.bryant@hpe.com>
+Workflow+1: Artur Basiak <artur.basiak@ts.fujitsu.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 07 Mar 2017 05:29:54 +0000
+Reviewed-on: https://review.openstack.org/419864
+Project: openstack/monasca-common
+Branch: refs/heads/master
