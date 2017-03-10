@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a30ddce_32c3c98a",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 14517
+      },
+      "writtenOn": "2017-03-10T21:48:54Z",
+      "side": 1,
+      "message": "I would call these largest and smallest to better fit with the kafka concept of offsets.\n\nAlso you might consider handling auto_offset_reset (see http://kafka-python.readthedocs.io/en/master/apidoc/kafka.consumer.html#kafka.consumer.simple.SimpleConsumer)",
+      "range": {
+        "startLine": 74,
+        "startChar": 55,
+        "endLine": 74,
+        "endChar": 68
+      },
+      "revId": "7c4a9c7bf12812d82044f6aa9ccafaa33e9dca92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
