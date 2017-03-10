@@ -1,4 +1,4 @@
-# (C) Copyright 2014-2016 Hewlett Packard Enterprise Development Company LP
+# (C) Copyright 2014-2017 Hewlett Packard Enterprise Development Company LP
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -52,7 +52,8 @@ class KafkaConsumer(object):
                  fetch_size=1048576,
                  repartition_callback=None,
                  commit_callback=None,
-                 commit_timeout=30):
+                 commit_timeout=30,
+                 seek_to=None):
         """Init
 
              kafka_url            - Kafka location
@@ -68,6 +69,9 @@ class KafkaConsumer(object):
              commit_callback      - Callback to run when the commit_timeout
                                     has elapsed between commits.
              commit_timeout       - Timeout between commits.
+             seek_to              - Manually specify the fetch offset for
+                                    all topics. Defaults to last known as
+                                    None, and accepts 'HEAD or 'TAIL'.
         """
 
         self._kazoo_client = None
@@ -77,6 +81,8 @@ class KafkaConsumer(object):
 
         self._commit_callback = commit_callback
         self._commit_timeout = commit_timeout
+
+        self._seek_to = seek_to
 
         self._last_commit = 0
 
@@ -107,7 +113,12 @@ class KafkaConsumer(object):
             max_buffer_size=None)
 
         consumer.provide_partition_info()
-        consumer.fetch_last_known_offsets()
+        if self._seek_to == 'HEAD':
+            consumer.seek(0,0)
+        elif self._seek_to == 'TAIL':
+            consumer.seek(0,2)
+        else:
+            consumer.fetch_last_known_offsets()
         return consumer
 
     def __iter__(self):
