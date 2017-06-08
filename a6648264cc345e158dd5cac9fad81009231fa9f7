@@ -1,0 +1,8 @@
+Code-Review+2: Fabio Giannetti <fgiannet@cisco.com>
+Workflow+1: Fabio Giannetti <fgiannet@cisco.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 08 Jun 2017 16:46:10 +0000
+Reviewed-on: https://review.openstack.org/472299
+Project: openstack/monasca-common
+Branch: refs/heads/master
