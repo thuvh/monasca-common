@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "7f231b9d_a3d7ebbf",
+        "filename": "monasca_common/monasca_query_language/aql_parser.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 14517
+      },
+      "writtenOn": "2017-06-12T19:29:30Z",
+      "side": 1,
+      "message": "I think these might fit better in a different file, or perhaps the original result can be refactored to better suit the output you need? Why take the dictionary and split it into multiple returns?",
+      "revId": "fe9584f7bdecff84d66346628b18094bc2583adc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_634553b3",
+        "filename": "monasca_common/monasca_query_language/query_structures.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 14517
+      },
+      "writtenOn": "2017-06-12T19:29:30Z",
+      "side": 1,
+      "message": "This name doesn\u0027t make sense to me, the query is at a different level. This code only deals with parsing the expression, regardless of where it comes from.",
+      "range": {
+        "startLine": 98,
+        "startChar": 6,
+        "endLine": 98,
+        "endChar": 20
+      },
+      "revId": "fe9584f7bdecff84d66346628b18094bc2583adc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_e35ba32b",
         "filename": "monasca_common/tests/test_monasca_query_language.py",
         "patchSetId": 8
@@ -19,6 +59,23 @@
         "endLine": 23,
         "endChar": 23
       },
+      "revId": "fe9584f7bdecff84d66346628b18094bc2583adc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_e32cc348",
+        "filename": "monasca_common/tests/test_monasca_query_language.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 14517
+      },
+      "writtenOn": "2017-06-12T19:29:30Z",
+      "side": 1,
+      "message": "Maybe a comment on this one explaining why it\u0027s allowed?",
       "revId": "fe9584f7bdecff84d66346628b18094bc2583adc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
