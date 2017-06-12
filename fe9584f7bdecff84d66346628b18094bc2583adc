@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f231b9d_de999d79",
+        "filename": "monasca_common/monasca_query_language/aql_parser.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 18179
+      },
+      "writtenOn": "2017-06-12T21:36:08Z",
+      "side": 1,
+      "message": "I think returning a dictionary instead of multiple items is better. It will save a lot of trouble later on such as the order of the return items.",
+      "parentUuid": "7f231b9d_a3d7ebbf",
+      "revId": "fe9584f7bdecff84d66346628b18094bc2583adc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_634553b3",
         "filename": "monasca_common/monasca_query_language/query_structures.py",
         "patchSetId": 8
