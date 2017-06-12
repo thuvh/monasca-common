@@ -45,6 +45,30 @@
       "revId": "fe9584f7bdecff84d66346628b18094bc2583adc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_4305b7c1",
+        "filename": "monasca_common/tests/test_monasca_query_language.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 14517
+      },
+      "writtenOn": "2017-06-12T19:10:20Z",
+      "side": 1,
+      "message": "I would as well, but range is python 3 compatible so it should probably stay",
+      "parentUuid": "7f231b9d_c3ae67e6",
+      "range": {
+        "startLine": 164,
+        "startChar": 17,
+        "endLine": 164,
+        "endChar": 22
+      },
+      "revId": "fe9584f7bdecff84d66346628b18094bc2583adc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
