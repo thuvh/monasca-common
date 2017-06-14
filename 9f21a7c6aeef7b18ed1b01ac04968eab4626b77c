@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f231b9d_3bf17b96",
+        "filename": "monasca_common/monasca_query_language/aql_parser.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 22157
+      },
+      "writtenOn": "2017-06-14T16:49:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_bc46ac7b",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 73
+      },
+      "revId": "9f21a7c6aeef7b18ed1b01ac04968eab4626b77c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_e6000e04",
         "filename": "monasca_common/monasca_query_language/aql_parser.py",
         "patchSetId": 10
@@ -36,6 +60,24 @@
       "writtenOn": "2017-06-14T13:45:37Z",
       "side": 1,
       "message": "this line is to long. Please break the line",
+      "revId": "9f21a7c6aeef7b18ed1b01ac04968eab4626b77c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_1be11f2b",
+        "filename": "monasca_common/monasca_query_language/aql_parser.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 22157
+      },
+      "writtenOn": "2017-06-14T16:49:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_e6000e04",
       "revId": "9f21a7c6aeef7b18ed1b01ac04968eab4626b77c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -112,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "7f231b9d_bbfd8b6f",
+        "filename": "monasca_common/monasca_query_language/query_structures.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 22157
+      },
+      "writtenOn": "2017-06-14T16:49:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_260046ab",
+      "range": {
+        "startLine": 26,
+        "startChar": 3,
+        "endLine": 30,
+        "endChar": 30
+      },
+      "revId": "9f21a7c6aeef7b18ed1b01ac04968eab4626b77c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_66407ea6",
         "filename": "monasca_common/monasca_query_language/query_structures.py",
         "patchSetId": 10
@@ -135,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "7f231b9d_5bcf9755",
+        "filename": "monasca_common/monasca_query_language/query_structures.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 22157
+      },
+      "writtenOn": "2017-06-14T16:49:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_66407ea6",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 8
+      },
+      "revId": "9f21a7c6aeef7b18ed1b01ac04968eab4626b77c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_a60b367b",
         "filename": "monasca_common/monasca_query_language/query_structures.py",
         "patchSetId": 10
@@ -146,6 +236,24 @@
       "writtenOn": "2017-06-14T13:45:37Z",
       "side": 1,
       "message": "line to long, please break it",
+      "revId": "9f21a7c6aeef7b18ed1b01ac04968eab4626b77c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_3bd85b1c",
+        "filename": "monasca_common/monasca_query_language/query_structures.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 22157
+      },
+      "writtenOn": "2017-06-14T16:49:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_a60b367b",
       "revId": "9f21a7c6aeef7b18ed1b01ac04968eab4626b77c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
