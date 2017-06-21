@@ -1,0 +1,9 @@
+Code-Review+1: Pradeep Kumar Velusamy <PradeepKumar.V@cognizant.com>
+Code-Review+2: Fabio Giannetti <fgiannet@cisco.com>
+Workflow+1: Witold Bedyk <witold.bedyk@est.fujitsu.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 21 Jun 2017 12:16:45 +0000
+Reviewed-on: https://review.openstack.org/473699
+Project: openstack/monasca-common
+Branch: refs/heads/master
