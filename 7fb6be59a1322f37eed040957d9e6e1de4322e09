@@ -1,0 +1,8 @@
+Code-Review+2: Tomasz Trębski <tomasz.trebski@ts.fujitsu.com>
+Workflow+1: Tomasz Trębski <tomasz.trebski@ts.fujitsu.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 18 Aug 2017 08:03:38 +0000
+Reviewed-on: https://review.openstack.org/494833
+Project: openstack/monasca-common
+Branch: refs/heads/master
