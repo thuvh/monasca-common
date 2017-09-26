@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f515b1d_c807721c",
+        "filename": "java/monasca-common-cassandra/src/main/java/monasca/common/configuration/CassandraDBConfiguration.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 16168
+      },
+      "writtenOn": "2017-09-26T07:17:24Z",
+      "side": 1,
+      "message": "spaces over tabs",
+      "revId": "3426c73b043a04b39b8b28e80890101977d5b25d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
