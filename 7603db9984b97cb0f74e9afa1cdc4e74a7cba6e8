@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f4e5783_74461a52",
+        "filename": "java/monasca-common-cassandra/src/main/java/monasca/common/configuration/CassandraDbConfiguration.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2017-10-12T14:49:59Z",
+      "side": 1,
+      "message": "nit: please remove whitespace",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 10
+      },
+      "revId": "7603db9984b97cb0f74e9afa1cdc4e74a7cba6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
