@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f4e5783_40c234eb",
+        "filename": "java/monasca-common-cassandra/src/main/java/monasca/common/configuration/CassandraDbConfiguration.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 10311
+      },
+      "writtenOn": "2017-10-12T17:32:53Z",
+      "side": 1,
+      "message": "No getter for readConsistencyLevel?",
+      "revId": "d9ae352927f9d95c5ed057544a338a2a0ef5c411",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
