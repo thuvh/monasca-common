@@ -19,3 +19,4 @@ dist
 cover/
 .coverage
 .testrepository/
+monasca-common-venv
