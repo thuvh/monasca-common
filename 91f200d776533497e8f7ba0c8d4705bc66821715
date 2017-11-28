@@ -22,6 +22,30 @@
       "revId": "91f200d776533497e8f7ba0c8d4705bc66821715",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_5e1bad71",
+        "filename": "monasca_common/policy_engine/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 26733
+      },
+      "writtenOn": "2017-11-28T12:00:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff82abbf_8d9a6db6",
+      "range": {
+        "startLine": 148,
+        "startChar": 72,
+        "endLine": 148,
+        "endChar": 73
+      },
+      "revId": "91f200d776533497e8f7ba0c8d4705bc66821715",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
