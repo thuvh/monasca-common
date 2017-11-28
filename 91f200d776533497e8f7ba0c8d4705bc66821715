@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_8d9a6db6",
+        "filename": "monasca_common/policy_engine/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 19853
+      },
+      "writtenOn": "2017-11-28T09:55:02Z",
+      "side": 1,
+      "message": "please remove white space at the end",
+      "range": {
+        "startLine": 148,
+        "startChar": 72,
+        "endLine": 148,
+        "endChar": 73
+      },
+      "revId": "91f200d776533497e8f7ba0c8d4705bc66821715",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
