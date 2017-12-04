@@ -1,0 +1,11 @@
+Code-Review+1: Michael Hoppal <michael.jam.hoppal@hpe.com>
+Code-Review+1: Andrea Adams <aadams@hpe.com>
+Code-Review+1: Kaiyan Sheng <kaiyan.sheng@hpe.com>
+Code-Review+2: Craig Bryant <craig.bryant@hpe.com>
+Workflow+1: Craig Bryant <craig.bryant@hpe.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 04 Dec 2017 17:40:45 +0000
+Reviewed-on: https://review.openstack.org/524411
+Project: openstack/monasca-common
+Branch: refs/heads/master
