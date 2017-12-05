@@ -1,4 +1,4 @@
-# Copyright (c) 2015 Hewlett-Packard Development Company, L.P.
+# (C) Copyright 2015, 2017 Hewlett Packard Enterprise Development LP
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -47,10 +47,23 @@ class KafkaProducer(object):
         if not isinstance(messages, list):
             messages = [messages]
 
-        try:
-            if key is None:
-                key = int(time.time() * 1000)
-            self._producer.send_messages(topic, str(key), *messages)
-        except Exception:
-            log.exception('Error publishing to {} topic.'.format(topic))
-            raise
+        first = True
+        success = False
+        while not success:
+            try:
+                if key is None:
+                    key = int(time.time() * 1000)
+                self._producer.send_messages(topic, str(key), *messages)
+                success = True
+            except Exception:
+                if first:
+                    # This is a warning because of all the other warning and
+                    # error messages that are logged in this case. This way
+                    # someone looking at the log file can see the retry
+                    log.warn("Failed send on topic {}, clear metadata and retry"
+                             .format(topic))
+                    self._kafka.reset_topic_metadata(topic)
+                    first = False
+                    continue
+                log.exception('Error publishing to {} topic.'.format(topic))
+                raise
