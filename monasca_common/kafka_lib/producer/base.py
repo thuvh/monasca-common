@@ -1,3 +1,4 @@
+# (C) Copyright 2017 Hewlett Packard Enterprise Development LP
 from __future__ import absolute_import
 
 import atexit
@@ -405,14 +406,26 @@ class Producer(object):
         else:
             messages = create_message_set([(m, key) for m in msg], self.codec, key, self.codec_compresslevel)
             req = ProduceRequest(topic, partition, messages)
-            try:
-                resp = self.client.send_produce_request(
-                    [req], acks=self.req_acks, timeout=self.ack_timeout,
-                    fail_on_error=self.sync_fail_on_error
-                )
-            except Exception:
-                log.exception("Unable to send messages")
-                raise
+            success = False
+            first = True
+            while not success:
+                try:
+                    resp = self.client.send_produce_request(
+                        [req], acks=self.req_acks, timeout=self.ack_timeout,
+                        fail_on_error=self.sync_fail_on_error
+                    )
+                    success= True
+                except Exception:
+                    if first:
+                        self.client.reset_topic_metadata(topic)
+                        # This is a warning because of all the other warning and error messages that
+                        # are logged in this case. This way someone looking at the log file can see
+                        # the retry
+                        log.warn("Failed to send message topic {}, cleared metadata and retrying", topic)
+                        first = False
+                        continue
+                    log.exception("Unable to send messages")
+                    raise
         return resp
 
     def stop(self, timeout=None):
