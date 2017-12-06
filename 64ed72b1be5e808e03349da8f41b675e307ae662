@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_8cf4f8d0",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10311
+      },
+      "writtenOn": "2017-12-06T18:32:10Z",
+      "side": 1,
+      "message": "if I was being really picky, I\u0027d say you should leave the old HP copyright then add the new HPE copyright in a second line.",
+      "revId": "64ed72b1be5e808e03349da8f41b675e307ae662",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
