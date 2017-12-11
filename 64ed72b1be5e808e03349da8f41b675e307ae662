@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_08286b94",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2017-12-11T19:16:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df87a7cf_3167eab9",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 8
+      },
+      "revId": "64ed72b1be5e808e03349da8f41b675e307ae662",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_a81cdf77",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2017-12-11T19:16:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df87a7cf_910d96e9",
+      "range": {
+        "startLine": 10,
+        "startChar": 42,
+        "endLine": 10,
+        "endChar": 54
+      },
+      "revId": "64ed72b1be5e808e03349da8f41b675e307ae662",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_8cf4f8d0",
         "filename": "monasca_common/kafka/producer.py",
         "patchSetId": 2
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_480bd328",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2017-12-11T19:16:31Z",
+      "side": 1,
+      "message": "I have to follow what our lawyers tell us :)",
+      "parentUuid": "df87a7cf_8cf4f8d0",
+      "revId": "64ed72b1be5e808e03349da8f41b675e307ae662",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_71c3328a",
         "filename": "monasca_common/kafka/producer.py",
         "patchSetId": 2
@@ -76,6 +142,24 @@
       "writtenOn": "2017-12-11T12:30:19Z",
       "side": 1,
       "message": "Please add a short comment here, why we\u0027re doing this.",
+      "revId": "64ed72b1be5e808e03349da8f41b675e307ae662",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_ab013907",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 11809
+      },
+      "writtenOn": "2017-12-11T19:16:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df87a7cf_71c3328a",
       "revId": "64ed72b1be5e808e03349da8f41b675e307ae662",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
