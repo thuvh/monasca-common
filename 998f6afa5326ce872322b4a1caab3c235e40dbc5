@@ -1,0 +1,10 @@
+Code-Review+2: Witold Bedyk <witold.bedyk@est.fujitsu.com>
+Code-Review+1: Ryan Brandt <ryan.brandt@hpe.com>
+Code-Review+2: Joe Keen <joe.keen@hpe.com>
+Workflow+1: Joe Keen <joe.keen@hpe.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 14 Dec 2017 13:53:10 +0000
+Reviewed-on: https://review.openstack.org/525669
+Project: openstack/monasca-common
+Branch: refs/heads/master
