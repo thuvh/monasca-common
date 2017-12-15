@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_caed29b8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2017-12-15T13:19:51Z",
+      "side": 1,
+      "message": "Please add some information about the content of the change.",
+      "revId": "f2fccd9a6f019ea86a87d13b930a5087fa8c4c42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_4a37d94e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2017-12-15T13:19:51Z",
+      "side": 1,
+      "message": "Please add this change as a new task to this [1] story.\n\n[1] https://storyboard.openstack.org/#!/story/2001233",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 14
+      },
+      "revId": "f2fccd9a6f019ea86a87d13b930a5087fa8c4c42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_0a223102",
+        "filename": "monasca_common/policy_engine/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2017-12-15T13:19:51Z",
+      "side": 1,
+      "message": "Other projects use `policy` or `policies` as the package name. The spec document [1] uses `monasca_common.policy`. Please stay consistent.\n\n[1] https://review.openstack.org/#/c/511245/3/specs/queens/approved/implement-oslo-policy.rst@50",
+      "revId": "f2fccd9a6f019ea86a87d13b930a5087fa8c4c42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_6d2d1745",
+        "filename": "monasca_common/tests/policy/test_policy.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2017-12-15T13:19:51Z",
+      "side": 1,
+      "message": "nit: wrap to 80 characters.",
+      "range": {
+        "startLine": 193,
+        "startChar": 45,
+        "endLine": 195,
+        "endChar": 101
+      },
+      "revId": "f2fccd9a6f019ea86a87d13b930a5087fa8c4c42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
