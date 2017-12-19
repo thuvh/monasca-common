@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "df87a7cf_a2a0b8f5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 26733
+      },
+      "writtenOn": "2017-12-19T14:21:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df87a7cf_c7d62ef3",
+      "range": {
+        "startLine": 10,
+        "startChar": 23,
+        "endLine": 10,
+        "endChar": 70
+      },
+      "revId": "1dc5c20eb83f9a1a8939582fe75f0f5e162fd7b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df87a7cf_e7ec92bc",
         "filename": "/COMMIT_MSG",
         "patchSetId": 8
@@ -36,6 +60,30 @@
       "writtenOn": "2017-12-19T14:04:30Z",
       "side": 1,
       "message": "Please wrap at 72 characters.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 73
+      },
+      "revId": "1dc5c20eb83f9a1a8939582fe75f0f5e162fd7b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87a7cf_42a1acf6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 26733
+      },
+      "writtenOn": "2017-12-19T14:21:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df87a7cf_e7ec92bc",
       "range": {
         "startLine": 9,
         "startChar": 0,
