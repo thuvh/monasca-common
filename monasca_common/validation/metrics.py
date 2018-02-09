@@ -15,6 +15,7 @@
 
 import math
 import re
+import time
 
 import six
 import ujson
@@ -174,4 +175,8 @@ def validate_timestamp(timestamp):
     if not isinstance(timestamp, NUMERIC_VALUES):
         msg = "invalid timestamp type: {0} is not a number type for " \
               "metric".format(timestamp)
+        raise InvalidTimeStamp(msg)
+    time_diff = time.time() * 1000 - timestamp
+    if time_diff > 120000 or time_diff < -120000:
+        msg = "timestamp {} is out of legal range".format(timestamp)
         raise InvalidTimeStamp(msg)
