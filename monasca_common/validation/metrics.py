@@ -15,6 +15,7 @@
 
 import math
 import re
+import time
 
 import six
 import ujson
@@ -29,6 +30,7 @@ RECENT_POINT_THRESHOLD_DEFAULT = 3600
 VALUE_META_MAX_NUMBER = 16
 VALUE_META_VALUE_MAX_LENGTH = 2048
 VALUE_META_NAME_MAX_LENGTH = 255
+TWO_MINUTES = 120000
 
 INVALID_CHARS = "<>={},\"\\\\;&"
 RESTRICTED_DIMENSION_CHARS = re.compile('[' + INVALID_CHARS + ']')
@@ -174,4 +176,8 @@ def validate_timestamp(timestamp):
     if not isinstance(timestamp, NUMERIC_VALUES):
         msg = "invalid timestamp type: {0} is not a number type for " \
               "metric".format(timestamp)
+        raise InvalidTimeStamp(msg)
+    time_diff = time.time() * 1000 - timestamp
+    if time_diff > TWO_MINUTES or time_diff < -TWO_MINUTES:
+        msg = "timestamp {} is out of legal range".format(timestamp)
         raise InvalidTimeStamp(msg)

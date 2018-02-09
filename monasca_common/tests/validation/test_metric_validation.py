@@ -14,6 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import time
+
 from oslotest import base
 import codecs
 import six
@@ -27,6 +29,8 @@ invalid_name_chars = " <>={}(),\"\\\\;&"
 # a few valid characters to test
 valid_dimension_chars = " .'_-"
 invalid_dimension_chars = "<>={},\"\\\\;&"
+
+valid_timestamp = time.time() * 1000
 
 
 def _hex_to_unicode(hex_raw):
@@ -75,7 +79,7 @@ class TestMetricValidation(base.BaseTestCase):
         metric = {"name": "test_metric_name",
                   "dimensions": {"key1": "value1",
                                  "key2": "value2"},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         metric_validator.validate(metric)
 
@@ -84,21 +88,21 @@ class TestMetricValidation(base.BaseTestCase):
             {"name": "name1",
              "dimensions": {"key1": "value1",
                             "key2": "value2"},
-             "timestamp": 1405630174123,
+             "timestamp": valid_timestamp,
              "value": 1.0},
             {"name": "name2",
              "dimensions": {"key1": "value1",
                             "key2": "value2"},
              "value_meta": {"key1": "value1",
                             "key2": "value2"},
-             "timestamp": 1405630174123,
+             "timestamp": valid_timestamp,
              "value": 2.0}
         ]
         metric_validator.validate(metrics)
 
     def test_valid_metric_unicode_dimension_value(self):
         metric = {"name": "test_metric_name",
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "dimensions": {UNICODE_MESSAGES[0]['input']: 'B', 'B': 'C',
                                  'D': 'E'},
                   "value": 5}
@@ -108,7 +112,7 @@ class TestMetricValidation(base.BaseTestCase):
         metric = {"name": 'test_metric_name',
                   "dimensions": {'A': 'B', 'B': UNICODE_MESSAGES[0]['input'],
                                  'D': 'E'},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         metric_validator.validate(metric)
 
@@ -116,7 +120,7 @@ class TestMetricValidation(base.BaseTestCase):
         metric = {"name": UNICODE_MESSAGES[0]['input'],
                   "dimensions": {"key1": "value1",
                                  "key2": "value2"},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         metric_validator.validate(metric)
 
@@ -124,7 +128,7 @@ class TestMetricValidation(base.BaseTestCase):
         metric = {'name': "TooLarge" * 255,
                   "dimensions": {"key1": "value1",
                                  "key2": "value2"},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         self.assertRaisesRegex(
             metric_validator.InvalidMetricName,
@@ -135,7 +139,7 @@ class TestMetricValidation(base.BaseTestCase):
         metric = {"name": "",
                   "dimensions": {"key1": "value1",
                                  "key2": "value2"},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         self.assertRaisesRegex(
             metric_validator.InvalidMetricName,
@@ -146,7 +150,7 @@ class TestMetricValidation(base.BaseTestCase):
         metric = {"name": 133,
                   "dimensions": {"key1": "value1",
                                  "key2": "value2"},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         self.assertRaisesRegex(
             metric_validator.InvalidMetricName,
@@ -158,7 +162,7 @@ class TestMetricValidation(base.BaseTestCase):
         metric = {"name": '"Foo"',
                   "dimensions": {"key1": "value1",
                                  "key2": "value2"},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         self.assertRaisesRegex(
             metric_validator.InvalidMetricName,
@@ -168,7 +172,7 @@ class TestMetricValidation(base.BaseTestCase):
     def test_invalid_dimension_empty_key(self):
         metric = {"name": "test_metric_name",
                   "dimensions": {'A': 'B', '': 'C', 'D': 'E'},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         self.assertRaisesRegex(
             metric_validator.InvalidDimensionKey,
@@ -178,7 +182,7 @@ class TestMetricValidation(base.BaseTestCase):
     def test_invalid_dimension_empty_value(self):
         metric = {"name": "test_metric_name",
                   "dimensions": {'A': 'B', 'B': 'C', 'D': ''},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         self.assertRaisesRegex(
             metric_validator.InvalidDimensionValue,
@@ -188,7 +192,7 @@ class TestMetricValidation(base.BaseTestCase):
     def test_invalid_dimension_non_str_key(self):
         metric = {"name": "test_metric_name",
                   "dimensions": {'A': 'B', 4: 'C', 'D': 'E'},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         self.assertRaisesRegex(
             metric_validator.InvalidDimensionKey,
@@ -198,7 +202,7 @@ class TestMetricValidation(base.BaseTestCase):
     def test_invalid_dimension_non_str_value(self):
         metric = {"name": "test_metric_name",
                   "dimensions": {'A': 13.3, 'B': 'C', 'D': 'E'},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         self.assertRaisesRegex(
             metric_validator.InvalidDimensionValue,
@@ -208,7 +212,7 @@ class TestMetricValidation(base.BaseTestCase):
     def test_invalid_dimension_key_length(self):
         metric = {"name": "test_metric_name",
                   "dimensions": {'A'*256: 'B', 'B': 'C', 'D': 'E'},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         self.assertRaisesRegex(
             metric_validator.InvalidDimensionKey,
@@ -218,7 +222,7 @@ class TestMetricValidation(base.BaseTestCase):
     def test_invalid_dimension_value_length(self):
         metric = {"name": "test_metric_name",
                   "dimensions": {'A': 'B', 'B': 'C'*256, 'D': 'E'},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         self.assertRaisesRegex(
             metric_validator.InvalidDimensionValue,
@@ -228,7 +232,7 @@ class TestMetricValidation(base.BaseTestCase):
     def test_invalid_dimension_key_restricted_characters(self):
         metric = {"name": "test_metric_name",
                   "dimensions": {'A': 'B', 'B': 'C', 'D=': 'E'},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         self.assertRaisesRegex(
             metric_validator.InvalidDimensionKey,
@@ -238,7 +242,7 @@ class TestMetricValidation(base.BaseTestCase):
     def test_invalid_dimension_value_restricted_characters(self):
         metric = {"name": "test_metric_name",
                   "dimensions": {'A': 'B;', 'B': 'C', 'D': 'E'},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         self.assertRaisesRegex(
             metric_validator.InvalidDimensionValue,
@@ -248,7 +252,7 @@ class TestMetricValidation(base.BaseTestCase):
     def test_invalid_dimension_key_leading_underscore(self):
         metric = {"name": "test_metric_name",
                   "dimensions": {'_A': 'B', 'B': 'C', 'D': 'E'},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         self.assertRaisesRegex(
             metric_validator.InvalidDimensionKey,
@@ -259,7 +263,7 @@ class TestMetricValidation(base.BaseTestCase):
         metric = {"name": "test_metric_name",
                   "dimensions": {"key1": "value1",
                                  "key2": "value2"},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": "value"}
         self.assertRaisesRegex(
             metric_validator.InvalidValue,
@@ -270,7 +274,7 @@ class TestMetricValidation(base.BaseTestCase):
         metric = {"name": "test_metric_name",
                   "dimensions": {"key1": "value1",
                                  "key2": "value2"},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": None}
 
         for value in ('nan', 'inf', '-inf'):
@@ -285,7 +289,7 @@ class TestMetricValidation(base.BaseTestCase):
             metric = {"name": 'test{}counter'.format(c),
                       "dimensions": {"key1": "value1",
                                      "key2": "value2"},
-                      "timestamp": 1405630174123,
+                      "timestamp": valid_timestamp,
                       "value": 5}
             metric_validator.validate(metric)
 
@@ -294,7 +298,7 @@ class TestMetricValidation(base.BaseTestCase):
             metric = {"name": 'test{}counter'.format(c),
                       "dimensions": {"key1": "value1",
                                      "key2": "value2"},
-                      "timestamp": 1405630174123,
+                      "timestamp": valid_timestamp,
                       "value": 5}
             self.assertRaisesRegex(
                 metric_validator.InvalidMetricName,
@@ -306,7 +310,7 @@ class TestMetricValidation(base.BaseTestCase):
             metric = {"name": "test_name",
                       "dimensions":
                           {"test{}key".format(c): "test{}value".format(c)},
-                      "timestamp": 1405630174123,
+                      "timestamp": valid_timestamp,
                       "value": 5}
             metric_validator.validate(metric)
 
@@ -314,7 +318,7 @@ class TestMetricValidation(base.BaseTestCase):
         for c in invalid_dimension_chars:
             metric = {"name": "test_name",
                       "dimensions": {'test{}key'.format(c): 'test-value'},
-                      "timestamp": 1405630174123,
+                      "timestamp": valid_timestamp,
                       "value": 5}
             self.assertRaisesRegex(
                 metric_validator.InvalidDimensionKey,
@@ -325,7 +329,7 @@ class TestMetricValidation(base.BaseTestCase):
         for c in invalid_dimension_chars:
             metric = {"name": "test_name",
                       "dimensions":  {'test-key': 'test{}value'.format(c)},
-                      "timestamp": 1405630174123,
+                      "timestamp": valid_timestamp,
                       "value": 5}
             self.assertRaisesRegex(
                 metric_validator.InvalidDimensionValue,
@@ -340,7 +344,7 @@ class TestMetricValidation(base.BaseTestCase):
                   "dimensions": {"key1": "value1",
                                  "key2": "value2"},
                   "value_meta": value_meta,
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         self.assertRaisesRegex(
             metric_validator.InvalidValueMeta,
@@ -352,7 +356,7 @@ class TestMetricValidation(base.BaseTestCase):
                   "dimensions": {"key1": "value1",
                                  "key2": "value2"},
                   "value_meta": {'': 'BBB'},
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         self.assertRaisesRegex(
             metric_validator.InvalidValueMeta,
@@ -368,7 +372,7 @@ class TestMetricValidation(base.BaseTestCase):
                   "dimensions": {"key1": "value1",
                                  "key2": "value2"},
                   "value_meta": value_meta,
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         self.assertRaisesRegex(
             metric_validator.InvalidValueMeta,
@@ -387,14 +391,14 @@ class TestMetricValidation(base.BaseTestCase):
                   "dimensions": {"key1": "value1",
                                  "key2": "value2"},
                   "value_meta": value_meta,
-                  "timestamp": 1405630174123,
+                  "timestamp": valid_timestamp,
                   "value": 5}
         self.assertRaisesRegex(
             metric_validator.InvalidValueMeta,
             "Unable to serialize valueMeta into JSON",
             metric_validator.validate, metric)
 
-    def test_invalid_timestamp(self):
+    def test_invalid_timestamp_type(self):
         metric = {'name': 'test_metric_name',
                   "dimensions": {"key1": "value1",
                                  "key2": "value2"},
@@ -405,19 +409,41 @@ class TestMetricValidation(base.BaseTestCase):
             "invalid timestamp type",
             metric_validator.validate, metric)
 
+    def test_invalid_timestamp_past(self):
+        metric = {'name': 'test_metric_name',
+                  "dimensions": {"key1": "value1",
+                                 "key2": "value2"},
+                  "timestamp": valid_timestamp - 121 * 1000,
+                  "value": 5}
+        self.assertRaisesRegex(
+            metric_validator.InvalidTimeStamp,
+            "out of legal range",
+            metric_validator.validate, metric)
+
+    def test_invalid_timestamp_future(self):
+        metric = {'name': 'test_metric_name',
+                  "dimensions": {"key1": "value1",
+                                 "key2": "value2"},
+                  "timestamp": valid_timestamp + 121 * 1000,
+                  "value": 5}
+        self.assertRaisesRegex(
+            metric_validator.InvalidTimeStamp,
+            "out of legal range",
+            metric_validator.validate, metric)
+
     def test_valid_metrics_by_components(self):
         metrics = [
             {"name": "name1",
              "dimensions": {"key1": "value1",
                             "key2": "value2"},
-             "timestamp": 1405630174123,
+             "timestamp": valid_timestamp,
              "value": 1.0},
             {"name": "name2",
              "dimensions": {"key1": "value1",
                             "key2": "value2"},
              "value_meta": {"key1": "value1",
                             "key2": "value2"},
-             "timestamp": 1405630174123,
+             "timestamp": valid_timestamp,
              "value": 2.0}
         ]
         for i in six.moves.range(len(metrics)):
