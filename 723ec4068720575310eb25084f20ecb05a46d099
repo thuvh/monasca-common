@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "bf659307_3401f76a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 26733
+      },
+      "writtenOn": "2018-04-04T13:17:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_99bd9e03",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 1
+      },
+      "revId": "723ec4068720575310eb25084f20ecb05a46d099",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_14fe336a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 26733
+      },
+      "writtenOn": "2018-04-04T13:17:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_593946a1",
+      "range": {
+        "startLine": 7,
+        "startChar": 19,
+        "endLine": 7,
+        "endChar": 20
+      },
+      "revId": "723ec4068720575310eb25084f20ecb05a46d099",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_79d76a4c",
         "filename": "monasca_common/kafka_lib/__init__.py",
         "patchSetId": 1
@@ -59,6 +107,24 @@
       "writtenOn": "2018-04-04T12:17:46Z",
       "side": 1,
       "message": "Add empty line between license and code (same for all files).",
+      "revId": "723ec4068720575310eb25084f20ecb05a46d099",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_d4fbdb75",
+        "filename": "monasca_common/kafka_lib/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 26733
+      },
+      "writtenOn": "2018-04-04T13:17:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_79d76a4c",
       "revId": "723ec4068720575310eb25084f20ecb05a46d099",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
