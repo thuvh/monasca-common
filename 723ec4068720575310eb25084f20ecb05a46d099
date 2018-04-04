@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_99bd9e03",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-04-04T12:17:46Z",
+      "side": 1,
+      "message": "U",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 1
+      },
+      "revId": "723ec4068720575310eb25084f20ecb05a46d099",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_593946a1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-04-04T12:17:46Z",
+      "side": 1,
+      "message": "Not dot at the end of commit subject",
+      "range": {
+        "startLine": 7,
+        "startChar": 19,
+        "endLine": 7,
+        "endChar": 20
+      },
+      "revId": "723ec4068720575310eb25084f20ecb05a46d099",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_79d76a4c",
+        "filename": "monasca_common/kafka_lib/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-04-04T12:17:46Z",
+      "side": 1,
+      "message": "Add empty line between license and code (same for all files).",
+      "revId": "723ec4068720575310eb25084f20ecb05a46d099",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
