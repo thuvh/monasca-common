@@ -1,0 +1,9 @@
+Code-Review+2: Amir Mofakhar <amofakhar@op5.com>
+Code-Review+2: Stefano Canepa (sc) <sc@linux.it>
+Workflow+1: Stefano Canepa (sc) <sc@linux.it>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 09 Apr 2018 10:46:27 +0000
+Reviewed-on: https://review.openstack.org/556802
+Project: openstack/monasca-common
+Branch: refs/heads/master
