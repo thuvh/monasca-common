@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from falcon.http_error import HTTPError
+
 
 class UnsupportedContentTypeException(Exception):
     """Exception thrown if content type is not supported."""
@@ -37,3 +39,13 @@ class DataConversionException(Exception):
 
     """
     pass
+
+
+class HTTPUnprocessableEntityError(HTTPError):
+    def __init__(self, title, description, **kwargs):
+        HTTPError.__init__(self, '422 Unprocessable Entity', title, description, **kwargs)
+
+
+class HTTPBadRequestError(HTTPError):
+    def __init__(self, title, description, **kwargs):
+        HTTPError.__init__(self, '400 Bad Request', title, description, **kwargs)

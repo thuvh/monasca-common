@@ -12,6 +12,7 @@
 
 import mock
 
+import falcon
 from oslotest import base
 
 from monasca_common.rest import exceptions
@@ -79,3 +80,210 @@ class TestRestUtils(base.BaseTestCase):
 
         self.assertRaises(exceptions.DataConversionException,
                           utils.as_json, data)
+
+
+class TestRoleValidation(base.BaseTestCase):
+
+    def test_role_valid(self):
+        req_roles = 'role0', 'rOlE1'
+        authorized_roles = ['RolE1', 'Role2']
+
+        req = mock.Mock()
+        req.roles = req_roles
+
+        utils.validate_authorization(req, authorized_roles)
+
+    def test_role_invalid(self):
+        req_roles = 'role2', 'role3'
+        authorized_roles = ['role0', 'role1']
+
+        req = mock.Mock()
+        req.roles = req_roles
+
+        self.assertRaises(
+            falcon.HTTPUnauthorized,
+            utils.validate_authorization, req, authorized_roles)
+
+    def test_empty_role_header(self):
+        req_roles = []
+        authorized_roles = ['Role1', 'Role2']
+
+        req = mock.Mock()
+        req.roles = req_roles
+
+        self.assertRaises(
+            falcon.HTTPUnauthorized,
+            utils.validate_authorization, req, authorized_roles)
+
+    def test_no_role_header(self):
+        req_roles = None
+        authorized_roles = ['Role1', 'Role2']
+
+        req = mock.Mock()
+        req.roles = req_roles
+
+        self.assertRaises(
+            falcon.HTTPUnauthorized,
+            utils.validate_authorization, req, authorized_roles)
+
+
+class TestGetQueryDimension(base.BaseTestCase):
+
+    def test_no_dimensions(self):
+        result = utils.get_query_dimensions(None)
+        self.assertEqual({}, result)
+
+    def test_one_dimension(self):
+        result = utils.get_query_dimensions('Dimension:Value')
+        self.assertEqual({"Dimension": "Value"}, result)
+
+    def test_comma_sep_dimensions(self):
+        result = utils.get_query_dimensions(
+            'Dimension:Value,Dimension-2:Value-2')
+        self.assertEqual(
+            {"Dimension": "Value", "Dimension-2": "Value-2"}, result)
+
+    def test_many_comma_sep_dimensions(self):
+        result = utils.get_query_dimensions(
+            'Dimension-3:Value-3,Dimension:Value,Dimension-2:Value-2')
+        self.assertEqual(
+            {"Dimension": "Value",
+             "Dimension-2": "Value-2",
+             "Dimension-3": "Value-3"}, result)
+
+    def test_dimension_no_value(self):
+        result = utils.get_query_dimensions('Dimension_no_value')
+        self.assertEqual({"Dimension_no_value": ""}, result)
+
+    def test_dimension_multi_value(self):
+        result = utils.get_query_dimensions('Dimension_multi_value:one|two|three')
+        self.assertEqual({"Dimension_multi_value": "one|two|three"}, result)
+
+    def test_dimension_list(self):
+        result = utils.get_query_dimensions(
+            ['Dimension:Value', 'Dimension-2:Value-2,Dimension-3:Value-3'])
+        self.assertEqual(
+            {"Dimension": "Value",
+             "Dimension-2": "Value-2",
+             "Dimension-3": "Value-3"}, result)
+
+    def test_invalid_dimension(self):
+        self.assertRaises(exceptions.HTTPUnprocessableEntityError,
+                          utils.get_query_dimensions,
+                          {'foo'})
+
+    def test_dimension_with_multiple_colons(self):
+        result = utils.get_query_dimensions(
+            'url:http://192.168.10.4:5601,'
+            'hostname:monasca,'
+            'component:kibana,'
+            'service:monitoring')
+        self.assertEqual({"url": "http://192.168.10.4:5601",
+                          "hostname": "monasca",
+                          "component": "kibana",
+                          "service": "monitoring"}, result)
+
+
+class TestTimestampsValidation(base.BaseTestCase):
+
+    def test_valid_timestamps(self):
+        start_time = '2015-01-01T00:00:00Z'
+        end_time = '2015-01-01T00:00:01Z'
+        start_timestamp = utils._convert_time_string(start_time)
+        end_timestamp = utils._convert_time_string(end_time)
+        self.assertIsNone(
+            utils.validate_timestamp_order(start_timestamp, end_timestamp))
+
+    def test_same_timestamps(self):
+        start_time = '2015-01-01T00:00:00Z'
+        end_time = start_time
+        start_timestamp = utils._convert_time_string(start_time)
+        end_timestamp = utils._convert_time_string(end_time)
+
+        self.assertRaises(
+            exceptions.HTTPUnprocessableEntityError,
+            utils.validate_timestamp_order,
+            start_timestamp, end_timestamp)
+
+    def test_end_before_than_start(self):
+        start_time = '2015-01-01T00:00:00Z'
+        end_time = '2014-12-31T23:59:59Z'
+        start_timestamp = utils._convert_time_string(start_time)
+        end_timestamp = utils._convert_time_string(end_time)
+
+        self.assertRaises(
+            exceptions.HTTPUnprocessableEntityError,
+            utils.validate_timestamp_order,
+            start_timestamp, end_timestamp)
+
+    def test_until_end(self):
+        end_time = '2014-12-31T23:59:59Z'
+        end_timestamp = utils._convert_time_string(end_time)
+        self.assertIsNone(
+            utils.validate_timestamp_order(None, end_timestamp))
+
+    def test_from_start(self):
+        start_time = '2014-12-31T23:59:59Z'
+        start_timestamp = utils._convert_time_string(start_time)
+        self.assertIsNone(
+            utils.validate_timestamp_order(start_timestamp, None))
+
+    def test_all_time(self):
+        self.assertIsNone(
+            utils.validate_timestamp_order(None, None))
+
+
+class TestGetQueryTimestamp(base.BaseTestCase):
+
+    def test_valid_date_time_string(self):
+        date_time_string = '2015-01-01T00:00:00Z'
+
+        timestamp = utils.get_query_timestamp(date_time_string)
+        self.assertEqual(1420070400., timestamp)
+
+    def test_valid_date_time_string_with_mills(self):
+        date_time_string = '2015-01-01T00:00:00.025Z'
+
+        timestamp = utils.get_query_timestamp(date_time_string)
+        self.assertEqual(1420070400.025, timestamp)
+
+    def test_valid_date_time_string_with_timezone(self):
+        date_time_string = '2015-01-01T09:00:00+09:00'
+
+        timestamp = utils.get_query_timestamp(date_time_string)
+        self.assertEqual(1420070400., timestamp)
+
+    def test_invalid_date_time_string(self):
+        date_time_string = '2015-01-01T00:00:000Z'
+
+        self.assertRaises(
+            exceptions.HTTPUnprocessableEntityError,
+            utils.get_query_timestamp, date_time_string)
+
+
+class TestValidateQueryDimensions(base.BaseTestCase):
+
+    def test_validate_query_dimension(self):
+        dimensions = {'foo': 'bar'}
+        actual = utils.validate_query_dimensions(dimensions)
+        expected = {'foo': ['bar']}
+        self.assertDictEqual(actual, expected)
+
+    def test_validate_query_no_value(self):
+        dimensions = {'foo': None}
+        actual = utils.validate_query_dimensions(dimensions)
+        expected = {'foo': None}
+        self.assertDictEqual(actual, expected)
+
+    def test_validate_query_dimension_multiple_keys(self):
+        dimensions = {'foo': 'a|b|c'}
+        actual = utils.validate_query_dimensions(dimensions)
+        expected = {'foo': ['a', 'b', 'c']}
+        self.assertDictEqual(actual, expected)
+
+    def test_validate_invalid_key(self):
+        dimensions = {'foo': None, '_invalid': 'bar'}
+        self.assertRaises(
+            exceptions.HTTPUnprocessableEntityError,
+            utils.validate_query_dimensions,
+            dimensions)
