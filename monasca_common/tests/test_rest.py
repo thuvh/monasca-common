@@ -12,6 +12,7 @@
 
 import mock
 
+import falcon
 from oslotest import base
 
 from monasca_common.rest import exceptions
@@ -79,3 +80,203 @@ class TestRestUtils(base.BaseTestCase):
 
         self.assertRaises(exceptions.DataConversionException,
                           utils.as_json, data)
+
+
+class TestRoleValidation(base.BaseTestCase):
+
+    def test_role_valid(self):
+        req_roles = 'role0', 'rOlE1'
+        authorized_roles = ['RolE1', 'Role2']
+
+        req = mock.Mock()
+        req.roles = req_roles
+
+        utils.validate_authorization(req, authorized_roles)
+
+    def test_role_invalid(self):
+        req_roles = 'role2', 'role3'
+        authorized_roles = ['role0', 'role1']
+
+        req = mock.Mock()
+        req.roles = req_roles
+
+        self.assertRaises(
+            falcon.HTTPUnauthorized,
+            utils.validate_authorization, req, authorized_roles)
+
+    def test_empty_role_header(self):
+        req_roles = []
+        authorized_roles = ['Role1', 'Role2']
+
+        req = mock.Mock()
+        req.roles = req_roles
+
+        self.assertRaises(
+            falcon.HTTPUnauthorized,
+            utils.validate_authorization, req, authorized_roles)
+
+    def test_no_role_header(self):
+        req_roles = None
+        authorized_roles = ['Role1', 'Role2']
+
+        req = mock.Mock()
+        req.roles = req_roles
+
+        self.assertRaises(
+            falcon.HTTPUnauthorized,
+            utils.validate_authorization, req, authorized_roles)
+
+
+class TestGetQueryDimension(base.BaseTestCase):
+
+    def test_no_dimensions(self):
+        req = mock.Mock()
+
+        req.query_string = "foo=bar"
+
+        result = utils.get_query_dimensions(req)
+
+        self.assertEqual(result, {})
+
+    def test_one_dimensions(self):
+        req = mock.Mock()
+
+        req.query_string = "foo=bar&dimensions=Dimension:Value"
+
+        result = utils.get_query_dimensions(req)
+
+        self.assertEqual(result, {"Dimension": "Value"})
+
+    def test_comma_sep_dimensions(self):
+        req = mock.Mock()
+
+        req.query_string = ("foo=bar&"
+                            "dimensions=Dimension:Value,Dimension-2:Value-2")
+
+        result = utils.get_query_dimensions(req)
+
+        self.assertEqual(
+            result, {"Dimension": "Value", "Dimension-2": "Value-2"})
+
+    def test_multiple_dimension_params(self):
+        req = mock.Mock()
+
+        req.query_string = ("foo=bar&"
+                            "dimensions=Dimension:Value&"
+                            "dimensions=Dimension-2:Value-2")
+
+        result = utils.get_query_dimensions(req)
+
+        self.assertEqual(
+            result, {"Dimension": "Value", "Dimension-2": "Value-2"})
+
+    def test_multiple_dimension_params_with_comma_sep_dimensions(self):
+        req = mock.Mock()
+
+        req.query_string = ("foo=bar&"
+                            "dimensions=Dimension-3:Value-3&"
+                            "dimensions=Dimension:Value,Dimension-2:Value-2")
+
+        result = utils.get_query_dimensions(req)
+
+        self.assertEqual(
+            result, {"Dimension": "Value",
+                     "Dimension-2": "Value-2",
+                     "Dimension-3": "Value-3"})
+
+    def test_dimension_no_value(self):
+        req = mock.Mock()
+        req.query_string = ("foo=bar&dimensions=Dimension_no_value")
+
+        result = utils.get_query_dimensions(req)
+        self.assertEqual(result, {"Dimension_no_value": ""})
+
+    def test_dimension_multi_value(self):
+        req = mock.Mock()
+        req.query_string = ("foo=bar&dimensions=Dimension_multi_value:one|two|three")
+
+        result = utils.get_query_dimensions(req)
+        self.assertEqual(result, {"Dimension_multi_value": "one|two|three"})
+
+    def test_dimension_with_multi_colons(self):
+        req = mock.Mock()
+        req.query_string = ("foo=bar&dimensions=url:http://192.168.10.4:5601,"
+                            "hostname:monasca,component:kibana,service:monitoring")
+
+        result = utils.get_query_dimensions(req)
+        self.assertEqual(result, {"url": "http://192.168.10.4:5601",
+                                  "hostname": "monasca",
+                                  "component": "kibana",
+                                  "service": "monitoring"})
+
+    def test_empty_dimension(self):
+        req = mock.Mock()
+        req.query_string = ("foo=bar&dimensions=")
+
+        result = utils.get_query_dimensions(req)
+        self.assertEqual(result, {})
+
+
+class TestTimestampsValidation(base.BaseTestCase):
+
+    def test_valid_timestamps(self):
+        start_time = '2015-01-01T00:00:00Z'
+        end_time = '2015-01-01T00:00:01Z'
+        start_timestamp = utils._convert_time_string(start_time)
+        end_timestamp = utils._convert_time_string(end_time)
+
+        try:
+            utils.validate_start_end_timestamps(start_timestamp,
+                                                end_timestamp)
+        except falcon.HTTPBadRequest:
+            self.fail("shouldn't happen")
+
+    def test_same_timestamps(self):
+        start_time = '2015-01-01T00:00:00Z'
+        end_time = start_time
+        start_timestamp = utils._convert_time_string(start_time)
+        end_timestamp = utils._convert_time_string(end_time)
+
+        self.assertRaises(
+            falcon.HTTPBadRequest,
+            utils.validate_start_end_timestamps,
+            start_timestamp, end_timestamp)
+
+    def test_end_before_than_start(self):
+        start_time = '2015-01-01T00:00:00Z'
+        end_time = '2014-12-31T23:59:59Z'
+        start_timestamp = utils._convert_time_string(start_time)
+        end_timestamp = utils._convert_time_string(end_time)
+
+        self.assertRaises(
+            falcon.HTTPBadRequest,
+            utils.validate_start_end_timestamps,
+            start_timestamp, end_timestamp)
+
+
+class TestConvertTimeString(base.BaseTestCase):
+
+    def test_valid_date_time_string(self):
+        date_time_string = '2015-01-01T00:00:00Z'
+
+        timestamp = utils._convert_time_string(date_time_string)
+        self.assertEqual(1420070400., timestamp)
+
+    def test_valid_date_time_string_with_mills(self):
+        date_time_string = '2015-01-01T00:00:00.025Z'
+
+        timestamp = utils._convert_time_string(date_time_string)
+        self.assertEqual(1420070400.025, timestamp)
+
+    def test_valid_date_time_string_with_timezone(self):
+        date_time_string = '2015-01-01T09:00:00+09:00'
+
+        timestamp = utils._convert_time_string(date_time_string)
+        self.assertEqual(1420070400., timestamp)
+
+    def test_invalid_date_time_string(self):
+        date_time_string = '2015-01-01T00:00:000Z'
+
+        self.assertRaises(
+            ValueError,
+            utils._convert_time_string, date_time_string)
