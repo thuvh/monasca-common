@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_d2c77395",
+        "filename": "requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-05-16T16:32:26Z",
+      "side": 1,
+      "message": "You have to add these two to lower-constraints as well.",
+      "revId": "5153ebcba1149a76261b90f24b97c452a2d61f54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
