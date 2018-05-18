@@ -127,6 +127,27 @@ class TestRoleValidation(base.BaseTestCase):
             utils.validate_authorization, req, authorized_roles)
 
 
+class TestGetQueryParam(base.BaseTestCase):
+
+    def test_no_param(self):
+        self.assertRaises(exceptions.HTTPUnprocessableEntityError,
+                          utils.get_query_param,
+                          None)
+
+    def test_invalid_param(self):
+        self.assertRaises(exceptions.HTTPUnprocessableEntityError,
+                          utils.get_query_param,
+                          {})
+
+    def test_get_param(self):
+        result = utils.get_query_param(u'some_param_value')
+        self.assertEqual(result, 'some_param_value')
+
+    def test_get_param_from_list(self):
+        result = utils.get_query_param(['foo', 'bar'])
+        self.assertEqual(result, 'foo')
+
+
 class TestGetQueryDimension(base.BaseTestCase):
 
     def test_no_dimensions(self):

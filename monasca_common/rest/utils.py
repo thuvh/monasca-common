@@ -16,6 +16,7 @@ import datetime
 
 import falcon
 from oslo_log import log
+from oslo_utils import encodeutils
 from oslo_utils import timeutils
 import six
 import ujson as json
@@ -179,9 +180,9 @@ def get_x_tenant_or_tenant_id(req, delegate_authorized_roles):
 def get_query_param(param):
     try:
         if isinstance(param, list):
-            param_val = param[0].decode(ENCODING)
+            param_val = encodeutils.safe_decode(param[0], ENCODING)
         else:
-            param_val = param.decode(ENCODING)
+            param_val = encodeutils.safe_decode(param, ENCODING)
         return param_val
     except Exception as ex:
         LOG.debug(ex)
