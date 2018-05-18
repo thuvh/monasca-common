@@ -16,6 +16,7 @@ import datetime
 
 import falcon
 from oslo_log import log
+from oslo_utils import encodeutils
 from oslo_utils import timeutils
 import six
 import ujson as json
@@ -187,9 +188,9 @@ def get_query_param(req, param_name, required=False, default_val=None):
         params = falcon.uri.parse_query_string(req.query_string)
         if param_name in params:
             if isinstance(params[param_name], list):
-                param_val = params[param_name][0].decode('utf8')
+                param_val = encodeutils.safe_decode(params[param_name][0], 'utf8')
             else:
-                param_val = params[param_name].decode('utf8')
+                param_val = encodeutils.safe_decode(params[param_name], 'utf8')
 
             return param_val
         else:

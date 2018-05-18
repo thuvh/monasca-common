@@ -127,6 +127,53 @@ class TestRoleValidation(base.BaseTestCase):
             utils.validate_authorization, req, authorized_roles)
 
 
+class TestGetQueryParam(base.BaseTestCase):
+
+    def test_no_param(self):
+        req = mock.Mock()
+        req.query_string = "some_param=some_param_value"
+
+        result = utils.get_query_param(req, 'some_other_param')
+
+        self.assertIsNone(result)
+
+    def test_get_param(self):
+        req = mock.Mock()
+        req.query_string = "some_param=some_param_value"
+
+        result = utils.get_query_param(req, 'some_param')
+
+        self.assertEqual(result, 'some_param_value')
+
+    def test_get_param_from_list(self):
+        req = mock.Mock()
+        req.query_string = "some_param=foo, bar"
+
+        result = utils.get_query_param(req, 'some_param')
+
+        self.assertEqual(result, 'foo')
+
+    def test_missing_param(self):
+        req = mock.Mock()
+        req.query_string = "some_param=some_param_value"
+
+        self.assertRaises(exceptions.HTTPUnprocessableEntityError,
+                          utils.get_query_param,
+                          req,
+                          'some_other_param',
+                          required=True)
+
+    def test_missing_param_default_val(self):
+        req = mock.Mock()
+        req.query_string = "some_param=some_param_value"
+
+        result = utils.get_query_param(req,
+                                       'some_other_param',
+                                       default_val='abc')
+
+        self.assertEqual(result, 'abc')
+
+
 class TestGetQueryDimension(base.BaseTestCase):
 
     def test_no_dimensions(self):
