@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_f8d6e427",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-05-18T11:31:47Z",
+      "side": 1,
+      "message": "Nice, how about using encodeutils.to_utf8 ?",
+      "revId": "9f31dfe10fed9dda3d0659f038bd47079b57fb79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
