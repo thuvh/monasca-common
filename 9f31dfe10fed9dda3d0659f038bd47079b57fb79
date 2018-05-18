@@ -16,6 +16,24 @@
       "revId": "9f31dfe10fed9dda3d0659f038bd47079b57fb79",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_567c89b4",
+        "filename": "monasca_common/rest/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 17669
+      },
+      "writtenOn": "2018-05-18T13:57:09Z",
+      "side": 1,
+      "message": "Thanks for taking a look Witek. I think encodeutils.to_utf8 will call encode in py2:\n\nhttps://github.com/openstack/oslo.utils/blob/master/oslo_utils/encodeutils.py#L107\n\nThere is no equivalent encodeutils.from_utf8",
+      "parentUuid": "5f7c97a3_f8d6e427",
+      "revId": "9f31dfe10fed9dda3d0659f038bd47079b57fb79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
