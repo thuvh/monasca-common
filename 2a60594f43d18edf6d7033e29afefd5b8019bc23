@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_ae13f465",
+        "filename": "docker/kafka_wait_for_topics.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-05-24T13:44:14Z",
+      "side": 1,
+      "message": "Well some operators don\u0027t want Docker Swarm and Kubernetes because they would need to additionally pay on RedHat for it or they want to run everything only on one host and docker compose is fine for it. It will also avoid many errors/restarts at the beginning of initialization (we got complains about that...).\n\nhttps://docs.docker.com/compose/startup-order/\n\nI will also create script for checking if Mysql is working.",
+      "parentUuid": "5f7c97a3_c3cad96c",
+      "range": {
+        "startLine": 72,
+        "startChar": 4,
+        "endLine": 72,
+        "endChar": 9
+      },
+      "revId": "2a60594f43d18edf6d7033e29afefd5b8019bc23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_a37d5d1d",
         "filename": "docker/kafka_wait_for_topics.py",
         "patchSetId": 15
@@ -36,6 +60,30 @@
       "writtenOn": "2018-05-23T13:10:28Z",
       "side": 1,
       "message": "It might be nice to have a note about which services might call this? Assuming Kafka will have automatic topic creation enabled, this will be consumers? I guess there are issues with some consumers not retrying if a topic doesn\u0027t exist or have I missed the point?",
+      "range": {
+        "startLine": 99,
+        "startChar": 46,
+        "endLine": 99,
+        "endChar": 48
+      },
+      "revId": "2a60594f43d18edf6d7033e29afefd5b8019bc23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_916e5d94",
+        "filename": "docker/kafka_wait_for_topics.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-05-24T13:44:14Z",
+      "side": 1,
+      "message": "Yes, some services start reading from topics before there is any data send to this topics so basically now in `monasca-docker` and `monasca-api/devstack` both create all topics before any monasca services are running. And Kafka automatic topics creation is disabled.",
+      "parentUuid": "5f7c97a3_a37d5d1d",
       "range": {
         "startLine": 99,
         "startChar": 46,
