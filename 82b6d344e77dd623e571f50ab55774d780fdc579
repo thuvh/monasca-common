@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_fb9d7ebb",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-05T15:06:11Z",
+      "side": 1,
+      "message": "Will this be the \"base image\" for all Monasca-images based on python and \"monasca-common\")?\nsee docker/example/Dockerfile line 11: \"FROM monasca-base:latest\"\n\nhttps://docs.docker.com/v17.09/engine/userguide/eng-image/baseimages/\n\"A base image either has no FROM line in its Dockerfile, or has FROM scratch.\"\n\nWhat about other Monasca-components like log-transformer?\n\nA comment would be helpful...",
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_9b3eca89",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-05T15:06:11Z",
+      "side": 1,
+      "message": "https://docs.docker.com/v17.09/engine/userguide/eng-image/dockerfile_best-practices/#run\n\n\"You should avoid RUN apt-get upgrade or dist-upgrade, as many of the “essential” packages from the parent images won’t upgrade inside an unprivileged container. If a package contained in the parent image is out-of-date, you should contact its maintainers. \"",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 15
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_bb114607",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-05T15:06:11Z",
+      "side": 1,
+      "message": "The LABEL instruction could be used to add metadata to an image. e.g. LABEL version\u003d\"master\"... \nhttps://docs.docker.com/v17.09/engine/reference/builder/#label",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 22
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_fb8c9e36",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-05T15:06:11Z",
+      "side": 1,
+      "message": "will the clone be deleted from the image?",
+      "range": {
+        "startLine": 39,
+        "startChar": 12,
+        "endLine": 39,
+        "endChar": 34
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_38c45c5f",
+        "filename": "docker/example/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-05T15:06:11Z",
+      "side": 1,
+      "message": "The LABEL instruction could be used to add metadata to an image. e.g. LABEL version\u003d\"master\"...\nhttps://docs.docker.com/v17.09/engine/reference/builder/#label",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 29
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_18c3a03a",
+        "filename": "docker/example/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-05T15:06:11Z",
+      "side": 1,
+      "message": "should be configurable, shouldn\u0027t it?\ne.g. if I want to use stable/pike",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 24
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_9bb56a81",
+        "filename": "docker/example/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-05T15:06:11Z",
+      "side": 1,
+      "message": "well, it is an example, but this example suggests that MYSQL is used...comment refers to \"service or wait scripts\" so shouldn\u0027t the (example) start script (start.sh) e.g. wait for the MYSQL service?",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 18
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
