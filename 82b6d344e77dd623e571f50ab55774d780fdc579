@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_9185340a",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-06T13:05:01Z",
+      "side": 1,
+      "message": "I\u0027m absolutly fine with using the official Python image ...I just wanted to say that this is not the base image for ALL Monasca docker images...\nA comment would be helpful. Also about stuff which is included like kafka client...My first assumption was that all stuff from https://github.com/openstack/monasca-common is included in this base image...",
+      "parentUuid": "5f7c97a3_2623c4c0",
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_9b3eca89",
         "filename": "docker/Dockerfile",
         "patchSetId": 23
@@ -201,6 +219,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_acfd7309",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-06T13:05:01Z",
+      "side": 1,
+      "message": "we will have such a script for each image? Wouldn\u0027t it be better to have the labeling in one central place (direct instead of indirect) in the dockerfile of the \"base image\"?\n\nI\u0027m not sure about the need for \"build_image.sh\"...labeling only?",
+      "parentUuid": "5f7c97a3_7107381a",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 22
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_5561cdd2",
         "filename": "docker/Dockerfile",
         "patchSetId": 23
@@ -295,6 +337,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_4c8e1f33",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-06T13:05:01Z",
+      "side": 1,
+      "message": "and don\u0027t forget the sorting ;-)",
+      "parentUuid": "5f7c97a3_51355cda",
+      "range": {
+        "startLine": 38,
+        "startChar": 16,
+        "endLine": 38,
+        "endChar": 42
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_fb8c9e36",
         "filename": "docker/Dockerfile",
         "patchSetId": 23
@@ -330,6 +396,30 @@
       "side": 1,
       "message": "Yes, I\u0027m now still looking into it for development.",
       "parentUuid": "5f7c97a3_fb8c9e36",
+      "range": {
+        "startLine": 39,
+        "startChar": 12,
+        "endLine": 39,
+        "endChar": 34
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_0cd4a7e8",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-06T13:05:01Z",
+      "side": 1,
+      "message": "we could use multi-stage images for dev and production...",
+      "parentUuid": "5f7c97a3_d1772c9f",
       "range": {
         "startLine": 39,
         "startChar": 12,
