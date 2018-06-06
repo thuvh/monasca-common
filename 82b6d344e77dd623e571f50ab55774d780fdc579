@@ -42,6 +42,29 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_7545e942",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-06T08:36:05Z",
+      "side": 1,
+      "message": "shouldn\u0027t we use explicit versions?",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 43
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_bb114607",
         "filename": "docker/Dockerfile",
         "patchSetId": 23
@@ -58,6 +81,29 @@
         "startChar": 0,
         "endLine": 29,
         "endChar": 22
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_5561cdd2",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-06T08:36:05Z",
+      "side": 1,
+      "message": "shouldn\u0027t we use explicit versions?",
+      "range": {
+        "startLine": 38,
+        "startChar": 16,
+        "endLine": 38,
+        "endChar": 42
       },
       "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -82,6 +128,23 @@
         "endLine": 39,
         "endChar": 34
       },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b5a941de",
+        "filename": "docker/README.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-06T08:36:05Z",
+      "side": 1,
+      "message": "that\u0027s true only for python components, isn\u0027t it?",
       "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -150,6 +213,115 @@
         "startChar": 0,
         "endLine": 20,
         "endChar": 18
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f52499b1",
+        "filename": "docker/example/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-06T08:36:05Z",
+      "side": 1,
+      "message": "I find this comment a bit confusing...It\u0027s written after the build process is finished, isn\u0027t it?\nMaybe \"build successfully\" would be better?",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 31
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_15d03553",
+        "filename": "docker/example/README.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-06T08:36:05Z",
+      "side": 1,
+      "message": "only for python components",
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3ac19ee5",
+        "filename": "docker/example/start.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-06T08:36:05Z",
+      "side": 1,
+      "message": "an echo like that would be helpful:\necho \"start script: waiting for needed services\"",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 52
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_5aa9fa21",
+        "filename": "docker/example/start.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-06T08:36:05Z",
+      "side": 1,
+      "message": "an echo like that would be helpful: \necho \"start script: creating configfiles from templates\"",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 56
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_fa6fa6f9",
+        "filename": "docker/example/start.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-06T08:36:05Z",
+      "side": 1,
+      "message": "an echo like that would be more helpful: \necho \"start script: starting container\"",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 26
       },
       "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
