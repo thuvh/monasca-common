@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_2623c4c0",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-06-06T12:11:46Z",
+      "side": 1,
+      "message": "I\u0027m going from official Python image because they already have hardened (used in production) image and have already fixed many problems inside (like stack problem).\n\nWill need to think how to handle stuff like log-transformer. Good catch.",
+      "parentUuid": "5f7c97a3_fb9d7ebb",
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_9b3eca89",
         "filename": "docker/Dockerfile",
         "patchSetId": 23
@@ -30,6 +48,30 @@
       "writtenOn": "2018-06-05T15:06:11Z",
       "side": 1,
       "message": "https://docs.docker.com/v17.09/engine/userguide/eng-image/dockerfile_best-practices/#run\n\n\"You should avoid RUN apt-get upgrade or dist-upgrade, as many of the “essential” packages from the parent images won’t upgrade inside an unprivileged container. If a package contained in the parent image is out-of-date, you should contact its maintainers. \"",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 15
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_461e0075",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-06-06T12:11:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_9b3eca89",
       "range": {
         "startLine": 14,
         "startChar": 4,
@@ -88,6 +130,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_260c2441",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-06-06T12:11:46Z",
+      "side": 1,
+      "message": "Will add versions closer to merging. Hadolint is still complaining about it so we won\u0027t forget.",
+      "parentUuid": "5f7c97a3_1ddb7b7d",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 43
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_bb114607",
         "filename": "docker/Dockerfile",
         "patchSetId": 23
@@ -99,6 +165,30 @@
       "writtenOn": "2018-06-05T15:06:11Z",
       "side": 1,
       "message": "The LABEL instruction could be used to add metadata to an image. e.g. LABEL version\u003d\"master\"... \nhttps://docs.docker.com/v17.09/engine/reference/builder/#label",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 22
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_7107381a",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-06-06T12:11:46Z",
+      "side": 1,
+      "message": "Check docker/example/build_image.sh. It\u0027s still not fully ready but something similar will be added to build base image.",
+      "parentUuid": "5f7c97a3_bb114607",
       "range": {
         "startLine": 25,
         "startChar": 0,
@@ -157,6 +247,54 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_51355cda",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-06-06T12:11:46Z",
+      "side": 1,
+      "message": "Will add versions closer to merging. Hadolint is still complaining about it so we won\u0027t forget.",
+      "parentUuid": "5f7c97a3_5561cdd2",
+      "range": {
+        "startLine": 38,
+        "startChar": 16,
+        "endLine": 38,
+        "endChar": 42
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f148285d",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-06-06T12:11:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_3dd67755",
+      "range": {
+        "startLine": 38,
+        "startChar": 16,
+        "endLine": 38,
+        "endChar": 42
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_fb8c9e36",
         "filename": "docker/Dockerfile",
         "patchSetId": 23
@@ -180,6 +318,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_d1772c9f",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-06-06T12:11:46Z",
+      "side": 1,
+      "message": "Yes, I\u0027m now still looking into it for development.",
+      "parentUuid": "5f7c97a3_fb8c9e36",
+      "range": {
+        "startLine": 39,
+        "startChar": 12,
+        "endLine": 39,
+        "endChar": 34
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_9d354bab",
         "filename": "docker/Dockerfile",
         "patchSetId": 23
@@ -191,6 +353,30 @@
       "writtenOn": "2018-06-06T09:09:12Z",
       "side": 1,
       "message": "should we use: apt-get clean ?",
+      "range": {
+        "startLine": 49,
+        "startChar": 12,
+        "endLine": 52,
+        "endChar": 29
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_71a3b801",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-06-06T12:11:46Z",
+      "side": 1,
+      "message": "There is not `apt-get` on Alpine but when we use `apk add --no-cache` then there is no cache created.",
+      "parentUuid": "5f7c97a3_9d354bab",
       "range": {
         "startLine": 49,
         "startChar": 12,
