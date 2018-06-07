@@ -261,6 +261,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_674f5a6a",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-06-07T12:00:29Z",
+      "side": 1,
+      "message": "I wanted to do that at the beginning but found out that to propagate labels with dynamic data (like commit hash, date of build, repo path used for build, used constraints file) you need to provide them to `docker build` command at build time. It\u0027s impossible to get them out of image at build time. \n\nI think we can move inside `Dockerfile` some static labels like:\n- org.opencontainers.image.url (with link to github.com repo)\n- org.opencontainers.image.title (with image/service name)\n- org.opencontainers.image.licenses\n\nUnfortunately rest need to be provided at build time and I don\u0027t want to retype them every time.",
+      "parentUuid": "5f7c97a3_acfd7309",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 22
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_5561cdd2",
         "filename": "docker/Dockerfile",
         "patchSetId": 23
@@ -438,6 +462,30 @@
       "side": 1,
       "message": "we could use multi-stage images for dev and production...",
       "parentUuid": "5f7c97a3_d1772c9f",
+      "range": {
+        "startLine": 39,
+        "startChar": 12,
+        "endLine": 39,
+        "endChar": 34
+      },
+      "revId": "82b6d344e77dd623e571f50ab55774d780fdc579",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_84fcf43e",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 23
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-06-07T12:00:29Z",
+      "side": 1,
+      "message": "Multi-stage builds are for compiled languages (like C++ or Go that generate binary files, best if statically linked). They provide no advantages for Python.",
+      "parentUuid": "5f7c97a3_0cd4a7e8",
       "range": {
         "startLine": 39,
         "startChar": 12,
