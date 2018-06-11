@@ -1,0 +1,11 @@
+Code-Review+2: Witold Bedyk <witold.bedyk@est.fujitsu.com>
+Code-Review+1: Adrian Czarnecki <adrian.czarnecki@ts.fujitsu.com>
+Code-Review+1: Nguyen Hai <nguyentrihai93@gmail.com>
+Code-Review+1: melissaml <ma.lei@99cloud.net>
+Workflow+1: Witold Bedyk <witold.bedyk@est.fujitsu.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 11 Jun 2018 17:13:02 +0000
+Reviewed-on: https://review.openstack.org/572910
+Project: openstack/monasca-common
+Branch: refs/heads/master
