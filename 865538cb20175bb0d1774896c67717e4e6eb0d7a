@@ -1,0 +1,297 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_431e7b0c",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 29
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-12T07:46:06Z",
+      "side": 1,
+      "message": "why is this needed in the base image?\n- not all components need access to MySQL.\n- I can not see any MySQL waitscript?\n\nBTW: These wait scripts are just for the start phase, aren\u0027t they? What happens if kafka or MySQL is not reachable during run time? Will the container stop and restart?",
+      "range": {
+        "startLine": 21,
+        "startChar": 8,
+        "endLine": 21,
+        "endChar": 23
+      },
+      "revId": "865538cb20175bb0d1774896c67717e4e6eb0d7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a3d2ef32",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 29
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-12T07:46:06Z",
+      "side": 1,
+      "message": "shouldn\u0027 there be a ONBUILD COPY healthcheck.p / ?",
+      "range": {
+        "startLine": 85,
+        "startChar": 32,
+        "endLine": 85,
+        "endChar": 46
+      },
+      "revId": "865538cb20175bb0d1774896c67717e4e6eb0d7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_23949f43",
+        "filename": "docker/README.rst",
+        "patchSetId": 29
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-12T07:46:06Z",
+      "side": 1,
+      "message": "maybe explain some basics:\n- why pykafka and PyMySQL is needed\n- health check stuff\n- \"instructions\" for the child image (and refer to example folder...)",
+      "revId": "865538cb20175bb0d1774896c67717e4e6eb0d7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e372274a",
+        "filename": "docker/example/Dockerfile",
+        "patchSetId": 29
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-12T07:46:06Z",
+      "side": 1,
+      "message": "remove empty line before ARG",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 1
+      },
+      "revId": "865538cb20175bb0d1774896c67717e4e6eb0d7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_237d7f1b",
+        "filename": "docker/example/Dockerfile",
+        "patchSetId": 29
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-12T07:46:06Z",
+      "side": 1,
+      "message": "add empty line before comment",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 2
+      },
+      "revId": "865538cb20175bb0d1774896c67717e4e6eb0d7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_0370833f",
+        "filename": "docker/example/Dockerfile",
+        "patchSetId": 29
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-12T07:46:06Z",
+      "side": 1,
+      "message": "add empty line before comment",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 1
+      },
+      "revId": "865538cb20175bb0d1774896c67717e4e6eb0d7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_63e297d6",
+        "filename": "docker/example/Dockerfile",
+        "patchSetId": 29
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-12T07:46:06Z",
+      "side": 1,
+      "message": "base version for?\nmaster?\nqueens?\n...",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 22
+      },
+      "revId": "865538cb20175bb0d1774896c67717e4e6eb0d7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e3c0e72d",
+        "filename": "docker/example/Dockerfile",
+        "patchSetId": 29
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-12T07:46:06Z",
+      "side": 1,
+      "message": "is there anything to do here?\nShouldn\u0027t there be a healthcheck script with default implementation in the examples?\nSo comment here should be: implement healthcheck script",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 56
+      },
+      "revId": "865538cb20175bb0d1774896c67717e4e6eb0d7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_63fb777a",
+        "filename": "docker/example/Dockerfile",
+        "patchSetId": 29
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-12T07:46:06Z",
+      "side": 1,
+      "message": "is there anything to do here? \nSo comment here should be: implement start script",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 17
+      },
+      "revId": "865538cb20175bb0d1774896c67717e4e6eb0d7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_767ed76a",
+        "filename": "docker/example/build_image.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-12T07:46:06Z",
+      "side": 1,
+      "message": "shouldn\u0027t it be origin/stable/queens?",
+      "range": {
+        "startLine": 11,
+        "startChar": 21,
+        "endLine": 11,
+        "endChar": 34
+      },
+      "revId": "865538cb20175bb0d1774896c67717e4e6eb0d7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f6a427a5",
+        "filename": "docker/example/start.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-12T07:46:06Z",
+      "side": 1,
+      "message": "before calling templer I had to set some env variables for gunicorn (for log-api image).\n\necho \"set GUNICORN stuff\"\nexport GUNICORN_BACKLOG\u003d1000\nexport GUNICORN_WORKERS\u003d9\nexport GUNICORN_WORKER_CLASS\u003dgevent\nexport GUNICORN_WORKER_CONNECTIONS\u003d2000\nexport GUNICORN_TIMEOUT\u003d1000\nexport PYTHONIOENCODING\u003dutf-8\n\nof course it should be possible to set the varibales from outside like that:\nGUNICORN_WORKERS\u003d${GUNICORN_WORKERS:-\"9\"}\nGUNICORN_WORKER_CLASS\u003d${GUNICORN_WORKER_CLASS:-\"gevent\"}\nGUNICORN_WORKER_CONNECTIONS\u003d${GUNICORN_WORKER_CONNECTIONS:-\"2000\"}\nGUNICORN_BACKLOG\u003d${GUNICORN_BACKLOG:-\"1000\"}\n\n--\u003e my point is we should add a comment and/or a echo to unify the place where to set the additional env variables",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 2
+      },
+      "revId": "865538cb20175bb0d1774896c67717e4e6eb0d7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_7641f709",
+        "filename": "docker/example/start.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-12T07:46:06Z",
+      "side": 1,
+      "message": "this doesn\u0027t work in my environment...\nI had to do it the hard way:\ntempler /etc/monasca/log-api.conf.j2 /etc/monasca/log-api.conf",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 15
+      },
+      "revId": "865538cb20175bb0d1774896c67717e4e6eb0d7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f66e672a",
+        "filename": "docker/example/start.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-06-12T07:46:06Z",
+      "side": 1,
+      "message": "I\u0027m not sure if it is a good idea to \"print\" all environment variables before executing templer...\nlike:\necho \"environment variables\"\nenv\necho \"\"",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 7
+      },
+      "revId": "865538cb20175bb0d1774896c67717e4e6eb0d7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
