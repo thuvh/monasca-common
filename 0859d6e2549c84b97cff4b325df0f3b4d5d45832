@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_6176cfa6",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-06-14T12:40:43Z",
+      "side": 1,
+      "message": "Should be `key` I guess.",
+      "range": {
+        "startLine": 59,
+        "startChar": 52,
+        "endLine": 59,
+        "endChar": 60
+      },
+      "revId": "0859d6e2549c84b97cff4b325df0f3b4d5d45832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_21a1b7f7",
+        "filename": "monasca_common/tests/test_kafka.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-06-14T12:40:43Z",
+      "side": 1,
+      "message": "not needed",
+      "revId": "0859d6e2549c84b97cff4b325df0f3b4d5d45832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e1697fbd",
+        "filename": "monasca_common/tests/test_kafka.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-06-14T12:40:43Z",
+      "side": 1,
+      "message": "b\u0027key\u0027",
+      "range": {
+        "startLine": 56,
+        "startChar": 23,
+        "endLine": 56,
+        "endChar": 49
+      },
+      "revId": "0859d6e2549c84b97cff4b325df0f3b4d5d45832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_819e8bb5",
+        "filename": "monasca_common/tests/test_kafka.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-06-14T12:40:43Z",
+      "side": 1,
+      "message": "b\u00271000\u0027",
+      "range": {
+        "startLine": 68,
+        "startChar": 23,
+        "endLine": 68,
+        "endChar": 51
+      },
+      "revId": "0859d6e2549c84b97cff4b325df0f3b4d5d45832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
