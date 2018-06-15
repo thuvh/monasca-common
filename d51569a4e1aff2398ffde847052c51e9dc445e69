@@ -22,6 +22,30 @@
       "revId": "d51569a4e1aff2398ffde847052c51e9dc445e69",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c3c5555e",
+        "filename": "monasca_common/tests/test_kafka.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 26141
+      },
+      "writtenOn": "2018-06-15T06:54:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_77a451b9",
+      "range": {
+        "startLine": 68,
+        "startChar": 23,
+        "endLine": 68,
+        "endChar": 49
+      },
+      "revId": "d51569a4e1aff2398ffde847052c51e9dc445e69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
