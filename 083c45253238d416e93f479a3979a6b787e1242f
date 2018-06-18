@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_492a9a7e",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 35
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-06-18T14:12:03Z",
+      "side": 1,
+      "message": "In devstack we have a scheme *_REPO for variable names pointing to Git repositories. In our case we could name it APP_REPO. That would be generic enough and consistent with devstack naming, thus reducing confusion.",
+      "range": {
+        "startLine": 31,
+        "startChar": 12,
+        "endLine": 31,
+        "endChar": 21
+      },
+      "revId": "083c45253238d416e93f479a3979a6b787e1242f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_09590234",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 35
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-06-18T14:12:03Z",
+      "side": 1,
+      "message": "Why do we need it here?",
+      "range": {
+        "startLine": 32,
+        "startChar": 12,
+        "endLine": 32,
+        "endChar": 23
+      },
+      "revId": "083c45253238d416e93f479a3979a6b787e1242f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_0924a2ae",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 35
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-06-18T14:12:03Z",
+      "side": 1,
+      "message": "Following devstack naming scheme could be APP_BRANCH.",
+      "range": {
+        "startLine": 33,
+        "startChar": 12,
+        "endLine": 33,
+        "endChar": 24
+      },
+      "revId": "083c45253238d416e93f479a3979a6b787e1242f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_29739eb6",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 35
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-06-18T14:12:03Z",
+      "side": 1,
+      "message": "That could be set in the previous variable, right? I don\u0027t understand the need of having it separately.",
+      "range": {
+        "startLine": 34,
+        "startChar": 12,
+        "endLine": 34,
+        "endChar": 22
+      },
+      "revId": "083c45253238d416e93f479a3979a6b787e1242f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_29987eca",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 35
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-06-18T14:12:03Z",
+      "side": 1,
+      "message": "In other places we call it CONSTRAINTS_FILE.",
+      "range": {
+        "startLine": 36,
+        "startChar": 12,
+        "endLine": 36,
+        "endChar": 28
+      },
+      "revId": "083c45253238d416e93f479a3979a6b787e1242f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
