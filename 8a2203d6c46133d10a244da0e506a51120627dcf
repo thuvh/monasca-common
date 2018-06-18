@@ -45,6 +45,54 @@
       "revId": "8a2203d6c46133d10a244da0e506a51120627dcf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_302547af",
+        "filename": "docker/example/start.sh",
+        "patchSetId": 34
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-06-18T12:27:08Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "5f7c97a3_cd38ffd5",
+      "range": {
+        "startLine": 11,
+        "startChar": 44,
+        "endLine": 11,
+        "endChar": 53
+      },
+      "revId": "8a2203d6c46133d10a244da0e506a51120627dcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_70197f78",
+        "filename": "docker/example/start.sh",
+        "patchSetId": 34
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-06-18T12:27:08Z",
+      "side": 1,
+      "message": "Removed both of this lines.",
+      "parentUuid": "5f7c97a3_6d78cb8e",
+      "range": {
+        "startLine": 11,
+        "startChar": 10,
+        "endLine": 11,
+        "endChar": 16
+      },
+      "revId": "8a2203d6c46133d10a244da0e506a51120627dcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
