@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_d0fb2a78",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 35
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-06-25T10:17:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_492a9a7e",
+      "range": {
+        "startLine": 31,
+        "startChar": 12,
+        "endLine": 31,
+        "endChar": 21
+      },
+      "revId": "083c45253238d416e93f479a3979a6b787e1242f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_09590234",
         "filename": "docker/Dockerfile",
         "patchSetId": 35
@@ -36,6 +60,30 @@
       "writtenOn": "2018-06-18T14:12:03Z",
       "side": 1,
       "message": "Why do we need it here?",
+      "range": {
+        "startLine": 32,
+        "startChar": 12,
+        "endLine": 32,
+        "endChar": 23
+      },
+      "revId": "083c45253238d416e93f479a3979a6b787e1242f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_703fb621",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 35
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-06-25T10:17:14Z",
+      "side": 1,
+      "message": "Here I\u0027m providing link to github repository because by default we should use https://git.openstack.org/openstack/monasca-api \nRight?",
+      "parentUuid": "5f7c97a3_09590234",
       "range": {
         "startLine": 32,
         "startChar": 12,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_f0cf4625",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 35
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-06-25T10:17:14Z",
+      "side": 1,
+      "message": "No, REPO_VERSION could be `master`, `stable/pike` but also tags and commit hash. I always want commit hash to add to image labels.",
+      "parentUuid": "5f7c97a3_29739eb6",
+      "range": {
+        "startLine": 34,
+        "startChar": 12,
+        "endLine": 34,
+        "endChar": 22
+      },
+      "revId": "083c45253238d416e93f479a3979a6b787e1242f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_29987eca",
         "filename": "docker/Dockerfile",
         "patchSetId": 35
@@ -105,6 +177,30 @@
       "writtenOn": "2018-06-18T14:12:03Z",
       "side": 1,
       "message": "In other places we call it CONSTRAINTS_FILE.",
+      "range": {
+        "startLine": 36,
+        "startChar": 12,
+        "endLine": 36,
+        "endChar": 28
+      },
+      "revId": "083c45253238d416e93f479a3979a6b787e1242f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f08186c3",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 35
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-06-25T10:17:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_29987eca",
       "range": {
         "startLine": 36,
         "startChar": 12,
