@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_552376be",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 51
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-07-09T11:49:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_e174489e",
+      "range": {
+        "startLine": 102,
+        "startChar": 12,
+        "endLine": 108,
+        "endChar": 34
+      },
+      "revId": "fc4f90d2eff9250519afbd742cc79d27a5a0f6b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_01eb8411",
         "filename": "docker/Dockerfile",
         "patchSetId": 51
@@ -36,6 +60,30 @@
       "writtenOn": "2018-07-09T08:26:26Z",
       "side": 1,
       "message": "Pleas add short documentation to this function.",
+      "range": {
+        "startLine": 109,
+        "startChar": 12,
+        "endLine": 113,
+        "endChar": 38
+      },
+      "revId": "fc4f90d2eff9250519afbd742cc79d27a5a0f6b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_751eb274",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 51
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-07-09T11:49:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_01eb8411",
       "range": {
         "startLine": 109,
         "startChar": 12,
