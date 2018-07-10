@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_c9b918cb",
+        "filename": "docker/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 26733
+      },
+      "writtenOn": "2018-07-10T08:01:21Z",
+      "side": 1,
+      "message": "the ability",
+      "range": {
+        "startLine": 31,
+        "startChar": 25,
+        "endLine": 31,
+        "endChar": 32
+      },
+      "revId": "987a2c8d8e42df3b00d3c65aa72a0821f1ec94c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_69ac8487",
+        "filename": "docker/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 26733
+      },
+      "writtenOn": "2018-07-10T08:01:21Z",
+      "side": 1,
+      "message": "the status",
+      "range": {
+        "startLine": 35,
+        "startChar": 38,
+        "endLine": 35,
+        "endChar": 44
+      },
+      "revId": "987a2c8d8e42df3b00d3c65aa72a0821f1ec94c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_69e1e4ce",
+        "filename": "docker/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 26733
+      },
+      "writtenOn": "2018-07-10T08:01:21Z",
+      "side": 1,
+      "message": "the application",
+      "range": {
+        "startLine": 35,
+        "startChar": 48,
+        "endLine": 35,
+        "endChar": 59
+      },
+      "revId": "987a2c8d8e42df3b00d3c65aa72a0821f1ec94c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_89fd606e",
+        "filename": "docker/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 26733
+      },
+      "writtenOn": "2018-07-10T08:01:21Z",
+      "side": 1,
+      "message": "and instead, use",
+      "range": {
+        "startLine": 38,
+        "startChar": 52,
+        "endLine": 38,
+        "endChar": 59
+      },
+      "revId": "987a2c8d8e42df3b00d3c65aa72a0821f1ec94c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_492188fb",
+        "filename": "docker/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 26733
+      },
+      "writtenOn": "2018-07-10T08:01:21Z",
+      "side": 1,
+      "message": "the content",
+      "range": {
+        "startLine": 61,
+        "startChar": 8,
+        "endLine": 61,
+        "endChar": 13
+      },
+      "revId": "987a2c8d8e42df3b00d3c65aa72a0821f1ec94c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_094f108c",
+        "filename": "docker/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 26733
+      },
+      "writtenOn": "2018-07-10T08:01:21Z",
+      "side": 1,
+      "message": "\"every one of\" or \"each of\"",
+      "range": {
+        "startLine": 61,
+        "startChar": 25,
+        "endLine": 61,
+        "endChar": 30
+      },
+      "revId": "987a2c8d8e42df3b00d3c65aa72a0821f1ec94c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
