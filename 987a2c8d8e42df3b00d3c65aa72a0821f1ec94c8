@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_e593d457",
+        "filename": "docker/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-07-10T10:56:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_c9b918cb",
+      "range": {
+        "startLine": 31,
+        "startChar": 25,
+        "endLine": 31,
+        "endChar": 32
+      },
+      "revId": "987a2c8d8e42df3b00d3c65aa72a0821f1ec94c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_69ac8487",
         "filename": "docker/README.rst",
         "patchSetId": 3
@@ -71,6 +95,54 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_a58b9c1b",
+        "filename": "docker/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-07-10T10:56:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_69e1e4ce",
+      "range": {
+        "startLine": 35,
+        "startChar": 48,
+        "endLine": 35,
+        "endChar": 59
+      },
+      "revId": "987a2c8d8e42df3b00d3c65aa72a0821f1ec94c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_8588e021",
+        "filename": "docker/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-07-10T10:56:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_69ac8487",
+      "range": {
+        "startLine": 35,
+        "startChar": 38,
+        "endLine": 35,
+        "endChar": 44
+      },
+      "revId": "987a2c8d8e42df3b00d3c65aa72a0821f1ec94c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_89fd606e",
         "filename": "docker/README.rst",
         "patchSetId": 3
@@ -82,6 +154,30 @@
       "writtenOn": "2018-07-10T08:01:21Z",
       "side": 1,
       "message": "and instead, use",
+      "range": {
+        "startLine": 38,
+        "startChar": 52,
+        "endLine": 38,
+        "endChar": 59
+      },
+      "revId": "987a2c8d8e42df3b00d3c65aa72a0821f1ec94c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_658104fa",
+        "filename": "docker/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-07-10T10:56:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_89fd606e",
       "range": {
         "startLine": 38,
         "startChar": 52,
@@ -133,6 +229,54 @@
         "startChar": 25,
         "endLine": 61,
         "endChar": 30
+      },
+      "revId": "987a2c8d8e42df3b00d3c65aa72a0821f1ec94c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_057cd01d",
+        "filename": "docker/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-07-10T10:56:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_094f108c",
+      "range": {
+        "startLine": 61,
+        "startChar": 25,
+        "endLine": 61,
+        "endChar": 30
+      },
+      "revId": "987a2c8d8e42df3b00d3c65aa72a0821f1ec94c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_25778c3d",
+        "filename": "docker/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-07-10T10:56:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_492188fb",
+      "range": {
+        "startLine": 61,
+        "startChar": 8,
+        "endLine": 61,
+        "endChar": 13
       },
       "revId": "987a2c8d8e42df3b00d3c65aa72a0821f1ec94c8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
