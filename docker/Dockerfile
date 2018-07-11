@@ -16,6 +16,7 @@ RUN \
         tini=0.16.1-r0 \
         # We need this to allow users choose different time zone.
         tzdata=2017c-r0 && \
+    touch /VERSIONS && \
     # Cleaning.
     rm -rf /var/cache/apk/* && \
     rm -rf /var/log/* && \
