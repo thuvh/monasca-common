@@ -1,0 +1,27 @@
+---
+- hosts: all
+  tasks:
+    - name: Run node setup script
+      shell: "{{ zuul.project.src_dir }}/playbooks/setup_ci.sh"
+      become: true
+
+    - name: Changing permission of Docker socket to 666
+      file:
+        path: /run/docker.sock
+        mode: 666
+      become: true
+
+    - name: Build monasca-base Docker image
+      shell: "{{ zuul.project.src_dir }}/playbooks/build_image.sh"
+      become: true
+      chdir: "{{ zuul.project.src_dir }}/docker/"
+
+    - name: Login to Dockerhub
+      command: "docker login -u {{ doker_hub_login.user }} -p {{ doker_hub_login.password }}"
+      # no_log: true
+    - name: List images
+      shell: "docker images  --format '{% raw %}{{ .Repository }}:{{ .Tag }}{% endraw %}' | grep monasca"
+    - name: Tag image
+      shell: "docker tag monasca-base:1.0.0 matrixik/monasca-base:latest"
+    - name: Push to Dockerhub
+      shell: "docker images  --format '{% raw %}{{ .Repository }}:{{ .Tag }}{% endraw %}' | grep matrixik | docker push"
