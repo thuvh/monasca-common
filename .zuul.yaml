@@ -1,3 +1,16 @@
+# - pipeline:
+#     name: docker-image-build-check
+#     manager: independent
+#     trigger:
+#         my_gerrit:
+#             - event: patchset-created
+#     success:
+#         my_gerrit:
+#             verified: 1
+#     failure:
+#         my_gerrit:
+#             verified: -1
+
 - project:
     check:
       jobs:
@@ -13,3 +26,24 @@
         - monasca-tempest-python-cassandra
         - monasca-tempest-java-cassandra
         - openstack-tox-lower-constraints
+
+- job:
+    name: monasca-base
+    timeout: 10200
+    post-timeout: 3600
+    pre-run: playbooks/pre.yml
+    run: playbooks/run.yml
+    post-run: playbooks/post.yml
+    attempts: 1
+    irrelevant-files:
+        - ^.*\.rst$
+        - ^doc/.*
+
+# - job:
+#     name: monasca-base-publish-image
+#     parent: monasca-base
+#     post-run: playbooks/publish.yml
+#     vars:
+#         publisher: true
+#     secrets:
+#         - monasca_dockerhub_creds
