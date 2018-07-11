@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+    - name: Run node setup script
+      shell: "{{ zuul.project.src_dir }}/playbooks/setup_ci.sh"
+      become: true
+
+    - name: Changing permission of Docker socket to 666
+      file:
+        path: /run/docker.sock
+        mode: 666
+      become: true
