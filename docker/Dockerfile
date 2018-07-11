@@ -1,4 +1,4 @@
-FROM python:3.5.5-alpine3.7
+FROM python:3.5.5-alpine3.8
 
 COPY wait_for.sh kafka_wait_for_topics.py /
 COPY ashrc /root/.ashrc
@@ -13,9 +13,10 @@ RUN \
     chmod +x /wait_for.sh /kafka_wait_for_topics.py && \
     apk add --no-cache \
         su-exec=0.2-r0 \
-        tini=0.16.1-r0 \
+        tini=0.18.0-r0 \
         # We need this to allow users choose different time zone.
-        tzdata=2017c-r0 && \
+        tzdata=2018d-r1 && \
+    touch /VERSIONS && \
     # Cleaning.
     rm -rf /var/cache/apk/* && \
     rm -rf /var/log/* && \
@@ -55,12 +56,12 @@ ONBUILD SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 ONBUILD RUN \
             chmod +x /start.sh && \
             apk add --no-cache --virtual .build-deps \
-                g++=6.4.0-r5 \
-                git=2.15.2-r0 \
+                g++=6.4.0-r8 \
+                git=2.18.0-r0 \
                 libffi-dev=3.2.1-r4 \
-                libressl-dev=2.6.5-r0 \
+                libressl-dev=2.7.4-r0 \
                 linux-headers=4.4.6-r2 \
-                make=4.2.1-r0 && \
+                make=4.2.1-r2 && \
             # Clone repository and checkout requested version.
             # This many steps are needed to support gerrit patch sets.
             mkdir -p /app && \
