@@ -1,0 +1,9 @@
+Code-Review+1: Christian Brandstetter <christian.brandstetter@est.fujitsu.com>
+Code-Review+2: Dobroslaw Zybort <dobroslaw.zybort@ts.fujitsu.com>
+Workflow+1: Dobroslaw Zybort <dobroslaw.zybort@ts.fujitsu.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 11 Jul 2018 11:56:33 +0000
+Reviewed-on: https://review.openstack.org/580654
+Project: openstack/monasca-common
+Branch: refs/heads/master
