@@ -7,9 +7,64 @@
         - monasca-tempest-python-cassandra
         - monasca-tempest-java-cassandra
         - openstack-tox-lower-constraints
+        - docker-build-monasca-base
     gate:
       jobs:
         - monasca-tempest-python-influxdb
         - monasca-tempest-python-cassandra
         - monasca-tempest-java-cassandra
         - openstack-tox-lower-constraints
+    post:
+      jobs:
+        - docker-publish-image
+
+- job:
+    name: docker-build-monasca-base
+    timeout: 10200
+    post-timeout: 3600
+    run: playbooks/run.yml
+    required-projects:
+      - openstack/monasca-common
+    attempts: 1
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^.*\.md$
+      - ^doc/.*$
+
+- job:
+    name: docker-publish-image
+    parent: docker-build-monasca-base
+    post-run: playbooks/publish.yml
+    required-projects:
+      - openstack/monasca-common
+    vars:
+        publisher: true
+    secrets:
+        - doker_hub_login
+
+- secret:
+    name: doker_hub_login
+    data:
+        # Private `matrixik` Docker Hub account for testing
+      user:  !encrypted/pkcs1-oaep
+        - pQYMhlN4CX64kHU4R2TBLvGlLmAxhjWFwWllgxJu/H7FbMAeNNiZr5ibHqPZMGOtaU9oC
+          /pFC43MqbTYE+SO83ylJzd6eJ5GhUMnh+4lrEHJa4maJpdIzJ5Lwx0S6Z75+ZyshJookJ
+          grHFTn6l+/AC0B7DPCLMv3E2Nsr1b1JMmMg2bBfVudfkYDB4ZdaKSg/1C5m6ULFULfY6y
+          QDn5ktQkCYHBttx7NF45eKzXEr+KNI8FiIS5fCIi4Z3OmmEFzuYpT3vsF5w0X3Q0IlAz6
+          LXZwXUIObLLDRcsnVw4HuhxMkE1WpVxkE2qkDbsT9qotBI1Z45icPNN9+f2I/iX0Fdrif
+          SihOqiJpkTJmGNtcv8MOC/OrC+b0qPKqzW9EJHbND5nLljMZk/BTdws+19FUdN2UqX+YC
+          PsSScjwwy4Q4g8WK5lnHdQq/3RciCqJsQhSHBnIesZI7rwdwvK9NGypUcS1BdDYxyJcfu
+          QQ15OiJywa/d/MtrjEmcDz66TIr/ekNyIYsuG0PH+xNLhoknO3VNMsWtPTFh7xUv99IU9
+          TMFYXySPxQO2L+vZKqab+0A2LwteRnCx4ZUvvrRKPtZWBymdT5Lym5jXnWbWKCKmx68Sz
+          2WThs0m9+yxQv8kAp0oJvN/34F0zxocEBXNN4Aev1JrIL1OoFJ8txghJxi6Rxs=
+      password: !encrypted/pkcs1-oaep
+        - r0n988fzSxg8pIVZbv5LVR5p3iuYlmAzhlmW+kr/SPsgK7hzSCBzW0by9J6oPqXfzKxxB
+          Z64GqjT5jnnkGdM5XXckvYdmAxo+P2GPbN1bJLoNDv/hyjKRlGDST2dYxVVvf5yAwtG7I
+          swBB+XFUwGmXv8KLzzoxYWi9WldxM0eIAYOTqFVgTEx2Mwabpn9bGcTvEyFPsk1Lj+y5N
+          hmlebBbWMfmaBFvk9cThgKCK3AOAnFQ/zsR+eDtNmegXm0QfOUPFb7UX3e0CiFGRMq5tM
+          5BAZcrELjRmhBUlS22r5ho+lxLfyrcs9kjo0gyzZOc/RLrPGXBTNtrwX5fyC7hS3LwJ6r
+          Oa0zbShUdv1GoYoY45AfSK3ZiGnkO4C6a+AuP8oJjXUsIDTP9MGPQ85PUgkPCOD0O3YM4
+          ibYDARf0O1NkdQ9KSJDXIXhTx+2nCz3CsOSJ516Isx7muhBXjYxQuSUWjxtqugIJBu2+/
+          qMJTcOKp40deoI5opQqD+/BUwSj0xt+kxVI0DqxI+5aW/tCiJgDMX2v8LJPlfYpc0VpuM
+          o7W5zGtU4t6B0xiH3VfCmm1B1WQ5/c9vY9NjjmNYKmoRlPOeLprbyibazbDcPLXgmnrFQ
+          HWWsGCNr9H7d4kz40MQgWOQA9rnmJj2U4GVMQWEHVgokPIQLSW1BPhKl+O9vCU=
