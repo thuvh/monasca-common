@@ -16,7 +16,7 @@
 import logging
 import time
 
-from six import PY2
+from six import PY3
 
 import monasca_common.kafka_lib.client as kafka_client
 import monasca_common.kafka_lib.producer as kafka_producer
@@ -55,7 +55,12 @@ class KafkaProducer(object):
             try:
                 if key is None:
                     key = int(time.time() * 1000)
-                key = str(key) if PY2 else bytes(str(key), 'utf-8')
+                if PY3:
+                    key = bytes(str(key), 'utf-8')
+                    messages = [m.encode("utf-8") for m in messages]
+                else:
+                    key = str(key)
+
                 self._producer.send_messages(topic, key, *messages)
                 success = True
             except Exception:
