@@ -33,8 +33,9 @@ start.sh
 
 health_check.py
   This file will be used for checking the status of the application running in
-  the container. It will be useful for container orchestration like Kubernetes
-  or Docker Swarm to properly handle services that are still running but
+  the container. It should be used to inform Docker that service is operations
+  and healthy. It will be useful for container orchestration like
+  Docker Swarm to properly handle services that are still running but
   stopped being responsive. Avoid using `curl` directly and instead, use
   `health_check.py` written with specific service in mind. It will provide more
   flexibility like when creating JSON request body.
