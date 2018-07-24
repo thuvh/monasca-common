@@ -1,0 +1,8 @@
+Code-Review+2: Witold Bedyk <witold.bedyk@est.fujitsu.com>
+Workflow+1: Dobroslaw Zybort <dobroslaw.zybort@ts.fujitsu.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 24 Jul 2018 06:28:57 +0000
+Reviewed-on: https://review.openstack.org/583509
+Project: openstack/monasca-common
+Branch: refs/heads/master
