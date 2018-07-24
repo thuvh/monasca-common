@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_f6ca6c17",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 17669
+      },
+      "writtenOn": "2018-07-24T15:01:09Z",
+      "side": 1,
+      "message": "Just wondering if we still need these?",
+      "revId": "34e4c58d501c777a27eb9dd60ae186b0109eb3ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
