@@ -16,6 +16,24 @@
       "revId": "cf77c5f25fa8afa95a1328f5d523d7e15f4e000e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_abed4fb9",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-07-25T13:12:01Z",
+      "side": 1,
+      "message": "5 min that I added previously was copy/paste from official docs. When I started reading more about health checks most real world examples was using around 5s for interval. By default docker will show if service is unhealthy after 3 intervals return error. So in previous timing service would be taken out of poll (by e.g. docker swarm) after 15 min. For all this time it would be returning errors for any communication to it. Now it will be removed from poll of running services after 15 seconds. Much better.\n\nRegarding timeout more examples was using something shorter. For all services we are using I think that if anything respond longer than 2 seconds then something is wrong with this service. Monasca is not web service but back-end service that should have high throughput.",
+      "parentUuid": "5f7c97a3_eba827db",
+      "revId": "cf77c5f25fa8afa95a1328f5d523d7e15f4e000e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
