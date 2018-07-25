@@ -34,6 +34,24 @@
       "revId": "cf77c5f25fa8afa95a1328f5d523d7e15f4e000e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_2e094ddb",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-07-25T13:51:31Z",
+      "side": 1,
+      "message": "Fine, please add motivation to the commit message.",
+      "parentUuid": "5f7c97a3_abed4fb9",
+      "revId": "cf77c5f25fa8afa95a1328f5d523d7e15f4e000e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
