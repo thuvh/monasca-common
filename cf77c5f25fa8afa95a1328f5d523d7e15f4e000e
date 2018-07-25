@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_eba827db",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-07-25T12:55:35Z",
+      "side": 1,
+      "message": "Why do we need this? Could you add motivation in commit message or story?\n\nThese periods are applicable to all child images, right? Are they reasonable in all cases? Could we just use default values (30s)?",
+      "revId": "cf77c5f25fa8afa95a1328f5d523d7e15f4e000e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
