@@ -53,11 +53,11 @@ class KafkaProducer(object):
         success = False
         if key is None:
             key = int(time.time() * 1000)
-        if PY3:
-            key = bytes(str(key), 'utf-8')
-            messages = [m.encode("utf-8") for m in messages]
-        else:
-            key = str(key)
+
+        messages = [m if isinstance(m, bytes) else m.encode("utf-8") for m in messages]
+
+        key = bytes(str(key), 'utf-8') if PY3 else str(key)
+
         while not success:
             try:
                 self._producer.send_messages(topic, key, *messages)
