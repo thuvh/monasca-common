@@ -5,6 +5,25 @@
 # https://github.com/pyca/cryptography/pull/4270
 FROM python:3.5.5-alpine3.7
 
+
+
+
+
+
+
+
+# REMOVE: test for zuul integration
+
+
+
+
+
+
+
+
+
+
+
 COPY wait_for.sh kafka_wait_for_topics.py /
 COPY ashrc /root/.ashrc
 
