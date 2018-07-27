@@ -26,7 +26,10 @@
     required-projects:
       - openstack/monasca-common
     attempts: 1
+    files:
+      - ^docker/.*
     irrelevant-files:
+      - ^docker/example/.*
       - ^.*\.rst$
       - ^.*\.md$
       - ^doc/.*$
@@ -39,6 +42,13 @@
       - openstack/monasca-common
     vars:
         publisher: true
+    files:
+      - ^docker/.*
+    irrelevant-files:
+      - ^docker/example/.*
+      - ^.*\.rst$
+      - ^.*\.md$
+      - ^doc/.*$
     secrets:
         - doker_hub_login
 
