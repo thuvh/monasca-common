@@ -11,7 +11,7 @@ ARG EXTRA_DEPS="gunicorn influxdb python-memcached"
 
 # Always start from `monasca-base` image and use specific tag of it.
 ARG BASE_TAG=1.0.0
-FROM monasca-base:$BASE_TAG
+FROM monasca/base:$BASE_TAG
 
 # Environment variables used for our service or wait scripts.
 ENV \
