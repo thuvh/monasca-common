@@ -6,6 +6,7 @@
             voting: false
         - monasca-tempest-python-cassandra
         - monasca-tempest-java-cassandra
+        - monascalog-tempest
         - openstack-tox-lower-constraints
         - docker-build-monasca-base
     gate:
@@ -13,6 +14,7 @@
         - monasca-tempest-python-influxdb
         - monasca-tempest-python-cassandra
         - monasca-tempest-java-cassandra
+        - monascalog-tempest
         - openstack-tox-lower-constraints
     post:
       jobs:
