@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_ce6c22d1",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-07-27T13:06:44Z",
+      "side": 0,
+      "message": "I though that this allow us to set default values for them and user will be able to overwrite it if needed from child image Dockerfile.\nBut it\u0027s not working...\nIt\u0027s possible to overwrite them only with `docker build --build-agr`.\nSo I moved this default values to `example/build_image.sh`.\nYes, all child images need to update they implementations of this file. Sorry.\n\nBut with this user could provide all this data (if he want to) in child Dockerfile (without changing build_image.sh).",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 74
+      },
+      "revId": "55dbc317ff74bf4815dfeab1166487c777573ef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
