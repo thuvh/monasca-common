@@ -50,9 +50,15 @@ REPO_VERSION_CLEAN=$(echo "$REPO_VERSION" | sed 's|/|-|g')
 GITHUB_REPO=$(echo "$APP_REPO" | sed 's/git.openstack.org/github.com/' | \
               sed 's/ssh:/https:/')
 
+if [ -z "$CONSTRAINTS_FILE" ]; then
+    CONSTRAINTS_FILE=$(\grep CONSTRAINTS_FILE Dockerfile | cut -f2 -d"=") || true
+    : "${CONSTRAINTS_FILE:=http://git.openstack.org/cgit/openstack/requirements/plain/upper-constraints.txt}"
+fi
+
 : "${CONSTRAINTS_BRANCH:=$2}"
 [ -z "$CONSTRAINTS_BRANCH" ] && \
     CONSTRAINTS_BRANCH=$(\grep CONSTRAINTS_BRANCH Dockerfile | cut -f2 -d"=")
+
 # When using stable version of repository use same stable constraints file.
 case "$REPO_VERSION" in
     *stable*)
@@ -62,6 +68,16 @@ case "$REPO_VERSION" in
         CONSTRAINTS_BRANCH_CLEAN="$CONSTRAINTS_BRANCH"
     ;;
 esac
+
+# Monasca-common variables.
+if [ -z "$COMMON_REPO" ]; then
+    COMMON_REPO=$(\grep COMMON_REPO Dockerfile | cut -f2 -d"=") || true
+    : "${COMMON_REPO:=https://git.openstack.org/openstack/monasca-common}"
+fi
+if [ -z "$COMMON_VERSION" ]; then
+    COMMON_VERSION=$(\grep COMMON_VERSION Dockerfile | cut -f2 -d"=") || true
+    : "${COMMON_VERSION:=master}"
+fi
 
 # Clone project to temporary directory for getting proper commit number from
 # branches and tags. We need this for setting proper image labels.
@@ -80,8 +96,19 @@ GIT_COMMIT=$(git -C "$TMP_DIR" rev-parse FETCH_HEAD)
 [ -z "${GIT_COMMIT}" ] && echo "No git commit hash found" && exit 1
 rm -rf "$TMP_DIR"
 
-# TODO(Dobroslaw): find a way to set label monasca-common with version
-# we will be using with app.
+# Do the same for monasca-common.
+COMMON_TMP_DIR=$(mktemp -d)
+(
+    cd "$COMMON_TMP_DIR"
+    # This many steps are needed to support gerrit patch sets.
+    git init
+    git remote add origin "$COMMON_REPO"
+    git fetch origin "$COMMON_VERSION"
+    git reset --hard FETCH_HEAD
+)
+COMMON_GIT_COMMIT=$(git -C "$COMMON_TMP_DIR" rev-parse FETCH_HEAD)
+[ -z "${COMMON_GIT_COMMIT}" ] && echo "No git commit hash found" && exit 1
+rm -rf "$COMMON_TMP_DIR"
 
 CREATION_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 # Docker tags don't like colons so use shorter version of ISO 8601 for them.
@@ -93,6 +120,10 @@ docker build --no-cache \
     --build-arg APP_REPO="$APP_REPO" \
     --build-arg REPO_VERSION="$REPO_VERSION" \
     --build-arg GIT_COMMIT="$GIT_COMMIT" \
+    --build-arg CONSTRAINTS_FILE="$CONSTRAINTS_FILE" \
     --build-arg CONSTRAINTS_BRANCH="$CONSTRAINTS_BRANCH_CLEAN" \
+    --build-arg COMMON_REPO="$COMMON_REPO" \
+    --build-arg COMMON_VERSION="$COMMON_VERSION" \
+    --build-arg COMMON_GIT_COMMIT="$COMMON_GIT_COMMIT" \
     --tag "$DOCKER_IMAGE":"$REPO_VERSION_CLEAN" \
     --tag "$DOCKER_IMAGE":"$REPO_VERSION_CLEAN"-"$CREATION_TIME_SHORT" .
