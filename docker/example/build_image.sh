@@ -12,6 +12,28 @@
 #  License for the specific language governing permissions and limitations
 #  under the License.
 
+
+
+
+
+
+
+
+
+
+# REMOVE:  test zuul
+
+
+
+
+
+
+
+
+
+
+
+
 # TODO(Dobroslaw): move this script to monasca-common/docker folder
 # and leave here small script to download it and execute using env variables
 # to minimize code duplication.
