@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_ffdd0f13",
+        "filename": ".zuul.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-07-27T11:46:43Z",
+      "side": 1,
+      "message": "Isn\u0027t this inherited from the parent job?",
+      "range": {
+        "startLine": 44,
+        "startChar": 4,
+        "endLine": 49,
+        "endChar": 16
+      },
+      "revId": "90918f5835ce3ec8bc3833ff88f8948d51b619df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
