@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_fc4df4c4",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-07-30T15:58:21Z",
+      "side": 1,
+      "message": "Looks good for Py3, although you could you use `oslo_utils.encodeutils.to_utf8(text)`.\n\nIn Py2 you\u0027re unnecessarily copying the complete list.",
+      "range": {
+        "startLine": 57,
+        "startChar": 8,
+        "endLine": 57,
+        "endChar": 87
+      },
+      "revId": "3bfb937ef67dcc00086c96ba0dfafd1eb350cd27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_577163aa",
+        "filename": "monasca_common/kafka/producer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-07-30T15:58:21Z",
+      "side": 1,
+      "message": "Again, encodeutils.to_utf8 could be used.",
+      "revId": "3bfb937ef67dcc00086c96ba0dfafd1eb350cd27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
