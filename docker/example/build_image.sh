@@ -84,8 +84,6 @@ rm -rf "$TMP_DIR"
 # we will be using with app.
 
 CREATION_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-# Docker tags don't like colons so use shorter version of ISO 8601 for them.
-CREATION_TIME_SHORT=$(date -d "$CREATION_TIME" -u +"%Y%m%dT%H%M%SZ")
 
 docker build --no-cache \
     --build-arg CREATION_TIME="$CREATION_TIME" \
@@ -94,5 +92,4 @@ docker build --no-cache \
     --build-arg REPO_VERSION="$REPO_VERSION" \
     --build-arg GIT_COMMIT="$GIT_COMMIT" \
     --build-arg CONSTRAINTS_BRANCH="$CONSTRAINTS_BRANCH_CLEAN" \
-    --tag "$DOCKER_IMAGE":"$REPO_VERSION_CLEAN" \
-    --tag "$DOCKER_IMAGE":"$REPO_VERSION_CLEAN"-"$CREATION_TIME_SHORT" .
+    --tag "$DOCKER_IMAGE":"$REPO_VERSION_CLEAN" .
