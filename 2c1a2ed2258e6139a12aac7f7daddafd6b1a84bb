@@ -1,0 +1,9 @@
+Code-Review+2: Witold Bedyk <witold.bedyk@est.fujitsu.com>
+Workflow+1: Witold Bedyk <witold.bedyk@est.fujitsu.com>
+Code-Review+1: daixianmeng <daixianmeng@yovole.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 31 Jul 2018 10:01:40 +0000
+Reviewed-on: https://review.openstack.org/584844
+Project: openstack/monasca-common
+Branch: refs/heads/master
