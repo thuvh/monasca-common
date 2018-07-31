@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_c26ef8fc",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-07-31T14:27:27Z",
+      "side": 1,
+      "message": ", otherwise use the version from upper-constraints.txt",
+      "range": {
+        "startLine": 102,
+        "startChar": 67,
+        "endLine": 102,
+        "endChar": 68
+      },
+      "revId": "da7ed749170fb23192a1a41ed21b3380a1dfcbb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f9ebaa0d",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-07-31T14:27:27Z",
+      "side": 1,
+      "message": "Don\u0027t we need it anymore?",
+      "range": {
+        "startLine": 137,
+        "startChar": 12,
+        "endLine": 145,
+        "endChar": 33
+      },
+      "revId": "da7ed749170fb23192a1a41ed21b3380a1dfcbb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_5d3d0f8b",
         "filename": "docker/example/build_image.sh",
         "patchSetId": 1
