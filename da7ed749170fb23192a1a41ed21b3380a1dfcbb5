@@ -140,6 +140,30 @@
       "revId": "da7ed749170fb23192a1a41ed21b3380a1dfcbb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_77753196",
+        "filename": "docker/example/build_image.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 16253
+      },
+      "writtenOn": "2018-08-02T11:54:18Z",
+      "side": 1,
+      "message": "# Example usage:\n# $ ./build_image.sh \u003crepository_version\u003e \u003cupper_constains_branch\u003e\n\nwell, here we have to handle two repositories:\n- monasca-common repo\n- child repo\n\nI would expect something like that:\n# Example usage:\n# $ ./build_image.sh \u003cbase_repo_version\u003e \u003cchild_repo_version\u003e \u003cupper_constains_branch\u003e\nOk, monasca-common is handled tricky (maybe too tricky?) with \"upper_constains_branch\"...so I guess this is worth some comment...\n\nmaybe like that:\n# Example usage:\n# $ ./build_image.sh \u003crepository_version\u003e \u003cupper_constains_branch\u003e\n#\n# child: \"repository_version\" of child repository. Image can be build with:\n#       - version tag, e.g. 2.5.0\n#       - Gerrit patch set, e.g. refs/changes/51/558751/1\n#       - branch, e.g. stable/queens\n#\n# base: monasca-common will be taken from \"upper_constains_branch\" file.\n#       File will be adapted to build monasca-common library with:\n#       - version tag, e.g. 2.5.0\n#       - Gerrit patch set, e.g. refs/changes/51/558751/1\n#       - branch, e.g. stable/queens\n#\n...",
+      "parentUuid": "5f7c97a3_decb0270",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 67
+      },
+      "revId": "da7ed749170fb23192a1a41ed21b3380a1dfcbb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
