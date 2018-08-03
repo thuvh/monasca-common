@@ -164,6 +164,30 @@
       "revId": "da7ed749170fb23192a1a41ed21b3380a1dfcbb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_45437f13",
+        "filename": "docker/example/build_image.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-08-03T12:30:03Z",
+      "side": 1,
+      "message": "With this comment I found bug in handling of docker labels (and probably installing) in case we want to build child image from tag. Now it don\u0027t save proper data and making it save it properly will make it even more confusing.",
+      "parentUuid": "5f7c97a3_77753196",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 67
+      },
+      "revId": "da7ed749170fb23192a1a41ed21b3380a1dfcbb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
