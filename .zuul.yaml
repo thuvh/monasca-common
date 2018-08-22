@@ -1,0 +1,14 @@
+- project:
+    templates:
+      - openstack-python-jobs
+      - check-requirements
+    check:
+      jobs:
+        - legacy-monasca-common-maven-build
+    gate:
+      queue: monasca
+      jobs:
+        - legacy-monasca-common-maven-build
+    post:
+      jobs:
+        - legacy-monasca-common-localrepo-upload
