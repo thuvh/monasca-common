@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_907613a4",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-08-24T11:41:51Z",
+      "side": 1,
+      "message": "remove empty line",
+      "revId": "d74ee64bd33ccf0726ccf2dca13f92589b2e2ec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_10af63e3",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-08-24T11:41:51Z",
+      "side": 1,
+      "message": "Could you restore previous version?\nLines are shorter, in the same format as generated and have comment from Zuul tool \u003d\u003e `tools/encrypt_secret.py` telling what encryption was used.",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 143
+      },
+      "revId": "d74ee64bd33ccf0726ccf2dca13f92589b2e2ec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
