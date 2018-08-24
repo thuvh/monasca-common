@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_57fcf570",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-08-24T09:24:21Z",
+      "side": 1,
+      "message": "Remove.\nPlease, Python 3.5 only for Rocky and master branch. We don\u0027t want to give false idea that anyone actually checked if everything worked fine on older releases.",
+      "revId": "578020756f05bb7b4dd403440d882e86bfae3038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
