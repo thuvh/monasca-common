@@ -1,0 +1,9 @@
+Code-Review+2: Doug Szumski <doug@stackhpc.com>
+Code-Review+1: Joseph Davis <joseph.davis@suse.com>
+Workflow+1: Dobroslaw Zybort <dobroslaw.zybort@ts.fujitsu.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 03 Sep 2018 09:11:15 +0000
+Reviewed-on: https://review.openstack.org/585374
+Project: openstack/monasca-common
+Branch: refs/heads/master
