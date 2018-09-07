@@ -36,6 +36,7 @@ public class AlarmStateTransitionedEvent {
   public boolean actionsEnabled;
   public String stateChangeReason;
   public String severity;
+  public String valueMeta;
   public String link;
   public String lifecycleState;
   public List<AlarmTransitionSubAlarm> subAlarms;
@@ -48,6 +49,17 @@ public class AlarmStateTransitionedEvent {
       List<MetricDefinition> metrics, String alarmName, String alarmDescription,
       AlarmState oldState, AlarmState newState, String severity, String link, String lifecycleState,
       boolean actionsEnabled, String stateChangeReason, List<AlarmTransitionSubAlarm> subAlarms,
+      long timestamp) {
+
+    this(tenantId, alarmId, alarmDefinitionId, metrics, alarmName, alarmDescription,
+      oldState, newState, severity, link, lifecycleState, actionsEnabled, stateChangeReason, null,
+      subAlarms, timestamp);
+  }
+
+  public AlarmStateTransitionedEvent(String tenantId, String alarmId, String alarmDefinitionId,
+      List<MetricDefinition> metrics, String alarmName, String alarmDescription,
+      AlarmState oldState, AlarmState newState, String severity, String link, String lifecycleState,
+      boolean actionsEnabled, String stateChangeReason, String valueMeta, List<AlarmTransitionSubAlarm> subAlarms,
       long timestamp) {
     this.tenantId = tenantId;
     this.alarmId = alarmId;
@@ -62,6 +74,7 @@ public class AlarmStateTransitionedEvent {
     this.lifecycleState = lifecycleState;
     this.actionsEnabled = actionsEnabled;
     this.stateChangeReason = stateChangeReason;
+    this.valueMeta = valueMeta;
     this.subAlarms = subAlarms;
     this.timestamp = timestamp;
   }
@@ -131,6 +144,11 @@ public class AlarmStateTransitionedEvent {
         return false;
     } else if (!stateChangeReason.equals(other.stateChangeReason))
       return false;
+    if (valueMeta == null) {
+      if (other.valueMeta != null)
+        return false;
+    } else if (!valueMeta.equals(other.valueMeta))
+       return false;
     if (tenantId == null) {
       if (other.tenantId != null)
         return false;
@@ -157,6 +175,7 @@ public class AlarmStateTransitionedEvent {
     result = prime * result + ((newState == null) ? 0 : newState.hashCode());
     result = prime * result + ((oldState == null) ? 0 : oldState.hashCode());
     result = prime * result + ((stateChangeReason == null) ? 0 : stateChangeReason.hashCode());
+    result = prime * result + ((valueMeta == null) ? 0 : valueMeta.hashCode());
     result = prime * result + ((tenantId == null) ? 0 : tenantId.hashCode());
     result = prime * result + ((subAlarms == null) ? 0 : subAlarms.hashCode());
     result = prime * result + (int) (timestamp ^ (timestamp >>> 32));
@@ -170,6 +189,7 @@ public class AlarmStateTransitionedEvent {
         + alarmName + ", alarmDescription=" + alarmDescription + ", oldState=" + oldState
         + ", newState=" + newState + ", severity=" + severity + ", link=" + link
         + ", lifecycleState=" + lifecycleState + ", actionsEnabled=" + actionsEnabled + ", stateChangeReason="
-        + stateChangeReason + ", subAlarms=" + subAlarms +  ", timestamp=" + timestamp + "]";
+        + stateChangeReason + ", valueMeta=" + valueMeta + ", subAlarms=" + subAlarms +
+        ", timestamp=" + timestamp + "]";
   }
 }
