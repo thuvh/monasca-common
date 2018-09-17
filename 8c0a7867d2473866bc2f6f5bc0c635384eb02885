@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_df3a8ce4",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/event/AlarmStateTransitionedEvent.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 17669
+      },
+      "writtenOn": "2018-09-17T12:57:43Z",
+      "side": 1,
+      "message": "If there is more than one valueMeta field will this be a list?",
+      "revId": "8c0a7867d2473866bc2f6f5bc0c635384eb02885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
