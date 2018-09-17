@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_792d918d",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/event/AlarmStateTransitionedEvent.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 17669
+      },
+      "writtenOn": "2018-09-17T15:16:05Z",
+      "side": 1,
+      "message": "nit: Undo these changes to the Copyright header",
+      "range": {
+        "startLine": 3,
+        "startChar": 1,
+        "endLine": 3,
+        "endChar": 2
+      },
+      "revId": "27c09e96d18a372e76736d5fd6e840c93aa87ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
