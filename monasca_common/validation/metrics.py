@@ -77,74 +77,84 @@ def validate(metrics):
 
 def validate_metric(metric):
     validate_name(metric['name'])
-    validate_value(metric['value'])
-    validate_timestamp(metric['timestamp'])
+    validate_value(metric['value'], metric['name'])
+    validate_timestamp(metric['timestamp'], metric['name'])
     if "dimensions" in metric:
-        validate_dimensions(metric['dimensions'])
+        validate_dimensions(metric['dimensions'], metric['name'])
     if "value_meta" in metric:
-        validate_value_meta(metric['value_meta'])
+        validate_value_meta(metric['value_meta'], metric['name'])
 
 
-def validate_value_meta(value_meta):
+def validate_value_meta(value_meta, name):
     if value_meta is None:
         return
     if len(value_meta) > VALUE_META_MAX_NUMBER:
-        msg = "Too many valueMeta entries {0}, limit is {1}: valueMeta {2}".\
-            format(len(value_meta), VALUE_META_MAX_NUMBER, value_meta)
+        msg = "Failed validation of {0}: " \
+              "Too many valueMeta entries {1}, limit is {2}: valueMeta {3}".\
+            format(name, len(value_meta), VALUE_META_MAX_NUMBER, value_meta)
         raise InvalidValueMeta(msg)
     for key, value in six.iteritems(value_meta):
         if not key:
-            raise InvalidValueMeta("valueMeta name cannot be empty: key={}, "
-                                   "value={}".format(key, value))
+            raise InvalidValueMeta("Failed validation of {}: "
+                                   "valueMeta name cannot be empty: key={}, "
+                                   "value={}".format(name, key, value))
         if len(key) > VALUE_META_NAME_MAX_LENGTH:
-            msg = "valueMeta name too long: {0} must be {1} characters or " \
-                  "less".format(key, VALUE_META_NAME_MAX_LENGTH)
+            msg = "Failed validation of {0}: " \
+                  "valueMeta name too long: {1} must be {2} characters or " \
+                  "less".format(name, key, VALUE_META_NAME_MAX_LENGTH)
             raise InvalidValueMeta(msg)
 
     try:
         value_meta_json = ujson.dumps(value_meta)
         if len(value_meta_json) > VALUE_META_VALUE_MAX_LENGTH:
-            msg = "valueMeta name value combinations must be {0} characters " \
-                  "or less: valueMeta {1}".format(VALUE_META_VALUE_MAX_LENGTH,
+            msg = "Failed validation of {0}: " \
+                  "valueMeta name value combinations must be {1} characters " \
+                  "or less: valueMeta {2}".format(name,
+                                                  VALUE_META_VALUE_MAX_LENGTH,
                                                   value_meta)
             raise InvalidValueMeta(msg)
     except Exception:
         raise InvalidValueMeta("Unable to serialize valueMeta into JSON")
 
 
-def validate_dimension_key(k):
+def validate_dimension_key(k, name):
     if not isinstance(k, (str, six.text_type)):
-        msg = "invalid dimension key type: " \
-              "{0} is not a string type".format(k)
+        msg = "Failed validation of {0}: invalid dimension key type: " \
+              "{1} is not a string type".format(name, k)
         raise InvalidDimensionKey(msg)
     if len(k) > 255 or len(k) < 1:
-        msg = "invalid length ({0}) for dimension key {1}". \
-            format(len(k), k)
+        msg = "Failed validation of {0}: " \
+              "invalid length ({1}) for dimension key {2}". \
+            format(name, len(k), k)
         raise InvalidDimensionKey(msg)
     if RESTRICTED_DIMENSION_CHARS.search(k) or re.match('^_', k):
-        msg = "invalid characters in dimension key {0}". \
-            format(k)
+        msg = "Failed validation of {0}: invalid characters in dimension key {1}". \
+            format(name, k)
         raise InvalidDimensionKey(msg)
 
 
-def validate_dimension_value(k, v):
+def validate_dimension_value(k, v, name):
     if not isinstance(v, (str, six.text_type)):
-        msg = "invalid dimension value type: {0} must be a " \
-              "string (from key {1})".format(v, k)
+        msg = "Failed validation of {0}: " \
+              "invalid dimension value type: {1} must be a " \
+              "string (from key {2})".format(name, v, k)
         raise InvalidDimensionValue(msg)
     if len(v) > 255 or len(v) < 1:
-        msg = "invalid length ({0}) for dimension value {1} from key {2}". \
-            format(len(v), v, k)
+        msg = "Failed validation of {0}: " \
+              "invalid length ({1}) for dimension value {2} from key {3}". \
+            format(name, len(v), v, k)
         raise InvalidDimensionValue(msg)
     if RESTRICTED_DIMENSION_CHARS.search(v):
-        msg = "invalid characters in dimension value {0} from key {1}".format(v, k)
+        msg = "Failed validation of {0}: " \
+              "invalid characters in dimension value {1} from key {2}". \
+            format(name, v, k)
         raise InvalidDimensionValue(msg)
 
 
-def validate_dimensions(dimensions):
+def validate_dimensions(dimensions, name):
     for k, v in six.iteritems(dimensions):
-        validate_dimension_key(k)
-        validate_dimension_value(k, v)
+        validate_dimension_key(k, name)
+        validate_dimension_value(k, v, name)
 
 
 def validate_name(name):
@@ -160,18 +170,22 @@ def validate_name(name):
         raise InvalidMetricName(msg)
 
 
-def validate_value(value):
+def validate_value(value, name):
     if not isinstance(value, NUMERIC_VALUES):
-        msg = "invalid value type: {0} is not a number type for metric".\
-            format(value)
+        msg = "Failed validation of {0}: " \
+              "invalid value type: {1} is not a number type for metric".\
+            format(name, value)
         raise InvalidValue(msg)
     if math.isnan(value) or math.isinf(value):
-        msg = "invalid value: {0} is not a valid value for metric".format(value)
+        msg = "Failed validation of {0}: " \
+              "invalid value: {1} is not a valid value for metric".\
+            format(name, value)
         raise InvalidValue(msg)
 
 
-def validate_timestamp(timestamp):
+def validate_timestamp(timestamp, name):
     if not isinstance(timestamp, NUMERIC_VALUES):
-        msg = "invalid timestamp type: {0} is not a number type for " \
-              "metric".format(timestamp)
+        msg = "Failed validation of {0}: " \
+              "invalid timestamp type: {1} is not a number type for " \
+              "metric".format(name, timestamp)
         raise InvalidTimeStamp(msg)
