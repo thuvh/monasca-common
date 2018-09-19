@@ -424,9 +424,13 @@ class TestMetricValidation(base.BaseTestCase):
         ]
         for i in six.moves.range(len(metrics)):
             metric_validator.validate_name(metrics[i]['name'])
-            metric_validator.validate_value(metrics[i]['value'])
-            metric_validator.validate_timestamp(metrics[i]['timestamp'])
+            metric_validator.validate_value(metrics[i]['value'],
+                                            metrics[i]['name'])
+            metric_validator.validate_timestamp(metrics[i]['timestamp'],
+                                                metrics[i]['name'])
             if 'dimensions' in metrics[i]:
-                metric_validator.validate_dimensions(metrics[i]['dimensions'])
+                metric_validator.validate_dimensions(metrics[i]['dimensions'],
+                                                     metrics[i]['name'])
             if 'value_meta' in metrics[i]:
-                metric_validator.validate_value_meta(metrics[i]['value_meta'])
+                metric_validator.validate_value_meta(metrics[i]['value_meta'],
+                                                     metrics[i]['name'])
