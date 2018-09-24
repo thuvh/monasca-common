@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_356c789c",
+        "filename": "java/monasca-common-model/src/main/java/monasca/common/model/event/AlarmStateTransitionedEvent.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-09-24T12:41:47Z",
+      "side": 1,
+      "message": "nit: please wrap to 100 characters.",
+      "revId": "95bb7f73166756f72048d0f123757435c367cc79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
