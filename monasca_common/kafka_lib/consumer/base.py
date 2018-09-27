@@ -159,11 +159,11 @@ class Consumer(object):
             if partitions is None:  # commit all partitions
                 partitions = list(self.offsets.keys())
 
-            log.debug('Committing new offsets for %s, partitions %s',
+            # log.debug('Committing new offsets for %s, partitions %s',
                       self.topic, partitions)
             for partition in partitions:
                 offset = self.offsets[partition]
-                log.debug('Commit offset %d in SimpleConsumer: '
+                # log.debug('Commit offset %d in SimpleConsumer: '
                           'group=%s, topic=%s, partition=%s',
                           offset, self.group, self.topic, partition)
 

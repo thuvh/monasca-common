@@ -97,7 +97,7 @@ class KafkaConnection(local):
         bytes_left = num_bytes
         responses = []
 
-        log.debug("About to read %d bytes from Kafka", num_bytes)
+        # log.debug("About to read %d bytes from Kafka", num_bytes)
 
         # Make sure we have a connection
         if not self._sock:
@@ -119,7 +119,7 @@ class KafkaConnection(local):
                 self._raise_connection_error()
 
             bytes_left -= len(data)
-            log.debug("Read %d/%d bytes from Kafka", num_bytes - bytes_left, num_bytes)
+            # log.debug("Read %d/%d bytes from Kafka", num_bytes - bytes_left, num_bytes)
             responses.append(data)
 
         return b''.join(responses)
@@ -144,7 +144,7 @@ class KafkaConnection(local):
             payload: an encoded kafka packet (see KafkaProtocol)
         """
 
-        log.debug("About to send %d bytes to Kafka, request %d" % (len(payload), request_id))
+        # log.debug("About to send %d bytes to Kafka, request %d" % (len(payload), request_id))
 
         # Make sure we have a connection
         if not self._sock:
@@ -166,7 +166,7 @@ class KafkaConnection(local):
         Returns:
             str: Encoded kafka packet response from server
         """
-        log.debug("Reading response %d from Kafka" % request_id)
+        # log.debug("Reading response %d from Kafka" % request_id)
 
         # Make sure we have a connection
         if not self._sock:
@@ -200,7 +200,7 @@ class KafkaConnection(local):
         """
         Shutdown and close the connection socket
         """
-        log.debug("Closing socket connection for %s:%d" % (self.host, self.port))
+        # log.debug("Closing socket connection for %s:%d" % (self.host, self.port))
         if self._sock:
             # Call shutdown to be a good TCP client
             # But expect an error if the socket has already been
@@ -214,7 +214,7 @@ class KafkaConnection(local):
             self._sock.close()
             self._sock = None
         else:
-            log.debug("No socket found to close!")
+            # log.debug("No socket found to close!")
 
     def reinit(self):
         """
@@ -223,7 +223,7 @@ class KafkaConnection(local):
         and start a fresh connection
         raise ConnectionError on error
         """
-        log.debug("Reinitializing socket connection for %s:%d" % (self.host, self.port))
+        # log.debug("Reinitializing socket connection for %s:%d" % (self.host, self.port))
 
         if self._sock:
             self.close()
