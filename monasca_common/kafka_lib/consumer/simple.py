@@ -289,15 +289,15 @@ class SimpleConsumer(Consumer):
             timeout += time.time()
 
         new_offsets = {}
-        log.debug('getting %d messages', count)
+        # log.debug('getting %d messages', count)
         while len(messages) < count:
             block_time = timeout - time.time()
-            log.debug('calling _get_message block=%s timeout=%s', block, block_time)
+            # log.debug('calling _get_message block=%s timeout=%s', block, block_time)
             block_next_call = block is True or block > len(messages)
             result = self._get_message(block_next_call, block_time,
                                        get_partition_info=True,
                                        update_offset=False)
-            log.debug('got %s from _get_messages', result)
+            # log.debug('got %s from _get_messages', result)
             if not result:
                 if block_next_call and (timeout is None or time.time() <= timeout):
                     continue
@@ -312,7 +312,7 @@ class SimpleConsumer(Consumer):
         self.offsets.update(new_offsets)
         self.count_since_commit += len(messages)
         self._auto_commit()
-        log.debug('got %d messages: %s', len(messages), messages)
+        # log.debug('got %d messages: %s', len(messages), messages)
         return messages
 
     def get_message(self, block=True, timeout=0.1, get_partition_info=None):
@@ -330,7 +330,7 @@ class SimpleConsumer(Consumer):
         start_at = time.time()
         while self.queue.empty():
             # We're out of messages, go grab some more.
-            log.debug('internal queue empty, fetching more messages')
+            # log.debug('internal queue empty, fetching more messages')
             with FetchContext(self, block, timeout):
                 self._fetch()
 
@@ -355,7 +355,7 @@ class SimpleConsumer(Consumer):
             else:
                 return message
         except queue.Empty:
-            log.debug('internal queue empty after fetch - returning None')
+            # log.debug('internal queue empty after fetch - returning None')
             return None
 
     def __iter__(self):
@@ -428,9 +428,9 @@ class SimpleConsumer(Consumer):
                 try:
                     for message in resp.messages:
                         if message.offset < self.fetch_offsets[partition]:
-                            log.debug(
-                                'Skipping message %s because its offset is less'
-                                ' than the consumer offset', message)
+                            # log.debug(
+                                # 'Skipping message %s because its offset is less'
+                                # ' than the consumer offset', message)
                             continue
                         # Put the message in our queue
                         self.queue.put((partition, message))
@@ -450,8 +450,8 @@ class SimpleConsumer(Consumer):
                                 'and retry', buffer_size)
                     retry_partitions[partition] = buffer_size
                 except ConsumerNoMoreData as e:
-                    log.debug('Iteration was ended by %r', e)
+                    # log.debug('Iteration was ended by %r', e)
                 except StopIteration:
                     # Stop iterating through this partition
-                    log.debug('Done iterating over partition %s', partition)
+                    # log.debug('Done iterating over partition %s', partition)
             partitions = retry_partitions

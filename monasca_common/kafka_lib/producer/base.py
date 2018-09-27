@@ -110,7 +110,7 @@ def _send_upstream(queue, client, codec, batch_time, batch_size,
             if not stop_at:
                 stop_at = stop_timeout + time.time()
             if time.time() > stop_at:
-                log.debug('Async producer stopping due to stop_timeout')
+                # log.debug('Async producer stopping due to stop_timeout')
                 break
 
         timeout = batch_time
@@ -122,9 +122,9 @@ def _send_upstream(queue, client, codec, batch_time, batch_size,
         # for now, dont look for new batches if we have old ones to retry
         if request_tries:
             count = 0
-            log.debug('Skipping new batch collection to handle retries')
+            # log.debug('Skipping new batch collection to handle retries')
         else:
-            log.debug('Batching size: %s, timeout: %s', count, timeout)
+            # log.debug('Batching size: %s, timeout: %s', count, timeout)
 
         # Keep fetching till we gather enough messages or a
         # timeout is reached
@@ -172,13 +172,13 @@ def _send_upstream(queue, client, codec, batch_time, batch_size,
                 retry_state['do_refresh'] |= True
 
         requests = list(request_tries.keys())
-        log.debug('Sending: %s', requests)
+        # log.debug('Sending: %s', requests)
         responses = client.send_produce_request(requests,
                                                 acks=req_acks,
                                                 timeout=ack_timeout,
                                                 fail_on_error=False)
 
-        log.debug('Received: %s', responses)
+        # log.debug('Received: %s', responses)
         for i, response in enumerate(responses):
             error_cls = None
             if isinstance(response, FailedPayloadsError):

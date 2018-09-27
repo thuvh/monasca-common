@@ -143,7 +143,7 @@ class KafkaClient(object):
         """
         for (host, port) in self.hosts:
             requestId = self._next_id()
-            log.debug('Request %s: %s', requestId, payloads)
+            # log.debug('Request %s: %s', requestId, payloads)
             try:
                 conn = self._get_conn(host, port)
                 request = encoder_fn(client_id=self.client_id,
@@ -153,7 +153,7 @@ class KafkaClient(object):
                 conn.send(requestId, request)
                 response = conn.recv(requestId)
                 decoded = decoder_fn(response)
-                log.debug('Response %s: %s', requestId, decoded)
+                # log.debug('Response %s: %s', requestId, decoded)
                 return decoded
 
             except Exception:
@@ -216,7 +216,7 @@ class KafkaClient(object):
         connections_by_socket = {}
         for broker, payloads in payloads_by_broker.items():
             requestId = self._next_id()
-            log.debug('Request %s to %s: %s', requestId, broker, payloads)
+            # log.debug('Request %s to %s: %s', requestId, broker, payloads)
             request = encoder_fn(client_id=self.client_id,
                                  correlation_id=requestId, payloads=payloads)
 
@@ -241,8 +241,8 @@ class KafkaClient(object):
                 # send a response.  This probably only applies to
                 # ProduceRequest w/ acks = 0
                 if decoder_fn is None:
-                    log.debug('Request %s does not expect a response '
-                              '(skipping conn.recv)', requestId)
+                    # log.debug('Request %s does not expect a response '
+                              # '(skipping conn.recv)', requestId)
                     for payload in payloads:
                         topic_partition = (payload.topic, payload.partition)
                         responses[topic_partition] = None
@@ -274,7 +274,7 @@ class KafkaClient(object):
                                        payload_response.partition)
                     responses[topic_partition] = payload_response
                     _resps.append(payload_response)
-                log.debug('Response %s: %s', requestId, _resps)
+                # log.debug('Response %s: %s', requestId, _resps)
 
         # Connection errors generally mean stale metadata
         # although sometimes it means incorrect api request
@@ -322,7 +322,7 @@ class KafkaClient(object):
         # errors
         responses = {}
         requestId = self._next_id()
-        log.debug('Request %s to %s: %s', requestId, broker, payloads)
+        # log.debug('Request %s to %s: %s', requestId, broker, payloads)
         request = encoder_fn(client_id=self.client_id,
                              correlation_id=requestId, payloads=payloads)
 
@@ -346,8 +346,8 @@ class KafkaClient(object):
             # send a response.  This probably only applies to
             # ProduceRequest w/ acks = 0
             if decoder_fn is None:
-                log.debug('Request %s does not expect a response '
-                          '(skipping conn.recv)', requestId)
+                # log.debug('Request %s does not expect a response '
+                          # '(skipping conn.recv)', requestId)
                 for payload in payloads:
                     topic_partition = (payload.topic, payload.partition)
                     responses[topic_partition] = None
@@ -371,7 +371,7 @@ class KafkaClient(object):
                                        payload_response.partition)
                     responses[topic_partition] = payload_response
                     _resps.append(payload_response)
-                log.debug('Response %s: %s', requestId, _resps)
+                # log.debug('Response %s: %s', requestId, _resps)
 
         # Return responses in the same order as provided
         return [responses[tp] for tp in original_ordering]
@@ -499,8 +499,8 @@ class KafkaClient(object):
 
         resp = self.send_metadata_request(topics)
 
-        log.debug('Updating broker metadata: %s', resp.brokers)
-        log.debug('Updating topic metadata: %s', resp.topics)
+        # log.debug('Updating broker metadata: %s', resp.brokers)
+        # log.debug('Updating topic metadata: %s', resp.topics)
 
         self.brokers = dict([(broker.nodeId, broker)
                              for broker in resp.brokers])
@@ -545,8 +545,8 @@ class KafkaClient(object):
                 # this error code is provided for admin purposes only
                 # we never talk to replicas, only the leader
                 except ReplicaNotAvailableError:
-                    log.debug('Some (non-leader) replicas not available for topic %s partition %d',
-                              topic, partition)
+                    # log.debug('Some (non-leader) replicas not available for topic %s partition %d',
+                              # topic, partition)
 
                 # If Known Broker, topic_partition -> BrokerMetadata
                 if leader in self.brokers:
