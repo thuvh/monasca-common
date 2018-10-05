@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_e56df92f",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 25553
+      },
+      "writtenOn": "2018-10-05T04:27:53Z",
+      "side": 1,
+      "message": "Do we need coverage erase here?",
+      "revId": "10fe9ba4f2e5a51e27a28ab1228a82e340f9a1cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_2564514d",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 25553
+      },
+      "writtenOn": "2018-10-05T04:27:53Z",
+      "side": 1,
+      "message": "Do we need coverage report here?",
+      "revId": "10fe9ba4f2e5a51e27a28ab1228a82e340f9a1cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
