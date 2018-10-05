@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_866c4c08",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-10-05T08:13:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_e56df92f",
+      "revId": "10fe9ba4f2e5a51e27a28ab1228a82e340f9a1cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_2564514d",
         "filename": "tox.ini",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2018-10-05T04:27:53Z",
       "side": 1,
       "message": "Do we need coverage report here?",
+      "revId": "10fe9ba4f2e5a51e27a28ab1228a82e340f9a1cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_06511c31",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-10-05T08:13:14Z",
+      "side": 1,
+      "message": "report, html and xml provide all just different reporting styles.",
+      "parentUuid": "3f79a3b5_2564514d",
       "revId": "10fe9ba4f2e5a51e27a28ab1228a82e340f9a1cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
