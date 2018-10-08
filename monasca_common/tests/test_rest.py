@@ -1,3 +1,4 @@
+# coding=utf-8
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
 # not use this file except in compliance with the License. You may obtain
 # a copy of the License at
@@ -22,14 +23,13 @@ class TestRestUtils(base.BaseTestCase):
 
     def setUp(self):
         super(TestRestUtils, self).setUp()
-        self.mock_json_patcher = mock.patch('monasca_common.rest.utils.json')
-        self.mock_json = self.mock_json_patcher.start()
 
     def tearDown(self):
         super(TestRestUtils, self).tearDown()
-        self.mock_json_patcher.stop()
 
     def test_read_body_with_success(self):
+        self.mock_json_patcher = mock.patch('monasca_common.rest.utils.jsonutils')
+        self.mock_json = self.mock_json_patcher.start()
         self.mock_json.loads.return_value = ""
         payload = mock.Mock()
 
@@ -38,14 +38,12 @@ class TestRestUtils(base.BaseTestCase):
         self.mock_json.loads.assert_called_once_with(payload.read.return_value)
 
     def test_read_body_empty_content_in_payload(self):
-        self.mock_json.loads.return_value = ""
         payload = mock.Mock()
         payload.read.return_value = None
 
         self.assertIsNone(utils.read_body(payload))
 
     def test_read_body_json_loads_exception(self):
-        self.mock_json.loads.side_effect = Exception
         payload = mock.Mock()
 
         self.assertRaises(exceptions.DataConversionException,
@@ -66,16 +64,8 @@ class TestRestUtils(base.BaseTestCase):
             exceptions.UnreadableContentError,
             utils.read_body, unreadable_content)
 
-    def test_as_json_success(self):
-        data = mock.Mock()
+    def test_as_json(self):
+        self.assertEqual(b'{"\xc4\x85": "\xc4\x99"}', utils.as_json({'ą': 'ę'}))
 
-        dumped_json = utils.as_json(data)
-
-        self.assertEqual(dumped_json, self.mock_json.dumps.return_value)
-
-    def test_as_json_with_exception(self):
-        data = mock.Mock()
-        self.mock_json.dumps.side_effect = Exception
-
-        self.assertRaises(exceptions.DataConversionException,
-                          utils.as_json, data)
+    def test_as_json_ensure_ascii(self):
+        self.assertEqual(b'{"\u0105": "\u0119"}', utils.as_json({'ą': 'ę'}, ensure_ascii=True))

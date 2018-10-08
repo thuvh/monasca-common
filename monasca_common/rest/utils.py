@@ -12,8 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_serialization import jsonutils
 import six
-import ujson as json
 
 from monasca_common.rest import exceptions
 
@@ -45,12 +45,10 @@ def as_json(data, **kwargs):
     :rtype: str
     """
 
-    if 'sort_keys' not in kwargs:
-        kwargs['sort_keys'] = False
     if 'ensure_ascii' not in kwargs:
         kwargs['ensure_ascii'] = False
 
-    data = json.dumps(data, **kwargs)
+    data = jsonutils.dump_as_bytes(data, **kwargs)
 
     return data
 
@@ -64,7 +62,7 @@ def from_json(data, **kwargs):
     :return: read data
     :rtype: dict
     """
-    return json.loads(data, **kwargs)
+    return jsonutils.loads(data, **kwargs)
 
 
 _READABLE_CONTENT_TYPES = {
