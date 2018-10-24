@@ -45,6 +45,30 @@
       "revId": "144529f62aff6c682c3c3026db395a1c30b7d406",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_9393a159",
+        "filename": "monasca_common/validation/metrics.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 10311
+      },
+      "writtenOn": "2018-10-24T14:35:19Z",
+      "side": 1,
+      "message": "I was surprised the individual functions were called directly from other code rather than just calling validate_metric.\n\nI was also considering leaving the function parameters alone and instead adding a large try/except around the calls in validate_metric where the exceptions could be caught, the additional information of the metric name could be added, then the exceptions thrown again.  However that seemed more complicated.\nI also considered a complete refactor and combining all the individual validations back in to the validate_metric function, but that would break the other places where they are called from monasca-api and monasca-log-api.",
+      "parentUuid": "3f79a3b5_6abe11cf",
+      "range": {
+        "startLine": 88,
+        "startChar": 36,
+        "endLine": 88,
+        "endChar": 40
+      },
+      "revId": "144529f62aff6c682c3c3026db395a1c30b7d406",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
