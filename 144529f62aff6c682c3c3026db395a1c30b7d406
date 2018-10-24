@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_caf7258e",
+        "filename": "monasca_common/validation/metrics.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-10-24T10:06:08Z",
+      "side": 1,
+      "message": "How about introducing `ValidationException` and inheriting from it? Then you could write a try-catch block in `validate_metric` and log all the relevant information.",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 34
+      },
+      "revId": "144529f62aff6c682c3c3026db395a1c30b7d406",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_6abe11cf",
+        "filename": "monasca_common/validation/metrics.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-10-24T10:06:08Z",
+      "side": 1,
+      "message": "These functions are also called from monasca-api and potentially monasca-log-api. For tempest tests to pass you would have to declare the argument as optional.",
+      "range": {
+        "startLine": 88,
+        "startChar": 36,
+        "endLine": 88,
+        "endChar": 40
+      },
+      "revId": "144529f62aff6c682c3c3026db395a1c30b7d406",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
