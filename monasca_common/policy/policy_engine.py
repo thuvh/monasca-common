@@ -156,7 +156,7 @@ def check_is_admin(context):
     init()
     credentials = context.to_policy_values()
     target = credentials
-    return _ENFORCER.authorize('admin_required', target, credentials)
+    return _ENFORCER.authorize('admin_api', target, credentials)
 
 
 def set_rules(rules, overwrite=True, use_conf=False):  # pragma: no cover
