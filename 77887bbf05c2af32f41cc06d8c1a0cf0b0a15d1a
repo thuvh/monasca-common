@@ -1,0 +1,8 @@
+Code-Review+2: Doug Szumski <doug@stackhpc.com>
+Workflow+1: Doug Szumski <doug@stackhpc.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 05 Nov 2018 18:39:28 +0000
+Reviewed-on: https://review.openstack.org/615557
+Project: openstack/monasca-common
+Branch: refs/heads/master
