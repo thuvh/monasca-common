@@ -78,7 +78,10 @@ ONBUILD RUN \
                 g++ \
                 git \
                 libffi-dev \
+                librdkafka-dev \
                 libressl-dev \
+                libxml2-dev \
+                libxslt-dev \
                 linux-headers \
                 make && \
             # Clone repository and checkout requested version.
