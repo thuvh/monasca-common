@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_4655f71d",
+        "filename": "monasca_common/tests/test_confluent_kafka.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-11-28T08:59:27Z",
+      "side": 1,
+      "message": "oops, relied on PyCharm syntax checks and had not run pep locally.",
+      "parentUuid": "3f79a3b5_0a6dcb2e",
+      "range": {
+        "startLine": 51,
+        "startChar": 68,
+        "endLine": 52,
+        "endChar": 61
+      },
+      "revId": "4391cfcf3bc18a504f3e600fb90d25c314bb0760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_4af42388",
         "filename": "tox.ini",
         "patchSetId": 5
@@ -36,6 +60,24 @@
       "writtenOn": "2018-11-27T23:10:18Z",
       "side": 1,
       "message": "Glad we are adding py36, though it might be more atomic to have this as a separate commit to monasca-common.",
+      "revId": "4391cfcf3bc18a504f3e600fb90d25c314bb0760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_064b7f7f",
+        "filename": "tox.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-11-28T08:59:27Z",
+      "side": 1,
+      "message": "Good point. Moved out of the change.",
+      "parentUuid": "3f79a3b5_4af42388",
       "revId": "4391cfcf3bc18a504f3e600fb90d25c314bb0760",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
