@@ -79,8 +79,15 @@ ONBUILD RUN \
                 git \
                 libffi-dev \
                 libressl-dev \
+                libxml2-dev \
+                libxslt-dev \
                 linux-headers \
                 make && \
+            # We need librdkafka at last v0.11.5 so need to take it from edge.
+            # It will be default in Apline 3.9.
+            apk add --no-cache --virtual .build-librdkafka \
+                librdkafka-dev \
+                --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community && \
             # Clone repository and checkout requested version.
             # This many steps are needed to support gerrit patch sets.
             mkdir -p /app && \
@@ -138,7 +145,7 @@ ONBUILD RUN \
             printf "Constraints file: %s\\n" \
                 "$CONSTRAINTS_FILE"?h="$CONSTRAINTS_BRANCH" >> /VERSIONS && \
             # Clean after instalation.
-            apk del .build-deps && \
+            apk del .build-deps .build-librdkafka && \
             rm -rf \
                 /app \
                 /root/.cache/ \
