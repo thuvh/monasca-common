@@ -38,8 +38,6 @@
     required-projects:
       - openstack/monasca-common
     attempts: 1
-    files:
-      - ^docker\/(?!example).*
     irrelevant-files:
       - ^.*\.rst$
       - ^.*\.md$
