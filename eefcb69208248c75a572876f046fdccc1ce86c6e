@@ -22,6 +22,30 @@
       "revId": "eefcb69208248c75a572876f046fdccc1ce86c6e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_9355e1ef",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 6
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2018-12-06T09:43:59Z",
+      "side": 1,
+      "message": "From build:\n\ngcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/local/include/python3.5m -c confluent_kafka/src/confluent_kafka.c -o build/temp.linux-x86_64-3.5/confluent_kafka/src/confluent_kafka.o\n    In file included from confluent_kafka/src/confluent_kafka.c:17:0:\n    confluent_kafka/src/confluent_kafka.h:55:2: error: #error \"confluent-kafka-python requires librdkafka v0.11.5 or later. Install the latest version of librdkafka from the Confluent repositories, see http://docs.confluent.io/current/installation.html\"\n     #error \"confluent-kafka-python requires librdkafka v0.11.5 or later. Install the latest version of librdkafka from the Confluent repositories, see http://docs.confluent.io/current/installation.html\"\n      ^~~~~\n    error: command \u0027gcc\u0027 failed with exit status 1",
+      "parentUuid": "3f79a3b5_33464d58",
+      "range": {
+        "startLine": 86,
+        "startChar": 41,
+        "endLine": 86,
+        "endChar": 48
+      },
+      "revId": "eefcb69208248c75a572876f046fdccc1ce86c6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
