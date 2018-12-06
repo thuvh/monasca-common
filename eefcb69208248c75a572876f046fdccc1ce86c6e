@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_33464d58",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 6
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2018-12-06T09:41:27Z",
+      "side": 1,
+      "message": "The requirements.txt says:\n\n  confluent-kafka\u003e\u003d0.11.4\n\nAre you sure we need this extra repository?",
+      "range": {
+        "startLine": 86,
+        "startChar": 41,
+        "endLine": 86,
+        "endChar": 48
+      },
+      "revId": "eefcb69208248c75a572876f046fdccc1ce86c6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
