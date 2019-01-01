@@ -1,0 +1,9 @@
+Code-Review+2: Witold Bedyk <witold.bedyk@est.fujitsu.com>
+Code-Review+2: Amir Mofakhar <amir@mofakhar.info>
+Workflow+1: Amir Mofakhar <amir@mofakhar.info>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 01 Jan 2019 17:58:32 +0000
+Reviewed-on: https://review.openstack.org/620606
+Project: openstack/monasca-common
+Branch: refs/heads/master
