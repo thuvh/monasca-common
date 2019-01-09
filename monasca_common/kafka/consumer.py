@@ -139,7 +139,10 @@ class KafkaConsumer(object):
             # between our current offset and the new Kafka head.
 
             try:
-                message = self._consumer.get_message()
+                try:
+                    message = self._consumer.get_message()
+                except StopIteration:
+                    return
                 if message:
                     yield message
                 else:
