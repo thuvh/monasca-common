@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfdaf3ff_c16de904",
+        "filename": "monasca_common/kafka_lib/producer/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2019-01-16T16:15:35Z",
+      "side": 1,
+      "message": "We have discussed it in the team meeting today [1]. `kafka_lib` package is an incubated copy of the old version of kafka-python library which we want to replace with confluent-kafka-python in this cycle. For that reason we thought it will be better not to touch this code here as it will be removed in the near future anyway.\n\n[1] http://eavesdrop.openstack.org/meetings/monasca/2019/monasca.2019-01-16-15.02.log.html#l-12",
+      "revId": "2caf625402b4186e69071c0e7927dc8c842374a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
