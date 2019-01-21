@@ -49,6 +49,19 @@
       - ^doc/.*$
 
 - job:
+    name: docker-build-monasca-service
+    timeout: 10200
+    post-timeout: 3600
+    run: playbooks/docker_build_service.yml
+    required-projects:
+      - openstack/monasca-common
+    attempts: 1
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^.*\.md$
+      - ^doc/.*$
+
+- job:
     name: docker-publish-monasca-base
     parent: docker-build-monasca-base
     post-run: playbooks/publish.yml
