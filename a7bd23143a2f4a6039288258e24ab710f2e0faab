@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_ead2395c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7102
+      },
+      "writtenOn": "2019-01-25T16:32:51Z",
+      "side": 1,
+      "message": "Why? Please be a bit more verbose...",
+      "revId": "a7bd23143a2f4a6039288258e24ab710f2e0faab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_4a17c5ee",
+        "filename": "playbooks/docker_build_service.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7102
+      },
+      "writtenOn": "2019-01-25T16:32:51Z",
+      "side": 1,
+      "message": "build_image.sh is in docker/example/build_image.sh . Or am I missing a step where this is copied to docker/build_image.sh ?",
+      "revId": "a7bd23143a2f4a6039288258e24ab710f2e0faab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
