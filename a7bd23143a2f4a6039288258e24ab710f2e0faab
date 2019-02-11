@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_69d09bf8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2019-02-11T13:35:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_ead2395c",
+      "revId": "a7bd23143a2f4a6039288258e24ab710f2e0faab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_4a17c5ee",
         "filename": "playbooks/docker_build_service.yml",
         "patchSetId": 2
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "This is a common playbook for all Monasca repositories, apart from monasca-common.",
       "parentUuid": "9fdfeff1_4a17c5ee",
+      "revId": "a7bd23143a2f4a6039288258e24ab710f2e0faab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_097c6fe9",
+        "filename": "playbooks/docker_build_service.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2019-02-11T13:35:43Z",
+      "side": 1,
+      "message": "Folder `example` is as name suggests just example. For now all repositories have separate docker folder with this file in it. At future most of this file content also could be moved to monasca-common and file `{monasca project}/docker/build_image.sh` will be small wrapper that download this file from one central location.",
+      "parentUuid": "9fdfeff1_d548c35c",
       "revId": "a7bd23143a2f4a6039288258e24ab710f2e0faab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
