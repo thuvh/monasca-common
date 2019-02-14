@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_eb5751c9",
+        "filename": "monasca_common/policy/policy_engine.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2019-02-14T13:59:49Z",
+      "side": 1,
+      "message": "I don\u0027t think that\u0027s the part of the naming policy document. What\u0027s the reason for changing this? In events-api [1] `admin_required` is still used.\n\n[1] https://review.openstack.org/#/c/613679/5/monasca_events_api/policies/admin.py",
+      "range": {
+        "startLine": 159,
+        "startChar": 31,
+        "endLine": 159,
+        "endChar": 42
+      },
+      "revId": "ef7d253835be50c42e3f2b134ad552ee2ef9ade1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
