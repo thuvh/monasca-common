@@ -35,6 +35,7 @@ RESTRICTED_DIMENSION_CHARS = re.compile('[' + INVALID_CHARS + ']')
 RESTRICTED_NAME_CHARS = re.compile('[' + INVALID_CHARS + '() ' + ']')
 
 NUMERIC_VALUES = [int, float]
+MIN_MILLISECONDS_NO = 1000000000
 if six.PY2:
     # according to PEP537 long was renamed to int in PY3
     # need to add long, as possible value, for PY2
@@ -174,4 +175,8 @@ def validate_timestamp(timestamp):
     if not isinstance(timestamp, NUMERIC_VALUES):
         msg = "invalid timestamp type: {0} is not a number type for " \
               "metric".format(timestamp)
+        raise InvalidTimeStamp(msg)
+    if not timestamp > MIN_MILLISECONDS_NO:
+        msg = "invalid timestamp format: {0} is not time formatted " \
+              "in milliseconds".format(timestamp)
         raise InvalidTimeStamp(msg)
