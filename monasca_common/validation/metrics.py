@@ -35,6 +35,10 @@ RESTRICTED_DIMENSION_CHARS = re.compile('[' + INVALID_CHARS + ']')
 RESTRICTED_NAME_CHARS = re.compile('[' + INVALID_CHARS + '() ' + ']')
 
 NUMERIC_VALUES = [int, float]
+# This is used to check if metrics timestamp is in milliseconds
+# Any metric timestamp with less than MIN_DIGITS_MS_FORMAT numbers
+# is treated as different unit
+MIN_MILLISECONDS_LEN = 13
 if six.PY2:
     # according to PEP537 long was renamed to int in PY3
     # need to add long, as possible value, for PY2
@@ -174,4 +178,8 @@ def validate_timestamp(timestamp):
     if not isinstance(timestamp, NUMERIC_VALUES):
         msg = "invalid timestamp type: {0} is not a number type for " \
               "metric".format(timestamp)
+        raise InvalidTimeStamp(msg)
+    if len(str(int(timestamp))) < MIN_MILLISECONDS_LEN:
+        msg = "invalid timestamp format: {0} is not time formatted " \
+              "in milliseconds".format(timestamp)
         raise InvalidTimeStamp(msg)
