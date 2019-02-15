@@ -35,6 +35,7 @@ RESTRICTED_DIMENSION_CHARS = re.compile('[' + INVALID_CHARS + ']')
 RESTRICTED_NAME_CHARS = re.compile('[' + INVALID_CHARS + '() ' + ']')
 
 NUMERIC_VALUES = [int, float]
+MIN_MILLISECONDS_NO = 1000000000
 if six.PY2:
     # according to PEP537 long was renamed to int in PY3
     # need to add long, as possible value, for PY2
@@ -79,9 +80,9 @@ def validate_metric(metric):
     validate_name(metric['name'])
     validate_value(metric['value'])
     validate_timestamp(metric['timestamp'])
-    if "dimensions" in metric:
+    if 'dimensions' in metric:
         validate_dimensions(metric['dimensions'])
-    if "value_meta" in metric:
+    if 'value_meta' in metric:
         validate_value_meta(metric['value_meta'])
 
 
@@ -89,55 +90,55 @@ def validate_value_meta(value_meta):
     if value_meta is None:
         return
     if len(value_meta) > VALUE_META_MAX_NUMBER:
-        msg = "Too many valueMeta entries {0}, limit is {1}: valueMeta {2}".\
+        msg = 'Too many valueMeta entries {0}, limit is {1}: valueMeta {2}'.\
             format(len(value_meta), VALUE_META_MAX_NUMBER, value_meta)
         raise InvalidValueMeta(msg)
     for key, value in six.iteritems(value_meta):
         if not key:
-            raise InvalidValueMeta("valueMeta name cannot be empty: key={}, "
-                                   "value={}".format(key, value))
+            raise InvalidValueMeta('valueMeta name cannot be empty: key={}, '
+                                   'value={}'.format(key, value))
         if len(key) > VALUE_META_NAME_MAX_LENGTH:
-            msg = "valueMeta name too long: {0} must be {1} characters or " \
-                  "less".format(key, VALUE_META_NAME_MAX_LENGTH)
+            msg = 'valueMeta name too long: {0} must be {1} characters or ' \
+                  'less'.format(key, VALUE_META_NAME_MAX_LENGTH)
             raise InvalidValueMeta(msg)
 
     try:
         value_meta_json = ujson.dumps(value_meta)
         if len(value_meta_json) > VALUE_META_VALUE_MAX_LENGTH:
-            msg = "valueMeta name value combinations must be {0} characters " \
-                  "or less: valueMeta {1}".format(VALUE_META_VALUE_MAX_LENGTH,
+            msg = 'valueMeta name value combinations must be {0} characters ' \
+                  'or less: valueMeta {1}'.format(VALUE_META_VALUE_MAX_LENGTH,
                                                   value_meta)
             raise InvalidValueMeta(msg)
     except Exception:
-        raise InvalidValueMeta("Unable to serialize valueMeta into JSON")
+        raise InvalidValueMeta('Unable to serialize valueMeta into JSON')
 
 
 def validate_dimension_key(k):
     if not isinstance(k, (str, six.text_type)):
-        msg = "invalid dimension key type: " \
-              "{0} is not a string type".format(k)
+        msg = 'invalid dimension key type: ' \
+              '{0} is not a string type'.format(k)
         raise InvalidDimensionKey(msg)
     if len(k) > 255 or len(k) < 1:
-        msg = "invalid length ({0}) for dimension key {1}". \
+        msg = 'invalid length ({0}) for dimension key {1}'. \
             format(len(k), k)
         raise InvalidDimensionKey(msg)
     if RESTRICTED_DIMENSION_CHARS.search(k) or re.match('^_', k):
-        msg = "invalid characters in dimension key {0}". \
+        msg = 'invalid characters in dimension key {0}'. \
             format(k)
         raise InvalidDimensionKey(msg)
 
 
 def validate_dimension_value(k, v):
     if not isinstance(v, (str, six.text_type)):
-        msg = "invalid dimension value type: {0} must be a " \
-              "string (from key {1})".format(v, k)
+        msg = 'invalid dimension value type: {0} must be a ' \
+              'string (from key {1})'.format(v, k)
         raise InvalidDimensionValue(msg)
     if len(v) > 255 or len(v) < 1:
-        msg = "invalid length ({0}) for dimension value {1} from key {2}". \
+        msg = 'invalid length ({0}) for dimension value {1} from key {2}'. \
             format(len(v), v, k)
         raise InvalidDimensionValue(msg)
     if RESTRICTED_DIMENSION_CHARS.search(v):
-        msg = "invalid characters in dimension value {0} from key {1}".format(v, k)
+        msg = 'invalid characters in dimension value {0} from key {1}'.format(v, k)
         raise InvalidDimensionValue(msg)
 
 
@@ -149,29 +150,33 @@ def validate_dimensions(dimensions):
 
 def validate_name(name):
     if not isinstance(name, (str, six.text_type)):
-        msg = "invalid metric name type: {0} is not a string type ".format(
+        msg = 'invalid metric name type: {0} is not a string type '.format(
             name)
         raise InvalidMetricName(msg)
     if len(name) > 255 or len(name) < 1:
-        msg = "invalid length for metric name: {0}".format(name)
+        msg = 'invalid length for metric name: {0}'.format(name)
         raise InvalidMetricName(msg)
     if RESTRICTED_NAME_CHARS.search(name):
-        msg = "invalid characters in metric name: {0}".format(name)
+        msg = 'invalid characters in metric name: {0}'.format(name)
         raise InvalidMetricName(msg)
 
 
 def validate_value(value):
     if not isinstance(value, NUMERIC_VALUES):
-        msg = "invalid value type: {0} is not a number type for metric".\
+        msg = 'invalid value type: {0} is not a number type for metric'.\
             format(value)
         raise InvalidValue(msg)
     if math.isnan(value) or math.isinf(value):
-        msg = "invalid value: {0} is not a valid value for metric".format(value)
+        msg = 'invalid value: {0} is not a valid value for metric'.format(value)
         raise InvalidValue(msg)
 
 
 def validate_timestamp(timestamp):
     if not isinstance(timestamp, NUMERIC_VALUES):
-        msg = "invalid timestamp type: {0} is not a number type for " \
-              "metric".format(timestamp)
+        msg = 'invalid timestamp type: {0} is not a number type for ' \
+              'metric'.format(timestamp)
+        raise InvalidTimeStamp(msg)
+    if not timestamp > MIN_MILLISECONDS_NO:
+        msg = 'invalid timestamp format: {0} is not time formatted ' \
+              'in milliseconds'.format(timestamp)
         raise InvalidTimeStamp(msg)
