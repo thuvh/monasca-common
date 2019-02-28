@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_32d61751",
+        "filename": "monasca_common/confluent_kafka/consumer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2019-02-28T11:50:33Z",
+      "side": 1,
+      "message": "Good point.",
+      "parentUuid": "9fdfeff1_1e8f5fcd",
+      "revId": "832e86357e919753a1863169ecf7d0898857ee92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_7e3a2b34",
         "filename": "monasca_common/tests/test_confluent_kafka.py",
         "patchSetId": 3
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "9fdfeff1_92dd8371",
+        "filename": "monasca_common/tests/test_confluent_kafka.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2019-02-28T11:50:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_7e3a2b34",
+      "range": {
+        "startLine": 104,
+        "startChar": 54,
+        "endLine": 104,
+        "endChar": 59
+      },
+      "revId": "832e86357e919753a1863169ecf7d0898857ee92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_7e230b06",
         "filename": "monasca_common/tests/test_confluent_kafka.py",
         "patchSetId": 3
@@ -53,6 +95,30 @@
       "writtenOn": "2019-02-28T11:33:41Z",
       "side": 1,
       "message": "server",
+      "range": {
+        "startLine": 126,
+        "startChar": 55,
+        "endLine": 126,
+        "endChar": 60
+      },
+      "revId": "832e86357e919753a1863169ecf7d0898857ee92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_b2d8c77e",
+        "filename": "monasca_common/tests/test_confluent_kafka.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2019-02-28T11:50:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fdfeff1_7e230b06",
       "range": {
         "startLine": 126,
         "startChar": 55,
