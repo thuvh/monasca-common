@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdfeff1_bc53b615",
+        "filename": "monasca_common/confluent_kafka/consumer.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 17669
+      },
+      "writtenOn": "2019-02-28T15:27:51Z",
+      "side": 1,
+      "message": "Being pedantic since I think time_delta.total_seconds() is fractional, time_delta.total_seconds() could return 29.999 and then this goes round another loop and the commit_callback runs after max_commit_interval seconds, especially if self._consumer.poll() blocks for a few seconds. I suppose we could subtract the max delay, or I could stop bike shedding :)",
+      "range": {
+        "startLine": 80,
+        "startChar": 48,
+        "endLine": 80,
+        "endChar": 73
+      },
+      "revId": "c542d908f1d05790c38d910508110dbab70938bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
