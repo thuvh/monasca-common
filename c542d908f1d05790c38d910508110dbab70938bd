@@ -22,6 +22,30 @@
       "revId": "c542d908f1d05790c38d910508110dbab70938bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fdfeff1_374cc1c6",
+        "filename": "monasca_common/confluent_kafka/consumer.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2019-02-28T16:05:49Z",
+      "side": 1,
+      "message": "Yes, you\u0027re right that the variable name and argument documentation are not quite consistent with that logic. The logic though is the same as in the old wrapper. I have renamed the variable from `commit_timeout` which was somewhat confusing to `max_commit_interval` which is not perfect either as you\u0027ve found out.",
+      "parentUuid": "9fdfeff1_bc53b615",
+      "range": {
+        "startLine": 80,
+        "startChar": 48,
+        "endLine": 80,
+        "endChar": 73
+      },
+      "revId": "c542d908f1d05790c38d910508110dbab70938bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
