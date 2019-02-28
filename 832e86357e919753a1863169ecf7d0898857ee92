@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9fdfeff1_1e8f5fcd",
+        "filename": "monasca_common/confluent_kafka/consumer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 26141
+      },
+      "writtenOn": "2019-02-28T11:42:29Z",
+      "side": 1,
+      "message": "Magic number. In my opinion is better to describe such number. For example\n_consumer.poll(timeout\u003d5)",
+      "revId": "832e86357e919753a1863169ecf7d0898857ee92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fdfeff1_7e3a2b34",
         "filename": "monasca_common/tests/test_confluent_kafka.py",
         "patchSetId": 3
