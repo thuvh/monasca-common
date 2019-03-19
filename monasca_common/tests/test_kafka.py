@@ -132,7 +132,10 @@ class TestKafkaConsumer(base.BaseTestCase):
     def test_kafka_consumer_process_messages(self, mock_set_partitioner):
         messages = []
         for i in range(5):
-            messages.append("message{}".format(i))
+            msg_value = "message{}".format(i)
+            msg = kafka_common.Message(i, i, "test_key", msg_value)
+            partition_and_msg = (i, kafka_common.OffsetAndMessage(i, msg))
+            messages.append(partition_and_msg)
         self.consumer.get_message.side_effect = messages
         mock_set_partitioner.return_value.failed = False
         mock_set_partitioner.return_value.release = False
@@ -140,7 +143,7 @@ class TestKafkaConsumer(base.BaseTestCase):
         mock_set_partitioner.return_value.__iter__.return_value = [1]
 
         for index, message in enumerate(self.monasca_kafka_consumer):
-            self.assertEqual(message, messages[index])
+            self.assertEqual(messages[index][1].message.value, message.value())
 
     @mock.patch('monasca_common.kafka.consumer.datetime')
     def test_commit(self, mock_datetime):
@@ -166,8 +169,11 @@ class TestKafkaConsumer(base.BaseTestCase):
             pass
 
         self.mock_kafka_common.OffsetOutOfRangeError = OffsetOutOfRangeError
+        msg = kafka_common.Message(0, 0, "test_key", "message")
+        partition_and_msg = (0,
+                             kafka_common.OffsetAndMessage("test_offset", msg))
         self.consumer.get_message.side_effect = [OffsetOutOfRangeError,
-                                                 "message"]
+                                                 partition_and_msg]
         mock_set_partitioner.return_value.failed = False
         mock_set_partitioner.return_value.release = False
         mock_set_partitioner.return_value.acquired = True
