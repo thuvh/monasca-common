@@ -18,12 +18,14 @@ import logging
 import threading
 import time
 
+from kazoo.client import KazooClient
+from kazoo.recipe.partitioner import SetPartitioner
+
+from monasca_common.kafka import kafka_message
 import monasca_common.kafka_lib.client as kafka_client
 import monasca_common.kafka_lib.common as kafka_common
 import monasca_common.kafka_lib.consumer as kafka_consumer
 
-from kazoo.client import KazooClient
-from kazoo.recipe.partitioner import SetPartitioner
 
 log = logging.getLogger(__name__)
 
@@ -141,7 +143,11 @@ class KafkaConsumer(object):
             try:
                 message = self._consumer.get_message()
                 if message:
-                    yield message
+                    yield kafka_message.KafkaMessage(self._consumer.topic,
+                                                     message[0],
+                                                     message[1].offset,
+                                                     message[1].message.key,
+                                                     message[1].message.value)
                 else:
                     time.sleep(0.01)
 
