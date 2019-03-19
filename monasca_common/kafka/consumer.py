@@ -141,7 +141,11 @@ class KafkaConsumer(object):
             try:
                 message = self._consumer.get_message()
                 if message:
-                    yield message
+                    yield kafka_common.KafkaMessage(self._consumer.topic,
+                                                    message[0],
+                                                    message[1].offset,
+                                                    message[1].message.key,
+                                                    message[1].message.value)
                 else:
                     time.sleep(0.01)
 
