@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_0487bf63",
+        "filename": "playbooks/docker_build_service.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2019-04-02T08:57:29Z",
+      "side": 1,
+      "message": "add space",
+      "revId": "dfc6cf1a589e8d941d64f3c919e4e520356159a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
