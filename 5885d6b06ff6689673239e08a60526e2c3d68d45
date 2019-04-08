@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc1f717_675ad2f2",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2019-04-08T14:41:34Z",
+      "side": 1,
+      "message": "I think `build-monasca-docker-image` would fit better the guidance rules.\nIn particular I find using `monasca-common` misleading as the job is used in other components to build e.g. monasca-api image.",
+      "range": {
+        "startLine": 52,
+        "startChar": 10,
+        "endLine": 52,
+        "endChar": 51
+      },
+      "revId": "5885d6b06ff6689673239e08a60526e2c3d68d45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
