@@ -22,6 +22,30 @@
       "revId": "5885d6b06ff6689673239e08a60526e2c3d68d45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_3897fb47",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2019-04-09T06:42:17Z",
+      "side": 1,
+      "message": "What about this point?\n\n`Remove the {repository} from the name, it is not needed anymore, __unless__ the job is defined in a specific repo`\n\nIt\u0027s possible that I got it in reverse way.",
+      "parentUuid": "5fc1f717_675ad2f2",
+      "range": {
+        "startLine": 52,
+        "startChar": 10,
+        "endLine": 52,
+        "endChar": 51
+      },
+      "revId": "5885d6b06ff6689673239e08a60526e2c3d68d45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
