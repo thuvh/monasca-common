@@ -70,6 +70,30 @@
       "revId": "5885d6b06ff6689673239e08a60526e2c3d68d45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fc1f717_9eab7786",
+        "filename": ".zuul.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2019-04-09T08:49:04Z",
+      "side": 1,
+      "message": "Good point. Fixed.",
+      "parentUuid": "5fc1f717_e38ea42c",
+      "range": {
+        "startLine": 52,
+        "startChar": 10,
+        "endLine": 52,
+        "endChar": 51
+      },
+      "revId": "5885d6b06ff6689673239e08a60526e2c3d68d45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
