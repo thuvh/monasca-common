@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fce034c_74c1512e",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 25553
+      },
+      "writtenOn": "2019-04-17T05:08:00Z",
+      "side": 1,
+      "message": "py36?",
+      "range": {
+        "startLine": 97,
+        "startChar": 19,
+        "endLine": 97,
+        "endChar": 23
+      },
+      "revId": "627840c023275923abd79791acf33966c8b6d295",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
