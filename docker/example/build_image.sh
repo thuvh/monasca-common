@@ -60,7 +60,7 @@ GITHUB_REPO=$(echo "$APP_REPO" | sed 's/git.openstack.org/github.com/' | \
 
 if [ -z "$CONSTRAINTS_FILE" ]; then
     CONSTRAINTS_FILE=$(\grep CONSTRAINTS_FILE Dockerfile | cut -f2 -d"=") || true
-    : "${CONSTRAINTS_FILE:=http://git.openstack.org/cgit/openstack/requirements/plain/upper-constraints.txt}"
+    : "${CONSTRAINTS_FILE:=http://opendev.org/openstack/requirements/plain/upper-constraints.txt}"
 fi
 
 : "${CONSTRAINTS_BRANCH:=$2}"
