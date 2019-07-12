@@ -1,0 +1,9 @@
+Code-Review+2: Witold Bedyk <witold.bedyk@suse.com>
+Code-Review+2: Adrian Czarnecki <adrian.czarnecki@ts.fujitsu.com>
+Workflow+1: Adrian Czarnecki <adrian.czarnecki@ts.fujitsu.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 12 Jul 2019 13:40:42 +0000
+Reviewed-on: https://review.opendev.org/670472
+Project: openstack/monasca-common
+Branch: refs/heads/master
