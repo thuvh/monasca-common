@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_90ef4ee8",
+        "filename": "monasca_common/kafka/consumer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 17669
+      },
+      "writtenOn": "2019-07-26T08:36:52Z",
+      "side": 1,
+      "message": "I think you want `timeout\u003dtimeout` here, otherwise you will set the client_id.",
+      "revId": "03900d11934f0abb3d2ecc409cdfd9bdc084c350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
