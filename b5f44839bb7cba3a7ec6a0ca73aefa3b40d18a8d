@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_83436daf",
+        "filename": "monasca_common/confluent_kafka/consumer.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 17669
+      },
+      "writtenOn": "2019-07-29T10:45:56Z",
+      "side": 1,
+      "message": "I\u0027m not entirely sure we will have the same issue with the new client. I have a fuzzy memory that this issue is related to the current Kafka client not supporting heart beats because the fork is old. The Confluent client should support them.",
+      "range": {
+        "startLine": 51,
+        "startChar": 28,
+        "endLine": 51,
+        "endChar": 35
+      },
+      "revId": "b5f44839bb7cba3a7ec6a0ca73aefa3b40d18a8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
