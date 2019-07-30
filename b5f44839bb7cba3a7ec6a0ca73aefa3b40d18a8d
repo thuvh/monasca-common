@@ -22,6 +22,30 @@
       "revId": "b5f44839bb7cba3a7ec6a0ca73aefa3b40d18a8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_59af97e2",
+        "filename": "monasca_common/confluent_kafka/consumer.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 16222
+      },
+      "writtenOn": "2019-07-30T10:28:15Z",
+      "side": 1,
+      "message": "Doug, you\u0027re probably right. The problem might not occur with the new client at all. Please also note that the proposed configuration options control different things: socket timeout in kafka-python and group session timeout in confluent-kafka.\n\nStill, the new configuration option is categorized as highly important [1]. Also the default value is kept the same as in the library. I think it\u0027s good to add.\n\n[1] https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md",
+      "parentUuid": "7faddb67_83436daf",
+      "range": {
+        "startLine": 51,
+        "startChar": 28,
+        "endLine": 51,
+        "endChar": 35
+      },
+      "revId": "b5f44839bb7cba3a7ec6a0ca73aefa3b40d18a8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
