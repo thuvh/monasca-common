@@ -1,0 +1,9 @@
+Code-Review+1: Scott Grasley <scott.grasley@suse.com>
+Code-Review+2: Amir Mofakhar <amir@mofakhar.info>
+Workflow+1: Adrian Czarnecki <adrian.czarnecki@ts.fujitsu.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 05 Aug 2019 09:44:06 +0000
+Reviewed-on: https://review.opendev.org/671451
+Project: openstack/monasca-common
+Branch: refs/heads/master
