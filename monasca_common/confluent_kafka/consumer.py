@@ -68,7 +68,7 @@ class KafkaConsumer(object):
             if message is None:
                 time.sleep(0.1)
             elif not message.error():
-                yield message
+                yield message.value()
             elif message.error().code() == \
                     confluent_kafka.KafkaError._PARTITION_EOF:
                 time.sleep(0.1)
