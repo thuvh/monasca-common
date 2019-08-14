@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_00c9a523",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2019-08-14T12:19:01Z",
+      "side": 1,
+      "message": "remove empty line, for now they work but future Docker versions will remove this support",
+      "revId": "28716223ac4fa0b8e37927952833a2dacf0fb56d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_204e21c1",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 21922
+      },
+      "writtenOn": "2019-08-14T12:19:01Z",
+      "side": 1,
+      "message": "remove empty line",
+      "revId": "28716223ac4fa0b8e37927952833a2dacf0fb56d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
