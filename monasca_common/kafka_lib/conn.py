@@ -16,6 +16,7 @@ from random import shuffle
 import socket
 import struct
 from threading import local
+from oslo_utils import netutils
 
 import six
 
@@ -40,9 +41,9 @@ def collect_hosts(hosts, randomize=True):
     result = []
     for host_port in hosts:
 
-        res = host_port.split(':')
+        res = netutils.parse_host_port(host_port)
         host = res[0]
-        port = int(res[1]) if len(res) > 1 else DEFAULT_KAFKA_PORT
+        port = int(res[1]) if res[1] else DEFAULT_KAFKA_PORT
         result.append((host.strip(), port))
 
     if randomize:
