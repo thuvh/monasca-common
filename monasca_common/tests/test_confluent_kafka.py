@@ -162,8 +162,10 @@ class TestConfluentKafkaConsumer(base.BaseTestCase):
             m.set_value("message{}".format(i))
             messages.append(m)
         self.consumer._consumer.poll.side_effect = messages
-        for index, message in enumerate(self.consumer):
+        index = 0
+        for message in self.consumer:
             self.assertEqual(message, messages[index])
+            index += 1
 
     @mock.patch('confluent_kafka.Message')
     @mock.patch('confluent_kafka.KafkaError')
