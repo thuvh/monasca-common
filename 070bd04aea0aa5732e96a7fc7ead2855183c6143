@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4c43b2_49c25d87",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 28522
+      },
+      "writtenOn": "2020-04-14T10:03:57Z",
+      "side": 1,
+      "message": "I think it could be dropped",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 28
+      },
+      "revId": "070bd04aea0aa5732e96a7fc7ead2855183c6143",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
