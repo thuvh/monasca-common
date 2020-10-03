@@ -125,17 +125,17 @@ ONBUILD RUN \
             [ $DOCKER_IMAGE = "monasca/statsd" ] && \
                 sed -i "s|monasca-statsd.*||" \
                     /app/upper-constraints.txt || true && \
-            pip3 install \
+            pip3 --no-cache-dir install \
                 --editable /monasca-common \
                 --constraint /app/upper-constraints.txt && \
             # Install packages needed by wait scripts and used for templating.
-            pip3 install \
+            pip3 --no-cache-dir install \
                 pykafka \
                 PyMySQL \
                 Templer==1.1.4 \
                 --constraint /app/upper-constraints.txt && \
             # Install our application with extra dependencies if provided.
-            pip3 install \
+            pip3 --no-cache-dir install \
                 /app/. $EXTRA_DEPS \
                 --requirement /app/requirements.txt \
                 --constraint /app/upper-constraints.txt && \
