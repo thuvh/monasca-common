@@ -1,0 +1,8 @@
+Code-Review+2: Martin Chacon Piza <martin@chaconpiza.com>
+Workflow+1: Martin Chacon Piza <martin@chaconpiza.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 07 Apr 2021 13:23:06 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/monasca-common/+/785151
+Project: openstack/monasca-common
+Branch: refs/heads/stable/wallaby
