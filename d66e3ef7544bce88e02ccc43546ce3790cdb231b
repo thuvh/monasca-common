@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b63bf01_b5a7d870",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17685
+      },
+      "writtenOn": "2022-09-06T18:14:32Z",
+      "side": 1,
+      "message": "Generated patch, LGTM, please merge as soon as possible.",
+      "revId": "d66e3ef7544bce88e02ccc43546ce3790cdb231b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
