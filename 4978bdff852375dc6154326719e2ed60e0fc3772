@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb3264f6_f608a4bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8556
+      },
+      "writtenOn": "2022-09-10T17:18:51Z",
+      "side": 1,
+      "message": "In Zed cycle, TC agree to use the unversioned template - https://etherpad.opendev.org/p/tc-zed-ptg#L360\n\nI am preparing it in https://review.opendev.org/c/openstack/openstack-zuul-jobs/+/856903\n\nAlso the release script - https://review.opendev.org/c/openstack/project-config/+/856904\n\nLet\u0027s wait for them to merge and we can update this patch manually. Until then -1.",
+      "revId": "4978bdff852375dc6154326719e2ed60e0fc3772",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
