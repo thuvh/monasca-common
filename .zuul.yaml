@@ -1,4 +1,5 @@
 - project:
+    queue: monasca
     templates:
       - check-requirements
       - openstack-cover-jobs
@@ -9,19 +10,25 @@
       jobs:
         - monasca-tempest-python2-influxdb
         - monasca-tempest-python3-influxdb
+<<<<<<< HEAD   (14a246 Remove periodic docker publish job)
         - monasca-tempest-python2-cassandra
         - monasca-tempest-java-cassandra
         - monascalog-tempest
+=======
+        - monasca-tempest-python3-cassandra
+>>>>>>> CHANGE (6e07c5 Fix deprecated zuul queue syntax and config error)
         - build-monasca-common-docker-base-image
         - legacy-monasca-common-maven-build
     gate:
-      queue: monasca
       jobs:
         - monasca-tempest-python2-influxdb
         - monasca-tempest-python3-influxdb
+<<<<<<< HEAD   (14a246 Remove periodic docker publish job)
         - monasca-tempest-python2-cassandra
         - monasca-tempest-java-cassandra
         - monascalog-tempest
+=======
+>>>>>>> CHANGE (6e07c5 Fix deprecated zuul queue syntax and config error)
         - legacy-monasca-common-maven-build
     post:
       jobs:
