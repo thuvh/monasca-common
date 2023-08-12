@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34a5ef91_85c2d5f8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13252
+      },
+      "writtenOn": "2023-08-12T20:51:35Z",
+      "side": 1,
+      "message": "Force-merging to get rid of zuul config errors",
+      "revId": "cdc03f9ae5aeda0a8409e8d555efa488cfb25fa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
