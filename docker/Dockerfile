@@ -1,4 +1,4 @@
-FROM python:3.8-alpine3.15
+FROM python:3.10-alpine3.19
 
 COPY wait_for.sh kafka_wait_for_topics.py mysql_check.py /
 COPY ashrc /root/.ashrc
