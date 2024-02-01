@@ -81,7 +81,7 @@ ONBUILD RUN \
                 linux-headers \
                 make \
                 rust && \
-            # For librdkafka bigger than v1.8.0 we need newer versions of some
+            # For librdkafka bigger than v2.3.0 we need newer versions of some
             # libraries.
             apk add --no-cache --virtual .build-librdkafka \
                 libressl3.4-libcrypto \
@@ -90,8 +90,8 @@ ONBUILD RUN \
                 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community && \
             # Install librdkafka from source code.
             apk add --no-cache curl bash && \
-            curl https://codeload.github.com/edenhill/librdkafka/tar.gz/v1.8.0 | tar xzf - -C /tmp/ && \
-                 cd /tmp/librdkafka-1.8.0/ && \
+            curl https://codeload.github.com/edenhill/librdkafka/tar.gz/v2.3.0 | tar xzf - -C /tmp/ && \
+                 cd /tmp/librdkafka-2.3.0/ && \
                  ./configure && \
                  make && \
                  make install && \
