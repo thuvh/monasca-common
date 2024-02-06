@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8dab97d6_0904f725",
+        "filename": ".zuul.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 11975
+      },
+      "writtenOn": "2024-02-06T14:45:15Z",
+      "side": 1,
+      "message": "should this be run on every patch send to gerrit?",
+      "revId": "86f83bbfb30dd7ef37e8c7266ac5ded5d12a3f0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ea9b5c4_aec55cbe",
+        "filename": ".zuul.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 11975
+      },
+      "writtenOn": "2024-02-06T14:45:15Z",
+      "side": 1,
+      "message": "do You need to run it daily?",
+      "revId": "86f83bbfb30dd7ef37e8c7266ac5ded5d12a3f0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
