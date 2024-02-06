@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "56485134_ba2a2ce5",
+        "filename": ".zuul.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 35988
+      },
+      "writtenOn": "2024-02-06T19:05:59Z",
+      "side": 1,
+      "message": "It should be checked the docker build before merging. Because after the merging, the docker image is aimed to be published.",
+      "parentUuid": "8dab97d6_0904f725",
+      "revId": "86f83bbfb30dd7ef37e8c7266ac5ded5d12a3f0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1ea9b5c4_aec55cbe",
         "filename": ".zuul.yaml",
         "patchSetId": 15
@@ -49,6 +67,24 @@
       "side": 1,
       "message": "The only reason to run this daily would be if you expect infrequent udpates to this repo which will update the docker image in the post queue. That does seem like it might be a bit much considering it would be easy to force an image update by merging a change.\n\nMaybe also consider gating on image builds since you expect them to run post merge.",
       "parentUuid": "1ea9b5c4_aec55cbe",
+      "revId": "86f83bbfb30dd7ef37e8c7266ac5ded5d12a3f0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a6582dca_c6174729",
+        "filename": ".zuul.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 35988
+      },
+      "writtenOn": "2024-02-06T19:05:59Z",
+      "side": 1,
+      "message": "We added the periodic job because it was also used in previous releases. But it may not be necessary. We can remove it.",
+      "parentUuid": "5058f9b7_7a477854",
       "revId": "86f83bbfb30dd7ef37e8c7266ac5ded5d12a3f0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
