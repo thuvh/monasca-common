@@ -33,6 +33,24 @@
       "message": "do You need to run it daily?",
       "revId": "86f83bbfb30dd7ef37e8c7266ac5ded5d12a3f0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5058f9b7_7a477854",
+        "filename": ".zuul.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2024-02-06T17:09:09Z",
+      "side": 1,
+      "message": "The only reason to run this daily would be if you expect infrequent udpates to this repo which will update the docker image in the post queue. That does seem like it might be a bit much considering it would be easy to force an image update by merging a change.\n\nMaybe also consider gating on image builds since you expect them to run post merge.",
+      "parentUuid": "1ea9b5c4_aec55cbe",
+      "revId": "86f83bbfb30dd7ef37e8c7266ac5ded5d12a3f0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
