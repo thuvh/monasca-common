@@ -36,6 +36,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c86a3fb5_9275851e",
+        "filename": ".zuul.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 11975
+      },
+      "writtenOn": "2024-02-07T08:18:14Z",
+      "side": 1,
+      "message": "Ok",
+      "parentUuid": "56485134_ba2a2ce5",
+      "revId": "86f83bbfb30dd7ef37e8c7266ac5ded5d12a3f0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1ea9b5c4_aec55cbe",
@@ -85,6 +103,24 @@
       "side": 1,
       "message": "We added the periodic job because it was also used in previous releases. But it may not be necessary. We can remove it.",
       "parentUuid": "5058f9b7_7a477854",
+      "revId": "86f83bbfb30dd7ef37e8c7266ac5ded5d12a3f0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e23735f_68191924",
+        "filename": ".zuul.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 11975
+      },
+      "writtenOn": "2024-02-07T08:18:14Z",
+      "side": 1,
+      "message": "Ok",
+      "parentUuid": "a6582dca_c6174729",
       "revId": "86f83bbfb30dd7ef37e8c7266ac5ded5d12a3f0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
