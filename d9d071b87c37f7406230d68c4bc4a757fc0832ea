@@ -68,6 +68,24 @@
       "parentUuid": "d26497b9_1eb7120b",
       "revId": "d9d071b87c37f7406230d68c4bc4a757fc0832ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17367dd3_ae05b36b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35988
+      },
+      "writtenOn": "2024-02-08T20:55:29Z",
+      "side": 1,
+      "message": "Most of the monasca-api jobs have been fixed, including non-voting jobs that failed here. It needs to be merged, but first monasca-common should be merged. You can review the changes: \n\nhttps://zuul.opendev.org/t/openstack/build/7ef38171b1844fb197bcd46f89b0a030",
+      "parentUuid": "f81a2025_5dfc3d1a",
+      "revId": "d9d071b87c37f7406230d68c4bc4a757fc0832ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
