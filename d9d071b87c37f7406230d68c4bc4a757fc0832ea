@@ -16,6 +16,23 @@
       "message": "LGTM",
       "revId": "d9d071b87c37f7406230d68c4bc4a757fc0832ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fbf6ed7_bb19941c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20865
+      },
+      "writtenOn": "2024-02-08T05:48:45Z",
+      "side": 1,
+      "message": "Hi @Ghanshyam @frickler and Elod, we need to merge this patch for fixing monasca-api gates. Can you help us for merging this patch.",
+      "revId": "d9d071b87c37f7406230d68c4bc4a757fc0832ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
