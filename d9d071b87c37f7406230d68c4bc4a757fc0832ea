@@ -50,6 +50,24 @@
       "message": "To me it sounds weird that you have been PTL for this project for the last cycle, but never got added as core reviewer. I think the TC should discuss this topic.\n\nThat said, looking at the patch itself, I\u0027m worried by the number of jobs still failing, but maybe this is feasible as a first step regardless. You should however urgently look into making unit tests pass for python3.10 (and also python3.11 which still seems to be missing completly), which are the current required versions for this cycle.",
       "revId": "d9d071b87c37f7406230d68c4bc4a757fc0832ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f81a2025_5dfc3d1a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35988
+      },
+      "writtenOn": "2024-02-08T20:48:18Z",
+      "side": 1,
+      "message": "As you said, after your message, we successfully passed the Python 3.10 unit tests. Due to our internal work, we were not able to contribute in the previous cycle. But  now, as a team, we are focusing on this project. Additionally, Hoai-Thu Vuong wants to contribute to the Monasca project.",
+      "parentUuid": "d26497b9_1eb7120b",
+      "revId": "d9d071b87c37f7406230d68c4bc4a757fc0832ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
