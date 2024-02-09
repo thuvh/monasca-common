@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58a79f97_14a278bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20865
+      },
+      "writtenOn": "2024-02-09T07:03:15Z",
+      "side": 1,
+      "message": "frickler, Hasan was PTL but he was not added as a core reviewer. we resolved all of the unit tests. Non voting jobs depends monasca-api. But monasca api docker image job is also depends monasca-common. There is circular dependency 😊 Firstly we need to merge monasca common patch.",
+      "revId": "fe601fa51b0e5887f9557dab0765b4e415b418eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
