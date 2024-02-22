@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc5b511d_7b04f07e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20865
+      },
+      "writtenOn": "2024-02-22T13:07:18Z",
+      "side": 1,
+      "message": "we need to check docker image is published or not published. we can\u0027t check post job.",
+      "revId": "2f71e5688df41e40c0c57989ee1c31e5bf77d0a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
