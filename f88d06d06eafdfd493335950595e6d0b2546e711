@@ -33,6 +33,23 @@
       "message": "recheck gate fixed",
       "revId": "f88d06d06eafdfd493335950595e6d0b2546e711",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f61c27ec_ddd4e8ae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20865
+      },
+      "writtenOn": "2024-03-15T08:34:20Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "f88d06d06eafdfd493335950595e6d0b2546e711",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
