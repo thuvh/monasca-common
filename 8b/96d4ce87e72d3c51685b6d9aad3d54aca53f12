@@ -1,0 +1,8 @@
+Code-Review+2: Gökhan <gokhan.isik@tubitak.gov.tr>
+Verified+2: Zuul
+Workflow+1: Hasan Acar <hasan.acar@tubitak.gov.tr>
+Submitted-by: Zuul
+Submitted-at: Fri, 15 Mar 2024 07:05:00 +0000
+Reviewed-on: https://review.opendev.org/c/openstack/monasca-common/+/909840
+Project: openstack/monasca-common
+Branch: refs/heads/stable/2023.1
