@@ -11,6 +11,7 @@
         - monasca-tempest-python3-cassandra
         - legacy-monasca-common-maven-build
         - build-monasca-common-docker-base-image
+        - publish-monasca-common-docker-base-image
     gate:
       jobs:
         - monasca-tempest-python3-influxdb:
