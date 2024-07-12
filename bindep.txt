@@ -2,4 +2,4 @@
 # see http://docs.openstack.org/infra/bindep/ for additional information.
 
 maven
-openjdk-8-jdk
+openjdk-11-jdk
