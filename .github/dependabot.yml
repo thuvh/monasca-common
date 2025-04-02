@@ -1,13 +1,15 @@
 version: 2
 updates:
 - package-ecosystem: maven
-  directory: "/"
+  directories: 
+    - "/"
+    - "/java"
   schedule:
-    interval: daily
+    interval: weekly
   ignore:
     # ignore Maven APIs/SPIs
     - dependency-name: org.apache.maven:*
 - package-ecosystem: "github-actions"
   directory: "/"
   schedule:
-    interval: "daily"
+    interval: weekly
