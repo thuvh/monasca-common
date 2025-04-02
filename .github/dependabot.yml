@@ -9,7 +9,4 @@ updates:
   ignore:
     # ignore Maven APIs/SPIs
     - dependency-name: org.apache.maven:*
-- package-ecosystem: "github-actions"
-  directory: "/"
-  schedule:
-    interval: weekly
+  open-pull-requests-limit: 0
