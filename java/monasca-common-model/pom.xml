@@ -11,7 +11,7 @@
 
   <properties>
     <antlr.version>4.13.2</antlr.version>
-    <jackson.version>2.18.3</jackson.version>
+    <jackson.version>2.20</jackson.version>
   </properties>
 
   <dependencies>
