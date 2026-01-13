@@ -11,7 +11,7 @@
 
   <properties>
     <jackson.version>2.18.3</jackson.version>
-    <logback.version>1.5.18</logback.version>
+    <logback.version>1.5.24</logback.version>
     <metrics.version>3.0.2</metrics.version>
   </properties>
 
